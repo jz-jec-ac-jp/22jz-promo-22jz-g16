@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <title>商品詳細画面</title>
+    <title>カード画面</title>
     <script src="/assets/js/humberger.js"></script>
 </head>
 
@@ -51,8 +51,7 @@
         </div>
         <!-- 検索アイコン -->
         <form class="search-form" action="get" href="#">
-            <!-- <input class="search-icon" type="submit"  alt=""> -->
-            <img src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
         </form>
@@ -67,114 +66,38 @@
         <ol class="breadcrumb">
           <li><a href="/">ホーム</a></li>
           <li><a href="/.../">2層目</a></li>
-          <li>新規会員登録</li>
+          <li>カード</li>
         </ol>
     </nav>
-        <figure>
-            <img class="product-img" src="/assets/img/chair.jpg" alt="">
-        </figure>
-        <h1 class="product-name">モノトーン椅子</h1>
-        <div class="product">
-            <p>5000円</p>
-            <figure>
-                <img src="/assets/img/header_favorite.png" alt="">
-            </figure>
-        </div>
-        <div class="product-star">
-            <p>☆☆☆☆</p>
-            <p>4.0</p>
-        </div>
-
-        <div class="detaile">
-            <p>商品コード</p>
-            <p>*****</p>
-            <p>カラー</p>
-            <p>*****</p>
-            <p>サイズ</p>
-            <p>*****</p>
-            <p>重量</p>
-            <p>*****</p>
-        </div>
-
-        <div class="product-content">
-            <p>
-                これも仮 <br>
-                背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
-            </p>
-        </div>
-
-        <input class="product-AR" type="submit" value="ARで表示してみよう！！">
-
-        <div class="product-review">
-            <div class="product-review-item">
-                <h2>レビュー</h2>
-                <p>総合評価</p>
-                <p>4.0</p>
-                <p>☆☆☆☆</p>
-            </div>
-            <div class="product-review-star">
-                <p>☆☆☆☆☆</p>
-                <p>☆☆☆☆</p>
-                <p>☆☆☆</p>
-                <p>☆☆</p>
-                <p>☆</p>
-            </div>
-        </div>
-
-        <div class="product-button">
-            <input class="return-btn" type="submit" value="戻る">
-            <input class="cart-btn" type="submit" value="カートに入れる">
-        </div>
-
-        <!-- <h2 class="product-relation">椅子の商品</h2>
-    <div class="product-list">
-        <div class="product-item">
-            <figure>
-                <img src="/assets/img/key-visuals.png" alt="">
-            </figure>
-            <p>モノトーン椅子</p>
-        </div>
-        <div class="product-item">
-            <figure>
-                <img src="/assets/img/key-visuals.png" alt="">
-            </figure>
-            <p>モノトーン椅子</p>
-        </div>
-    </div> -->
-
-        <!-- カテゴリ -->
-        <h2 class="category">Category</h2>
-        <div class="category-list">
-            <!-- 椅子 -->
-            <div class="category-item">
-                <figure>
-                    <img src="/assets/img/chair.jpg" alt="">
-                </figure>
-                <p>椅子</p>
-            </div>
-            <!-- 机 -->
-            <div class="category-item">
-                <figure>
-                    <img src="/assets/img/table.jpg" alt="">
-                </figure>
-                <p>机</p>
-            </div>
-            <!-- 照明 -->
-            <div class="category-item">
-                <figure>
-                    <img src="/assets/img/light.jpg" alt="">
-                </figure>
-                <p>照明</p>
-            </div>
-            <!-- 収納 -->
-            <div class="category-item">
-                <figure>
-                    <img src="/assets/img/storage.jpg" alt="">
-                </figure>
-                <p>収納</p>
-            </div>
+        <div class="card-main">
+            <form class="card-form" action="#" method="get">
+                <h1 class="card-logo">Visa</h1>
+                <!-- カード番号 -->
+                <h2>カード番号（半角）*</h2>
+                <input class="card-number" type="text" inputmode="numeric" pattern="\d*" placeholder="入力してください"
+                    pattern="[0-9]">
+                <!-- 有効期限 -->
+                <h2>有効期限*</h2>
+                <div class="expiration">
+                    <input class="expiration-month" type="number" placeholder="例）12">
+                    <p>月　/</p>
+                    <input class="expiration-year" type="number" placeholder="例）27">
+                    <p>年</p>
+                </div>
+                <!-- 名義人名 -->
+                <h2>名義人名（半角ローマ字）</h2>
+                <input class="holder-name" type="text" placeholder="入力してください">
+                <!-- セキュリティ番号 -->
+                <h2>セキュリティ番号</h2>
+                <input class="security-number" type="number" placeholder="入力してください">
+                <!-- 確定ボタン -->
+                <input type="submit" class="card-submit" value="次へ">
+            </form>
+            <input class="card-return" type="submit" value="戻る">
+            <!-- エラー文や警告文 <div></div> -->
         </div>
     </main>
+
 
     <!-- footer -->
     <footer>
