@@ -1,1 +1,1424 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+
+
+/* html  */
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    min-height: 100vh;
+    font-family: 'Noto Sans JP', sans-serif;
+    /* color: #141414; */;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background: #FFF;
+}
+
+main {
+    max-width: 75%;
+    margin: 100px auto 0 auto;
+    /* color: #4b4b4b; */
+    flex: 1;
+    /* height: 100vh; */
+}
+
+/* footerの画像 */
+figure {
+    padding: 0;
+    margin: auto 0;
+    /* padding: 10px; */
+}
+
+/* 追加してみたimg全部丸くした */
+img {
+    border-radius: 5px;
+}
+
+h1,
+h2,
+a,
+p {
+    color: #4b4b4b;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 
+テキストボックス全部に反映
+ボタンにしたいやつは追加しまくる！！
+*/
+
+/* テキストボックス */
+input {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 10px;
+    border: solid .5px #362918;
+    border-radius: 1rem;
+}
+
+.login-button,
+.submit,
+.card-return,
+.confirm,
+.cancel-button,
+.merchandise-detail,
+.product-AR,
+.return-btn,
+.cart-btn,
+.confirm-button,
+.purchase-button,
+.review-product-cart,
+.review-submit-icon,
+.card-submit {
+    background: #7c7c7c;
+    color: #FFF;
+    width: fit-content;
+    padding: 10px 15px;
+}
+
+
+
+/* header  */
+
+
+
+header {
+    font-family: 'Bad Script', cursive;
+    /* font-weight: bold; */
+    border-bottom: 1px solid #949494;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    /* display: flex; */
+    padding: 5px 0 50px 0;
+    width: 100%;
+    background: #fff;
+    z-index: 98;
+}
+
+/* 
+header div {
+    display: block;
+} */
+
+header .hum {
+    display: block;
+    width: 7%;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100vh;
+    /* background: rgba(0, 0, 0, 0.9); */
+    background: #d8d8d8;
+    /* background: #000; */
+    color: #ffffff;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* 左からスライド */
+    transition: left 0.5s;
+    z-index: 100;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 80px;
+}
+
+.nav li:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.nav a {
+    color: #141414;
+    font-size: 1rem;
+    border-bottom: 1px solid #362918;
+}
+
+
+/* ナビゲーションボタン（開く） */
+#navbtn {
+    position: fixed;
+    top: 23px;
+    left: 15px;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#navbtn::before,
+#navbtn::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #362918;
+    transform: translateY(10px);
+    transition: .3s ease-in-out;
+}
+
+@keyframes nav_before {
+    0% {
+        transform: rotate(-45deg);
+        box-shadow: none;
+    }
+    50% {
+        transform: rotate(0);
+        box-shadow: none;
+
+    }  
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+#navbtn::before {
+    box-shadow: 0 10px #362918;
+    animation-name: nav_before;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav_after {
+    0% {
+        /* transform: translateY(10px); */
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0);
+    }  
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+#navbtn::after {
+    animation-name: nav_after;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+/* ナビゲーションボタン（閉じる） */
+.open #navbtn {
+    z-index: 100;
+}
+
+@keyframes nav_motion_before {
+    0% {
+        /* transform: translateY(10px); */
+        transform: translateY(-10px);
+
+    }
+    50% {
+        transform: rotate(0);
+        box-shadow: none;
+        
+    }  
+    100% {
+        transform: rotate(45deg);
+        box-shadow: none;
+
+    }
+}
+
+.open #navbtn::before {
+    /* transform: rotate(0); */
+
+    /* transform: rotate(-45deg); */
+    animation-name: nav_motion_before;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+
+    /* animation-iteration-count: infinite; */
+
+}
+
+@keyframes nav_motion_after {
+    0% {
+        transform: translateY(10px);
+
+        box-shadow: none;
+
+    }
+    50% {
+        transform: rotate(0);
+        box-shadow: none;
+
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.open #navbtn::after {
+    /* transform: rotate(0); */
+
+    /* transform: rotate(45deg); */
+    animation-name: nav_motion_after;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+/* ナビゲーションメニュー 開いた時*/
+.open .nav {
+    left: 0;
+}
+
+
+header,
+footer {
+    /* background: #00A692; */
+    /* background: #fffdfa; */
+    /* background: #fff; */
+}
+
+header p,
+.category,
+.ranking,
+.news {
+    /* color: #F8F8F8; */
+    /* color: #4b4b4b; */
+    /* color: #8B4513; */
+    /* color: #d6be99; */
+    color: #362918;
+    /* opacity: .; */
+}
+
+footer a {
+    border-bottom: solid 1px #362918;
+    width: 55%;
+}
+
+header img,
+header .search-icon,
+footer img {
+    /* filter: invert(2%); */
+    /* color: #7c7c7c; */
+}
+
+
+
+
+footer img {
+    padding-right: 10px;
+}
+
+header .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header .shop-logo p {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+/* 検索フォーム */
+header .search-form {
+    position: relative;
+    padding-bottom: 15px;
+    width: 200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* header, footer {
+  background: linear-gradient(45deg, #ebebeb 25%, transparent 25%, transparent 75%, #ebebeb 75%),
+	linear-gradient(45deg, #ebebeb 25%, transparent 25%, transparent 75%, #ebebeb 75%);
+  background-color: #f3f3f3;
+  background-size: 70px 70px;
+  background-position: 0 0, 36px 36px;
+} */
+
+/* header {
+    background-image: url(../../assets/img/leaf.jpeg);
+} */
+
+/* 検索アイコン */
+header .search-icon {
+    position: absolute;
+    display: block;
+    /* margin-right: 100px; */
+    /* padding-right: 20px; */
+    left: -10px;
+    /* top: 19%; */
+    /* right: 10px; */
+    border: none;
+    width: 20%;
+}
+
+header .search-box {
+    margin: auto;
+}
+
+/* input */
+
+input::selection {
+    background: #dcdcdc;
+    color: #4b4b4b;
+}
+
+input:focus {
+    outline-width: 1px;
+    /* outline-color: #00A692; */
+    outline-color: #362918;
+}
+
+/* footer  */
+
+footer {
+    margin-bottom: 0;
+    /* width: 100%; */
+    border: 1px solid #362918;
+    /* margin: auto; */
+    /* height: 25vh; */
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    margin: 1.5% 0;
+    margin-bottom: 15px;
+}
+
+/* 店舗以外のボタン */
+.footer-aligned {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.footer-store {
+    margin-left: 13%;
+}
+
+.footer-aligned a {
+    margin-left: 25%;
+}
+
+
+
+/* 上と左のボーダー */
+/* .footer-aligned a {
+    border-top: solid 1px #4b4b4b;
+    border-right: solid 1px #4b4b4b;
+} */
+
+/* 一番左のボーダー */
+/* .footer-store,
+.footer-shopping,
+.footer-support {
+    border-left: 1px solid #4b4b4b;
+} */
+
+/* 店舗のボーダー */
+/* .footer-store {
+    border-top: 1px solid #4b4b4b;
+    border-right: 1px solid #4b4b4b;
+} */
+
+/* 一番下のボーダー */
+/* .footer-support,
+.footer-site {
+    border-bottom: 1px solid #4b4b4b;
+} */
+
+
+
+
+/*
+
+ログイン画面
+
+*/
+/* ログイン */
+.login-title {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+/* ログイン全体 */
+.login {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60vw;
+}
+
+/* ログインIDとパスワード */
+.login-id,
+.login-password {
+    padding: 4%;
+}
+
+.login-button {
+    display: block;
+    margin: 10px auto;
+    padding: 1rem 3rem;
+}
+
+/* パスワードを忘れたとき、新規アカウント作成リンク */
+.password-forget,
+.account-create {
+    display: block;
+    font-size: 1rem;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+/*
+
+ここまでがログイン画面 
+
+*/
+
+/*
+
+トップページ
+
+*/
+
+/* .key-visuals {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 89vh;
+    background-image: url(../../assets/img/key.jpg);
+    background-size: cover;
+    background-position: center;
+} */
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    margin-left: -17%;
+}
+
+.image {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: change-img-anim 20s infinite;
+}
+
+.image:nth-of-type(1) {
+    animation: change-img-anim-first 30s infinite;
+    animation-delay: 0s;
+}
+
+.image:nth-of-type(2) {
+    animation-delay: 10s;
+}
+
+.image:nth-of-type(3) {
+    animation-delay: 20s;
+}
+
+@keyframes change-img-anim-first {
+    0% {
+        opacity: １;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    36% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes change-img-anim {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    36% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.store-explain {
+    margin-top: 15vh;
+}
+
+.key-store {
+    margin-top: 15vh;
+}
+
+.key-store img {
+    width: 60%;
+}
+
+.key-store p {
+    margin: 10%;
+}
+
+.key-right {
+    display: block;
+    margin-left: auto;
+}
+
+
+.category,
+.ranking,
+.news {
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* color: #00A692; */
+    /* color: #4b4b4b; */
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+}
+
+
+.category {
+    margin-top: 50%;
+}
+
+.category-item img,
+.ranking-item img {
+    height: 15vh;
+}
+
+.category-list,
+.ranking-list,
+.news-list {
+    margin-bottom: 50%;
+}
+
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ranking-list {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.category-item:hover,
+.ranking-item:hover {
+    opacity: .7;
+}
+
+/* 
+ここから
+
+分類したいときはここに追加するほうがいいかも
+カテゴリとかリストにしたいやつ
+ */
+
+/* .key-store img, .category-item img, .ranking-item img, product-item {
+    width: 60%;
+} */
+
+.category-item,
+.ranking-item,
+.product-item {
+    margin-bottom: 5%;
+    /* background: #F8F8F8; */
+    /* border: 3px solid #f8f8f8; */
+    /* padding: 5px; */
+}
+
+/* .category-item figure, .ranking-list figure, .product-list figure {
+    padding: 0;
+} */
+
+.category-item img,
+.ranking-item img,
+.product-item img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.ranking-item img {
+    width: 40vw;
+    /* overflow-x: auto; */
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.category-list p,
+.ranking-list p,
+.product-list p {
+    margin: 0;
+    text-align: center;
+}
+
+/* ここまで */
+
+.news-item {
+    border-bottom: 1px solid #362918;
+}
+
+.item-contents {
+    text-align: center;
+}
+
+/*
+
+ここまでがトップページ
+
+*/
+
+/*
+
+新規登録画面
+
+*
+
+/* 新規会員全体 */
+.new-accoumt {
+    margin: 20% auto;
+    padding: 15px 0;
+    width: 90%;
+    /* height: 100vh; */
+}
+
+/* 新規会員登録 */
+.new-account {
+    text-align: center;
+    margin: 10% 0;
+}
+
+/* 氏名、姓（カナ）名前（かな）、姓（漢字）名前（漢字）、電話番号、住所（市区町村）、都道府県（番地）のテキストボックス */
+.user-id,
+.name-kana,
+.name-kanji,
+.telephone-number,
+.addres,
+.telephone-number,
+.prefectur {
+    margin-left: 10%;
+}
+
+.user-id-txt,
+.name-kana-txt,
+.name-kanji-txt,
+.telephone-number-txt,
+.addres-txt,
+.telephone-txt,
+.prefectur-txt {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 20px;
+}
+
+/* 都道府県選択 */
+.prefectur-box {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    padding-right: 3px;
+}
+
+.ad-product-man {
+    /* display: ; */
+}
+
+.shop-value-sum {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop-product-line {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 確定ボタン */
+.confirm-button {
+    display: block;
+    margin-left: auto;
+    /* margin-right: 30px; */
+    padding: 10px 40px;
+}
+
+/*
+
+ここまでが新規会員登録画面 
+
+*/
+
+
+
+/*
+
+購入画面
+
+*/
+
+/* 
+
+ショップカート画面 
+
+*/
+
+.history .ad-product-man {
+    /* margin: 15% 0; */
+}
+
+.cart-div .ad-product-man .ad-productimg {
+    width: 35vw;
+    height: 12vh;
+}
+
+
+
+.cart-div .year-total {
+    text-align: center;
+}
+
+.cart-div .o,
+.cart-div .ad-productimg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart-div .us-detail-peace {
+    padding-left: 60px;
+    margin: 0 auto;
+}
+
+.us-productname,
+.total-value {
+    /* font-size: 2.2rem; */
+}
+
+.us-product-man,
+.us-color-size,
+.peace,
+.postage {
+    /* font-size: 1.4rem; */
+    /* ; */
+}
+
+.cart-div .paymethood-pulldown {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    padding-right: 3px;
+}
+
+.cart-div .shop-value-send {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .cart-div .purchase-button {
+    background: #FFDE69;
+    margin: 10% auto;
+    padding: 10px;
+} */
+
+/* 
+
+ここまでがショップカート画面
+
+*/
+
+
+/*
+
+購入情報入力画面
+
+*/
+
+.cart-div .us-detail-product-name {
+    display: flex;
+}
+
+.purchase-product {
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.cart-div .ad-productimg {
+    width: 50%;
+}
+
+.cart-div .introduction-div {
+    display: block;
+    width: 40%;
+}
+
+.cart-div .us-detail-peace{
+    display: flex;
+
+}
+
+/*
+
+ここまでが購入情報入力画面
+
+*/
+
+/*
+
+レビュー画面
+
+*/
+
+/* レビュー画面全体 */
+.review {
+    margin: 10% auto;
+    padding: 1px 0;
+    width: 90%;
+}
+
+.reviwe-data {
+    list-style: none;
+}
+
+/* レビュータイトル */
+.title-review {
+    text-align: center;
+    margin: 10% 0;
+}
+
+/*画像*/
+.review-productimg {
+    width: 95%;
+    margin: 3px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* 商品名 */
+.review-productname {
+    text-align: center;
+    /* background: #F8F8F8; */
+}
+
+/*商品名　背景*/
+.review-productname {
+    margin: 3% auto;
+    padding: 13px;
+    width: 70%;
+}
+
+/* 総合評価　背景 */
+.evaluation-div {
+    margin: auto;
+    padding: 4px;
+    width: 77%;
+    /* background: #F8F8F8; */
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-photo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-photo img {
+    display: block;
+    background: #d8d8d8;
+    /* max-width: 7vw; */
+    height: 7vh;
+    border: 3px solid #FFF;
+    /* width: 90vw; */
+}
+
+.picture-movie {
+    margin-top: 10%;
+}
+
+
+/* レビュータイトル　背景 */
+.review-div {
+    margin: 5% auto;
+    padding: 4px;
+    /* width: 77%; */
+    /* background: #F8F8F8; */
+}
+
+/*レビューコメント　背景*/
+.customer-review {
+    margin: 3% auto;
+    padding: 3px;
+    width: 85%;
+    /* background: #F8F8F8; */
+}
+
+/* レビュータイトルコメント */
+.customer-comment {
+    text-align: center;
+    width: 100%;
+}
+
+/* レビュー書き込み 背景 */
+.write-div {
+    margin: 5% auto;
+    padding: 5px;
+    /* width: 76%; */
+    /* background: #F8F8F8; */
+}
+
+/* レビュー */
+.review-text {
+    /* width: 178px;
+    height: 90px; */
+    /* transform: translateY(10) translateX(0); */
+    width: 100%;
+    height: 20vh;
+}
+
+/* .review-product-cart {
+    display: block;
+    background: #FFDE69;
+    border: 1px solid #4b4b4b;
+    border-radius: 10px;
+    padding: 7px 13px;
+    width: fit-content;
+    margin-top: 5vh;
+} */
+
+.review-product-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid #4b4b4b; */
+    border-radius: 20px;
+}
+
+/* .review-product-cart {} */
+
+.review-submit-icon {
+    border: 1px solid #362918;
+    border-radius: 1rem;
+    filter: invert(90%);
+    margin: 0;
+    margin-left: auto;
+}
+
+/* .review-submit-icon {
+    display: block;
+    width: fit-content;
+    background: #FFDE69;
+    margin-top: 5vh;
+    margin-right: 0;
+} */
+
+.review-send {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+
+ここまでレビュー画面
+
+
+*/
+
+
+
+/*
+
+購入履歴画面
+
+*/
+
+/*合計金額*/
+
+/*購入履歴全体*/
+.history-div {
+    /* margin: 20% auto;
+    padding: 15px 0; */
+    /* width: 90%; */
+    /* height: 100vh; S*/
+}
+
+.history-data .ad-productimg {
+    /* text-align: center; */
+    /* margin: 0 auto; */
+}
+
+.history-data .ad-product-man {
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    /* flex-wrap: nowrap; */
+    /* width: 40vw; */
+    /* height: 100%; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 購入履歴項目   違うクラスをふる */
+/* .ad-productimg {
+    width: 40%;
+    margin: 10px auto;
+    justify-content: center;
+} */
+
+.history-data {
+    /* padding: 5px; */
+    margin: 0 auto;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.introduction-div {
+    /* width: fit-content; */
+    width: 100%;
+    /* margin-left: 5%; */
+    /* padding: 3%; */
+    /* height: 100px; */
+    /* margin: 50% 0; */
+}
+
+.history-div .ad-productname {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.delivery-route {
+    /* width: 100%;
+    height: 100%; */
+}
+
+.deliverly-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.history-div p {
+    margin: 1%;
+}
+
+/* .ad-productname, */
+/* .ad-product-man, */
+.delivery-situation,
+.value,
+.total-value,
+.cansel-button {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+.delivery-route {
+    text-align: center;
+    background: color #646464;
+    resize: none;
+}
+
+/* 
+
+カード情報
+
+*/
+
+.card-main {
+    width: 55%;
+    position: absolute;
+    top: 40%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.card-form h2 {
+    margin-bottom: 3px;
+}
+
+.card-form input {
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.card-logo {
+    text-align: center;
+    margin: 0;
+}
+
+.expiration {
+    display: flex;
+    justify-content: space-between;
+    /* width: 90%; */
+}
+
+.expiration-month,
+.expiration-year {
+    width: 30%;
+    height: 15%;
+}
+
+.expiration-month {
+    margin-right: 5%;
+}
+
+.expiration-year {
+    margin: 0 5%;
+}
+
+.card-submit,
+.card-return {
+    position: absolute;
+    padding: 10px 15px;
+}
+
+.card-form .card-submit {
+    bottom: -70px;
+    /* right: 15px; */
+    right: 0;
+    width: fit-content;
+}
+
+.card-return {
+    bottom: -50px;
+    /* left: 15px; */
+    left: 0;
+}
+
+/* 
+
+ここまでがカード情報
+
+*/
+
+
+
+
+/* 
+
+購入完了報告画面
+
+*/
+
+.complete {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.complete h1 {
+    font-size: 2.4rem;
+}
+
+.complete h2 {
+    margin: 20% 0 0 0;
+}
+
+.product-number {
+    font-size: 1.6rem;
+    margin-bottom: 20%;
+}
+
+/* 
+
+ここまでが購入完了報告画面
+
+*/
+
+/* 
+
+商品詳細画面
+
+*/
+
+.product {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-star {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-relation {
+    color: #00A692;
+}
+
+.product-img {
+    display: block;
+    margin: 0 auto;
+    width: 73vw;
+    margin-top: 10px;
+}
+
+.product-name {
+    text-align: center;
+}
+
+.detaile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.product-AR {
+    display: block;
+    margin: 10% auto;
+}
+
+.product-review {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-button {
+    /* display: block; */
+    display: flex;
+    justify-content: space-around;
+    /* margin: 100px auto; */
+}
+
+/* .product-relation {
+    text-align: center;
+} */
+
+.product-list {
+    display: flex;
+}
+
+/*
+
+商品一覧ページ
+
+*/
+.a {
+    /* column-count: 2; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* padding-right: 30px; */
+    margin-top: 10%;
+
+
+}
+
+.a .goods-item {
+    /* padding: 32px; */
+    text-align: center;
+}
+
+.a .ad-productname,
+.a .price {
+    margin: 0 auto;
+
+}
+
+.a .p {
+    width: 85%;
+}
+
+.a .goods-item {
+    margin-bottom: 10%;
+}
+
+/* .p {
+    width: 500%;
+} */
+
+/*
+
+お気に入りページ
+
+*/
+.q {
+    margin: 10px auto;
+    padding: 25px 15px;
+
+}
+
+.h .ad-product-man {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.h {
+    text-align: center;
+    justify-content: center;
+}
+
+.h .confirm {
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.h .ad-product-man .ad-productimg {
+    padding: 60px 15px;
+    height: 130%;
+}
+
+.h .evaluation {
+    margin: 0 auto;
+    padding: 1px;
+}
