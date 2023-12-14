@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>やっほー</p>
-<p>やっほー</p>
+
 </body>
 </html>
