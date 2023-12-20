@@ -104,6 +104,20 @@
     </header>
 
     <main>
+    
+    
+    <ul>
+    <c:forEach var="video" items="${list}">
+		    <li class="list-item">
+		        <p class="item-ttl">${item.id}<%-- ビデオタイトルを表示  --%></p>
+		        <p>${item.id}<%-- ビデオ紹介文（短）を表示 --%></p>
+		    </li>
+	    </c:forEach>
+	</ul>
+    
+    
+    
+    
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">

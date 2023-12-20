@@ -51,13 +51,12 @@ public class Item {
 	
 	public Item() {}
 	
-	public Item(int id, int price, int stock, String product_name, String product_ditail) {
-		super();
+	public Item(int id, String product_name, String product_detail, int price, int stock) {
 		this.id = id;
+		this.product_name = product_name;
+		this.product_ditail = product_detail;
 		this.price = price;
 		this.stock = stock;
-		this.product_name = product_name;
-		this.product_ditail = product_ditail;
 //		this.create_date = create_date;
 //		this.update_date = update_date;
 	}

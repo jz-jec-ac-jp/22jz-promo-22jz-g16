@@ -20,9 +20,10 @@ public class  ItemDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM  items";
+			String sql = "SELECT * FROM  item_table";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("ieieieiei");
 			
 			// データをリストに格納
 			while(rs.next()) {
@@ -88,12 +89,12 @@ public class  ItemDAO {
 	private  Item rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 		int id = rs.getInt("id");/* ⑨ */
+		String product_name = rs.getString("product_name");
+		String product_detail = rs.getString("product_detail");
 		int price = rs.getInt("price");
 		int stock = rs.getInt("stock");
-		String product_name = rs.getString("puroduct_name");
-		String puroduct_ditail = rs.getString("puroduct_ditail");
 		
-		return new  Item(id, price, stock, product_name, puroduct_ditail);
+		return new  Item(id, product_name, product_detail, price, stock);
 	}
 
 	
