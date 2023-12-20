@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ja">
-
+    
+<%@ %>
+    
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -116,7 +116,7 @@
         <figure>
             <img class="product-img" src="assets/img/chair.jpg" alt="">
         </figure>
-        <h1 class="detail-product-name">モノトーン椅子</h1>
+        <h1 class="detail-product-name"><%-- モノトーン椅子 --%> ${ Item.product_name }</h1>
         <div class="product">
             <p>5000円</p>
             <figure>
