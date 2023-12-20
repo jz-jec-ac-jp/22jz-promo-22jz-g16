@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ %>
+   
     
 <!DOCTYPE html>
 <html lang="ja">
@@ -116,9 +115,9 @@
         <figure>
             <img class="product-img" src="assets/img/chair.jpg" alt="">
         </figure>
-        <h1 class="detail-product-name"><%-- モノトーン椅子 --%> ${ Item.product_name }</h1>
+        <h1 class="detail-product-name"><%-- モノトーン椅子 --%>${item.product_name}</h1>
         <div class="product">
-            <p>5000円</p>
+            <p>${ item.price }</p>
             <figure>
                 <img src="assets/img/header_favorite.png" alt="">
             </figure>
@@ -140,10 +139,13 @@
         </div>
 
         <div class="product-content">
+            <%--
             <p>
                 これも仮 <br>
                 背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
             </p>
+             --%>
+             <p>${ item.product_ditail }</p>
         </div>
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
