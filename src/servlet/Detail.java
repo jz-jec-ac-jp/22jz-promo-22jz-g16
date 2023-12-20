@@ -36,7 +36,8 @@ public class Detail extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/puroduct_detail.jsp");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_detail.jsp");
 		dispatcher.forward(request, response);
 	}
 

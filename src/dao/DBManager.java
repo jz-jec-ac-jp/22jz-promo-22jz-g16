@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class DBManager {
 	private static final String CN_STRING = "jdbc:oracle:thin:@//10.40.112.11:1521/dbsys";
-	private static final String USER = "jz220141";
-	private static final String PASS = "jz41";
+	private static final String USER = "g2216";
+	private static final String PASS = "g16";
 	
 	/* 中略。定数の定義。 */
 	private static DBManager self; // 自分を管理する変数
