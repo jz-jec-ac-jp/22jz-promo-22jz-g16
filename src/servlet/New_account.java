@@ -21,6 +21,7 @@ public class New_account extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/new_account.jsp");
 		dispatcher.forward(request, response);
 	
+		
 	}
 
 	/**
