@@ -25,8 +25,8 @@
             </a> -->
             <nav class="nav">
                 <ul>
-                    <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                    <li><a href="user/purchase_history/index.html">商品履歴</a></li>
+                    <li><a href="Produvt_favoritel">お気に入り</a></li>
+                    <li><a href="Product_history">商品履歴</a></li>
                 </ul>
             </nav>
             <button type="button" id="navbtn" onclick="navClick()"></button>
@@ -38,16 +38,16 @@
                 <img src="assets/img/header_user.png" alt="">
             </a>
             <!-- お店のロゴ -->
-            <a class="shop-logo" href="user/product_top/index.html">
+            <a class="shop-logo" href="Product_top">
                 <!-- <img src="assets/img/header_title.png" alt=""> -->
                 <p>Inair</p>
             </a>
             <!--お気に入りアイコン  -->
-            <a class="favorite-icon" href="user/purchase_favorite/index.html">
+            <a class="favorite-icon" href="purchase_favorite">
                 <img src="assets/img/header_favorite.png" alt="">
             </a>
             <!-- カートアイコン -->
-            <a class="cart-icon" href="user/product_shopcart/index.html">
+            <a class="cart-icon" href="Product_shopcart">
                 <img src="assets/img/header_cart.png" alt="">
             </a>
         </div>
