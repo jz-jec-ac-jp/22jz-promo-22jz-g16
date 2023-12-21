@@ -122,7 +122,7 @@
         <figure>
             <img class="product-img" src="assets/img/chair.jpg" alt="">
         </figure>
-        <h1 class="detail-product-name">モノトーン椅子 -- ${item.id}</h1>
+        <h1 class="detail-product-name">${item.product_name}</h1>
         <div class="product">
             <p>${item.price}</p>
             <figure>

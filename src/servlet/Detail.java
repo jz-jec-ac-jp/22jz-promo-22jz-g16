@@ -34,6 +34,7 @@ public class Detail extends HttpServlet {
 //		List<Item> list = dao.get();
 		Item item = dao.find(1);
 		
+		
 //		request.setAttribute("list", list);
 		request.setAttribute("item", item);
 		
