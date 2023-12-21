@@ -48,28 +48,31 @@ public class  ItemDAO {
 	 * @param id 主キーの値
 	 * @return 発見したデータ。なければnull
 	 */
-//	public  Item find(int id) {
-//		 Item  item = null;
-//		DBManager manager = DBManager.getInstance();
-//		try(Connection cn = manager.getConnection()) {
-//			// プレースホルダで変数部分を定義
-//			String sql = "SELECT id FROM item_table";
-//			PreparedStatement stmt = cn.prepareStatement(sql);
-//			stmt.setInt(1, id);
-//			ResultSet rs = stmt.executeQuery();
-//			
-//			// データをリストに格納
-//			if (rs.next()) {
-//				 item = rs2model(rs);
-//				 System.out.println("true_find  " + item);
-//			}
-//		} catch(SQLException e) {
-//			e.printStackTrace();
-//			System.out.println("error_find  " + e);
-//		}
-//		
-//		return   item;
-//	}
+	public  Item find(int id) {
+		 Item  item = null;
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "SELECT * FROM item_table where id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			
+			// データをリストに格納
+			if (rs.next()) {
+				 item = rs2model(rs);
+				 
+				 System.out.println("true_find  " + item);
+				 System.out.println("true_get()  " + item.getId());
+				 System.out.println("true_Name()  " + item.getProduct_name());
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_find  " + e);
+		}
+		
+		return   item;
+	}
 
 	  /**
 	   * ビデオデータに紐づくライセンス情報を検索して追加
