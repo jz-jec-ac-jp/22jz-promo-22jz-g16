@@ -38,6 +38,7 @@ public class Product_detail extends HttpServlet {
 		request.setAttribute("item", item);
 		
 		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_detail.jsp");
 		dispatcher.forward(request, response);
 	}
