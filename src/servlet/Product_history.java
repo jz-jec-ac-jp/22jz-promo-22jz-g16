@@ -20,7 +20,7 @@ public class Product_history extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_history.jsp");
 		dispatcher.forward(request, response);
 	}
 
