@@ -27,7 +27,7 @@ public class Product_review extends HttpServlet {
 		ItemDAO dao = new ItemDAO();
 		
 //		List<Item> list = dao.get();
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));                                                                                                                                                                                                                                                                                                                                                                                                    
 		Item item = dao.find(1);
 		
 		
