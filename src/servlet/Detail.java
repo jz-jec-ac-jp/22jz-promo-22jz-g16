@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,9 +31,11 @@ public class Detail extends HttpServlet {
 		
 		ItemDAO dao = new ItemDAO();
 		
-		List<Item> list = dao.get();
+//		List<Item> list = dao.get();
+		Item item = dao.find(1);
 		
-		request.setAttribute("list", list);
+//		request.setAttribute("list", list);
+		request.setAttribute("item", item);
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_detail.jsp");
