@@ -16,8 +16,8 @@ import model.Item;
 /**
  * Servlet implementation class Detail
  */
-@WebServlet("/Detail")
-public class Detail extends HttpServlet {
+@WebServlet("/Product_detail")
+public class Product_detail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

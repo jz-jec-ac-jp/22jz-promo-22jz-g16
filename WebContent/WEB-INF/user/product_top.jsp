@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トップページ</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="/assets/js/humberger.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/humberger.js"></script>
 </head>
 <body>
 <!-- header -->
@@ -16,8 +16,8 @@
 
     <nav class="nav">
       <ul>
-        <li><a href="/user/purchase_favorite/index.html">お気に入り</a></li>
-        <li><a href="/user/purchase_history/index.html">商品履歴</a></li>
+        <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
+        <li><a href="user/purchase_history/index.html">商品履歴</a></li>
       </ul>
     </nav>
     <button type="button" id="navbtn" onclick="navClick()"></button>
@@ -27,31 +27,31 @@
       <!-- これはimg画像じゃなくてjavascriptでつくる -->
       <!-- <div class="hamburger"> -->
       <!-- <a class="humberger" href="#">
-          <img src="/assets/img/header_humbergermenu.png" alt="">
+          <img src="assets/img/header_humbergermenu.png" alt="">
       </a> -->
       <!-- </div> -->
       <!-- ユーザーアイコン -->
-      <a class="user-icon" href="/user/login/index.html">
-          <img src="/assets/img/header_user.png" alt="">
+      <a class="user-icon" href="user/login/index.html">
+          <img src="assets/img/header_user.png" alt="">
       </a>
       <!-- お店のロゴ -->
       <a class="shop-logo" href="#">
-          <!-- <img src="/assets/img/header_title.png" alt=""> -->
+          <!-- <img src="assets/img/header_title.png" alt=""> -->
           <p>Inair</p>
       </a>
       <!--お気に入りアイコン  -->
-      <a class="favorite-icon" href="/user/purchase_favorite/index.html">
-          <img src="/assets/img/header_favorite.png" alt="">
+      <a class="favorite-icon" href="user/purchase_favorite/index.html">
+          <img src="assets/img/header_favorite.png" alt="">
       </a>
       <!-- カートアイコン -->
-      <a class="cart-icon" href="/user/product_shopcart/index.html">
-          <img src="/assets/img/header_cart.png" alt="">
+      <a class="cart-icon" href="user/product_shopcart/index.html">
+          <img src="assets/img/header_cart.png" alt="">
       </a>
   </div>
   <!-- 検索アイコン -->
   <form class="search-form" action="get" href="#">
-      <!-- <input class="search-icon" type="image" src="/assets/img/header_search.png" alt=""> -->
-      <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+      <!-- <input class="search-icon" type="image" src="assets/img/header_search.png" alt=""> -->
+      <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
       <!-- 検索ボックス -->
       <input type="search" class="search-box" placeholder="入力してください">
   </form>
@@ -72,9 +72,9 @@
   <!-- キービジュアル -->
   <!-- <div class="key-visuals"></div> -->
   <div class="container">
-    <img class="image" src="/assets/img/key.jpg" />
-    <img class="image" src="/assets/img/key02.jpg"/>
-    <img class="image" src="/assets/img/key03.jpg" />
+    <img class="image" src="assets/img/key.jpg" />
+    <img class="image" src="assets/img/key02.jpg"/>
+    <img class="image" src="assets/img/key03.jpg" />
   </div>
   <!-- お店について -->
 <div class="store-explain">
@@ -93,7 +93,7 @@
 
   <div class="key-store">
     <figure>
-      <img src="/assets/img/key.jpg" class="key-left" alt="">
+      <img src="assets/img/key.jpg" class="key-left" alt="">
     </figure>
     <p>
       説明は仮。表示の仕方も変えるかも <br>
@@ -102,7 +102,7 @@
     
 
     <figure>
-      <img src="/assets/img/key02.jpg" class="key-right" alt="">
+      <img src="assets/img/key02.jpg" class="key-right" alt="">
     </figure>
     <p>
       カントリー風家具の特徴は、使い込むほど風合いが生まれて、インテリアと毎日の暮らしとがなじみます。カフェ風のインテリアなど、テイストの異なる家具とも相性がよく、やさしい存在感を放ちます。
@@ -115,28 +115,28 @@
     <!-- 椅子 -->
     <div class="category-item">
       <figure>
-        <img src="/assets/img/chair.jpg" alt="">
+        <img src="assets/img/chair.jpg" alt="">
       </figure>
       <p>椅子</p>
     </div>
     <!-- 机 -->
     <div class="category-item">
       <figure>
-        <img src="/assets/img/table.jpg" alt="">
+        <img src="assets/img/table.jpg" alt="">
       </figure>
       <p>机</p>
     </div>
     <!-- 照明 -->
     <div class="category-item">
       <figure>
-        <img src="/assets/img/light.jpg" alt="">
+        <img src="assets/img/light.jpg" alt="">
       </figure>
       <p>照明</p>
     </div>
     <!-- 収納 -->
     <div class="category-item">
       <figure>
-        <img src="/assets/img/storage.jpg" alt="">
+        <img src="assets/img/storage.jpg" alt="">
       </figure>
       <p>収納</p>
     </div>
@@ -146,42 +146,42 @@
     <div class="ranking-list">
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/light.jpg" alt="">
+          <img src="assets/img/light.jpg" alt="">
         </figure>
         <p>照明</p>
         <p>1位</p>
       </div>
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <p>2位</p>
       </div>
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <p>2位</p>
       </div>
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <p>2位</p>
       </div>
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <p>2位</p>
       </div>
       <div class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <p>2位</p>
@@ -210,7 +210,7 @@
       <div class="footer-aligned">
       <a href="#" class="footer-store">
           <figure>
-              <img src="/assets/img/footer_store.png" alt="">
+              <img src="assets/img/footer_store.png" alt="">
           </figure>
           <p>店舗</p>
       </a>
@@ -219,28 +219,28 @@
           <!-- 商品 -->
           <a href="#" class="footer-shopping">
               <figure>
-                  <img src="/assets/img/footer_shopping.png" alt="">
+                  <img src="assets/img/footer_shopping.png" alt="">
               </figure>
               <p>商品</p>
           </a>
           <!-- サービス -->
           <a href="#" class="footer-service">
               <figure>
-                  <img src="/assets/img/footer_service.png" alt="">
+                  <img src="assets/img/footer_service.png" alt="">
               </figure>
               <p>サービス</p>
           </a>
           <!-- お問い合わせ -->
           <a href="#" class="footer-support">
               <figure>
-                  <img src="/assets/img/footer_service.png" alt="">
+                  <img src="assets/img/footer_service.png" alt="">
               </figure>
               <p>お問い合わせ</p>
           </a>
           <!-- サイトについて -->
           <a href="#" class="footer-site">
               <figure>
-                  <img src="/assets/img/footer_site.png" alt="">
+                  <img src="assets/img/footer_site.png" alt="">
               </figure>
               <p>Inairについて</p>
           </a>
