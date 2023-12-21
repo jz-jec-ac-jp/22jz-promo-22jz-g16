@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -197,14 +199,22 @@
         </div>
       </div>
     </div>
+    
+    
+    
     <div class="a">
+    
+    <c:forEach var="item" items="${ list }">
       <div class="goods-item">
         <figure>
           <img class="p" src="assets/img/key-visuals.png" alt="">
         </figure>
-        <p class="ad-productname">商品名 家具</p>
-        <p class="price">値段:5000円(税込)</p>
+        <p class="ad-productname">${ item.product_name }</p>
+        <p class="price">値段:${ item.price }(税込)</p>
       </div>
+    </c:forEach>  
+      
+      <%--  
       <!-- </section> -->
       <div class="ur-product-list">
         <div class="goods-item">
@@ -252,6 +262,7 @@
         </div>
       </div>
     </div>
+    --%>
     <!--ページネーション-->
     <ul class="Pagination">
       <li class="Pagination-Item">
