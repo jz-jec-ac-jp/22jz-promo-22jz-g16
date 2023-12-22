@@ -248,15 +248,13 @@
             --%>
             <!--確定ボタン-->
             
-            <form class="search-form" action="get" href="#">
-            <%--
-              <input class="confirm-button" type="submit" value="購入する">
-               --%>
-               
-               <a href="Product_purchase?id=${ item.id }" class="confirm-button">購入する</a>
-               
-            </form>
-
+	         <a href="Product_purchase" class="cart-btn">購入する</a>
+	            <form class="search-form" action="get" href="#">
+	            <%--
+	              <input class="confirm-button" type="submit" value="購入する">
+	               --%>         
+	            </form>
+				
             <!-- カテゴリ -->
             <h2 class="category">Category</h2>
             <div class="category-list">

@@ -136,6 +136,7 @@
                 </section>
                 <!-- ここまで -->
                 <!-- ここから -->
+                <%-- --%>
                 <section>
                     <p class="us-productname">モノトーン椅子</p>
                     <div class="us-detail-Product-name">
