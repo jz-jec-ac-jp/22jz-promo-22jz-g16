@@ -124,7 +124,7 @@
         </figure>
         <h1 class="detail-product-name">${item.product_name}</h1>
         <div class="product">
-            <p>${item.price}</p>
+            <p>${item.product_price}</p>
             <figure>
                 <img src="assets/img/header_favorite.png" alt="">
             </figure>
@@ -227,7 +227,9 @@
 
             <div class="product-button">
                 <input class="return-btn" type="submit" value="戻る">
-                <input class="cart-btn" type="submit" value="カートに入れる">
+                
+                <a href="Product_shopcart?id=" + ${ item.id } class="cart-btn">カートに入れる</a>
+                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
             <!-- カテゴリ -->
