@@ -214,6 +214,7 @@
 	        <p class="ad-productname">${ item.product_name }</p>
 	        <p class="price">値段:${ item.product_price }(税込)</p>
 =======
+<%--
       <div class="goods-item">
         <figure>
           <img class="p" src="assets/img/key-visuals.png" alt="">
@@ -224,7 +225,7 @@
       </div>
 	 </a>
     </c:forEach>  
-      
+     --%>  
       <%--  
       <!-- </section> -->
       <div class="ur-product-list">
