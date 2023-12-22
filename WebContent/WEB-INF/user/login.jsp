@@ -26,7 +26,7 @@
             </a> -->
             <nav class="nav">
                 <ul>
-                    <li><a href="Produvt_favoritel">お気に入り</a></li>
+                    <li><a href="Product_favorite">お気に入り</a></li>
                     <li><a href="Product_history">商品履歴</a></li>
                 </ul>
             </nav>
