@@ -47,46 +47,62 @@ public class ShopcartDAO {
 	        
 	        ret = stmt.executeUpdate();
 	        
-	    
-	        
-	        
-	        
+	   
 	        
 	    } catch(SQLException e) {
 	        e.printStackTrace();
 	        System.out.println("データ追加エラー " + e);
 	    }
-	    
-    	List<Item> get() {
-    		List<Item> list = new ArrayList<>();
-    		
-    		DBManager manager1 = DBManager.getInstance();
-    		try(Connection cn = manager1.getConnection()) {
-    			String sql = "SELECT * FROM item_table";
-    			PreparedStatement stmt = cn.prepareStatement(sql);
-    			ResultSet rs = stmt.executeQuery();
-    			
-    			// データをリストに格納
-    			while(rs.next()) {
-    				Item  item = rs2model(rs);
-    				list.add( item);
-    				
-//    				System.out.println("true_get " +  list.add(item));
-    				System.out.println("true_get()  " + item.getId());
-    				System.out.println("true_Name()  " + item.getProduct_name());
-    				System.out.println("true_Name()  " + item.getProduct_price());
-    			}
-    		} catch(SQLException e) {
-    			e.printStackTrace();
-    			System.out.println("error_get  " + e);
-    		}
-    		
-    		return list;
-    	}
+
 	    
 	    return ret >= 0;
+	    
 	}
-
-
+	
+	public List<Item> get() {
+		List<Item> list = new ArrayList<>();
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT * FROM item_table ";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			
+			// データをリストに格納
+			while(rs.next()) {
+				Item  item = rs2model(rs);
+				list.add( item);
+				
+//				System.out.println("true_get " +  list.add(item));
+				System.out.println("true_get()  " + item.getId());
+				System.out.println("true_Name()  " + item.getProduct_name());
+				System.out.println("true_Name()  " + item.getProduct_price());
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+		
+		return list;
+	}
+	
+	/**
+	 * ResultSetの行データをモデルの形に変換するメソッド
+	 * @param rs 変換前のデータ
+	 * @return 変換後のデータ
+	 */
+	private  Item rs2model(ResultSet rs) throws SQLException {
+		/* 中略。rsの値を取得し、それぞれの変数に代入 */
+		int id = rs.getInt("id");/* ⑨ */
+		String product_name = rs.getString("product_name");
+		String product_detail = rs.getString("product_detail");
+		int product_price = rs.getInt("product_price");
+		int product_stock = rs.getInt("product_stock");
+		Timestamp create_date = rs.getTimestamp("create_date");
+		Timestamp update_date = rs.getTimestamp("update_date");
+		
+		
+		return new  Item(id, product_name, product_detail, product_price, product_stock, create_date, update_date);
+	}
 
 }
