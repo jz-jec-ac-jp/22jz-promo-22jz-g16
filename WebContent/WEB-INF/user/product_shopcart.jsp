@@ -247,6 +247,7 @@
             <!-- ここまで -->
             --%>
             <!--確定ボタン-->
+            
             <form class="search-form" action="get" href="#">
               <input class="confirm-button" type="submit" value="購入する">
             </form>
