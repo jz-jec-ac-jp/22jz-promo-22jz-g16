@@ -210,7 +210,7 @@
           <img class="p" src="assets/img/key-visuals.png" alt="">
         </figure>
         <p class="ad-productname">${ item.product_name }</p>
-        <p class="price">値段:${ item.price }(税込)</p>
+        <p class="price">値段:${ item.product_price }(税込)</p>
       </div>
     </c:forEach>  
       
