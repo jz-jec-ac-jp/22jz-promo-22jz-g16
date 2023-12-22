@@ -53,6 +53,7 @@ public class Item implements Serializable {
 	
 	public Item() {}
 	
+	
 	public Item(int id, String product_name, String product_detail, int product_price, int product_stock, Timestamp create_date, Timestamp update_date) {
 		this.id = id;
 		this.product_name = product_name;
