@@ -32,8 +32,8 @@ public class Product_detail extends HttpServlet {
 		ItemDAO dao = new ItemDAO();
 		
 //		List<Item> list = dao.get();
-		int id = Integer.parseInt(request.getParameter("id"));
-		Item item = dao.find(id);
+//		int id = Integer.parseInt(request.getParameter("id"));
+		Item item = dao.find(1);
 		
 		
 //		request.setAttribute("list", list);
