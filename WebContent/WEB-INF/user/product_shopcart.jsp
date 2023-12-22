@@ -249,7 +249,12 @@
             <!--確定ボタン-->
             
             <form class="search-form" action="get" href="#">
+            <%--
               <input class="confirm-button" type="submit" value="購入する">
+               --%>
+               
+               <a href="Product_purchase?id=${ item.id }" class="confirm-button">購入する</a>
+               
             </form>
 
             <!-- カテゴリ -->
