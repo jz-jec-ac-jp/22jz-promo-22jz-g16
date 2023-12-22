@@ -7,22 +7,23 @@ public class Item implements Serializable {
 	private int id, product_price, product_stock;
 	private String product_name, product_detail;
 	private Timestamp  create_date, update_date;
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPrice() {
+	public int getProduct_price() {
 		return product_price;
 	}
-	public void setPrice(int product_price) {
+	public void setProduct_price(int product_price) {
 		this.product_price = product_price;
 	}
-	public int getStock() {
+	public int getProduct_stock() {
 		return product_stock;
 	}
-	public void setStock(int product_stock) {
+	public void setProduct_stock(int product_stock) {
 		this.product_stock = product_stock;
 	}
 	public String getProduct_name() {

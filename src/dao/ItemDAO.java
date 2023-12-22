@@ -27,12 +27,13 @@ public class  ItemDAO {
 			
 			// データをリストに格納
 			while(rs.next()) {
-				 Item  item = rs2model(rs);
+				Item  item = rs2model(rs);
 				list.add( item);
 				
-				System.out.println("true_get " +  list.add(item));
+//				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
+				System.out.println("true_Name()  " + item.getProduct_price());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

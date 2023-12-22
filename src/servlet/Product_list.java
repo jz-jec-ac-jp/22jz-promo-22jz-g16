@@ -30,6 +30,7 @@ public class Product_list extends HttpServlet {
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);
+		
 		//request.setAttribute("item", item);
 		
 //		PrintWriter out = response.getWriter();
