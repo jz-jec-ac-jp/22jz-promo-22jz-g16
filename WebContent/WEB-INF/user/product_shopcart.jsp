@@ -119,7 +119,7 @@
         <!--商品データ-->
         <div class="cart-product-div">
           <!-- ここから -->
-          <c:forEach var="item" items="${list }">
+          <c:forEach var="item" items="${shopcart }">
             <a href="Product_shopcart?id${item.id }">
               <section class="history-product">
                 <h1 class="us-productname">${item.product_name }</h1>

@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ItemDAO;
-import model.Item;
+import dao.ShopcartDAO;
 
 /**
  * Servlet implementation class Product_shopcart
@@ -25,15 +24,24 @@ public class Product_shopcart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ItemDAO dao = new ItemDAO();
+//		ItemDAO dao = new ItemDAO();
 		
-		List<Item> list = dao.get();
-		//int id = Integer.parseInt(request.getParameter("id"));
+//		List<Item> list = dao.get();
 		//Item item = dao.find(1);
 		
 		
-		request.setAttribute("list", list);
 		//request.setAttribute("item", item);
+		
+		ShopcartDAO dao_shop = new ShopcartDAO();
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		boolean shopcart =  dao_shop.create(id, 1);
+		request.setAttribute("shopcart", shopcart);
+		
+		ItemDAO dao = new ItemDAO();
+		
+
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
 		dispatcher.forward(request, response);
