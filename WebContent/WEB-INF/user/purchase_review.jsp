@@ -22,10 +22,11 @@
             <!-- <a class="humberger" href="#">
                 <img src="assets/img/header_humbergermenu.png" alt="">
             </a> -->
+            
             <nav class="nav">
                 <ul>
-                    <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                    <li><a href="user/purchase_history/index.html">商品履歴</a></li>
+                    <li><a href="Product_favorite">お気に入り</a></li>
+                    <li><a href="Product_history">商品履歴</a></li>
                 </ul>
             </nav>
             <button type="button" id="navbtn" onclick="navClick()"></button>

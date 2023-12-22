@@ -205,6 +205,7 @@
     <div class="a">
     
     <c:forEach var="item" items="${ list }">
+<<<<<<< HEAD
 	  <a href="Product_detail?id=${ item.id }">
 	   <div class="goods-item">
 	        <figure>
@@ -212,10 +213,17 @@
 	        </figure>
 	        <p class="ad-productname">${ item.product_name }</p>
 	        <p class="price">値段:${ item.product_price }(税込)</p>
+=======
+      <div class="goods-item">
+        <figure>
+          <img class="p" src="assets/img/key-visuals.png" alt="">
+        </figure>
+        <p class="ad-productname">${ item.product_name }</p>
+        <p class="price">値段:${ item.price }(税込)</p>
+>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
       </div>
 	 </a>
     </c:forEach>  
-   
       
       <%--  
       <!-- </section> -->
