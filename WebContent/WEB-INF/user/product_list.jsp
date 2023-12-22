@@ -213,6 +213,7 @@
         <p class="price">値段:${ item.product_price }(税込)</p>
       </div>
     </c:forEach>  
+   
       
       <%--  
       <!-- </section> -->
