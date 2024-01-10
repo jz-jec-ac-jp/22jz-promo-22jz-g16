@@ -7,33 +7,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>商品状況</title>
-  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>
   <!-- header -->
   <header>
     <ul class="ad-ul-head">
-      <a href="../list/index.html">
+      <a href="Admin_productList">
         <li class="ad-list">一覧</li>
       </a>
-      <a href="../new_product/index.html">
+      <a href="Admin_newProduct">
         <li class="ad-product">商品管理</li>
       </a>
-      <a href="#">
+      <a href="Admin_productStatus">
         <li class="ad-del-list">配送管理</li>
       </a>
-      <a href="#">
         <li class="ad-username">ユーザー名</li>
-      </a>
     </ul>
   </header>
+  
   <main>
     <!-- ＊＊まとまり＊＊ -->
     <!-- 商品 -->
     <div class="ad">
       <div class="ad-product-status">
-        <img class="ad-producting" src="../../assets/img/chair.jpg" alt="">
+        <img class="ad-producting" src="assets/img/chair.jpg" alt="">
         <p class="ad-productname">題名：モノトーン椅子<br>色：black　　個数：１ </p>
       </div>
       <!-- 配送 -->
@@ -68,7 +67,7 @@
     <!-- 商品 -->
     <div class="ad">
       <div class="ad-product-status">
-        <img class="ad-producting" src="../../assets/img/chair.jpg" alt="">
+        <img class="ad-producting" src="assets/img/chair.jpg" alt="">
         <p class="ad-productname">題名：モノトーン椅子<br>色：black　　個数：１ </p>
       </div>
       <!-- 配送 -->
@@ -103,7 +102,7 @@
     <!-- 商品 -->
     <div class="ad">
       <div class="ad-product-status">
-        <img class="ad-producting" src="../../assets/img/chair.jpg" alt="">
+        <img class="ad-producting" src="assets/img/chair.jpg" alt="">
         <p class="ad-productname">題名：モノトーン椅子<br>色：black　　個数：１ </p>
       </div>
       <!-- 配送 -->
@@ -127,10 +126,10 @@
     </div>
     <!-- 配送ステータス -->
     <ul class="progressbar">
-      <li>池袋倉庫　10:00</li>
-      <li>○○　14:00</li>
-      <li>○○　20:00</li>
-      <li>自宅　21:00</li>
+      <li>池袋倉庫　<span>10:00</span></li>
+      <li>○○　<span>14:00</span></li>
+      <li>○○　<span>20:00</span></li>
+      <li>自宅　<span>21:00</span></li>
     </ul>
     <!-- ＊＊まとまり＊＊ -->
 
