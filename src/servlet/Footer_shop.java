@@ -33,3 +33,4 @@ public class Footer_shop extends HttpServlet {
 	}
 
 }
+
