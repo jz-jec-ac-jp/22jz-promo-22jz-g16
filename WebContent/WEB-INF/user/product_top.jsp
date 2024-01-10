@@ -8,14 +8,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トップページ</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="/assets/js/humberger.js"></script>
-  <script src="/assets/js/top-page.js" defer></script>
-  <script src="/assets/js/toppage-animation.js"></script>
-  <script src="/assets/js/header-anim.js"></script>
-  <script src="/assets/js/toppage-animation.js"></script>
-  <script src="/assets/js/page-animatiojn.js"></script>
-  <script src="/assets/js/top-category.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/humberger.js"></script>
+  <script src="assets/js/top-page.js" defer></script>
+  <script src="assets/js/toppage-animation.js"></script>
+  <script src="assets/js/header-anim.js"></script>
+  <script src="assets/js/toppage-animation.js"></script>
+  <script src="assets/js/page-animatiojn.js"></script>
+  <script src="assets/js/top-category.js"></script>
 
   <!-- animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" />
