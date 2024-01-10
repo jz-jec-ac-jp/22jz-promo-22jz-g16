@@ -54,6 +54,7 @@ public class Item implements Serializable {
 	
 	public Item() {}
 	
+	// 画像のリストを持てるようにする　変数追加　追加用のセッター(addImage)
 	
 	public Item(int id, String product_name, String product_detail, int product_price, int product_stock, Timestamp create_date, Timestamp update_date) {
 		this.id = id;

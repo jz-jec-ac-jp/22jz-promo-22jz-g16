@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>商品追加</title>
-  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>
@@ -233,7 +233,7 @@
         <a href="#">編集</a>
       </div>
       <div class="ad-search">
-        <input class="new-search-icon" type="image" src="../../assets/img/header_search.png" src="#">
+        <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
         <!-- 検索ボックス -->
         <input type="search" class="new-search-txtbox" placeholder="キーワードを入力">
       </div>
