@@ -47,11 +47,11 @@
               <li><a href="Product_shopcart">カート</a></li>
               <li><a href="Product_favorite">お気に入り</a></li>
               <li><a href="Product_history">商品履歴</a></li>
-              <li><a href="/user/footer_shop/index.html">店舗</a></li>
-              <li><a href="/user/footer_product/index.html">商品</a></li>
-              <li><a href="/user/footer_service/index.html">サービス</a></li>
-              <li><a href="/user/footer_inquiry/index.html">お問い合わせ</a></li>
-              <li><a href="/user/footer_about Inair/index.html">Inairについて</a></li>
+              <li><a href="Footer_shop">店舗</a></li>
+              <li><a href="Footer_product">商品</a></li>
+              <li><a href="Footer_service">サービス</a></li>
+              <li><a href="Footer_inquiry">お問い合わせ</a></li>
+              <li><a href="Footer_about_Inair">Inairについて</a></li>
               </ul>
             </nav>
             <button type="button" id="navbtn" onclick="navClick()"></button>
@@ -89,11 +89,11 @@
             <li><a href="Product_shopcart">カート</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
             <li><a href="Product_history">商品履歴</a></li>
-            <li><a href="/user/footer_shop/index.html">店舗</a></li>
-            <li><a href="/user/footer_product/index.html">商品</a></li>
-            <li><a href="/user/footer_service/index.html">サービス</a></li>
-            <li><a href="/user/footer_inquiry/index.html">お問い合わせ</a></li>
-            <li><a href="/user/footer_about Inair/index.html">Inairについて</a></li>
+            <li><a href="Footer_shop">店舗</a></li>
+            <li><a href="Footer_product">商品</a></li>
+            <li><a href="Footer_service">サービス</a></li>
+            <li><a href="Footer_inquiry">お問い合わせ</a></li>
+            <li><a href="Footer_aboutI_nair">Inairについて</a></li>
             </ul>
           </nav>
           <button type="button" id="navbtn" onclick="navClick()"></button>
@@ -107,7 +107,7 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="/user/product_top/">ホーム</a></li>
+                <li><a href="Product_top">ホーム</a></li>
                 <li>ログイン</li>
             </ol>
         </nav>
@@ -132,7 +132,7 @@
 
             </form>
             <!-- 新規会員登録はこちら -->
-            <a class="account-create" href="/user/new_account/index.html">新規会員登録はこちら</a>
+            <a class="account-create" href="New_account">新規会員登録はこちら</a>
         </div>
 
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
