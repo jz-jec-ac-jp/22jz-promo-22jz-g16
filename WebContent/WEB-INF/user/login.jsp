@@ -93,7 +93,7 @@
             <li><a href="Footer_product">商品</a></li>
             <li><a href="Footer_service">サービス</a></li>
             <li><a href="Footer_inquiry">お問い合わせ</a></li>
-            <li><a href="Footer_aboutI_nair">Inairについて</a></li>
+            <li><a href="Footer_about_Inair">Inairについて</a></li>
             </ul>
           </nav>
           <button type="button" id="navbtn" onclick="navClick()"></button>
