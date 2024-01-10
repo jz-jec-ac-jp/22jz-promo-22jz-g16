@@ -8,18 +8,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <title>商品一覧画面</title>
-  <script src="assets/js/humberger.js"></script>
-  <script src="assets/js/top-page.js" defer></script>
-  <script src="assets/js/header-anim.js"></script>
-  <script src="assets/js/list.js"></script>
+  <script src="/assets/js/humberger.js"></script>
+  <script src="/assets/js/top-page.js" defer></script>
+  <script src="/assets/js/header-anim.js"></script>
+  <script src="/assets/js/list.js"></script>
 
 
 </head>
 
 <body>
-   <!-- header -->
+  <!-- header -->
   <header>
     <div class="head">
       <!-- ハンバーガーメニュー -->
@@ -106,8 +106,8 @@
     <!--パンくずリスト-->
     <nav>
       <ol class="breadcrumb">
-        <li><a href="user/product_top/">ホーム</a></li>
-        <li><a href="user/product_list/">商品一覧</a></li>
+        <li><a href="/user/product_top/">ホーム</a></li>
+        <li><a href="/user/product_list/">商品一覧</a></li>
       </ol>
     </nav>
     <div>
@@ -131,66 +131,66 @@
             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
             <ul class="list-ul">
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
               <!--  -->
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
               <!--  -->
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
               <!--  -->
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
               <!--  -->
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="user/product_list/index.html">
-                  <img src="assets/img/light.jpg" alt="">
+                <a href="/user/product_list/index.html">
+                  <img src="/assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -199,39 +199,19 @@
         </div>
       </div>
     </div>
-    
-    
-    
     <div class="a">
-    
-    <c:forEach var="item" items="${ list }">
-
-	  <a href="Product_detail?id=${ item.id }">
-	   <div class="goods-item">
-	        <figure>
-	          <img class="p" src="assets/img/key-visuals.png" alt="">
-	        </figure>
-	        <p class="ad-productname">${ item.product_name }</p>
-	        <p class="price">値段:${ item.product_price }(税込)</p>
-      </div>
-	 </a>
-
-    </c:forEach>  
-<%--
       <div class="goods-item">
         <figure>
-          <img class="p" src="assets/img/key-visuals.png" alt="">
+          <img class="p" src="/assets/img/key-visuals.png" alt="">
         </figure>
-        <p class="ad-productname">${ item.product_name }</p>
-        <p class="price">値段:${ item.price }(税込)</p>
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
-     --%>  
-      <%--  
+        <p class="ad-productname">商品名 家具</p>
+        <p class="price">値段:5000円(税込)</p>
+      </div>
       <!-- </section> -->
       <div class="ur-product-list">
         <div class="goods-item">
           <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
           </figure>
           <p class="ad-productname">商品名 家具</p>
           <p class="price">値段:5000円(税込)</p>
@@ -240,7 +220,7 @@
       <div class="ur-product-list">
         <div class="goods-item">
           <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
           </figure>
           <p class="ad-productname">商品名 家具</p>
           <p class="price">値段:5000円(税込)</p>
@@ -249,7 +229,7 @@
       <div class="ur-product-list">
         <div class="goods-item">
           <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
           </figure>
           <p class="ad-productname">商品名 家具</p>
           <p class="price">値段:5000円(税込)</p>
@@ -258,7 +238,7 @@
       <div class="ur-product-list">
         <div class="goods-item">
           <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
           </figure>
           <p class="ad-productname">商品名 家具</p>
           <p class="price">値段:5000円(税込)</p>
@@ -267,18 +247,36 @@
       <div class="ur-product-list">
         <div class="goods-item">
           <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
+          </figure>
+          <p class="ad-productname">商品名 家具</p>
+          <p class="price">値段:5000円(税込)</p>
+        </div>
+      </div>
+      <div class="ur-product-list">
+        <div class="goods-item">
+          <figure>
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
+          </figure>
+          <p class="ad-productname">商品名 家具</p>
+          <p class="price">値段:5000円(税込)</p>
+        </div>
+      </div>
+      <div class="ur-product-list">
+        <div class="goods-item">
+          <figure>
+            <img class="p" src="/assets/img/key-visuals.png" alt="">
           </figure>
           <p class="ad-productname">商品名 家具</p>
           <p class="price">値段:5000円(税込)</p>
         </div>
       </div>
     </div>
-    --%>
+    
     <!--ページネーション-->
     <ul class="Pagination">
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/">
+        <a class="Pagination-Item-Link" href="/user/product_list/">
           <svg xmlns="http://www.w3.org/2000/svg" class="Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
@@ -286,22 +284,22 @@
         </a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/"><span>1</span></a>
+        <a class="Pagination-Item-Link" href="/user/product_list/"><span>1</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link isActive" href="user/product_list/"><span>2</span></a>
+        <a class="Pagination-Item-Link isActive" href="/user/product_list/"><span>2</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/"><span>3</span></a>
+        <a class="Pagination-Item-Link" href="/user/product_list/"><span>3</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/"><span>4</span></a>
+        <a class="Pagination-Item-Link" href="/user/product_list/"><span>4</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/"><span>5</span></a>
+        <a class="Pagination-Item-Link" href="/user/product_list/"><span>5</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="user/product_list/">
+        <a class="Pagination-Item-Link" href="/user/product_list/">
           <svg xmlns="http://www.w3.org/2000/svg" class="Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
@@ -310,7 +308,7 @@
       </li>
     </ul>
 
-    <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
+    <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
   </main>
 
   <!-- footer -->
@@ -319,7 +317,7 @@
     <div class="footer-aligned">
       <a href="#" class="footer-store">
         <figure>
-          <img src="assets/img/footer_store.png" alt="">
+          <img src="/assets/img/footer_store.png" alt="">
         </figure>
         <p>店舗</p>
       </a>
@@ -327,28 +325,28 @@
       <!-- 商品 -->
       <a href="#" class="footer-shopping">
         <figure>
-          <img src="assets/img/footer_shopping.png" alt="">
+          <img src="/assets/img/footer_shopping.png" alt="">
         </figure>
         <p>商品</p>
       </a>
       <!-- サービス -->
       <a href="#" class="footer-service">
         <figure>
-          <img src="assets/img/footer_service.png" alt="">
+          <img src="/assets/img/footer_service.png" alt="">
         </figure>
         <p>サービス</p>
       </a>
       <!-- お問い合わせ -->
       <a href="#" class="footer-support">
         <figure>
-          <img src="assets/img/footer_service.png" alt="">
+          <img src="/assets/img/footer_service.png" alt="">
         </figure>
         <p>お問い合わせ</p>
       </a>
       <!-- サイトについて -->
       <a href="#" class="footer-site">
         <figure>
-          <img src="assets/img/footer_site.png" alt="">
+          <img src="/assets/img/footer_site.png" alt="">
         </figure>
         <p>Inairについて</p>
       </a>

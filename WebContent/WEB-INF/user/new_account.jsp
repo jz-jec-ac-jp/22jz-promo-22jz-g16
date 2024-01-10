@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    
-    
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,18 +9,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/humberger.js"></script>
-    <script src="assets/js/top-page.js" defer></script>
-    <script src="assets/js/header-anim.js"></script>
-    <script src="assets/js/form-aleart.js"></script>
-    <script src="assets/js/fonst-count.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/humberger.js"></script>
+    <script src="/assets/js/top-page.js" defer></script>
+    <script src="/assets/js/header-anim.js"></script>
+    <script src="/assets/js/form-aleart.js"></script>
+    <script src="/assets/js/fonst-count.js"></script>
 
     <title>新規アカウント登録画面</title>
 </head>
 
 <body>
-     <!-- header -->
+    <!-- header -->
   <header>
     <div class="head">
       <!-- ハンバーガーメニュー -->
@@ -102,7 +101,7 @@
       <button type="button" id="navbtn" onclick="navClick()"></button>
     </div>
 
-  </header>
+  </header>s
 
 
     <main>
@@ -110,7 +109,7 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="user/product_top/">ホーム</a></li>
+                <li><a href="/user/product_top/">ホーム</a></li>
                 <li>新規会員登録</li>
             </ol>
         </nav>
@@ -229,7 +228,7 @@
             </form>
         </div>
 
-        <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
+        <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
 
     </main>
 
@@ -239,7 +238,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="assets/img/footer_store.png" alt="">
+                    <img src="/assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -247,28 +246,28 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="assets/img/footer_shopping.png" alt="">
+                    <img src="/assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="assets/img/footer_site.png" alt="">
+                    <img src="/assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>

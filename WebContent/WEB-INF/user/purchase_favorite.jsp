@@ -7,17 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>お気に入り画面</title>
-    <script src="assets/js/humberger.js"></script>
-    <script src="assets/js/top-page.js" defer></script>
-    <script src="assets/js/header-anim.js"></script>
+    <script src="/assets/js/humberger.js"></script>
+    <script src="/assets/js/top-page.js" defer></script>
+    <script src="/assets/js/header-anim.js"></script>
 
 
 </head>
 
 <body>
-     <!-- header -->
+    <!-- header -->
   <header>
     <div class="head">
       <!-- ハンバーガーメニュー -->
@@ -103,7 +103,7 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="user/product_top/">ホーム</a></li>
+                <li><a href="/user/product_top/">ホーム</a></li>
                 <li>お気に入り</li>
             </ol>
         </nav>
@@ -117,7 +117,7 @@
                     <p class="evaluation">☆☆☆☆☆</p>
                 </div>
                 <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+                    <img class="ad-productimg" src="/assets/img/chair.jpg" alt="">
                     <div class="q">
                         <p class="ad-product-man"><br>色：白<br>サイズ：○○</p>
                         <p class="value">30,000円(税込)</p>
@@ -133,7 +133,7 @@
                     <p class="evaluation">☆☆☆☆☆</p>
                 </div>
                 <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+                    <img class="ad-productimg" src="/assets/img/chair.jpg" alt="">
                     <div class="q">
                         <p class="ad-product-man"><br>色：白<br>サイズ：○○</p>
                         <p class="value">30,000円(税込)</p>
@@ -149,7 +149,7 @@
                     <p class="evaluation">☆☆☆☆☆</p>
                 </div>
                 <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+                    <img class="ad-productimg" src="/assets/img/chair.jpg" alt="">
                     <div class="q">
                         <p class="ad-product-man"><br>色：白<br>サイズ：○○</p>
                         <p class="value">30,000円(税込)</p>
@@ -165,7 +165,7 @@
                     <p class="evaluation">☆☆☆☆☆</p>
                 </div>
                 <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+                    <img class="ad-productimg" src="/assets/img/chair.jpg" alt="">
                     <div class="q">
                         <p class="ad-product-man"><br>色：白<br>サイズ：○○</p>
                         <p class="value">30,000円(税込)</p>
@@ -181,7 +181,7 @@
                     <p class="evaluation">☆☆☆☆☆</p>
                 </div>
                 <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+                    <img class="ad-productimg" src="/assets/img/chair.jpg" alt="">
                     <div class="q">
                         <p class="ad-product-man"><br>色：白<br>サイズ：○○</p>
                         <p class="value">30,000円(税込)</p>
@@ -194,7 +194,7 @@
 
         </div>
 
-        <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
+        <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
     </main>
     <!-- footer -->
     <footer>
@@ -202,7 +202,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="assets/img/footer_store.png" alt="">
+                    <img src="/assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -210,28 +210,28 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="assets/img/footer_shopping.png" alt="">
+                    <img src="/assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="assets/img/footer_site.png" alt="">
+                    <img src="/assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>

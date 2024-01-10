@@ -2,31 +2,22 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html><!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>購入完了画面</title>
-    <script src="assets/js/humberger.js"></script>
-    <script src="assets/js/top-page.js" defer></script>
-    <script src="assets/js/header-anim.js"></script>
+    <script src="/assets/js/humberger.js"></script>
+    <script src="/assets/js/top-page.js" defer></script>
+    <script src="/assets/js/header-anim.js"></script>
 
 
 </head>
 
 <body>
-     <!-- header -->
+    <!-- header -->
   <header>
     <div class="head">
       <!-- ハンバーガーメニュー -->
@@ -113,12 +104,12 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="user/product_top/">ホーム</a></li>
-                <li><a href="user/product_list/">商品一覧</a></li>
-                <li><a href="user/puroduct_detail/">商品詳細</a></li>
-                <li><a href="user/product_shopcart/">カート</a></li>
-                <li><a href="user/product_purchase/">商品購入</a></li>
-                <li><a href="user/product_card/">カード</a></li>
+                <li><a href="/user/product_top/">ホーム</a></li>
+                <li><a href="/user/product_list/">商品一覧</a></li>
+                <li><a href="/user/puroduct_detail/">商品詳細</a></li>
+                <li><a href="/user/product_shopcart/">カート</a></li>
+                <li><a href="/user/product_purchase/">商品購入</a></li>
+                <li><a href="/user/product_card/">カード</a></li>
                 <li>商品購入完了</li>
             </ol>
         </nav>
@@ -132,7 +123,7 @@
             <a href="#">トップページへ</a>
         </div>
 
-        <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
+        <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
     </main>
 
     <!-- footer -->
@@ -141,7 +132,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="assets/img/footer_store.png" alt="">
+                    <img src="/assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -149,28 +140,28 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="assets/img/footer_shopping.png" alt="">
+                    <img src="/assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="assets/img/footer_site.png" alt="">
+                    <img src="/assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>
