@@ -18,85 +18,88 @@
 
 <body>
     <!-- header -->
-    <header>
-        <div class="head">
+     <!-- header -->
+  <header>
+    <div class="head">
+      <!-- ハンバーガーメニュー -->
+      <!-- </div> -->
+      <!-- お店のロゴ -->
+      <a class="shop-logo" href="/user/product_top/index.html">
+        <p>Inair</p>
+      </a>
+      <div class="head-right">
+        <!-- ユーザーアイコン -->
+        <a class="user-icon" href="/user/login/index.html">
+          <img src="/assets/img/header_user.png" alt="">
+        </a>
+        <!--お気に入りアイコン  -->
+        <a class="favorite-icon" href="/user/purchase_favorite/index.html">
+          <img src="/assets/img/header_favorite.png" alt="">
+        </a>
+        <!-- カートアイコン -->
+        <a class="cart-icon" href="/user/product_shopcart/index.html">
+          <img src="/assets/img/header_cart.png" alt="">
+        </a>
+        <nav class="nav">
+          <h1 class="Inair"><a href="">Inair</a></h1>
+          <li class="nav-top"><a href="/user/product_top/index.html">ホーム</a></li>
+          <li><a href="/user/login/index.html">ログイン</a></li>
+          <li><a href="/user/product_shopcart/index.html">カート</a></li>
+          <li><a href="/user/purchase_favorite/index.html">お気に入り</a></li>
+          <li><a href="/user/purchase_history/index.html">商品履歴</a></li>
+          <li><a href="/user/footer_shop/index.html">店舗</a></li>
+          <li><a href="/user/footer_product/index.html">商品</a></li>
+          <li><a href="/user/footer_service/index.html">サービス</a></li>
+          <li><a href="/user/footer_inquiry/index.html">お問い合わせ</a></li>
+          <li><a href="/user/footer_about Inair/index.html">Inairについて</a></li>
+          </ul>
+        </nav>
+        <button type="button" id="navbtn" onclick="navClick()"></button>
 
-            <nav class="nav">
-                <h1 class="Inair"><a href="">Inair</a></h1>
-                <li class="nav-top"><a href="user/product_top/index.html">ホーム</a></li>
-                <li><a href="user/login/index.html">ログイン</a></li>
-                <li><a href="user/product_shopcart/index.html">カート</a></li>
-                <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                <li><a href="user/purchase_history/index.html">商品履歴</a></li>
-                <li><a href="user/footer_shop/index.html">店舗</a></li>
-                <li><a href="user/footer_product/index.html">商品</a></li>
-                <li><a href="user/footer_service/index.html">サービス</a></li>
-                <li><a href="user/footer_inquiry/index.html">お問い合わせ</a></li>
-                <li><a href="user/footer_about Inair/index.html">Inairについて</a></li>
-                </ul>
-            </nav>
-            <button type="button" id="navbtn" onclick="navClick()"></button>
-
-            <!-- ハンバーガーメニュー -->
-            <!-- </div> -->
-            <!-- ユーザーアイコン -->
-            <a class="user-icon" href="user/login/index.html">
-                <img src="assets/img/header_user.png" alt="">
-            </a>
-            <!-- お店のロゴ -->
-            <a class="shop-logo" href="user/product_top/index.html">
-                <p>Inair</p>
-            </a>
-            <!--お気に入りアイコン  -->
-            <a class="favorite-icon" href="user/purchase_favorite/index.html">
-                <img src="assets/img/header_favorite.png" alt="">
-            </a>
-            <!-- カートアイコン -->
-            <a class="cart-icon" href="user/product_shopcart/index.html">
-                <img src="assets/img/header_cart.png" alt="">
-            </a>
-        </div>
-        <!-- 検索アイコン -->
-        <form class="search-form" action="get" href="#">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
-            <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください">
-        </form>
+      </div>
+    </div>
+      <!-- 検索アイコン -->
+      <form class="search-form" action="get" href="#">
+        <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+        <!-- 検索ボックス -->
+        <input type="search" class="search-box" placeholder="入力してください">
+      </form>
 
 
-        <div id="header-animation">
-            <nav class="nav">
-                <h1 class="Inair"><a href="">Inair</a></h1>
-                <li class="nav-top"><a href="user/product_top/index.html">ホーム</a></li>
-                <li><a href="user/login/index.html">ログイン</a></li>
-                <li><a href="user/product_shopcart/index.html">カート</a></li>
-                <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                <li><a href="user/purchase_history/index.html">商品履歴</a></li>
-                <li><a href="user/footer_shop/index.html">店舗</a></li>
-                <li><a href="user/footer_product/index.html">商品</a></li>
-                <li><a href="user/footer_service/index.html">サービス</a></li>
-                <li><a href="user/footer_inquiry/index.html">お問い合わせ</a></li>
-                <li><a href="user/footer_about Inair/index.html">Inairについて</a></li>
-                </ul>
-            </nav>
-            <button type="button" id="navbtn" onclick="navClick()"></button>
-            <!-- 検索アイコン -->
-            <form class="search-form-anim" action="get" href="#">
-                <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
-                <!-- 検索ボックス -->
-                <input type="search" class="search-box-anim" placeholder="入力してください">
-            </form>
-            <!--お気に入りアイコン  -->
-            <a class="favorite-icon-anim" href="user/purchase_favorite/index.html">
-                <img src="assets/img/header_favorite.png" alt="">
-            </a>
-            <!-- カートアイコン -->
-            <a class="cart-icon-anim" href="user/product_shopcart/index.html">
-                <img src="assets/img/header_cart.png" alt="">
-            </a>
-        </div>
+    <div id="header-animation" class="header-anim">
+      <!-- 検索アイコン -->
+      <form class="search-form-anim" action="get" href="#">
+        <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+        <!-- 検索ボックス -->
+        <input type="search" class="search-box-anim" placeholder="入力してください">
+      </form>
+      <!--お気に入りアイコン  -->
+      <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
+        <img src="/assets/img/header_favorite.png" alt="">
+      </a> -->
+      <!-- カートアイコン -->
+      <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
+        <img src="/assets/img/header_cart.png" alt="">
+      </a> -->
 
-    </header>
+      <nav class="nav">
+        <h1 class="Inair"><a href="">Inair</a></h1>
+        <li class="nav-top"><a href="/user/product_top/index.html">ホーム</a></li>
+        <li><a href="/user/login/index.html">ログイン</a></li>
+        <li><a href="/user/product_shopcart/index.html">カート</a></li>
+        <li><a href="/user/purchase_favorite/index.html">お気に入り</a></li>
+        <li><a href="/user/purchase_history/index.html">商品履歴</a></li>
+        <li><a href="/user/footer_shop/index.html">店舗</a></li>
+        <li><a href="/user/footer_product/index.html">商品</a></li>
+        <li><a href="/user/footer_service/index.html">サービス</a></li>
+        <li><a href="/user/footer_inquiry/index.html">お問い合わせ</a></li>
+        <li><a href="/user/footer_about Inair/index.html">Inairについて</a></li>
+        </ul>
+      </nav>
+      <button type="button" id="navbtn" onclick="navClick()"></button>
+    </div>
+
+  </header>
 
     <main>
         <!--パンくずリスト-->
