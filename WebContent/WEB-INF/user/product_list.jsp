@@ -8,12 +8,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <title>商品一覧画面</title>
-  <script src="/assets/js/humberger.js"></script>
-  <script src="/assets/js/top-page.js" defer></script>
-  <script src="/assets/js/header-anim.js"></script>
-  <script src="/assets/js/list.js"></script>
+  <script src="assets/js/humberger.js"></script>
+  <script src="assets/js/top-page.js" defer></script>
+  <script src="assets/js/header-anim.js"></script>
+  <script src="assets/js/list.js"></script>
 
 
 </head>
@@ -200,78 +200,28 @@
       </div>
     </div>
     <div class="a">
-      <div class="goods-item">
+      <c:forEach var="item" items="${ list }">
+
+	  <a href="Product_detail?id=${ item.id }">
+	   <div class="goods-item">
+	        <figure>
+	          <img class="p" src="assets/img/key-visuals.png" alt="">
+	        </figure>
+	        <p class="ad-productname">${ item.product_name }</p>
+	        <p class="price">値段:${ item.product_price }(税込)</p>
+      </div>
+	 </a>
+
+    </c:forEach>  
+
+    <%--      <div class="goods-item">
         <figure>
-          <img class="p" src="/assets/img/key-visuals.png" alt="">
+          <img class="p" src="assets/img/key-visuals.png" alt="">
         </figure>
-        <p class="ad-productname">商品名 家具</p>
-        <p class="price">値段:5000円(税込)</p>
-      </div>
-      <!-- </section> -->
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="/assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-    </div>
+        <p class="ad-productname">${ item.product_name }</p>
+        <p class="price">値段:${ item.price }(税込)</p>
+	 </div> --%>
+  
     
     <!--ページネーション-->
     <ul class="Pagination">

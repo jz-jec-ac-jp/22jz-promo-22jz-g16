@@ -8,13 +8,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>商品詳細画面</title>
-    <script src="/assets/js/humberger.js"></script>
-    <script src="/assets/js/top-page.js" defer></script>
-    <script src="/assets/js/header-anim.js"></script>
-    <script src="/assets/js/top-category.js"></script>
-    <script src="/assets/js/review-animation.js"></script>
+    <script src="assets/js/humberger.js"></script>
+    <script src="assets/js/top-page.js" defer></script>
+    <script src="assets/js/header-anim.js"></script>
+    <script src="assets/js/top-category.js"></script>
+    <script src="assets/js/review-animation.js"></script>
 
 
 </head>
@@ -115,12 +115,15 @@
         <figure>
             <img class="product-img" src="/assets/img/chair.jpg" alt="">
         </figure>
-        <h1 class="detail-product-name">モノトーン椅子</h1>
+         
+         
+        <h1 class="detail-product-name">${item.product_name}</h1>
         <div class="product">
-            <p>5000円</p>
+            <p>${item.product_price}</p>
             <figure>
-                <img src="/assets/img/header_favorite.png" alt="">
+                <img src="assets/img/header_favorite.png" alt="">
             </figure>
+            
         </div>
         <div class="product-star">
             <p>☆☆☆☆</p>
@@ -143,6 +146,9 @@
                 これも仮 <br>
                 背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
             </p>
+            
+            
+            <p>${ item.product_detail }</p>
         </div>
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
@@ -217,7 +223,9 @@
 
             <div class="product-button">
                 <input class="return-btn" type="submit" value="戻る">
-                <input class="cart-btn" type="submit" value="カートに入れる">
+                
+                <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
+                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
             <!-- カテゴリ -->

@@ -36,7 +36,7 @@
                     <img src="/assets/img/header_user.png" alt="">
                 </a>
                 <!--お気に入りアイコン  -->
-                <a class="favorite-icon" href="/user/purchase_favorite/index.html">
+                <a class="favorite-icon" href="Purchase_favorite">
                     <img src="/assets/img/header_favorite.png" alt="">
                 </a>
                 <!-- カートアイコン -->
@@ -45,7 +45,7 @@
                 </a>
                 <nav class="nav">
                     <h1 class="Inair"><a href="">Inair</a></h1>
-                    <li class="nav-top"><a href="/user/product_top/index.html">ホーム</a></li>
+                    <li class="nav-top"><a href="Product_top">ホーム</a></li>
                     <li><a href="/user/login/index.html">ログイン</a></li>
                     <li><a href="/user/product_shopcart/index.html">カート</a></li>
                     <li><a href="/user/purchase_favorite/index.html">お気に入り</a></li>
