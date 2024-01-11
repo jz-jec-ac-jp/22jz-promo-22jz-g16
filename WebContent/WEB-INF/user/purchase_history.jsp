@@ -12,8 +12,6 @@
     <script src="assets/js/humberger.js"></script>
     <script src="assets/js/top-page.js" defer></script>
     <script src="assets/js/header-anim.js"></script>
-
-
 </head>
 
 <body>
