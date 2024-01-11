@@ -19,7 +19,7 @@
 
 <body>
     <!-- header -->
-    <header>
+    <header class="header">
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -65,24 +65,27 @@
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
     
-    
-        <div id="header-animation" class="header-anim">
+       <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
-          <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
+           <form class="search-form-anim" action="get" href="#">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt=""> -->
             <!-- 検索ボックス -->
-            <input type="search" class="search-box-anim" placeholder="入力してください">
-          </form>
+             <input type="search" class="search-box-anim" placeholder="入力してください">
+          </form> 
+        
+          
+          
+          
           <!--お気に入りアイコン  -->
-          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
-            <img src="/assets/img/header_favorite.png" alt="">
+          <a class="favorite-icon-anim" href="Purchase_favorite">
+            <img src="assets/img/header_favorite.png" alt="">
           </a> -->
           <!-- カートアイコン -->
-          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
-            <img src="/assets/img/header_cart.png" alt="">
-          </a> -->
+          <a class="cart-icon-anim" href="Product_shopcart">
+            <img src="assets/img/header_cart.png" alt="">
+          </a> 
     
-          <nav class="nav">
+     <nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li class="nav-top"><a href="Product_top">ホーム</a></li>
             <li><a href="Product_login">ログイン</a></li>
@@ -97,7 +100,9 @@
             </ul>
           </nav>
           <button type="button" id="navbtn" onclick="navClick()"></button>
-        </div>
+        </div> 
+          
+
     
       </header>
 
@@ -111,20 +116,26 @@
                 <li>ログイン</li>
             </ol>
         </nav>
+        
         <h1 class="login-title">ログイン</h1>
         <div class="login">
             <!-- ログインフォーム -->
             <form class="login-form" action="#" method="get" onsubmit="return check();">
+            <div class="err-message">            
                 <!-- ログインID入力 -->
-                <h2 class="login-id">ログインID</h2>
+                <h2 class="login-id">ログインID  </h2>
                 <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
+            </div>
 
-                <!-- パスワード入力 -->
-                <h2 class="login-password ">パスワード</h2>
-                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
-                <p class="error-message">※入力してください</p>
-                <p id="textlength2">0</p>
+	
+					<!-- パスワード入力 -->
+				<div class="err-message">
+	            	<h2 class="login-password ">パスワード</h2>
+	                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
+	                <p class="error-message">※入力してください</p>
+	                <p id="textlength2">0</p>
+				</div>   
 
                 <a class="password-forget" href="#">パスワードをお忘れの方</a>
                 <!-- ログインボタン -->
