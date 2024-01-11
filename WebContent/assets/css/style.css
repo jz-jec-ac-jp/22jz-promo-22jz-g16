@@ -107,9 +107,9 @@ input {
 } */
 
 /* 未入力 */
-.text-input:placeholder-shown+.error-message {
+.text-input:placeholder-shown{
     display: block;
-    /* border: 2px solid #ff3700; */
+/*     border: 2px solid #ff3700; */
 }
 
 
