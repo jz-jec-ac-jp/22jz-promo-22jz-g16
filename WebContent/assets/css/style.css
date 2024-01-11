@@ -94,7 +94,7 @@ input {
 }
 
 /* inputのすぐ隣に配置するメッセージ要素 */
-.error-message,
+ .error-message,
 .error-message-select {
     font-size: 1rem;
     color: #ff7676;
@@ -147,7 +147,7 @@ input {
     border: 1px solid #ff3700;
 }
 
-.border-input:placeholder-shown+.error-message {
+.border-input:placeholder-shown+ .error-message {
     /* display: block; */
     opacity: 1;
 }
@@ -156,7 +156,7 @@ input {
     border: 1px solid #ff3700;
 }
 
-.border-input:not(:placeholder-shown)+.error-message {
+.border-input:not(:placeholder-shown)+ .error-message {
     /* display: none; */
     opacity: 0;
 }
@@ -167,7 +167,7 @@ input {
 
 
 /* 入力済み */
-.text-input:not(:placeholder-shown)+.error-message {
+.text-input:not(:placeholder-shown)+ .error-message {
     display: none;
 }
 
@@ -175,7 +175,7 @@ input {
     border: 1px solid #362918;
 }
 
-.text-area:not(:placeholder-shown)+.error-message {
+.text-area:not(:placeholder-shown)+  .error-message {
     border: none;
 }
 
@@ -713,20 +713,37 @@ footer a {
 
 */
 
+.header{
+	padding: 5px 0 18px 0;
+}
 
 
 /* ログイン */
 .login-title {
     text-align: center;
     margin-top: 4vh;
+    margin-bottom: 0;
 }
 
 /* ログイン全体 */
 .login {
-    position: absolute;
-    top: 30%;
+   /*position: absolute;*/ 
+    top: 20%;
     left: 20%;
     width: 60vw;
+}
+
+.err-message {
+	position: relative;
+}
+
+.err-message .error-message {
+	position: absolute;
+	top: 40px;
+/*	right: 10px;*/
+/*	padding-right: 10px;*/
+/*	margin-right: 10px;*/
+	left: 20px;
 }
 
 /* ログインIDとパスワード */

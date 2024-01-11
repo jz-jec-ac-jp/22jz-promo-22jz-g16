@@ -19,7 +19,7 @@
 
 <body>
     <!-- header -->
-    <header>
+    <header class="header">
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -116,20 +116,26 @@
                 <li>ログイン</li>
             </ol>
         </nav>
+        
         <h1 class="login-title">ログイン</h1>
         <div class="login">
             <!-- ログインフォーム -->
             <form class="login-form" action="#" method="get" onsubmit="return check();">
+            <div class="err-message">            
                 <!-- ログインID入力 -->
-                <h2 class="login-id">ログインID</h2>
+                <h2 class="login-id">ログインID  </h2>
                 <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
+            </div>
 
-                <!-- パスワード入力 -->
-                <h2 class="login-password ">パスワード</h2>
-                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
-                <p class="error-message">※入力してください</p>
-                <p id="textlength2">0</p>
+	
+					<!-- パスワード入力 -->
+				<div class="err-message">
+	            	<h2 class="login-password ">パスワード</h2>
+	                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
+	                <p class="error-message">※入力してください</p>
+	                <p id="textlength2">0</p>
+				</div>   
 
                 <a class="password-forget" href="#">パスワードをお忘れの方</a>
                 <!-- ログインボタン -->
