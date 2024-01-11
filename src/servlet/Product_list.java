@@ -43,6 +43,7 @@ public class Product_list extends HttpServlet {
 //		
 //		while()
 		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_list.jsp");
 		dispatcher.forward(request, response);
 	}

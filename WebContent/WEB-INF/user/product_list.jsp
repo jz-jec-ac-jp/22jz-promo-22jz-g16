@@ -205,13 +205,17 @@
     <div class="a">
     
     <c:forEach var="item" items="${ list }">
+    
       <div class="goods-item">
+      <a href="Product_detail?id=${item.id }">
+      
         <figure>
           <img class="p" src="assets/img/key-visuals.png" alt="">
         </figure>
         <p class="ad-productname">${ item.product_name }</p>
         <p class="price">値段:${ item.price }(税込)</p>
       </div>
+      </a>
     </c:forEach>  
       
       <%--  
