@@ -48,7 +48,6 @@ public class Product_shopcart extends HttpServlet {
 		
 
 		
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
 		dispatcher.forward(request, response);
 	}
