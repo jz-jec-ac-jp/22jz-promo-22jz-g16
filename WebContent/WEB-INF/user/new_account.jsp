@@ -32,15 +32,15 @@
           <div class="head-right">
             <!-- ユーザーアイコン -->
             <a class="user-icon" href="Product_login">
-              <img src="/assets/img/header_user.png" alt="">
+              <img src="assets/img/header_user.png" alt="">
             </a>
             <!--お気に入りアイコン  -->
             <a class="favorite-icon" href="Product_favorite">
-              <img src="/assets/img/header_favorite.png" alt="">
+              <img src="assets/img/header_favorite.png" alt="">
             </a>
             <!-- カートアイコン -->
             <a class="cart-icon" href="Product_shopcart">
-              <img src="/assets/img/header_cart.png" alt="">
+              <img src="assets/img/header_cart.png" alt="">
             </a>
             <nav class="nav">
               <h1 class="Inair"><a href="">Inair</a></h1>
@@ -62,7 +62,7 @@
         </div>
           <!-- 検索アイコン -->
           <form class="search-form" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
@@ -71,7 +71,7 @@
         <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
           <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box-anim" placeholder="入力してください">
           </form>
@@ -228,7 +228,7 @@
             </form>
         </div>
 
-        <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
+        <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
 
     </main>
 
@@ -238,7 +238,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="/assets/img/footer_store.png" alt="">
+                    <img src="assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -246,7 +246,7 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="/assets/img/footer_shopping.png" alt="">
+                    <img src="assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
@@ -260,14 +260,14 @@
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="/assets/img/footer_service.png" alt="">
+                    <img src="assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="/assets/img/footer_site.png" alt="">
+                    <img src="assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>

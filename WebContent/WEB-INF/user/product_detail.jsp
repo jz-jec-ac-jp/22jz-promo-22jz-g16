@@ -32,15 +32,15 @@
           <div class="head-right">
             <!-- ユーザーアイコン -->
             <a class="user-icon" href="Product_login">
-              <img src="/assets/img/header_user.png" alt="">
+              <img src="assets/img/header_user.png" alt="">
             </a>
             <!--お気に入りアイコン  -->
             <a class="favorite-icon" href="Product_favorite">
-              <img src="/assets/img/header_favorite.png" alt="">
+              <img src="assets/img/header_favorite.png" alt="">
             </a>
             <!-- カートアイコン -->
             <a class="cart-icon" href="Product_shopcart">
-              <img src="/assets/img/header_cart.png" alt="">
+              <img src="assets/img/header_cart.png" alt="">
             </a>
             <nav class="nav">
               <h1 class="Inair"><a href="">Inair</a></h1>
@@ -62,7 +62,7 @@
         </div>
           <!-- 検索アイコン -->
           <form class="search-form" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
@@ -71,7 +71,7 @@
         <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
           <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box-anim" placeholder="入力してください">
           </form>
@@ -113,7 +113,7 @@
             </ol>
         </nav>
         <figure>
-            <img class="product-img" src="/assets/img/chair.jpg" alt="">
+            <img class="product-img" src="assets/img/chair.jpg" alt="">
         </figure>
          
          
@@ -235,7 +235,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_chair();">
                         <figure>
-                            <img src="/assets/img/chair.jpg" alt="">
+                            <img src="assets/img/chair.jpg" alt="">
                         </figure>
                         <p>椅子</p>
                     </a>
@@ -252,14 +252,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="/user/product_list/index.html">
-                                        <img src="/assets/img/chair.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="assets/img/chair.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="/user/product_list/index.html">
-                                        <img src="/assets/img/chair.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="assets/img/chair.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -273,7 +273,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_table();">
                         <figure>
-                            <img src="/assets/img/table.jpg" alt="">
+                            <img src="assets/img/table.jpg" alt="">
                         </figure>
                         <p>机</p>
                     </a>
@@ -290,14 +290,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="/user/product_list/index.html">
-                                        <img src="/assets/img/table.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="assets/img/table.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="/user/product_list/index.html">
-                                        <img src="/assets/img/table.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="assets/img/table.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -314,7 +314,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_light();">
                         <figure>
-                            <img src="/assets/img/light.jpg" alt="">
+                            <img src="assets/img/light.jpg" alt="">
                         </figure>
                         <p>照明</p>
                     </a>
@@ -332,13 +332,13 @@
                             <ul>
                                 <li class="popup-list">
                                     <a href="Product_list">
-                                        <img src="/assets/img/light.jpg" alt="">
+                                        <img src="assets/img/light.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
                                     <a href="Product_list">
-                                        <img src="/assets/img/light.jpg" alt="">
+                                        <img src="assets/img/light.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -352,7 +352,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_storage();">
                         <figure>
-                            <img src="/assets/img/storage.jpg" alt="">
+                            <img src="assets/img/storage.jpg" alt="">
                         </figure>
                         <p>収納</p>
                     </a>
@@ -370,13 +370,13 @@
                             <ul>
                                 <li class="popup-list">
                                     <a href="Product_list">
-                                        <img src="/assets/img/storage.jpg" alt="">
+                                        <img src="assets/img/storage.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
                                     <a href="Product_list">
-                                        <img src="/assets/img/storage.jpg" alt="">
+                                        <img src="assets/img/storage.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -389,7 +389,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_goods();">
                         <figure>
-                            <img src="/assets/img/table.jpg" alt="">
+                            <img src="assets/img/table.jpg" alt="">
                         </figure>
                         <p>雑貨</p>
                     </a>
@@ -409,13 +409,13 @@
                         <ul>
                             <li class="popup-list">
                                 <a href="Product_list">
-                                    <img src="/assets/img/chair.jpg" alt="">
+                                    <img src="assets/img/chair.jpg" alt="">
                                     <p>モノトーン</p>
                                 </a>
                             </li>
                             <li class="popup-list">
                                 <a href="Product_list">
-                                    <img src="/assets/img/chair.jpg" alt="">
+                                    <img src="assets/img/chair.jpg" alt="">
                                     <p>カントリー風</p>
                                 </a>
                             </li>
@@ -433,7 +433,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="/assets/img/footer_store.png" alt="">
+                    <img src="assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -441,28 +441,28 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="/assets/img/footer_shopping.png" alt="">
+                    <img src="assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="/assets/img/footer_service.png" alt="">
+                    <img src="assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="/assets/img/footer_service.png" alt="">
+                    <img src="assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="/assets/img/footer_site.png" alt="">
+                    <img src="assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>

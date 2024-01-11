@@ -42,15 +42,15 @@
           <div class="head-right">
             <!-- ユーザーアイコン -->
             <a class="user-icon" href="Product_login">
-              <img src="/assets/img/header_user.png" alt="">
+              <img src="assets/img/header_user.png" alt="">
             </a>
             <!--お気に入りアイコン  -->
             <a class="favorite-icon" href="Product_favorite">
-              <img src="/assets/img/header_favorite.png" alt="">
+              <img src="assets/img/header_favorite.png" alt="">
             </a>
             <!-- カートアイコン -->
             <a class="cart-icon" href="Product_shopcart">
-              <img src="/assets/img/header_cart.png" alt="">
+              <img src="assets/img/header_cart.png" alt="">
             </a>
             <nav class="nav">
               <h1 class="Inair"><a href="">Inair</a></h1>
@@ -72,7 +72,7 @@
         </div>
           <!-- 検索アイコン -->
           <form class="search-form" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
@@ -81,7 +81,7 @@
         <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
           <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
             <input type="search" class="search-box-anim" placeholder="入力してください">
           </form>
@@ -124,9 +124,9 @@
     </nav>
     <!-- キービジュアル -->
     <div class="container">
-      <img class="image" src="/assets/img/key.jpg" />
-      <img class="image" src="/assets/img/key02.jpg" />
-      <img class="image" src="/assets/img/key03.jpg" />
+      <img class="image" src="assets/img/key.jpg" />
+      <img class="image" src="assets/img/key02.jpg" />
+      <img class="image" src="assets/img/key03.jpg" />
     </div>
     <div class="key-store">
       <!-- お店について -->
@@ -153,7 +153,7 @@
       <div class="store">
         <div class="store-img">
           <figure>
-            <img src="/assets/img/key.jpg" class="fadein key-left wow animated fadeInUp" alt="">
+            <img src="assets/img/key.jpg" class="fadein key-left wow animated fadeInUp" alt="">
           </figure>
           <p class="top-store-first">
             モノトーン風家具の特徴は、シンプルな配色であるため、あらゆるスタイルと相性が良くお好きな雰囲気をつくれます。モノトーンをベースにナチュラルな雰囲気からエレガントな雰囲気までコーディネートできるため、模様替えしやすいスタイルです。
@@ -162,7 +162,7 @@
   
         <div class="store-img">
           <figure>
-            <img src="/assets/img/key02.jpg" class="fadein key-right  wow animated fadeInUp" alt="">
+            <img src="assets/img/key02.jpg" class="fadein key-right  wow animated fadeInUp" alt="">
           </figure>
           <p class="top-store-second">
             カントリー風家具の特徴は、使い込むほど風合いが生まれてインテリアと毎日の暮らしとがなじみます。カフェ風のインテリアなど、テイストの異なる家具とも相性がよくやさしい存在感を放ちます。北欧風なデザインが好きな方におすすめです。
@@ -178,7 +178,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -187,7 +187,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -196,7 +196,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -205,7 +205,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -214,7 +214,31 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
+              </figure>
+              <p class="ad-productname">商品名 家具</p>
+              <p class="price">値段:5000円(税込)</p>
+            </div>
+          <li>
+            <div class="goods-item content-hover ">
+              <figure>
+                <img class="p" src="assets/img/key-visuals.png" alt="">
+              </figure>
+              <p class="ad-productname">商品名 家具</p>
+              <p class="price">値段:5000円(税込)</p>
+            </div>
+          <li>
+            <div class="goods-item content-hover ">
+              <figure>
+                <img class="p" src="assets/img/key-visuals.png" alt="">
+              </figure>
+              <p class="ad-productname">商品名 家具</p>
+              <p class="price">値段:5000円(税込)</p>
+            </div>
+          <li>
+            <div class="goods-item content-hover ">
+              <figure>
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -230,31 +254,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -264,7 +264,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -273,7 +273,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -282,7 +282,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -291,7 +291,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -300,7 +300,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -308,7 +308,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -316,7 +316,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -324,7 +324,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -332,7 +332,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -340,7 +340,7 @@
           <li>
             <div class="goods-item content-hover ">
               <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
+                <img class="p" src="assets/img/key-visuals.png" alt="">
               </figure>
               <p class="ad-productname">商品名 家具</p>
               <p class="price">値段:5000円(税込)</p>
@@ -366,14 +366,14 @@
       <div class="furniture-delivery  wow animated fadeInUp">
         <div class="furniture-link">
           <figure>
-            <img src="/assets/img/furniture.png" alt="">
+            <img src="assets/img/furniture.png" alt="">
           </figure>
           <p class="furniture">組み立て時間が気になる方</p>
         </div>
 
         <div class="delivery-link">
           <figure>
-            <img src="/assets/img/delivery.png" alt="">
+            <img src="assets/img/delivery.png" alt="">
           </figure>
           <p class="delivery">配送料金が気なる方</p>
         </div>
@@ -388,7 +388,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_chair();">
           <figure>
-            <img src="/assets/img/chair.jpg" alt="">
+            <img src="assets/img/chair.jpg" alt="">
           </figure>
           <p>椅子</p>
         </a>
@@ -405,14 +405,14 @@
             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
             <ul>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/chair.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/chair.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/chair.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/chair.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -426,7 +426,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_table();">
           <figure>
-            <img src="/assets/img/table.jpg" alt="">
+            <img src="assets/img/table.jpg" alt="">
           </figure>
           <p>机</p>
         </a>
@@ -443,14 +443,14 @@
             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
             <ul>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/table.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/table.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/table.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/table.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -467,7 +467,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_light();">
           <figure>
-            <img src="/assets/img/light.jpg" alt="">
+            <img src="assets/img/light.jpg" alt="">
           </figure>
           <p>照明</p>
         </a>
@@ -484,14 +484,14 @@
             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
             <ul>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/light.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/light.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/light.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/light.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -505,7 +505,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_storage();">
           <figure>
-            <img src="/assets/img/storage.jpg" alt="">
+            <img src="assets/img/storage.jpg" alt="">
           </figure>
           <p>収納</p>
         </a>
@@ -522,14 +522,14 @@
             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
             <ul>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/storage.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/storage.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
-                <a href="/user/product_list/index.html">
-                  <img src="/assets/img/storage.jpg" alt="">
+                <a href="Product_list">
+                  <img src="assets/img/storage.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -542,7 +542,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_goods();">
           <figure>
-            <img src="/assets/img/table.jpg" alt="">
+            <img src="assets/img/table.jpg" alt="">
           </figure>
           <p>雑貨</p>
         </a>
@@ -560,16 +560,16 @@
           <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
           <ul class="popup-list">
             <li>
-              <a href="/user/product_list/index.html">
-                <img src="/assets/img/chair.jpg" alt="">
+              <a href="Product_list">
+                <img src="assets/img/chair.jpg" alt="">
                 <p>モノトーン</p>
               </a>
             </li>
           </ul>
           <ul class="popup-list">
             <li>
-              <a href="/user/product_list/index.html">
-                <img src="/assets/img/chair.jpg" alt="">
+              <a href="Product_list">
+                <img src="assets/img/chair.jpg" alt="">
                 <p>カントリー風</p>
               </a>
             </li>
@@ -584,35 +584,35 @@
     <ul class="ranking-list">
       <li class="ranking-item">
         <figure>
-          <img src="/assets/img/light.jpg" alt="">
+          <img src="assets/img/light.jpg" alt="">
         </figure>
         <p>モノトーン照明</p>
         <!-- <p>1位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>カントリー机</p>
         <!-- <p>2位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <!-- <p>3位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <!-- <p>4位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="/assets/img/table.jpg" alt="">
+          <img src="assets/img/table.jpg" alt="">
         </figure>
         <p>机</p>
         <!-- <p>5位</p> -->
@@ -645,7 +645,7 @@
     <div class="footer-aligned">
       <a href="#" class="footer-store">
         <figure>
-          <img src="/assets/img/footer_store.png" alt="">
+          <img src="assets/img/footer_store.png" alt="">
         </figure>
         <p>店舗</p>
       </a>
@@ -653,28 +653,28 @@
       <!-- 商品 -->
       <a href="#" class="footer-shopping">
         <figure>
-          <img src="/assets/img/footer_shopping.png" alt="">
+          <img src="assets/img/footer_shopping.png" alt="">
         </figure>
         <p>商品</p>
       </a>
       <!-- サービス -->
       <a href="#" class="footer-service">
         <figure>
-          <img src="/assets/img/footer_service.png" alt="">
+          <img src="assets/img/footer_service.png" alt="">
         </figure>
         <p>サービス</p>
       </a>
       <!-- お問い合わせ -->
       <a href="#" class="footer-support">
         <figure>
-          <img src="/assets/img/footer_service.png" alt="">
+          <img src="assets/img/footer_service.png" alt="">
         </figure>
         <p>お問い合わせ</p>
       </a>
       <!-- サイトについて -->
       <a href="#" class="footer-site">
         <figure>
-          <img src="/assets/img/footer_site.png" alt="">
+          <img src="assets/img/footer_site.png" alt="">
         </figure>
         <p>Inairについて</p>
       </a>
