@@ -455,7 +455,7 @@
 
     <!-- 検索フォーム -->
     <!-- 準備中と完了のタブ切り替え -->
-    <form class="new-search-form" action="get" href="#">
+    <form class="new-search-form" action="get" href="Product">
       <div class="ad-tab-switch">
         <a href="#">追加</a>
         <a href="#">編集</a>
