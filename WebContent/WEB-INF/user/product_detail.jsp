@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    
-    
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -24,110 +23,107 @@
     <!-- header -->
     <header>
         <div class="head">
-            <!-- ハンバーガーメニュー -->
-            <!-- </div> -->
-            <!-- お店のロゴ -->
-            <a class="shop-logo" href="Top">
-                <p>Inair</p>
+          <!-- ハンバーガーメニュー -->
+          <!-- </div> -->
+          <!-- お店のロゴ -->
+          <a class="shop-logo" href="Product_top">
+            <p>Inair</p>
+          </a>
+          <div class="head-right">
+            <!-- ユーザーアイコン -->
+            <a class="user-icon" href="Product_login">
+              <img src="/assets/img/header_user.png" alt="">
             </a>
-            <div class="head-right">
-                <!-- ユーザーアイコン -->
-                <a class="user-icon" href="login.jsp">
-                    <img src="assets/img/header_user.png" alt="">
-                </a>
-                <!--お気に入りアイコン  -->
-                <a class="favorite-icon" href="user/purchase_favorite/index.html">
-                    <img src="assets/img/header_favorite.png" alt="">
-                </a>
-                <!-- カートアイコン -->
-                <a class="cart-icon" href="user/product_shopcart/index.html">
-                    <img src="assets/img/header_cart.png" alt="">
-                </a>
-                <nav class="nav">
-                    <h1 class="Inair"><a href="">Inair</a></h1>
-                    <li class="nav-top"><a href="/user/product_top/index.html">ホーム</a></li>
-                    <li><a href="user/login/index.html">ログイン</a></li>
-                    <li><a href="user/product_shopcart/index.html">カート</a></li>
-                    <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                    <li><a href="user/purchase_history/index.html">商品履歴</a></li>
-                    <li><a href="user/footer_shop/index.html">店舗</a></li>
-                    <li><a href="user/footer_product/index.html">商品</a></li>
-                    <li><a href="user/footer_service/index.html">サービス</a></li>
-                    <li><a href="user/footer_inquiry/index.html">お問い合わせ</a></li>
-                    <li><a href="user/footer_about Inair/index.html">Inairについて</a></li>
-                    </ul>
-                </nav>
-                <button type="button" id="navbtn" onclick="navClick()"></button>
-
-            </div>
-        </div>
-        <!-- 検索アイコン -->
-        <form class="search-form" action="get" href="#">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
-            <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください">
-        </form>
-
-
-        <div id="header-animation" class="header-anim">
-            <!-- 検索アイコン -->
-            <form class="search-form-anim" action="get" href="#">
-                <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
-                <!-- 検索ボックス -->
-                <input type="search" class="search-box-anim" placeholder="入力してください">
-            </form>
             <!--お気に入りアイコン  -->
-            <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
-        <img src="/assets/img/header_favorite.png" alt="">
-      </a> -->
+            <a class="favorite-icon" href="Product_favorite">
+              <img src="/assets/img/header_favorite.png" alt="">
+            </a>
             <!-- カートアイコン -->
-            <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
-        <img src="/assets/img/header_cart.png" alt="">
-      </a> -->
-
+            <a class="cart-icon" href="Product_shopcart">
+              <img src="/assets/img/header_cart.png" alt="">
+            </a>
             <nav class="nav">
-                <h1 class="Inair"><a href="">Inair</a></h1>
-                <li class="nav-top"><a href="/user/product_top/index.html">ホーム</a></li>
-                <li><a href="user/login/login.jsp">ログイン</a></li>
-                <li><a href="user/product_shopcart/index.html">カート</a></li>
-                <li><a href="user/purchase_favorite/index.html">お気に入り</a></li>
-                <li><a href="user/purchase_history/index.html">商品履歴</a></li>
-                <li><a href="user/footer_shop/index.html">店舗</a></li>
-                <li><a href="user/footer_product/index.html">商品</a></li>
-                <li><a href="user/footer_service/index.html">サービス</a></li>
-                <li><a href="user/footer_inquiry/index.html">お問い合わせ</a></li>
-                <li><a href="user/footer_about Inair/index.html">Inairについて</a></li>
-                </ul>
+              <h1 class="Inair"><a href="">Inair</a></h1>
+              <li class="nav-top"><a href="Product_top">ホーム</a></li>
+              <li><a href="Product_login">ログイン</a></li>
+              <li><a href="Product_shopcart">カート</a></li>
+              <li><a href="Product_favorite">お気に入り</a></li>
+              <li><a href="Product_history">商品履歴</a></li>
+              <li><a href="Footer_shop">店舗</a></li>
+              <li><a href="Footer_product">商品</a></li>
+              <li><a href="Footer_service">サービス</a></li>
+              <li><a href="Footer_inquiry">お問い合わせ</a></li>
+              <li><a href="Footer_about_Inair">Inairについて</a></li>
+              </ul>
             </nav>
             <button type="button" id="navbtn" onclick="navClick()"></button>
+    
+          </div>
         </div>
-
-    </header>
+          <!-- 検索アイコン -->
+          <form class="search-form" action="get" href="#">
+            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <!-- 検索ボックス -->
+            <input type="search" class="search-box" placeholder="入力してください">
+          </form>
+    
+    
+        <div id="header-animation" class="header-anim">
+          <!-- 検索アイコン -->
+          <form class="search-form-anim" action="get" href="#">
+            <input type="image" class="search-icon" src="/assets/img/header_search.png" alt="">
+            <!-- 検索ボックス -->
+            <input type="search" class="search-box-anim" placeholder="入力してください">
+          </form>
+          <!--お気に入りアイコン  -->
+          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
+            <img src="/assets/img/header_favorite.png" alt="">
+          </a> -->
+          <!-- カートアイコン -->
+          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
+            <img src="/assets/img/header_cart.png" alt="">
+          </a> -->
+    
+          <nav class="nav">
+            <h1 class="Inair"><a href="">Inair</a></h1>
+            <li class="nav-top"><a href="Product_top">ホーム</a></li>
+            <li><a href="Product_login">ログイン</a></li>
+            <li><a href="Product_shopcart">カート</a></li>
+            <li><a href="Product_favorite">お気に入り</a></li>
+            <li><a href="Product_history">商品履歴</a></li>
+            <li><a href="Footer_shop">店舗</a></li>
+            <li><a href="Footer_product">商品</a></li>
+            <li><a href="Footer_service">サービス</a></li>
+            <li><a href="Footer_inquiry">お問い合わせ</a></li>
+            <li><a href="Footer_about_Inair">Inairについて</a></li>
+            </ul>
+          </nav>
+          <button type="button" id="navbtn" onclick="navClick()"></button>
+        </div>
+    
+      </header>
 
     <main>
-    
-    
-    
-    
-    
-    
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="user/product_top/">ホーム</a></li>
-                <li><a href="user/product_list/">商品一覧</a></li>
+                <li><a href="/user/product_top/">ホーム</a></li>
+                <li><a href="/user/product_list/">商品一覧</a></li>
                 <li>商品詳細</li>
             </ol>
         </nav>
         <figure>
-            <img class="product-img" src="assets/img/chair.jpg" alt="">
+            <img class="product-img" src="/assets/img/chair.jpg" alt="">
         </figure>
+         
+         
         <h1 class="detail-product-name">${item.product_name}</h1>
         <div class="product">
-            <p>${item.price}</p>
+            <p>${item.product_price}</p>
             <figure>
                 <img src="assets/img/header_favorite.png" alt="">
             </figure>
+            
         </div>
         <div class="product-star">
             <p>☆☆☆☆</p>
@@ -146,13 +142,13 @@
         </div>
 
         <div class="product-content">
-            <%--
             <p>
                 これも仮 <br>
                 背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
             </p>
-             --%>
-             <p>${ item.product_detail }</p>
+            
+            
+            <p>${ item.product_detail }</p>
         </div>
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
@@ -227,7 +223,9 @@
 
             <div class="product-button">
                 <input class="return-btn" type="submit" value="戻る">
-                <input class="cart-btn" type="submit" value="カートに入れる">
+                
+                <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
+                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
             <!-- カテゴリ -->
@@ -237,7 +235,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_chair();">
                         <figure>
-                            <img src="assets/img/chair.jpg" alt="">
+                            <img src="/assets/img/chair.jpg" alt="">
                         </figure>
                         <p>椅子</p>
                     </a>
@@ -254,14 +252,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/chair.jpg" alt="">
+                                    <a href="/user/product_list/index.html">
+                                        <img src="/assets/img/chair.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/chair.jpg" alt="">
+                                    <a href="/user/product_list/index.html">
+                                        <img src="/assets/img/chair.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -275,7 +273,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_table();">
                         <figure>
-                            <img src="assets/img/table.jpg" alt="">
+                            <img src="/assets/img/table.jpg" alt="">
                         </figure>
                         <p>机</p>
                     </a>
@@ -292,14 +290,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/table.jpg" alt="">
+                                    <a href="/user/product_list/index.html">
+                                        <img src="/assets/img/table.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/table.jpg" alt="">
+                                    <a href="/user/product_list/index.html">
+                                        <img src="/assets/img/table.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -316,7 +314,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_light();">
                         <figure>
-                            <img src="assets/img/light.jpg" alt="">
+                            <img src="/assets/img/light.jpg" alt="">
                         </figure>
                         <p>照明</p>
                     </a>
@@ -333,14 +331,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/light.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="/assets/img/light.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/light.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="/assets/img/light.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -354,7 +352,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_storage();">
                         <figure>
-                            <img src="assets/img/storage.jpg" alt="">
+                            <img src="/assets/img/storage.jpg" alt="">
                         </figure>
                         <p>収納</p>
                     </a>
@@ -371,14 +369,14 @@
                             <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                             <ul>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/storage.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="/assets/img/storage.jpg" alt="">
                                         <p>モノトーン</p>
                                     </a>
                                 </li>
                                 <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/storage.jpg" alt="">
+                                    <a href="Product_list">
+                                        <img src="/assets/img/storage.jpg" alt="">
                                         <p>カントリー風</p>
                                     </a>
                                 </li>
@@ -391,7 +389,7 @@
                 <div class="category-item">
                     <a href="javascript:popup_open_goods();">
                         <figure>
-                            <img src="assets/img/table.jpg" alt="">
+                            <img src="/assets/img/table.jpg" alt="">
                         </figure>
                         <p>雑貨</p>
                     </a>
@@ -410,14 +408,14 @@
                         <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
                         <ul>
                             <li class="popup-list">
-                                <a href="user/product_list/index.html">
-                                    <img src="assets/img/chair.jpg" alt="">
+                                <a href="Product_list">
+                                    <img src="/assets/img/chair.jpg" alt="">
                                     <p>モノトーン</p>
                                 </a>
                             </li>
                             <li class="popup-list">
-                                <a href="user/product_list/index.html">
-                                    <img src="assets/img/chair.jpg" alt="">
+                                <a href="Product_list">
+                                    <img src="/assets/img/chair.jpg" alt="">
                                     <p>カントリー風</p>
                                 </a>
                             </li>
@@ -426,7 +424,7 @@
                 </div>
             </div>
 
-            <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
+            <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
     </main>
 
     <!-- footer -->
@@ -435,7 +433,7 @@
         <div class="footer-aligned">
             <a href="#" class="footer-store">
                 <figure>
-                    <img src="assets/img/footer_store.png" alt="">
+                    <img src="/assets/img/footer_store.png" alt="">
                 </figure>
                 <p>店舗</p>
             </a>
@@ -443,28 +441,28 @@
             <!-- 商品 -->
             <a href="#" class="footer-shopping">
                 <figure>
-                    <img src="assets/img/footer_shopping.png" alt="">
+                    <img src="/assets/img/footer_shopping.png" alt="">
                 </figure>
                 <p>商品</p>
             </a>
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>
             <!-- お問い合わせ -->
             <a href="#" class="footer-support">
                 <figure>
-                    <img src="assets/img/footer_service.png" alt="">
+                    <img src="/assets/img/footer_service.png" alt="">
                 </figure>
                 <p>お問い合わせ</p>
             </a>
             <!-- サイトについて -->
             <a href="#" class="footer-site">
                 <figure>
-                    <img src="assets/img/footer_site.png" alt="">
+                    <img src="/assets/img/footer_site.png" alt="">
                 </figure>
                 <p>Inairについて</p>
             </a>
