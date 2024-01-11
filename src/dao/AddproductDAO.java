@@ -19,7 +19,7 @@ public class AddproductDAO {
 	*/
 	
 	
-	public boolean create(int id, String product_name, String product_detail, int product_price, int product_stock) {
+	public boolean create(String product_name, String product_detail, int product_price, int product_stock) {
 	    int ret = -1;
 	    
 //	    // ①データの存在確認
@@ -38,19 +38,21 @@ public class AddproductDAO {
 	    DBManager manager = DBManager.getInstance();
 	    try(Connection cn = manager.getConnection()) {
 	        // プレースホルダで変数部分を定義
-	        String sql = "INSERT INTO  (id, product_name, product_detail, product_price, product_stock, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	        String sql = "INSERT INTO item_table (product_name, product_detail, product_price, product_stock, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?)";
 	        PreparedStatement stmt = cn.prepareStatement(sql);
-	        stmt.setInt(1, id);
-	        stmt.setString(2, product_name);
-	        stmt.setString(3, product_detail);
-	        stmt.setInt(4, product_price);
-	        stmt.setInt(5, product_stock);
+	        stmt.setString(1, product_name);
+	        stmt.setString(2, product_detail);
+	        stmt.setInt(3, product_price);
+	        stmt.setInt(4, product_stock);
+	        stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
 	        stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
-	        stmt.setTimestamp(7, Timestamp.valueOf(LocalDateTime.now()));
 	        
 	        ret = stmt.executeUpdate();
+	        System.out.println(ret);
 	        
-	   
+			 System.out.println("true_find  " );
+			 System.out.println("true_get()  ");
+			 System.out.println("true_Name()  ");
 	        
 	    } catch(SQLException e) {
 	        e.printStackTrace();

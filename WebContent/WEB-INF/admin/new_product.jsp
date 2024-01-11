@@ -9,7 +9,7 @@
   <title>商品追加</title>
   <link rel="stylesheet" href="assets/css/admin.css">
   <script src="assets/js/humberger.js"></script>
-  <script src="assets/js/top-page.js" defer></script>
+  <!-- <script src="assets/js/top-page.js" defer></script> -->
   <script src="assets/js/header-anim.js"></script>
   <!-- <script src="assets/js/top-category.js"></script> -->
   <script src="assets/js/review-animation.js"></script>
@@ -455,7 +455,7 @@
 
     <!-- 検索フォーム -->
     <!-- 準備中と完了のタブ切り替え -->
-    <form class="new-search-form" action="get" href="Product">
+    <form class="new-search-form" action="#" href="post">
       <div class="ad-tab-switch">
         <a href="#">追加</a>
         <a href="#">編集</a>
@@ -484,23 +484,24 @@
       </div>
       <!-- 商品名 -->
       <p class="ad-product-name">商品名</p>
-      <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子">
+      <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子" name="productName">
       <!-- <div class="ad-new-product"> -->
       <!-- 値段 -->
       <div class="ad-value">
         <div class="ad-new-vaca">
           <p>値段</p>
-          <input type="number" class="ad-new-value" placeholder="例）3000">
+          <input type="number" class="ad-new-value" placeholder="例）3000" name="productValue">
         </div>
         <!-- 個数 -->
         <div class="ad-new-vaca">
           <p>個数</p>
-          <input type="number" class="ad-new-num" placeholder="例）50">
+          <input type="number" class="ad-new-num" placeholder="例）50" name="productStock">
         </div>
       </div>
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
-      <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力"></textarea>
+      <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
+      <button type="submit">追加</button>
     </form>
   </main>
 </body>

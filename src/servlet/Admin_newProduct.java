@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.AddproductDAO;
+
 /**
  * Servlet implementation class Admin_newProduct
  */
@@ -30,6 +32,23 @@ public class Admin_newProduct extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		AddproductDAO daoAdd = new AddproductDAO();
+		
+		String productName = request.getParameter("productName");
+//		String productName = "testdayo";
+		String productDetail = request.getParameter("productDetail");
+		int productValue = Integer.parseInt(request.getParameter("productValue"));
+		int productStock = Integer.parseInt(request.getParameter("productStock"));
+		
+		System.out.println("aaaa");
+		daoAdd.create(productName, productDetail, productValue, productStock);
+		
+//		ShopcartDAO dao = new ShopcartDAO();
+////		
+//		List<Item> list = dao.get();
+//		//Item item = dao.find(1);
+//		
+//		request.setAttribute("list", list);
 	}
 
 }
