@@ -712,10 +712,13 @@ footer a {
 ログイン画面
 
 */
+
+
+
 /* ログイン */
 .login-title {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 4vh;
 }
 
 /* ログイン全体 */
