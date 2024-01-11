@@ -63,6 +63,7 @@ public class  ItemDAO {
 			if (rs.next()) {
 				 item = rs2model(rs);
 				 
+				 
 				 System.out.println("true_find  " + item);
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
