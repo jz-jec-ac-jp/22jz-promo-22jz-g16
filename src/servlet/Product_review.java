@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ItemDAO;
+import model.Item;
+
 /**
  * Servlet implementation class Product_review
  */
@@ -21,7 +24,7 @@ public class Product_review extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		ItemDAO dao = new ItemDAO();
 		
 //		List<Item> list = dao.get();
@@ -31,7 +34,7 @@ public class Product_review extends HttpServlet {
 		
 //		request.setAttribute("list", list);
 		request.setAttribute("item", item);
-=======
+//=======
 //		ItemDAO dao = new ItemDAO();
 //		
 ////		List<Item> list = dao.get();
@@ -41,7 +44,7 @@ public class Product_review extends HttpServlet {
 //		
 ////		request.setAttribute("list", list);
 //		request.setAttribute("item", item);
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
+//>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_review.jsp");
 		dispatcher.forward(request, response);
