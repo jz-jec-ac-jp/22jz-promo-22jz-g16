@@ -20,7 +20,7 @@ public class FavoriteDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM favorit_table";
+			String sql = "SELECT * FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			
@@ -99,12 +99,14 @@ public class FavoriteDAO {
 	private  Item rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 		int id = rs.getInt("id");/* ⑨ */
-		String Purchase_history = rs.getString("Purchase_history");
-		String user_id = rs.getString("user_id");
+		String product_name = rs.getString("product_name");
+		String product_detail = rs.getString("product_detail");
+		int product_price = rs.getInt("product_price");
+		int product_stock = rs.getInt("product_stock");
 		Timestamp create_date = rs.getTimestamp("create_date");
 		Timestamp update_date = rs.getTimestamp("update_date");
 		
 		
-		return new Item(id, Purchase_history, user_id, create_date, update_date);
+		return new Item(id, product_name, product_detail, product_price, product_stock, create_date, update_date);
 	}
 }
