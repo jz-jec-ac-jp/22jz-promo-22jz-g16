@@ -57,11 +57,14 @@ public class Product_favorite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //		request.setCharacterEncoding("UTF-8");
-		ShopcartDAO dao = new ShopcartDAO();
+		ShopcartDAO daoShopCart = new ShopcartDAO();
 		
-		int productId=Integer.parseInt(request.getParameter("id"));
+//		System.out.println("aaaa");
+		int productId = Integer.parseInt(request.getParameter("id"));
+		int id = 1;
 		
-		dao.create(productId, 1);
+		daoShopCart.create(productId, id);
+		
 		
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -111,29 +111,30 @@
 
             <!-- </li> -->
             <!-- 商品データ -->
-          <form action="#" method="post">
           
             <c:forEach var="item" items="${list }">
-            <a href="Product_favorite?id=${ item.id }">
-            <section class="history-list">
-                <div class="history-title">
-                    <h1 class="ad-productname">${ item.product_name }</h1>
-                    <p class="evaluation">☆☆☆☆☆</p>
-                </div>
-                <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
-                    <div class="q">
-                        <p class="ad-product-man"><br>色：白<br>サイズ：</p>
-                        <p class="value">${ item.product_price}(税込)</p>
-                        <!--カートに入れる-->
-                        <input class="confirm" type="submit" value="カートに入れる"></input>
-                    </div>
-                </div>
-            </section>
-            </a>
+	          <form action="#" method="post">
+              <a href="Product_detail?id=${ item.id }">
+              <input type = "hidden" name = "id" value = "${ item.id }">
+	            <section class="history-list">
+	                <div class="history-title">
+	                    <h1 class="ad-productname">${ item.product_name }</h1>
+	                    <p class="evaluation">☆☆☆☆☆</p>
+	                </div>
+	                <div class="ad-product-man">
+	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+	                    <div class="q">
+	                        <p class="ad-product-man"><br>色：白<br>サイズ：</p>
+	                        <p class="value">${ item.product_price}(税込)</p>
+	                        <!--カートに入れる-->
+	                        <input class="confirm" type="submit" value="カートに入れる"></input>
+	                    </div>
+	                </div>
+	            </section>
+              </a>
+	          </form>
             </c:forEach>
             
-          </form>
             
             
             <!--    

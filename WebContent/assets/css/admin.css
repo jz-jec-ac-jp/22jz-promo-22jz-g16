@@ -321,14 +321,15 @@ header {
     width: 390px;
     height: 844px;
     /* border: solid 5px #00A692; */
-    border: solid 4px #362918;
+    border: solid 5px #362918;
+/*    border-bottom: solid 10px #FFF;*/
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: auto;
 
-    
+/*    margin-bottom: 100px;*/
 }
 
 .ad-product-review .product-img {
@@ -367,6 +368,8 @@ header {
     background: #fff;
     z-index: 1000;
 }
+
+
 
 .user-header,
 .user-footer {
@@ -546,6 +549,11 @@ header {
     padding: 10px 10px 3px 20px;
 }
 
+.user-main a {
+	color: #000;
+}
+
+
 .user-header .shop-logo p {
     font-size: 2.2rem;
     font-weight: bold;
@@ -610,7 +618,7 @@ header {
 .header-anim .search-icon {
     position: absolute;
     /* margin-left: 30%; */
-    left: -40px;
+    left: 0;
     min-width: 20px;
     /* width: 10%; */
 }
@@ -633,6 +641,8 @@ header {
 .category-list-line {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    margin-left: -15px;
     /* height: 80%; */
 }
 
@@ -640,6 +650,15 @@ header {
     height: 100px;
     width: 100px;
     border-radius: 0;
+    margin: 0 5px
+}
+
+.category-list p {
+	color: #000;
+}
+
+.category-list-line .category-item p {
+    color: #000;
 }
 
 .nav ul {
@@ -876,9 +895,9 @@ header {
 .user-header .search-icon {
     position: absolute;
     display: block;
-    left: -10px;
+    left: -35px;
     border: none;
-    width: 20%;
+    width: 15%;
 }
 
 .user-header .search-form {

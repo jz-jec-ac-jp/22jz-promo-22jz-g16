@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/admin.css">
   <script src="assets/js/humberger.js"></script>
   <!-- <script src="assets/js/top-page.js" defer></script> -->
-  <script src="assets/js/header-anim.js"></script>
+  <!-- <script src="assets/js/header-anim.js"></script> -->
   <!-- <script src="assets/js/top-category.js"></script> -->
   <script src="assets/js/review-animation.js"></script>
 
