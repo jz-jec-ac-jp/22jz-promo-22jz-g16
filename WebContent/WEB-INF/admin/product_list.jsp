@@ -40,6 +40,7 @@
       <!-- 注文データ一覧 -->
       
    <!-- DB接続テスト -->
+   <!-- 
    <c:forEach var="item" items="${ list }">
 
 	  <a href="Product_detail?id=${ item.id }">
@@ -51,13 +52,14 @@
 	        <p class="price">値段:${ item.product_price }(税込)</p>
        </div>
 	  </a>
-    </c:forEach>  
+    </c:forEach> -->  
     <!-- --------------  -->
     
+    <c:forEach var="item" items="${ list }">
       <li class="ad-order-list">
         <div class="ad-product-man">
           <img class="ad-productimg" src="assets/img/adlogin_shopping.png" alt="">
-          <p class="ad-product-name">題名：モノトーン椅子<br>色：black　　個数：１ </p>
+          <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>
         </div>
         <div class="ad-product-del">
           <p>配送日時<br>2023/05/02</p>
@@ -71,9 +73,10 @@
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">
           <p>出荷準備中</p>
-          <p>在庫数：１</p>
+          <p>在庫数：${ item.product_stock }</p>
         </div>
-      </li>
+       </li>
+      </c:forEach>  
     </ul>
   </main>
 </body>

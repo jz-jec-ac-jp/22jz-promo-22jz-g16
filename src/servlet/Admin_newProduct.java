@@ -32,6 +32,7 @@ public class Admin_newProduct extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
 		AddproductDAO daoAdd = new AddproductDAO();
 		
 		String productName = request.getParameter("productName");
@@ -40,7 +41,7 @@ public class Admin_newProduct extends HttpServlet {
 		int productValue = Integer.parseInt(request.getParameter("productValue"));
 		int productStock = Integer.parseInt(request.getParameter("productStock"));
 		
-		System.out.println("aaaa");
+		System.out.println("admin_newProduct doPost");
 		daoAdd.create(productName, productDetail, productValue, productStock);
 		
 //		ShopcartDAO dao = new ShopcartDAO();
@@ -49,6 +50,7 @@ public class Admin_newProduct extends HttpServlet {
 //		//Item item = dao.find(1);
 //		
 //		request.setAttribute("list", list);
+		doGet(request, response);
 	}
 
 }
