@@ -7,6 +7,7 @@ public class ProductColor implements Serializable {
 	private int id, product_id;
 	private String purchase_color;
 	private Timestamp  create_date, update_date;
+	
 	public int getId() {
 		return id;
 	}
