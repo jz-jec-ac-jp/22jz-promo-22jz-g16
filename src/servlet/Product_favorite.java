@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ItemDAO;
+import dao.FavoriteDAO;
+import dao.ShopcartDAO;
 import model.Item;
 
 /**
@@ -24,7 +25,7 @@ public class Product_favorite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-ItemDAO dao = new ItemDAO();
+		FavoriteDAO dao = new FavoriteDAO();
 		
 		List<Item> list = dao.get();
 		//Item item = dao.find(1);
@@ -54,6 +55,14 @@ ItemDAO dao = new ItemDAO();
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+//		request.setCharacterEncoding("UTF-8");
+		ShopcartDAO dao = new ShopcartDAO();
+		
+		int productId=Integer.parseInt(request.getParameter("id"));
+		
+		dao.create(productId, 1);
+		
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

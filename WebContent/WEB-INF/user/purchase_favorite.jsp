@@ -18,7 +18,7 @@
 
 <body>
     <!-- header -->
-    <header>
+    <header class="header">
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -111,9 +111,10 @@
 
             <!-- </li> -->
             <!-- 商品データ -->
-           
-            <c:forEach var="Item" items="${list }">
-            <a href="Product_shopcart?id=${ item.id }">
+          <form action="#" method="post">
+          
+            <c:forEach var="item" items="${list }">
+            <a href="Product_favorite?id=${ item.id }">
             <section class="history-list">
                 <div class="history-title">
                     <h1 class="ad-productname">${ item.product_name }</h1>
@@ -125,12 +126,14 @@
                         <p class="ad-product-man"><br>色：白<br>サイズ：</p>
                         <p class="value">${ item.product_price}(税込)</p>
                         <!--カートに入れる-->
-                        <form class="search-form" action="get" href="#">
                         <input class="confirm" type="submit" value="カートに入れる"></input>
                     </div>
                 </div>
             </section>
+            </a>
             </c:forEach>
+            
+          </form>
             
             
             <!--    

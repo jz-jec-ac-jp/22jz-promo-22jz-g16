@@ -33,14 +33,14 @@ public class Product_shopcart extends HttpServlet {
 		
 		//request.setAttribute("item", item);
 		
-		ShopcartDAO dao_shop = new ShopcartDAO();
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		dao_shop.create(id, 1);
-		
-		ShopcartDAO dao = new ShopcartDAO();
+//		ShopcartDAO dao_shop = new ShopcartDAO();
 //		
+//		int id = Integer.parseInt(request.getParameter("id"));
+//		
+//		dao_shop.create(id, 1);
+//		
+		ShopcartDAO dao = new ShopcartDAO();
+		
 		List<Item> list = dao.get();
 		//Item item = dao.find(1);
 		

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +74,52 @@ public class FavoriteDAO {
 		}
 		
 		return   item;
+	}
+	
+	
+	public boolean create(String product_name, String product_detail, int product_price, int product_stock) {
+	    int ret = -1;
+	    
+//	    // ①データの存在確認
+//	    LicenseDAO licDAO = new LicenseDAO();
+//	    if (licDAO.find(license_id) == null) {
+//	        System.out.println("購入履歴追加失敗。ライセンスが見つかりませんでした");
+//	        return false;
+//	    }
+//	    UserDAO userDAO = new UserDAO();
+//	    if (userDAO.find(user_id) == null) {
+//	        System.out.println("購入履歴追加失敗。ユーザが見つかりませんでした");
+//	        return false;
+//	    }
+	    
+	    // ②DBにデータを追加
+	    DBManager manager = DBManager.getInstance();
+	    try(Connection cn = manager.getConnection()) {
+	        // プレースホルダで変数部分を定義
+	        String sql = "INSERT INTO item_table (product_name, product_detail, product_price, product_stock, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?)";
+	        PreparedStatement stmt = cn.prepareStatement(sql);
+	        stmt.setString(1, product_name);
+	        stmt.setString(2, product_detail);
+	        stmt.setInt(3, product_price);
+	        stmt.setInt(4, product_stock);
+	        stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
+	        stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
+	        
+	        ret = stmt.executeUpdate();
+	        System.out.println(ret);
+	        
+			 System.out.println("true_find  " );
+			 System.out.println("true_get()  ");
+			 System.out.println("true_Name()  ");
+	        
+	    } catch(SQLException e) {
+	        e.printStackTrace();
+	        System.out.println("データ追加エラー " + e);
+	    }
+
+	    
+	    return ret >= 0;
+	    
 	}
 
 	  /**
