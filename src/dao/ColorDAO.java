@@ -66,6 +66,7 @@ public class ColorDAO {
 		Timestamp update_date = rs.getTimestamp("update_time");
 		
 		
+		
 		return new ProductColor(id, product_id, purchase_color, create_date, update_date);
 	
 	}
