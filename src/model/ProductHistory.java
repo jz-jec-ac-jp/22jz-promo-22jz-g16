@@ -63,6 +63,7 @@ public class ProductHistory implements Serializable{
 		this.update_date = update_date;
 	}
 	
+	public ProductHistory() {}
 	
 	public ProductHistory(int id, int user_id, int pay_method, Timestamp purchase_date, int card_id,
 		String delivery_status, Timestamp create_date, Timestamp update_date) {
