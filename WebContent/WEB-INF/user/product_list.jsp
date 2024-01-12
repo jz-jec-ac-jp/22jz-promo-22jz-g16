@@ -216,6 +216,7 @@
 	        </figure>
 	        <p class="ad-productname">${ item.product_name }</p>
 	        <p class="price">値段:${ item.product_price }(税込)</p>
+	        <p>色:${ item.colorTexts }</p>
       </div>
 	 </a>
 

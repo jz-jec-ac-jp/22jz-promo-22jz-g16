@@ -28,6 +28,7 @@ public class  ItemDAO {
 			// データをリストに格納
 			while(rs.next()) {
 				Item  item = rs2model(rs);
+				setColor(item);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
@@ -43,6 +44,18 @@ public class  ItemDAO {
 		return list;
 	}
 
+//	public void setColor(Item item) {
+//		ColorDAO dao = new ColorDAO();
+//		List<Item> colors = dao.find(item.getId());
+//		
+//		item.setColorTexts(colors);
+//	}
+	
+	public void setColor(Item item) {
+		ColorDAO dao = new ColorDAO();
+		Item color = dao.find(item.getId());
+		item.setColorText(color);
+	}
 	
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド

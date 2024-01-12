@@ -8,6 +8,10 @@ public class Item implements Serializable {
 	private String product_name, product_detail;
 	private Timestamp  create_date, update_date;
 	
+	//カラーテーブル用
+//	List<Item> colorTexts;
+	Item colorText;
+	
 	public int getId() {
 		return id;
 	}
@@ -51,6 +55,14 @@ public class Item implements Serializable {
 		this.update_date = update_date;
 	}
 	
+	//カラーテーブル用
+//	public void setColorTexts(List<Item> colorTexts) {
+//		this.colorTexts = colorTexts;
+//	}
+	
+	public void setColorText(Item color) {
+		this.colorText = color;
+	}
 	
 	public Item() {}
 	
@@ -65,6 +77,9 @@ public class Item implements Serializable {
 		this.create_date = create_date;
 		this.update_date = update_date;
 	}
+
+
+
 	
 	
 }

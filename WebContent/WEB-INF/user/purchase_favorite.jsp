@@ -124,7 +124,7 @@
 	                <div class="ad-product-man">
 	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 	                    <div class="q">
-	                        <p class="ad-product-man"><br>色：白<br>サイズ：</p>
+	                        <p class="ad-product-man"><br>色：${ item.colorTexts[0] }<br>サイズ：</p>
 	                        <p class="value">${ item.product_price}(税込)</p>
 	                        <!--カートに入れる-->
 	                        <input class="confirm" type="submit" value="カートに入れる"></input>
