@@ -20,7 +20,7 @@ public class FavoriteDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id";
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			
