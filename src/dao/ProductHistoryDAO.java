@@ -20,12 +20,18 @@ public class ProductHistoryDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM item_table";
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id";
+			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			
+//			System.out.println("whileの前");
+//			System.out.println(stmt);
+//			System.out.println(rs.next());
+			
 			// データをリストに格納
 			while(rs.next()) {
+//				System.out.println("whileの後");
 				Item  item = rs2model(rs);
 				list.add( item);
 				
@@ -105,7 +111,7 @@ public class ProductHistoryDAO {
 		int product_stock = rs.getInt("product_stock");
 		Timestamp create_date = rs.getTimestamp("create_date");
 		Timestamp update_date = rs.getTimestamp("update_date");
-		
+
 		
 		return new  Item(id, product_name, product_detail, product_price, product_stock, create_date, update_date);
 	}

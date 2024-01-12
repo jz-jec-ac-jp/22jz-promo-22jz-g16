@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ItemDAO;
+import dao.ProductHistoryDAO;
 import model.Item;
 
 /**
@@ -25,10 +25,12 @@ public class Admin_productList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ItemDAO dao = new ItemDAO();
+		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 		
-		List<Item> list = dao.get();
+		List<Item> list = daoHistory.get();
 		//Item item = dao.find(1);
+		System.out.println("Admin_productList servlet");
+		System.out.println(list);
 		
 		request.setAttribute("list", list);
 		
