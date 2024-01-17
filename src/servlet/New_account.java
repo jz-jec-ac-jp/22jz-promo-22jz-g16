@@ -25,7 +25,7 @@ public class New_account extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/new_account.jsp");
 		dispatcher.forward(request, response);
 	
-		
+		System.out.println("new_account get");
 	}
 
 	/**
@@ -50,8 +50,6 @@ public class New_account extends HttpServlet {
 					request.setAttribute("msg", "ユーザの追加に失敗しました");
 					doGet(request, response);
 				}
-			
-
 	}
 
 }
