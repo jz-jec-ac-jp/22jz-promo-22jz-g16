@@ -23,10 +23,12 @@ public class AuthLogic {
 		UserDAO dao = new UserDAO();
 		ProductUser user = dao.findByEmail(mail_adrres);
 		
+		System.out.println("login authlogic " + user + "mailAdress " + mail_adrres);
 		if ((user != null) && (BCrypt.checkpw(us_password,user.getUs_pasward()))) {
 			return user;
 		}
 		
+//		return user;
 		return null;
 	}
 	

@@ -33,6 +33,7 @@ public class New_account extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// ユーザを新規登録
+		request.setCharacterEncoding("UTF-8");
 		System.out.println("new_account post");
 				UserDAO dao = new UserDAO();
 				
@@ -45,7 +46,7 @@ public class New_account extends HttpServlet {
 					// ログインしてトップページ（今回はVoD一覧）へリダイレクト
 					HttpSession session = request.getSession();
 					session.setAttribute("loginUser", user);
-					response.sendRedirect("Inair/Product_top");
+					response.sendRedirect("Product_top");
 				} else {
 					// エラー時はエラーメッセージを追加し自分へ戻る
 					request.setAttribute("msg", "ユーザの追加に失敗しました");

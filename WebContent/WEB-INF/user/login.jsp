@@ -120,7 +120,13 @@
         <h1 class="login-title">ログイン</h1>
         <div class="login">
             <!-- ログインフォーム -->
-            <form class="login-form" action="#" method="get" onsubmit="return check();">
+            
+            <c:if test="${not empty msg}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p>${msg}</p>
+	        </c:if>
+            
+            <form class="login-form" action="#" method="post" ><!-- onsubmit="return check();" -->
             <div class="err-message">            
                 <!-- ログインID入力 -->
                 <h2 class="login-id">ログインID  </h2>

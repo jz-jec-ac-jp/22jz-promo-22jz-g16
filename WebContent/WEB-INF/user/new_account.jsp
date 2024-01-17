@@ -120,6 +120,10 @@
 
 
             <form class="newaccount-form" action="#" method="post"> <!--  onsubmit="return check();" -->
+	            <c:if test="${not empty msg}">
+		            <%-- メッセージが存在するときのみ表示 --%>
+		            <p class="error-message">${msg}</p>
+	            </c:if>
                 <!--氏名-->
                 <h2 class="us-login-id">氏名*</h2>
                 <!--姓（カナ）名前（かな）-->
