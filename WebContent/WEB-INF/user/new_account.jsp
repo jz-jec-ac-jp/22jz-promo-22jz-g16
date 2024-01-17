@@ -113,6 +113,7 @@
                 <li>新規会員登録</li>
             </ol>
         </nav>
+        
         <h1 class="new-account-title">新規会員登録</h1>
         <div class="new-account">
             <!--新規会員登録フォーム-->
