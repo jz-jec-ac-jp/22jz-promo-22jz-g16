@@ -22,7 +22,7 @@ public class UserDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM users_table";
+			String sql = "SELECT * FROM user_table";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 
@@ -74,7 +74,7 @@ public class UserDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "SELECT * FROM users_table WHERE email = ?";
+			String sql = "SELECT * FROM user_table WHERE mail_adress = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, email);
 			ResultSet rs = stmt.executeQuery();
@@ -82,9 +82,11 @@ public class UserDAO {
 			// データをリストに格納
 			if (rs.next()) {
 				user = rs2model(rs);
+				System.out.println("user.next");
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
+			System.out.println("user.error " + e);
 		}
 		
 		return  user;
@@ -96,13 +98,14 @@ public class UserDAO {
 	 */
 	public ProductUser create(String mail_adress, String us_password) {
 		int ret = -1;
+		System.out.println("datacreate");
 		
 		// 重複確認
 		if (findByEmail(mail_adress) != null) {
 			System.out.println("該当ユーザは既に存在しています");
 			return null;
 		}
-		
+		System.out.println("datacreate find");
 		// DBにデータを追加
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
@@ -111,7 +114,7 @@ public class UserDAO {
 			String hashed = BCrypt.hashpw(us_password,BCrypt.gensalt());
 			
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+			String sql = "INSERT INTO user_table (mail_adress, us_pasward) VALUES (?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, mail_adress);
 			stmt.setString(2, hashed);

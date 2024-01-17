@@ -36,10 +36,11 @@ public class New_account extends HttpServlet {
 		System.out.println("new_account post");
 				UserDAO dao = new UserDAO();
 				
-				String mail_adress = request.getParameter("mail_adress");
-				String us_pasword = request.getParameter("us_pasword");
+				String mail_adress = request.getParameter("login-id");
+				String us_pasword = request.getParameter("password-txt");
 				
 				ProductUser user = dao.create(mail_adress, us_pasword);
+				System.out.println("usercreate");
 				if (user != null) {
 					// ログインしてトップページ（今回はVoD一覧）へリダイレクト
 					HttpSession session = request.getSession();
