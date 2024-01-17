@@ -1,13 +1,13 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class ProductUser implements Serializable{
 
 	private int id;
 	private String name_kanji, name_kana, mail_adress, us_pasward , us_adress, tel_number, us_prefectur, street_address;
-	private Timestamp  create_date, update_date;
+	private LocalDateTime  create_date, update_date;
 	public int getId() {
 		return id;
 	}
@@ -62,25 +62,25 @@ public class ProductUser implements Serializable{
 	public void setStreet_address(String street_address) {
 		this.street_address = street_address;
 	}
-	public Timestamp getCreate_date() {
+	public LocalDateTime getCreate_date() {
 		return create_date;
 	}
-	public void setCreate_date(Timestamp create_date) {
+	public void setCreate_date(LocalDateTime create_date) {
 		this.create_date = create_date;
 	}
-	public Timestamp getUpdate_date() {
+	public LocalDateTime getUpdate_date() {
 		return update_date;
 	}
-	public void setUpdate_date(Timestamp update_date) {
+	public void setUpdate_date(LocalDateTime update_date) {
 		this.update_date = update_date;
 	}
 	
 	public ProductUser() {}
 	
 	public ProductUser(int id, String name_kanji, String name_kana, String mail_adress, String us_pasward,
-			String us_adress, String tel_number, String us_prefectur, String street_address, Timestamp create_date,
-			Timestamp update_date) {
-		super();
+			String us_adress, String tel_number, String us_prefectur, String street_address, LocalDateTime create_date,
+			LocalDateTime update_date) {
+		
 		this.id = id;
 		this.name_kanji = name_kanji;
 		this.name_kana = name_kana;

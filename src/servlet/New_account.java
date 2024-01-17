@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.UserDAO;
+import model.ProductUser;
 
 /**
  * Servlet implementation class New_account
@@ -28,8 +32,26 @@ public class New_account extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
+		// ユーザを新規登録
+		System.out.println("new_account post");
+				UserDAO dao = new UserDAO();
+				
+				String mail_adress = request.getParameter("mail_adress");
+				String us_pasword = request.getParameter("us_pasword");
+				
+				ProductUser user = dao.create(mail_adress, us_pasword);
+				if (user != null) {
+					// ログインしてトップページ（今回はVoD一覧）へリダイレクト
+					HttpSession session = request.getSession();
+					session.setAttribute("loginUser", user);
+					response.sendRedirect("Inair/Product_top");
+				} else {
+					// エラー時はエラーメッセージを追加し自分へ戻る
+					request.setAttribute("msg", "ユーザの追加に失敗しました");
+					doGet(request, response);
+				}
+			
+
 	}
 
 }

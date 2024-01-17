@@ -118,7 +118,7 @@
             <!--新規会員登録フォーム-->
 
 
-            <form class="newaccount-form" action="#" method="get" onsubmit="return check();">
+            <form class="newaccount-form" action="#" method="post" onsubmit="return check();">
                 <!--氏名-->
                 <h2 class="us-login-id">氏名*</h2>
                 <!--姓（カナ）名前（かな）-->
@@ -224,6 +224,7 @@
 
                 <!--確定ボタン-->
                 <input class="confirm-button" type="submit" value="確定">
+                <button type="submit">確定</button>
 
             </form>
         </div>
