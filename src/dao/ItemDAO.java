@@ -10,6 +10,7 @@ import java.util.List;
 
 //import model.License;
 import model. Item;
+import model.ProductColor;
 
 public class  ItemDAO {
 	/**
@@ -35,6 +36,7 @@ public class  ItemDAO {
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
+				System.out.println("true_color()  " + item.getColorTexts());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -53,8 +55,8 @@ public class  ItemDAO {
 	
 	public void setColor(Item item) {
 		ColorDAO dao = new ColorDAO();
-		Item color = dao.find(item.getId());
-		item.setColorText(color);
+		List<ProductColor> color = dao.find(item.getId());
+		item.setColorTexts(color);
 	}
 	
 	/**

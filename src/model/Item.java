@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Item implements Serializable {
 	private int id, product_price, product_stock;
@@ -9,8 +10,8 @@ public class Item implements Serializable {
 	private Timestamp  create_date, update_date;
 	
 	//カラーテーブル用
-//	List<Item> colorTexts;
-	Item colorText;
+	List<ProductColor> colorTexts;
+//	Item colorText;
 	
 	public int getId() {
 		return id;
@@ -56,14 +57,17 @@ public class Item implements Serializable {
 	}
 	
 	//カラーテーブル用
-//	public void setColorTexts(List<Item> colorTexts) {
-//		this.colorTexts = colorTexts;
-//	}
-	
-	public void setColorText(Item color) {
-		this.colorText = color;
+	public List<ProductColor> getColorTexts() {
+		return colorTexts;
 	}
 	
+	public void setColorTexts(List<ProductColor> colorTexts) {
+		this.colorTexts = colorTexts;
+	}
+
+	
+
+
 	public Item() {}
 	
 	// 画像のリストを持てるようにする　変数追加　追加用のセッター(addImage)

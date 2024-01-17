@@ -198,30 +198,23 @@
         </div>
       </div>
     </div>
+    
     <div class="a">
-
-    
-    <c:forEach var="item" items="${ list }">
-    
-      <div class="goods-item">
-      <a href="Product_detail?id=${item.id }">
-      
-
-   <c:forEach var="item" items="${ list }">
-
-	  <a href="Product_detail?id=${ item.id }">
-	   <div class="goods-item">
-	        <figure>
-	          <img class="p" src="assets/img/key-visuals.png" alt="">
-	        </figure>
-	        <p class="ad-productname">${ item.product_name }</p>
-	        <p class="price">値段:${ item.product_price }(税込)</p>
-	        <p>色:${ item.colorTexts }</p>
-      </div>
-	 </a>
-
-    </c:forEach>  
-
+	   <c:forEach var="item" items="${ list }">
+	
+		  <a href="Product_detail?id=${ item.id }">
+		   <div class="goods-item">
+		        <figure>
+		          <img class="p" src="assets/img/key-visuals.png" alt="">
+		        </figure>
+		        <p class="ad-productname">${ item.product_name }</p>
+		        <p class="price">値段:${ item.product_price }(税込)</p>
+		        <p>色:${ item.getColorTexts() }</p>
+	      </div>
+		 </a>
+	
+	    </c:forEach>  
+	</div>
     <%--      <div class="goods-item">
 >>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
         <figure>
@@ -284,8 +277,7 @@
     </div>
     --%>
 
-	 </div> 
-  </c:forEach>
+
     
 
     <!--ページネーション-->
