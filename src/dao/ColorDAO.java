@@ -18,7 +18,7 @@ public class ColorDAO {
         
         DBManager manager = DBManager.getInstance();
         try(Connection cn = manager.getConnection()) {
-        String sql = "SELECT * FROM color_table WHERE id = ?";
+        String sql = "SELECT * FROM color_table WHERE product_id = ?";
         PreparedStatement stmt = cn.prepareStatement(sql);
 //        一行入れる
         stmt.setInt(1, colorId);
@@ -32,7 +32,7 @@ public class ColorDAO {
             	ProductColor itemColor = rs2model(rs);
                 list.add(itemColor);
 //                setColor(itemColor);
-                System.out.println("color_next()");
+                System.out.println("color_next");
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -65,9 +65,9 @@ public class ColorDAO {
 //		
 		int id = rs.getInt("id");
 		int product_id = rs.getInt("product_id");
-		String purchase_color = rs.getString("product_name");
+		String purchase_color = rs.getString("purchase_color");
 		Timestamp create_date = rs.getTimestamp("create_date");
-		Timestamp update_date = rs.getTimestamp("update_time");
+		Timestamp update_date = rs.getTimestamp("update_date");
 		
 		System.out.println("rs2model");
 		
