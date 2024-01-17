@@ -74,7 +74,7 @@ public class UserDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "SELECT * FROM users WHERE email = ?";
+			String sql = "SELECT * FROM users_table WHERE email = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, email);
 			ResultSet rs = stmt.executeQuery();
@@ -94,11 +94,11 @@ public class UserDAO {
 	 * DBにデータを追加する
 	 * @return 成功時は追加したデータ、失敗時はnull
 	 */
-	public ProductUser create(String email, String password) {
+	public ProductUser create(String mail_adress, String us_password) {
 		int ret = -1;
 		
 		// 重複確認
-		if (findByEmail(email) != null) {
+		if (findByEmail(mail_adress) != null) {
 			System.out.println("該当ユーザは既に存在しています");
 			return null;
 		}
@@ -108,12 +108,12 @@ public class UserDAO {
 		try(Connection cn = manager.getConnection()) {
 			// パスワードをハッシュ化
 			/* ***************************** */
-			String hashed = BCrypt.hashpw(password,BCrypt.gensalt());
+			String hashed = BCrypt.hashpw(us_password,BCrypt.gensalt());
 			
 			// プレースホルダで変数部分を定義
 			String sql = "INSERT INTO users (email, password) VALUES (?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setString(1, email);
+			stmt.setString(1, mail_adress);
 			stmt.setString(2, hashed);
 			
 			ret = stmt.executeUpdate();
@@ -123,7 +123,7 @@ public class UserDAO {
 		}
 		
 		if (ret >= 0) {
-			return findByEmail(email);
+			return findByEmail(mail_adress);
 		}
 		return null;
 	}
