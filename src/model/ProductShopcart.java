@@ -41,7 +41,6 @@ public class ProductShopcart implements Serializable{
 	public ProductShopcart() {}
 	
 	public ProductShopcart(int id, int product_id, int user_id, Timestamp create_date, Timestamp update_date) {
-		super();
 		this.id = id;
 		this.product_id = product_id;
 		this.user_id = user_id;

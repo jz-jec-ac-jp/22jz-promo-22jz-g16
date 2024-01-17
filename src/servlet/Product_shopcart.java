@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ShopcartDAO;
-import model.Item;
+import model.ProductShopcart;
 
 /**
  * Servlet implementation class Product_shopcart
@@ -41,7 +41,7 @@ public class Product_shopcart extends HttpServlet {
 //		
 		ShopcartDAO dao = new ShopcartDAO();
 		
-		List<Item> list = dao.get();
+		List<ProductShopcart> list = dao.get();
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);
@@ -50,6 +50,9 @@ public class Product_shopcart extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
 		dispatcher.forward(request, response);
+		
+		// 実際には、ここでDAO使って商品情報を取得
+		
 	}
 	
 
@@ -57,8 +60,30 @@ public class Product_shopcart extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		// カートに入れる処理
+		
+				// 商品ID、ユーザIDを取得
+				// できるならちゃんとエラーチェック
+//				ItemDAO itemDAO = new ItemDAO();
+//				if (itemDAO.find(ph.getLicense().getId()) == null) {
+//					request.setAttribute("message", "商品の追加に失敗しました。対象の商品が見つかりません。");
+//					doGet(request, response);
+//					return;
+//				}
+				
+				int Product_id = Integer.parseInt(request.getParameter("Product_id"));
+				int userId = 1;		// ログイン実装してないのでユーザは1番固定
+//				int userId = (User)(request.getSession().getAttribute("user")).getId();
+				
+				// CartDAOを用意してDBに登録
+				ShopcartDAO dao = new ShopcartDAO();
+				dao.create(itemId, userId);
+				
+				// リクエストスコープにメッセージを保存
+				request.setAttribute("message", "カートに商品を追加しました。");
+				
+				// 自分を再表示
+				doGet(request, response);
+			}
 
-}
+	}
