@@ -26,14 +26,16 @@ public class Product_login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// すでにログイン済みならビデオ一覧へリダイレクト
-//		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
-//		if (loginUser != null) {
-//			System.out.println("login済み get");
-//			response.sendRedirect("Product_top");
-//		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/login.jsp");
-		dispatcher.forward(request, response);
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		if (loginUser != null) {
+			System.out.println("login済み get");
+			response.sendRedirect("Product_top");
+		}
+		else {
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/login.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**

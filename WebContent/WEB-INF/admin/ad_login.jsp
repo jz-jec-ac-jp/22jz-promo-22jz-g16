@@ -13,17 +13,27 @@
     <main>
         <!-- ログイン -->
         <h1 class="admin-login">ログイン</h1>
+        <p>ad@ad, ad</p>
+        
         <div class="ad-login">
-            <form class="ad-login-form" action="#" method="get">
+	        <c:if test="${not empty msg}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p>${msg}</p>
+	        </c:if>
+            <form class="ad-login-form" action="#" method="post">
                 <!-- ログインID入力 -->
                 <h2 class="ad-login-id">ログインID</h2>
-                <input class="ad-id-txt" type="text" name="ad-login-id">
+                <input class="ad-id-txt" type="text" name="ad-login-id"> <!-- name="ad-login-id"  -->
                 <!-- パスワード入力 -->
                 <h2 class="ad-login-password">パスワード</h2>
-                <input class="ad-password-txt" type="text" name="ad-password-txt">
+                <input class="ad-password-txt" type="text" name="ad-password-txt"> <!-- name="ad-password-txt" -->
                 <!-- ログインボタン -->
+                
+                <!-- <input class="login-button" type="button" value="ログイン"> 
                 <input type="submit" class="ad-login-button" value="ログイン" />
-                <!-- <input class="login-button" type="button" value="ログイン"> -->
+                -->
+                
+                <button class="login-button" type="submit">ログイン</button>
             </form>
         </div>
     </main>
