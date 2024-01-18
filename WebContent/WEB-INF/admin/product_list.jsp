@@ -31,14 +31,16 @@
   </header>
 
   <main>
+  
     <ul class="ad-ul-main">
-      <!-- 準備中と完了のタブ切り替え -->
-      <div class="ad-tab-switch">
-        <a href="#">準備中</a>
-        <a href="#">完了</a>
-      </div>
-      <!-- 注文データ一覧 -->
-      
+  		<form  action="#" method="post" ><!-- onsubmit="return check();" -->
+	      <!-- 準備中と完了のタブ切り替え -->
+	      <div class="ad-tab-switch">
+	        <option type="submit" href="#">準備中</option>
+	        <option type="submit" href="#">完了</option>
+	      </div>
+	      <!-- 注文データ一覧 -->
+      	</form>
    <!-- DB接続テスト -->
    <!-- 
    <c:forEach var="item" items="${ list }">
@@ -72,7 +74,30 @@
         </div>
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">
-          <p>出荷準備中</p>
+          <!--  <p>出荷準備中</p> -->
+         
+          
+         <!--  <h2 class="payment-method">支払方法*</h2> -->
+           <!-- <input class="select-input-btn" type="button" onclick="check_select()"> -->
+           
+           <form action="#" method="post" ><!-- onsubmit="return check();" -->
+               <!-- 
+               <select class="paymethood-pulldown text-input-select" name="paymethood-box">
+                   <option value="">お選びください</option>
+                   <option value="準備中">準備中<input type="hidden" name="credit"></option>
+                   <option value="発送済み">発送済み<input type="hidden" name="cache"></option>
+               </select>
+                -->
+               
+               <input type="radio" name="preparation">準備中
+               <input type="radio" name="completion">完了
+               
+               <button type="submit">確定</button>
+            </form>
+           <!-- </input> -->
+           <!-- <p class="error-message-select">※入力してください</p> -->
+         
+          
           <p>在庫数：${ item.product_stock }</p>
         </div>
        </li>
