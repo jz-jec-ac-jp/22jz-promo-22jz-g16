@@ -10,7 +10,6 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
-import model.ProductShopcart;
 
 public class ShopcartDAO {
 	/**
@@ -56,8 +55,8 @@ public class ShopcartDAO {
 	 * @param id 主キーの値
 	 * @return 発見したカートデータ。なければnull
 	 */
-	public ProductShopcart find(int id) {
-		ProductShopcart cart = null;
+	public Item find(int id) {
+		Item cart = null;
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義

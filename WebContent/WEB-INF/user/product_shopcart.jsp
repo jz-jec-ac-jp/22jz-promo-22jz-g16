@@ -146,8 +146,11 @@
       </a>
       </c:forEach>
       
-
-      
+	<div class="product-button">
+                <input class="return-btn" type="submit" value="戻る">
+      			<a href="Product_purchase?id=${ item.id }" class="cart-btn">確認画面へ進む</a>
+                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
+            </div>
 
 
       <!--確定ボタン-->
