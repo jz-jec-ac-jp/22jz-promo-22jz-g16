@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Item;
+import model.ProductColor;
 
 public class ProductHistoryDAO {
 	/**
@@ -33,6 +34,7 @@ public class ProductHistoryDAO {
 			while(rs.next()) {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
+				setColor(item);
 				list.add( item);
 				
 				
@@ -40,6 +42,7 @@ public class ProductHistoryDAO {
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
+				System.out.println("true_color()  " + item.getColorTexts());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -49,6 +52,11 @@ public class ProductHistoryDAO {
 		return list;
 	}
 
+	public void setColor(Item item) {
+		ColorDAO dao = new ColorDAO();
+		List<ProductColor> color = dao.find(item.getId());
+		item.setColorTexts(color);
+	}
 	
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド

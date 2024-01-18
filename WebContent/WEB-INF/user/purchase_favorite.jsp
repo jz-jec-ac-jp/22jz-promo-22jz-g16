@@ -124,8 +124,17 @@
 	                <div class="ad-product-man">
 	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 	                    <div class="q">
-	                        <p class="ad-product-man"><br>色：${ item.colorTexts[0] }<br>サイズ：</p>
-	                        <p class="value">${ item.product_price}(税込)</p>
+	                        <p class="ad-product-man">
+	                        
+	                            <c:forEach var="color" items="${ item.colorTexts }">
+			                       <p>${ color.purchase_color}</p>
+			                    </c:forEach>
+		                        <br><p class="size">サイズ：</p>
+	                        	</p><br>
+	                        </p>
+		                     
+		                        <p class="value">${ item.product_price}(税込)</p>
+		                       
 	                        <!--カートに入れる-->
 	                        <input class="confirm" type="submit" value="カートに入れる"></input>
 	                    </div>

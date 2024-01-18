@@ -128,7 +128,13 @@
 	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 	
 	                    <div class="introduction-div">
-	                        <p class="ad-product-man">色：白　サイズ:</p>
+	                        <p class="ad-product-man">サイズ:</p>
+		                    <c:forEach var="color" items="${ item.colorTexts }">
+				                       <p>${ color.purchase_color}</p>
+				            </c:forEach>
+				            <br><p class="size">サイズ：</p>
+	                        	</p><br>
+	                        </p>
 	                        <p class="delivery-situation">2023/09/21に発送済</p>
 	                        <p class="value">${ item.product_price }(税込)</p>
 	                        <input class="cancel-button" type="submit" value="キャンセル">
