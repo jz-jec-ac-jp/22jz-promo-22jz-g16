@@ -43,6 +43,21 @@ public class Admin_productList extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("");
+		System.out.println("admin_doPost");
+		boolean preparation = request.getParameter("preparation") != null;
+		boolean completion = request.getParameter("completion") != null;
+		
+		if (preparation) {
+			
+		}
+		else if (completion) {
+			
+		}
+		
+		System.out.println("");
+		
+		doGet(request, response);
 	}
 
 }
