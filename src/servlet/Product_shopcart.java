@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ShopcartDAO;
-import model.ProductShopcart;
+import model.Item;
 
 /**
  * Servlet implementation class Product_shopcart
@@ -41,12 +41,13 @@ public class Product_shopcart extends HttpServlet {
 //		
 		ShopcartDAO dao = new ShopcartDAO();
 		
-		List<ProductShopcart> list = dao.get();
+		List<Item> list = dao.get();
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);
 		
-
+		System.out.println("true  " + list);
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
 		dispatcher.forward(request, response);
@@ -77,7 +78,7 @@ public class Product_shopcart extends HttpServlet {
 				
 				// CartDAOを用意してDBに登録
 				ShopcartDAO dao = new ShopcartDAO();
-				dao.create(itemId, userId);
+				dao.create(Product_id, userId);
 				
 				// リクエストスコープにメッセージを保存
 				request.setAttribute("message", "カートに商品を追加しました。");

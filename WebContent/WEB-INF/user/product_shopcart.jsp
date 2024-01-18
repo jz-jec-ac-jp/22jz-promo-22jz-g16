@@ -123,8 +123,8 @@
       
       
       
-      <c:forEach var="list" items="${ list }">
-      <a href="Product_purchase?id=${ item.id }">
+      <c:forEach var="item" items="${ list }">
+      <a href="Product_detail?id=${ item.id }">
       <section class="history-product">
         <p class="us-productname">${ item.product_name }</p>
         <div class="us-detail-Product-name">
@@ -133,7 +133,7 @@
           </figure>
           <div class="introduction-div">
             <p class="us-product-man">商品コード:${ item.id }</p>
-            <p class="us-color-size">カラー:${item.getColorTexts() }<br>サイズ:${ item.size_name }</p>
+            <p class="us-color-size">カラー:${ item.getColorTexts() }<br>サイズ:</p>
             <p class="value">${item.product_price }(税込)</p>
           </div>
           <p class="peace">個数 ${item.product_stock}</p>
@@ -143,16 +143,19 @@
           </div>
         </div>
       </section>
+      </a>
       </c:forEach>
       
-      
+
       
 
 
       <!--確定ボタン-->
-      <form class="search-form" action="get" href="#">
+     <!-- 
+     <form class="search-form" action="get" href="#">
         <input class="confirm-button" type="submit" value="購入する">
       </form>
+      -->
 
       <!-- カテゴリ -->
       <h2 class="category">Category</h2>
