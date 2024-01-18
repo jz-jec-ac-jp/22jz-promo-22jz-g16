@@ -105,9 +105,9 @@
     <!--パンくずリスト-->
     <nav>
       <ol class="breadcrumb">
-        <li><a href="user/product_top/">ホーム</a></li>
-        <li><a href="user/product_list/">商品一覧</a></li>
-        <li><a href="user/puroduct_detail/">商品詳細</a></li>
+        <li><a href="Product_top">ホーム</a></li>
+        <li><a href="Product_list">商品一覧</a></li>
+        <li><a href="Product_detail">商品詳細</a></li>
         <li>カート</li>
       </ol>
     </nav>

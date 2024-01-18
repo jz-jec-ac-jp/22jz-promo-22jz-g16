@@ -29,7 +29,15 @@ public class Product_complete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String cash = request.getParameter("cash");
+		String credit = request.getParameter("credit");
+		
+		System.out.println(cash);
+		System.out.println(credit);
+		
+		System.out.println("Product_dopost");
 		doGet(request, response);
+		
 	}
 
 }

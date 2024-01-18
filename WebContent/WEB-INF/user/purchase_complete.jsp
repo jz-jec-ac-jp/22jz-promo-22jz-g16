@@ -104,12 +104,12 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="/user/product_top/">ホーム</a></li>
-                <li><a href="/user/product_list/">商品一覧</a></li>
-                <li><a href="/user/puroduct_detail/">商品詳細</a></li>
-                <li><a href="/user/product_shopcart/">カート</a></li>
-                <li><a href="/user/product_purchase/">商品購入</a></li>
-                <li><a href="/user/product_card/">カード</a></li>
+                <li><a href="Product_top">ホーム</a></li>
+                <li><a href="Product_list">商品一覧</a></li>
+                <li><a href="Puroduct_detail">商品詳細</a></li>
+                <li><a href="Product_shopcart">カート</a></li>
+                <li><a href="Product_purchase">商品購入</a></li>
+                <li><a href="Product_card">カード</a></li>
                 <li>商品購入完了</li>
             </ol>
         </nav>
@@ -120,7 +120,7 @@
             <h2>お客様の注文番号</h2>
             <p class="product-number">****************</p>
 
-            <a href="#">トップページへ</a>
+            <a href="Product_top">トップページへ</a>
         </div>
 
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>

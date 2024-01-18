@@ -251,16 +251,27 @@
                 
                 
                         <!--支払方法-->
-                        <h2 class="payment-method">支払方法*</h2>
-                        <button class="select-input-btn" type="button" onclick="check_select()">
-                            <select class="paymethood-pulldown text-input-select" name="paymethood-box">
-                                <option value="">お選びください</option>
-                                <option value="クレジットカード払い">クレジットカード払い</option>
-                                <option value="代引き">代引き</option>
-                            </select>
-                        </button>
-                        <p class="error-message-select">※入力してください</p>
-
+                        <form  action="Product_complete" method="post" ><!-- onsubmit="return check();" -->
+	                        <h2 class="payment-method">支払方法*</h2>
+	                        <button class="select-input-btn" type="button" onclick="check_select()">
+	                            <select class="paymethood-pulldown text-input-select" name="paymethood-box">
+	                                <option value="">お選びください</option>
+	                                <option name="credit" value="クレジットカード払い">クレジットカード払い</option>
+	                                <option name="cash" value="代引き">代引き</option>
+	                            </select>
+	                        </button>
+	                        <p class="error-message-select">※入力してください</p>
+	                         <div class="product-button">
+				                <input class="return-btn" type="submit" value="戻る">
+				                <button type="submit">購入する</button>
+				              
+				                <%--
+				                
+				                <a href="Product_complete" class="cart-btn">購入する</a>
+				                 --%>
+				                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
+		            		</div>
+						</form>
                         <!--確定ボタン-->
                         <!-- 
                         
@@ -271,12 +282,7 @@
 
             <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
             -->
-            <div class="product-button">
-                <input class="return-btn" type="submit" value="戻る">
-                
-                <a href="Product_compleate?id=${ item.id }" class="cart-btn">購入する</a>
-                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
-            </div>
+
         </main>
 
         <!-- footer -->

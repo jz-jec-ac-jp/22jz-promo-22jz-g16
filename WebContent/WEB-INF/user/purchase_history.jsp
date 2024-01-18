@@ -106,7 +106,9 @@
                 <li>購入履歴</li>
             </ol>
         </nav>
-        <!-- 検索ボックス -->
+        
+        <!-- 
+        
         <input type="search" class="search-box" placeholder="入力欄"></form>
 
         <div class="year-total">
@@ -114,30 +116,40 @@
             <h2 class="year-month">2023年8月</h2>
             <h2 class="total-pay">合計金額：40,000円</h2>
         </div>
+         -->
+        
         <div class="history-data">
-            <section class="history-product">
+        
+	        <c:forEach var="item" items="${ list }">
+	        <a href="Product_detail?id=${ item.id }">
+	            <section class="history-product">
+	                <p class="ad-productname">${ item.product_name }</p>
+	                <div class="ad-product-man">
+	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+	
+	                    <div class="introduction-div">
+	                        <p class="ad-product-man">色：白　サイズ:</p>
+	                        <p class="delivery-situation">2023/09/21に発送済</p>
+	                        <p class="value">${ item.product_price }(税込)</p>
+	                        <input class="cancel-button" type="submit" value="キャンセル">
+	                    </div>
+	                </div>
+	                <div class="delivery-bottom">
+	                    <div class="delivery-route">○○ → ------ ○○ ----- ○○ ----- ○○ -----○○</div>
+	                </div>
+	            </section>
+	         </c:forEach>
+           </div>
+            
+            <!-- 
+            
+             <section class="history-product">
                 <p class="ad-productname">モノトーン椅子</p>
                 <div class="ad-product-man">
                     <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 
                     <div class="introduction-div">
-                        <p class="ad-product-man">色：白　サイズ：○○</p>
-                        <p class="delivery-situation">2023/09/21に発送済</p>
-                        <p class="value">10,000円(税込)</p>
-                        <input class="cancel-button" type="submit" value="キャンセル">
-                    </div>
-                </div>
-                <div class="delivery-bottom">
-                    <div class="delivery-route">○○ → ------ ○○ ----- ○○ ----- ○○ -----○○</div>
-                </div>
-            </section>
-            <section class="history-product">
-                <p class="ad-productname">モノトーン椅子</p>
-                <div class="ad-product-man">
-                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
-
-                    <div class="introduction-div">
-                        <p class="ad-product-man">色：白　サイズ：○○</p>
+                        <p class="ad-product-man">色：白　サイズ：</p>
                         <p class="delivery-situation">2023/09/21に発送済</p>
                         <p class="value">10,000円(税込)</p>
                         <input class="cancel-button" type="submit" value="キャンセル">
@@ -199,6 +211,7 @@
 
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
         <!-- </div> -->
+           
     </main>
     <!-- footer -->
     <footer>

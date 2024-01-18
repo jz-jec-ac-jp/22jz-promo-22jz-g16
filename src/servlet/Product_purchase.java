@@ -38,8 +38,29 @@ public class Product_purchase extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// TODO Auto-generated menthod stub
+		
+				System.out.println("purchase_dopost");
+				
+//				if ( != null) {
+//					//完了ページへリダイレクト
+//					HttpSession session = request.getSession();
+//					session.setAttribute("loginUser", );
+//					response.sendRedirect("Product_top");
+//				}
+//				else if() {
+//					//カード画面へリダイレクト
+//					HttpSession session = request.getSession();
+//					session.setAttribute("loginUser", );
+//					response.sendRedirect("Product_card");
+//				}
+//				else {
+//					// エラー時はエラーメッセージを追加し自分へ戻る
+//					request.setAttribute("msg", "支払方法をお選びください");
+//					doGet(request, response);
+//				} 
+				
+//				doGet(request, response);
 	}
 
 }

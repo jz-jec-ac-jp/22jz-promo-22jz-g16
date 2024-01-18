@@ -201,8 +201,7 @@
     
     <div class="a">
 	   <c:forEach var="item" items="${ list }">
-	
-		  <a href="Product_detail?id=${ item.id }">
+	    <a href="Product_detail?id=${ item.id }">
 		   <div class="goods-item">
 		        <figure>
 		          <img class="p" src="assets/img/key-visuals.png" alt="">
