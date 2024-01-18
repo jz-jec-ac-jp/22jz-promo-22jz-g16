@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductHistoryDAO;
+import dao.PurchaseStatusDAO;
 import model.Item;
 
 /**
@@ -48,11 +49,13 @@ public class Admin_productList extends HttpServlet {
 		boolean preparation = request.getParameter("preparation") != null;
 		boolean completion = request.getParameter("completion") != null;
 		
+		PurchaseStatusDAO dao = new PurchaseStatusDAO();
+		
 		if (preparation) {
-			
+			dao.find("準備中");
 		}
 		else if (completion) {
-			
+			dao.find("完了");
 		}
 		
 		System.out.println("");
