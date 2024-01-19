@@ -156,6 +156,7 @@
                 <p id="textlength1">0</p>
 
 
+
                 <!--電話番号-->
                 <h2 class="telephone-number">電話番号*</h2>
                 <input class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用">
