@@ -129,39 +129,39 @@
                 <!--姓（カナ）名前（かな）-->
                 <h2 class="name-kana">姓（カナ）名前（かな）</h2>
                 <input  class="name-kana-txt text-input" type="text" placeholder="何か変える"  pattern=".*\S+.*">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--姓（漢字）名前（漢字）-->
                 <h2 class="name-kanji">姓（漢字）名前（漢字）</h2>
                 <input class="name-kanji-txt text-input" type="text" placeholder="入力してください">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--ログインID入力-->
                 <h2 class="us-login-id">ログインID*</h2>
                 <input class="id-txt text-input" type="email" name="login-id" placeholder="入力してください">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <input class="id-txt text-input" type="email" name="login-id" placeholder="確認用メールアドレス欄">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--パスワード-->
                 <h2 class="us-login-password">パスワード*</h2>
                 <input class="password-txt text-input" type="password" name="password-txt" placeholder="パスワード入力欄" onKeyUp="countLength(value, 'textlength0');">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
                 <p id="textlength0">0</p>
 
                 <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"
                 onKeyUp="countLength(value, 'textlength1');">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
                 <p id="textlength1">0</p>
 
                 <!--電話番号-->
                 <h2 class="telephone-number">電話番号*</h2>
                 <input class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <input class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="FAX">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--住所１（市区町村）-->
                 <h2 class="addres-txt">住所１(市区町村)*</h2>
@@ -217,15 +217,15 @@
                         <option value="沖縄">沖縄</option>
                     </select>
                 </button>
-                <p class="error-message-select">※入力してください</p>
+                <p class="error-message-select">※</p>
 
                 <input id="name" class="telephone-txt text-input" type="text" name="addres-txt" placeholder="市区町村を入力">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--都道府県-->
                 <h2 class="prefectur">都道府県(番地)*</h2>
                 <input class="prefectur-txt text-input" type="text" name="prefectur-txt" placeholder="住所２（番地）">
-                <p class="error-message">※入力してください</p>
+                <p class="error-message">※</p>
 
                 <!--確定ボタン-->
                 <input class="confirm-button" type="submit" value="確定">

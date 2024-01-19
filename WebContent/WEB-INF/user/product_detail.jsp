@@ -145,9 +145,12 @@
             <p>商品コード</p>
             <p>${ item.id }</p>
             <p>カラー</p>
+           
+            
             <c:forEach var="color" items="${ item.colorTexts }">
-			      <p>${ color.purchase_color}</p>
+			   <p>${ color.purchase_color}</p>
 			</c:forEach>
+         
             <p>サイズ</p>
             <p>*****</p>
             <p>重量</p>
@@ -235,12 +238,20 @@
             </div>
 
             <div class="product-button">
+            	<%--
+            	
                 <input class="return-btn" type="submit" value="戻る">
+<<<<<<< HEAD
                  <form  action="Product_shopcart" method="post">
                  <input type="hidden" name="shopCartName" value="${ item.id }">
 			        <button type="submit"><カートに入れる</button>
 			      </form>
                 <!-- <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a> -->
+=======
+            	 --%>
+            	<a href="Product_list" class="cart-btn">一覧に戻る</a>
+                <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
+>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
