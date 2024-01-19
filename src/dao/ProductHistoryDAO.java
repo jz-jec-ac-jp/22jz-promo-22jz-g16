@@ -36,7 +36,7 @@ public class ProductHistoryDAO {
 				Item  item = rs2model(rs);
 				setColor(item);
 				list.add( item);
-				
+	
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());

@@ -27,7 +27,7 @@ public class ItemDetail extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 実際には、ここでDAO使って商品情報を取得
-ItemDAO dao = new ItemDAO();
+		ItemDAO dao = new ItemDAO();
 		
 		List<Item> list = dao.get();
 		//Item item = dao.find(1);

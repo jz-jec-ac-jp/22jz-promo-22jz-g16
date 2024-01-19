@@ -134,9 +134,12 @@
             <p>商品コード</p>
             <p>${ item.id }</p>
             <p>カラー</p>
+           
+            
             <c:forEach var="color" items="${ item.colorTexts }">
-			      <p>${ color.purchase_color}</p>
+			   <p>${ color.purchase_color}</p>
 			</c:forEach>
+         
             <p>サイズ</p>
             <p>*****</p>
             <p>重量</p>

@@ -77,11 +77,13 @@ public class  ItemDAO {
 			// データをリストに格納
 			if (rs.next()) {
 				 item = rs2model(rs);
+				 setColor(item);
 				 
 				 
 				 System.out.println("true_find  " + item);
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
+				 System.out.println("true_color()  " + item.getColorTexts());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
