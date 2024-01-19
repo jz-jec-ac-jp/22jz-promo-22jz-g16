@@ -133,7 +133,11 @@
                         </figure>
                         <div class="introduction-div">
                             <p class="us-product-man">商品コード：${ item.id }</p>
-                            <p class="us-color-size">カラー:${ item.getColorTexts() }<br>サイズ:</p>
+                            
+                            <c:forEach var="color" items="${ item.colorTexts }">
+			                   <p class="us-color-size">カラー:${ color.purchase_color}</p>
+			                </c:forEach>
+                            <br><p class="size">サイズ:</p>
                             <p class="value">${ item.product_price }(税込)</p>
                         </div
                         <p class="peace">個数 1</p>
