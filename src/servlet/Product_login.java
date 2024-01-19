@@ -25,7 +25,7 @@ public class Product_login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// すでにログイン済みならビデオ一覧へリダイレクト
+		// すでにログイン済みならトップページへリダイレクト
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		if (loginUser != null) {
 			System.out.println("login済み get");
@@ -55,7 +55,7 @@ public class Product_login extends HttpServlet {
 		ProductUser user = logic.login(email, password);
 		
 		if (user != null) {
-			// ログインしてトップページ（今回はVoD一覧）へリダイレクト
+			// ログインしてトップページへリダイレクト
 			System.out.println("login済み");
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", user);

@@ -151,11 +151,8 @@
                 <p id="textlength0">0</p>
 
                 <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"
-                
                 <p class="error-message">※</p>
                 <p id="textlength1">0</p>
-
-
 
                 <!--電話番号-->
                 <h2 class="telephone-number">電話番号*</h2>
@@ -228,10 +225,11 @@
                 <h2 class="prefectur">都道府県(番地)*</h2>
                 <input class="prefectur-txt text-input" type="text" name="prefectur-txt" placeholder="住所２（番地）">
                 <p class="error-message">※</p>
-
                 <!--確定ボタン-->
                 <input class="confirm-button" type="submit" value="確定">
+                <!-- 
                 <button type="submit">確定</button>
+                 -->
 
             </form>
         </div>
@@ -261,7 +259,7 @@
             <!-- サービス -->
             <a href="#" class="footer-service">
                 <figure>
-                    <img src="/assets/img/footer_service.png" alt="">
+                    <img src="assets/img/footer_service.png" alt="">
                 </figure>
                 <p>サービス</p>
             </a>

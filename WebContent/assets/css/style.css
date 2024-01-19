@@ -98,9 +98,12 @@ input {
 .error-message-select {
     font-size: 1rem;
     color: #ff7676;
+    
     /* display: none; */
     /* 非表示に */
 }
+
+
 
 /* :invalid時だけ隣の要素を表示 */
 /* .text-input:invalid + .error-message {
@@ -739,7 +742,7 @@ footer a {
 
 .err-message .error-message {
 	position: absolute;
-	top: 40px;
+	top: 45px;
 /*	right: 10px;*/
 /*	padding-right: 10px;*/
 /*	margin-right: 10px;*/
@@ -1562,6 +1565,7 @@ footer a {
     margin: 10px 20px 15px auto;
     padding: 10px 20px;
 }
+
 
 /*
 
