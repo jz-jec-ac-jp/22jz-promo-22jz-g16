@@ -139,7 +139,7 @@
 				<div class="err-message">
 	            	<h2 class="login-password ">パスワード</h2>
 	                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
-	                <p class="error-message">※入力してください</p>
+	                <p class="error-message">※</p>
 	                <p id="textlength2">0</p>
 				</div>   
 

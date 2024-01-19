@@ -37,6 +37,8 @@ public class  ItemDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
+				
+
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -59,6 +61,7 @@ public class  ItemDAO {
 		item.setColorTexts(color);
 	}
 	
+	
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド
 	 * @param id 主キーの値
@@ -80,10 +83,12 @@ public class  ItemDAO {
 				 setColor(item);
 				 
 				 
+				 
 				 System.out.println("true_find  " + item);
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
 				 System.out.println("true_color()  " + item.getColorTexts());
+				 
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

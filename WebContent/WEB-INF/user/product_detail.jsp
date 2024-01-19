@@ -227,8 +227,11 @@
             </div>
 
             <div class="product-button">
+            	<%--
+            	
                 <input class="return-btn" type="submit" value="戻る">
-            
+            	 --%>
+            	<a href="Product_list" class="cart-btn">一覧に戻る</a>
                 <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
