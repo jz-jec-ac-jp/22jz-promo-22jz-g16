@@ -151,9 +151,10 @@
                 <p id="textlength0">0</p>
 
                 <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"
-                onKeyUp="countLength(value, 'textlength1');">
+                
                 <p class="error-message">※</p>
                 <p id="textlength1">0</p>
+
 
                 <!--電話番号-->
                 <h2 class="telephone-number">電話番号*</h2>
