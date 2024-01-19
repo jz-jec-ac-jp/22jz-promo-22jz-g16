@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.FavoriteDAO;
 import dao.ItemDAO;
 import model.Item;
 
@@ -48,7 +49,20 @@ public class Product_detail extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+//		request.setCharacterEncoding("UTF-8");
+		FavoriteDAO dao = new FavoriteDAO();
+		
+//		System.out.println("aaaa");
+		int favoriteId = Integer.parseInt(request.getParameter("favoriteId"));
+		int id = 61;
+		
+		dao.create(favoriteId, id);
+		
+		
+		// TODO Auto-generated method stub
+		doGet(request, response);
+		
 	}
 
 }

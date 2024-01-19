@@ -87,7 +87,7 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO shopcart_table (item_id, user_id) VALUES (?, ?)";
+			String sql = "INSERT INTO shopcart_table (product_id, user_id) VALUES (?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, product_id);
 			stmt.setInt(2, user_id);

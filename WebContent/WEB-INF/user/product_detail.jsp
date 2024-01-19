@@ -120,9 +120,20 @@
         <h1 class="detail-product-name">${item.product_name}</h1>
         <div class="product">
             <p>${item.product_price}</p>
+            <!-- お気に入り -->
+            <form  action="#" method="post">
+            	<button type="submit">
+            		<input type="hidden" name="favoriteId" value="${ item.id }"> 	
+		            <figure>
+		                <img src="assets/img/header_favorite.png" alt="">
+		            </figure>
+            	</button>
+            </form>
+            <!-- 
             <figure>
                 <img src="assets/img/header_favorite.png" alt="">
             </figure>
+             -->
             
         </div>
         <div class="product-star">
@@ -144,10 +155,10 @@
         </div>
 
         <div class="product-content">
-            <p>
+            <!-- <p>
                 これも仮 <br>
                 背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
-            </p>
+            </p> -->
             
             
             <p>${ item.product_detail }</p>
@@ -225,8 +236,11 @@
 
             <div class="product-button">
                 <input class="return-btn" type="submit" value="戻る">
-            
-                <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
+                 <form  action="Product_shopcart" method="post">
+                 <input type="hidden" name="shopCartName" value="${ item.id }">
+			        <button type="submit"><カートに入れる</button>
+			      </form>
+                <!-- <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a> -->
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
