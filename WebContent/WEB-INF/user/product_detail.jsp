@@ -107,8 +107,8 @@
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="/user/product_top/">ホーム</a></li>
-                <li><a href="/user/product_list/">商品一覧</a></li>
+                <li><a href="Product_top">ホーム</a></li>
+                <li><a href="Product_list">商品一覧</a></li>
                 <li>商品詳細</li>
             </ol>
         </nav>
@@ -132,9 +132,11 @@
 
         <div class="detaile">
             <p>商品コード</p>
-            <p>*****</p>
+            <p>${ item.id }</p>
             <p>カラー</p>
-            <p>*****</p>
+            <c:forEach var="color" items="${ item.colorTexts }">
+			      <p>${ color.purchase_color}</p>
+			</c:forEach>
             <p>サイズ</p>
             <p>*****</p>
             <p>重量</p>
