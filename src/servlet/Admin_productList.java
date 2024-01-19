@@ -46,19 +46,38 @@ public class Admin_productList extends HttpServlet {
 		
 		System.out.println("");
 		System.out.println("admin_doPost");
-		boolean preparation = request.getParameter("preparation") != null;
-		boolean completion = request.getParameter("completion") != null;
+//		boolean preparation = request.getParameter("preparation") != null;
+//		boolean completion = request.getParameter("completion") != null;
+		
+		String status = request.getParameter("comparison-box");
+		System.out.println(status);
 		
 		PurchaseStatusDAO dao = new PurchaseStatusDAO();
 		
-		if (preparation) {
+		if (status.equals("preparation")) {
+			System.out.println("");
+			System.out.println("test");
+			System.out.println(status);
+			System.out.println("");
 			dao.find("準備中");
 		}
-		else if (completion) {
+		else if (status.equals("completion")) {
+			System.out.println("");
+			System.out.println("test");
+			System.out.println(status);
+			System.out.println("");
 			dao.find("完了");
 		}
 		
-		System.out.println("");
+		
+		
+//		if (preparation) {
+//			dao.find("準備中");
+//		}
+//		else if (completion) {
+//			dao.find("完了");
+//		}
+		
 		
 		doGet(request, response);
 	}

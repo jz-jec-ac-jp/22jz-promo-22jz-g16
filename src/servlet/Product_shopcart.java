@@ -72,13 +72,18 @@ public class Product_shopcart extends HttpServlet {
 //					return;
 //				}
 				
-				int Product_id = Integer.parseInt(request.getParameter("Product_id"));
+				int Product_id = Integer.parseInt(request.getParameter("shopCartName"));
 				int userId = 1;		// ログイン実装してないのでユーザは1番固定
 //				int userId = (User)(request.getSession().getAttribute("user")).getId();
+				System.out.println("shopCart post");
 				
 				// CartDAOを用意してDBに登録
 				ShopcartDAO dao = new ShopcartDAO();
 				dao.create(Product_id, userId);
+				
+				System.out.println("");
+				System.out.println("shopCartId = " + Product_id);
+				System.out.println("");
 				
 				// リクエストスコープにメッセージを保存
 				request.setAttribute("message", "カートに商品を追加しました。");

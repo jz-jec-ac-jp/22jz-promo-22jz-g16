@@ -88,10 +88,16 @@
                    <option value="発送済み">発送済み<input type="hidden" name="cache"></option>
                </select>
                 -->
-               
+                
+               <select class="paymethood-pulldown text-input-select" name="comparison">
+                   <option value="">お選びください</option>
+                   <option value="preparation">準備中</option>
+                   <option value="completion">発送済み</option>
+               </select>
+               <!-- 
                <input type="radio" name="preparation">準備中
                <input type="radio" name="completion">完了
-               
+                -->
                <button type="submit">確定</button>
             </form>
            <!-- </input> -->

@@ -84,7 +84,7 @@ public class FavoriteDAO {
 	}
 	
 	
-	public boolean create(String product_name, String product_detail, int product_price, int product_stock) {
+	public boolean create(int favotiteId, int userId) {
 	    int ret = -1;
 	    
 //	    // ①データの存在確認
@@ -103,14 +103,12 @@ public class FavoriteDAO {
 	    DBManager manager = DBManager.getInstance();
 	    try(Connection cn = manager.getConnection()) {
 	        // プレースホルダで変数部分を定義
-	        String sql = "INSERT INTO item_table (product_name, product_detail, product_price, product_stock, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?)";
+	        String sql = "INSERT INTO favorit_table (product_id, user_id, create_date, update_date) VALUES (?, ?, ?, ?)";
 	        PreparedStatement stmt = cn.prepareStatement(sql);
-	        stmt.setString(1, product_name);
-	        stmt.setString(2, product_detail);
-	        stmt.setInt(3, product_price);
-	        stmt.setInt(4, product_stock);
-	        stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
-	        stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
+	        stmt.setInt(1, favotiteId);
+	        stmt.setInt(2, userId);
+	        stmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+	        stmt.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
 	        
 	        ret = stmt.executeUpdate();
 	        System.out.println(ret);

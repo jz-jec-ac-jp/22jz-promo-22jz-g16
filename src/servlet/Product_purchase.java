@@ -42,6 +42,10 @@ public class Product_purchase extends HttpServlet {
 		
 				System.out.println("purchase_dopost");
 				
+				
+				
+				
+				
 //				if ( != null) {
 //					//完了ページへリダイレクト
 //					HttpSession session = request.getSession();

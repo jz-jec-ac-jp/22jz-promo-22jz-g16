@@ -251,13 +251,13 @@
                 
                 
                         <!--支払方法-->
-                        <form  action="Product_complete" method="post" ><!-- onsubmit="return check();" -->
+                        <form  action="Product_complete" method="get" ><!-- onsubmit="return check();" -->
 	                        <h2 class="payment-method">支払方法*</h2>
 	                        <button class="select-input-btn" type="button" onclick="check_select()">
 	                            <select class="paymethood-pulldown text-input-select" name="paymethood-box">
 	                                <option value="">お選びください</option>
-	                                <option name="credit" value="クレジットカード払い">クレジットカード払い</option>
-	                                <option name="cash" value="代引き">代引き</option>
+	                                <option value="credit">クレジットカード払い</option>
+	                                <option value="cash">代引き</option>
 	                            </select>
 	                        </button>
 	                        <p class="error-message-select">※入力してください</p>

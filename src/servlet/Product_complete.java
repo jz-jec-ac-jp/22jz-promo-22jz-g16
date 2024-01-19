@@ -20,8 +20,25 @@ public class Product_complete extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
-		dispatcher.forward(request, response);
+		
+		String pay = request.getParameter("paymethood-box");
+		System.out.println(pay);
+		
+		if (pay.equals("credit")) {
+			System.out.println("");
+			System.out.println(pay);
+			System.out.println("");
+			response.sendRedirect("Product_card");
+			
+		}
+		else if(pay.equals("cash")){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
+//		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -29,14 +46,7 @@ public class Product_complete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String cash = request.getParameter("cash");
-		String credit = request.getParameter("credit");
-		
-		System.out.println(cash);
-		System.out.println(credit);
-		
-		System.out.println("Product_dopost");
-		doGet(request, response);
+
 		
 	}
 
