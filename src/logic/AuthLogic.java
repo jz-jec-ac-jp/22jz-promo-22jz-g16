@@ -26,12 +26,11 @@ public class AuthLogic {
 		System.out.println("login authlogic " + user + "mailAdress " + mail_adrres);
 		if ((user != null) && (BCrypt.checkpw(us_password,user.getUs_pasward()))) {
 			return user;
-		}
-		
-		
+		}		
 //		return user;
 		return null;
 	}
+	
 	
 	/**
 	 * ログアウト処理を行う

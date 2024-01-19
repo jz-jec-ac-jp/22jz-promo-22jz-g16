@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,7 +100,8 @@ public class UserDAO {
 	 * DBにデータを追加する
 	 * @return 成功時は追加したデータ、失敗時はnull
 	 */
-	public ProductUser create(String mail_adress, String us_password) {
+	public ProductUser create(String name_kanji, String name_kana, String mail_adress, String us_pasward,
+			String us_adress, String tel_number, String us_prefectur, String street_address) {
 		int ret = -1;
 		System.out.println("datacreate");
 		
@@ -114,14 +116,19 @@ public class UserDAO {
 		try(Connection cn = manager.getConnection()) {
 			// パスワードをハッシュ化
 			/* ***************************** */
-			String hashed = BCrypt.hashpw(us_password,BCrypt.gensalt());
+			String hashed = BCrypt.hashpw(us_pasward,BCrypt.gensalt());
 			System.out.println("hashed after");
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO user_table (mail_adress, us_pasward) VALUES (?, ?)";
+			String sql = "INSERT INTO user_table (name_kanji, name_kana, mail_adress, us_pasward, us_adress, tel_number, us_prefectur, street_address) VALUES (?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setString(1, mail_adress);
-			stmt.setString(2, hashed);
-//			stmt.setString(2, us_password);
+			stmt.setString(1, name_kanji);
+			stmt.setString(2, name_kana);
+			stmt.setString(3, mail_adress);
+			stmt.setString(4, hashed);
+			stmt.setString(5, us_adress);
+			stmt.setString(6, tel_number);
+			stmt.setString(7, us_prefectur);
+			stmt.setString(8, street_address);
 			
 			ret = stmt.executeUpdate();
 			
@@ -142,25 +149,25 @@ public class UserDAO {
 	 * @return 変換後のデータ
 	 */
 	
-	private ProductUser rs2model(ResultSet rs) throws SQLException {
-		String mail_adress = rs.getString("mail_adress");
-		String us_pasward = rs.getString("us_pasward");
-		
-		return new ProductUser(mail_adress, us_pasward);
-	}
 //	private ProductUser rs2model(ResultSet rs) throws SQLException {
-//		int id = rs.getInt("id");
-//		String name_kanji = rs.getString("name_kanji");
-//		String name_kana = rs.getString("name_kana");
 //		String mail_adress = rs.getString("mail_adress");
 //		String us_pasward = rs.getString("us_pasward");
-//		String us_adress = rs.getString("us_adress");
-//		String tel_number = rs.getString("tel_number");
-//		String us_prefectur = rs.getString("us_prefectur");
-//		String street_address = rs.getString("street_address");
-//		LocalDateTime create_date = rs.getTimestamp("created_at").toLocalDateTime();
-//		LocalDateTime update_date = rs.getTimestamp("updated_at").toLocalDateTime();
-//
-//		return new ProductUser(id, name_kanji, name_kana,mail_adress, us_pasward , us_adress, tel_number, us_prefectur, street_address, create_date, update_date);
+//		
+//		return new ProductUser(mail_adress, us_pasward);
 //	}
+	private ProductUser rs2model(ResultSet rs) throws SQLException {
+		int id = rs.getInt("id");
+		String name_kanji = rs.getString("name_kanji");
+		String name_kana = rs.getString("name_kana");
+		String mail_adress = rs.getString("mail_adress");
+		String us_pasward = rs.getString("us_pasward");
+		String us_adress = rs.getString("us_adress");
+		String tel_number = rs.getString("tel_number");
+		String us_prefectur = rs.getString("us_prefectur");
+		String street_address = rs.getString("street_address");
+		LocalDateTime create_date = rs.getTimestamp("created_at").toLocalDateTime();
+		LocalDateTime update_date = rs.getTimestamp("updated_at").toLocalDateTime();
+
+		return new ProductUser(id, name_kanji, name_kana,mail_adress, us_pasward , us_adress, tel_number, us_prefectur, street_address, create_date, update_date);
+	}
 }
