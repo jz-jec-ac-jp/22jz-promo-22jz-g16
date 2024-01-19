@@ -54,7 +54,24 @@ public class Product_list extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		ItemDAO dao = new ItemDAO();
+		
+		String search = request.getParameter("search");
+		List<Item> list = dao.findString(search);
+		
+		request.setAttribute("list", list);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_list.jsp");
+		dispatcher.forward(request, response);
+		
+		System.out.println("");
+		System.out.println("list post");
+		System.out.println(list);
+		System.out.println(search);
+		System.out.println("");
 	}
 
 }

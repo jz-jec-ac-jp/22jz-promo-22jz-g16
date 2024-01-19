@@ -60,10 +60,10 @@
           </div>
         </div>
           <!-- 検索アイコン -->
-          <form class="search-form" action="get" href="#">
+          <form class="search-form" action="#" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください">
+            <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
     
     
