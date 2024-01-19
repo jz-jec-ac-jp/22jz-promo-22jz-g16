@@ -157,7 +157,7 @@
             <div class="review-div">
                 <h2 class="review-title">レビュータイトル</h2>
             </div>
-            <form enctype="multipart/form-data" class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
+            <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
             	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
@@ -185,8 +185,8 @@
     
                 <div class="write-div">
                     <h2>レビュー</h2>
-                    <textarea class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
-                        minlength="5" placeholder="入力してください"></textarea>
+                    <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
+                        minlength="5" placeholder="入力してください"></input>
                     <p class="error-message">※入力してください</p>
                     <p id="textlength4">0</p>
                 </div>

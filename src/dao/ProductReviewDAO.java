@@ -73,7 +73,7 @@ public class ProductReviewDAO {
 //		return  cart;
 //	}
 	
-	public boolean create(int product_id, int user_id, int review_rating ,String pictur_movieUrl,
+	public boolean create(int product_id, int user_id, int review_rating,
 			String review_text, String review_title ) {
 		int ret = -1;
 		
@@ -84,16 +84,16 @@ public class ProductReviewDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO review_table (product_id, user_id, review_text, review_rating, pictur_movieUrl,  review_title, create_date,  update_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO review_table (product_id, user_id, review_title, review_text, review_rating, create_date,  update_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, product_id);
 			stmt.setInt(2, user_id);
-			stmt.setInt(3,  review_rating);
-			stmt.setString(4,  pictur_movieUrl);
-			stmt.setString(5,  review_text);
-			stmt.setString(6,  review_title);
-			stmt.setTimestamp(7, Timestamp.valueOf(LocalDateTime.now()));
-	        stmt.setTimestamp(8, Timestamp.valueOf(LocalDateTime.now()));
+			stmt.setString(3,  review_title);
+			stmt.setString(4,  review_text);
+//			stmt.setString(4,  pictur_movieUrl);
+			stmt.setInt(5,  review_rating);
+			stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
+	        stmt.setTimestamp(7, Timestamp.valueOf(LocalDateTime.now()));
 			
 			ret = stmt.executeUpdate();
 			System.out.println("review insert");

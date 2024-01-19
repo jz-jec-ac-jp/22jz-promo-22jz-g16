@@ -65,14 +65,14 @@ public class ProductReview implements Serializable{
 	
 	public ProductReview() {}
 	
-	public ProductReview(int id, int product_id, int user_id, int review_rating, String pictur_movieUrl,
+	public ProductReview(int id, int product_id, int user_id, int review_rating,
 			String review_text, String review_title, Timestamp create_date, Timestamp update_date) {
 		super();
 		this.id = id;
 		this.product_id = product_id;
 		this.user_id = user_id;
 		this.review_rating = review_rating;
-		this.pictur_movieUrl = pictur_movieUrl;
+//		this.pictur_movieUrl = pictur_movieUrl;
 		this.review_text = review_text;
 		this.review_title = review_title;
 		this.create_date = create_date;
