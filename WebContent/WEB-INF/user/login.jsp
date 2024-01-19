@@ -59,10 +59,10 @@
           </div>
         </div>
           <!-- 検索アイコン -->
-          <form class="search-form" action="get" href="#">
+          <form class="search-form" action="Product_list" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください">
+            <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
     
        <div id="header-animation" class="header-anim">
@@ -125,32 +125,40 @@
 	            <%-- メッセージが存在するときのみ表示 --%>
 	            <p>${msg}</p>
 	        </c:if>
+	        
+	        <c:if test="${ not empty logincomplete }">
+	        	<h2>${ logincomplete }</h2>
+	        	<a href="Product_logout">ログアウト</a>
+	        </c:if>
             
-            <form class="login-form" action="#" method="post" ><!-- onsubmit="return check();" -->
-            <div class="err-message">            
-                <!-- ログインID入力 -->
-                <h2 class="login-id">ログインID  </h2>
-                <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
-                <p class="error-message">※</p>
-            </div>
-
-	
-					<!-- パスワード入力 -->
-				<div class="err-message">
-	            	<h2 class="login-password ">パスワード</h2>
-	                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
+            <c:if test="${ not empty login }">
+	   
+	            <form class="login-form" action="#" method="post" ><!-- onsubmit="return check();" -->
+	            <div class="err-message">            
+	                <!-- ログインID入力 -->
+	                <h2 class="login-id">ログインID  </h2>
+	                <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
 	                <p class="error-message">※</p>
-	                <p id="textlength2">0</p>
-				</div>   
-
-                <a class="password-forget" href="#">パスワードをお忘れの方</a>
-                <!-- ログインボタン -->
-                <input class="login-button" type="submit" value="ログイン">
-
-            </form>
-            <!-- 新規会員登録はこちら -->
-            <a class="account-create" href="New_account">新規会員登録はこちら</a>
-        </div>
+	            </div>
+	
+		
+						<!-- パスワード入力 -->
+					<div class="err-message">
+		            	<h2 class="login-password ">パスワード</h2>
+		                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
+		                <p class="error-message">※</p>
+		                <p id="textlength2">0</p>
+					</div>   
+	
+	                <a class="password-forget" href="#">パスワードをお忘れの方</a>
+	                <!-- ログインボタン -->
+	                <input class="login-button" type="submit" value="ログイン">
+	
+	            </form>
+	            <!-- 新規会員登録はこちら -->
+	            <a class="account-create" href="New_account">新規会員登録はこちら</a>
+	        </c:if>
+	        </div>
 
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
 

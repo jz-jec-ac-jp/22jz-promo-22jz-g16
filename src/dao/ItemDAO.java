@@ -97,6 +97,39 @@ public class  ItemDAO {
 		
 		return   item;
 	}
+	
+	public   List<Item>findString(String productName) {
+		List<Item> list = new ArrayList<>();
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "SELECT * FROM item_table where product_name LIKE ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setString(1, "%" + productName + "%");
+			ResultSet rs = stmt.executeQuery();
+			
+			// データをリストに格納
+			if (rs.next()) {
+				Item item = rs2model(rs);
+				setColor(item);
+				list.add(item);
+				 
+				 
+				 
+				 System.out.println("true_find  " + item);
+				 System.out.println("true_get()  " + item.getId());
+				 System.out.println("true_Name()  " + item.getProduct_name());
+				 System.out.println("true_color()  " + item.getColorTexts());
+				 
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_find  " + e);
+		}
+		
+		return   list;
+	}
+
 
 	  /**
 	   * ビデオデータに紐づくライセンス情報を検索して追加

@@ -29,13 +29,14 @@ public class Product_login extends HttpServlet {
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		if (loginUser != null) {
 			System.out.println("login済み get");
-			response.sendRedirect("Product_top");
+//			response.sendRedirect("Product_top");
+			request.setAttribute("logincomplete", "ログイン済みです");
 		}
 		else {
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/login.jsp");
-			dispatcher.forward(request, response);
+			request.setAttribute("login", "ログインしてください");
 		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/login.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
