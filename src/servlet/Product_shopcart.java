@@ -43,6 +43,7 @@ public class Product_shopcart extends HttpServlet {
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
+		
 		UserDAO daoUser = new UserDAO();
 		daoUser.findByEmail(loginUser.getMail_adress());
 		System.out.println("");
@@ -51,7 +52,7 @@ public class Product_shopcart extends HttpServlet {
 //		
 		ShopcartDAO dao = new ShopcartDAO();
 		
-		List<Item> list = dao.get();
+		List<Item> list = dao.get(loginUser.getId());
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);
@@ -82,14 +83,16 @@ public class Product_shopcart extends HttpServlet {
 //					return;
 //				}
 
+				ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 				
-				int Product_id = Integer.parseInt(request.getParameter("shopCartName"));
-				int userId = 1;		// ログイン実装してないのでユーザは1番固定
+				int Product_id = Integer.parseInt(request.getParameter("shopCart"));
+				int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
 //				int userId = (User)(request.getSession().getAttribute("user")).getId();
 				System.out.println("shopCart post");
 				
 				// CartDAOを用意してDBに登録
 				ShopcartDAO dao = new ShopcartDAO();
+				
 				dao.create(Product_id, userId);
 				
 				System.out.println("");

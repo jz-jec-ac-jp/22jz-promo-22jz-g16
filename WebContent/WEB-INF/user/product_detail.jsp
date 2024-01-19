@@ -250,7 +250,10 @@
 =======
             	 --%>
             	<a href="Product_list" class="cart-btn">一覧に戻る</a>
-                <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
+            	<form action="Product_shopcart" method="post">
+            		<input type="hidden" value="${ item.id }" name="shopCart">
+	                <button class="cart-btn" type="submit">カートに入れる</button>
+            	</form>
 <!-- >>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git -->
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>

@@ -101,7 +101,7 @@ public class UserDAO {
 	 * @return 成功時は追加したデータ、失敗時はnull
 	 */
 	public ProductUser create(String name_kanji, String name_kana, String mail_adress, String us_pasward,
-			String us_adress, String tel_number, String us_prefectur, String street_address) {
+			String us_adress, int tel_number, String us_prefectur, String street_address) {
 		int ret = -1;
 		System.out.println("datacreate");
 		
@@ -119,18 +119,20 @@ public class UserDAO {
 			String hashed = BCrypt.hashpw(us_pasward,BCrypt.gensalt());
 			System.out.println("hashed after");
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO user_table (name_kanji, name_kana, mail_adress, us_pasward, us_adress, tel_number, us_prefectur, street_address) VALUES (?, ?)";
+			String sql = "INSERT INTO user_table (name_kanji, name_kana, mail_adress, us_pasward, us_adress, tel_number, us_prefectur, street_address) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, name_kanji);
 			stmt.setString(2, name_kana);
 			stmt.setString(3, mail_adress);
 			stmt.setString(4, hashed);
 			stmt.setString(5, us_adress);
-			stmt.setString(6, tel_number);
+			stmt.setInt(6, tel_number);
 			stmt.setString(7, us_prefectur);
 			stmt.setString(8, street_address);
 			
 			ret = stmt.executeUpdate();
+			System.out.println("");
+			System.out.println("ret " + ret);
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -162,11 +164,11 @@ public class UserDAO {
 		String mail_adress = rs.getString("mail_adress");
 		String us_pasward = rs.getString("us_pasward");
 		String us_adress = rs.getString("us_adress");
-		String tel_number = rs.getString("tel_number");
+		int tel_number = rs.getInt("tel_number");
 		String us_prefectur = rs.getString("us_prefectur");
 		String street_address = rs.getString("street_address");
-		LocalDateTime create_date = rs.getTimestamp("created_at").toLocalDateTime();
-		LocalDateTime update_date = rs.getTimestamp("updated_at").toLocalDateTime();
+		LocalDateTime create_date = rs.getTimestamp("create_date").toLocalDateTime();
+		LocalDateTime update_date = rs.getTimestamp("update_date").toLocalDateTime();
 
 		return new ProductUser(id, name_kanji, name_kana,mail_adress, us_pasward , us_adress, tel_number, us_prefectur, street_address, create_date, update_date);
 	}

@@ -42,15 +42,17 @@ public class New_account extends HttpServlet {
 				String mail_adress = request.getParameter("mail_adress");
 				String us_pasward = request.getParameter("us_pasward");
 				String us_adress = request.getParameter("us_adress");
-				String tel_number = request.getParameter("tel_number");
+				int tel_number = Integer.parseInt(request.getParameter("tel_number"));
 				String us_prefectur = request.getParameter("us_prefectur");
 				String street_address = request.getParameter("street_address");
 				
+				System.out.println(name_kanji + name_kana + mail_adress + us_pasward + us_adress + tel_number + us_prefectur + street_address);
 				
 				ProductUser user = dao.create(name_kanji, name_kana, mail_adress, us_pasward,
 						us_adress, tel_number, us_prefectur, street_address);
 				
-				
+				System.out.println("");
+				System.out.println("user " + user);
 				System.out.println("usercreate");
 				if (user != null) {
 					// ログインしてトップページ（今回はVoD一覧）へリダイレクト

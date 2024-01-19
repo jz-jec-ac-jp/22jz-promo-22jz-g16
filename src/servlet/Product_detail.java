@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.FavoriteDAO;
 import dao.ItemDAO;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Detail
@@ -53,9 +54,11 @@ public class Product_detail extends HttpServlet {
 //		request.setCharacterEncoding("UTF-8");
 		FavoriteDAO dao = new FavoriteDAO();
 		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
 		int favoriteId = Integer.parseInt(request.getParameter("favoriteId"));
-		int id = 61;
+		int id = loginUser.getId();
+		System.out.println("detail post userId " + id);
 		
 		dao.create(favoriteId, id);
 		

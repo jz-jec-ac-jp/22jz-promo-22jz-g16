@@ -138,15 +138,15 @@
                     <!-- <p class="evaluation-star">☆☆☆☆☆</p> -->
                     <div class="stars">
                         <span>
-                            <input id="review01" type="radio" name="review" value="5"><label for="review01"
+                            <input id="review01" type="radio" name="review5" value="5"><label for="review01"
                                 onclick="setRating(5)">★</label>
-                            <input id="review02" type="radio" name="review" value="4"><label for="review02"
+                            <input id="review02" type="radio" name="review4" value="4"><label for="review02"
                                 onclick="setRating(4)">★</label>
-                            <input id="review03" type="radio" name="review" value="3"><label for="review03"
+                            <input id="review03" type="radio" name="review3" value="3"><label for="review03"
                                 onclick="setRating(3)">★</label>
-                            <input id="review04" type="radio" name="review" value="2"><label for="review04"
+                            <input id="review04" type="radio" name="review2" value="2"><label for="review04"
                                 onclick="setRating(2)">★</label>
-                            <input id="review05" type="radio" name="review" value="1"><label for="review05"
+                            <input id="review05" type="radio" name="review1" value="1"><label for="review05"
                                 onclick="setRating(1)">★</label>
                         </span>
                     </div>
@@ -157,7 +157,7 @@
             <div class="review-div">
                 <h2 class="review-title">レビュータイトル</h2>
             </div>
-            <form class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
+            <form enctype="multipart/form-data" class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
             	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
@@ -169,6 +169,7 @@
                 </div>
                 <!--商品・動画-->
                 <h2 class="picture-movie">写真・動画</h2>
+                <input type="file" name="img" value="写真・画像" multiple>
     
                 <div class="product-photo">
                     <figure>

@@ -17,13 +17,14 @@ public class ShopcartDAO {
 	 * @return カートデータ
 	 * String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id";
 	 */
-	public List<Item> get() {
+	public List<Item> get(int userId) {
 		List<Item> list = new ArrayList<>();
-		String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id";
+		String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id where user_id = ?";
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			
 			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, userId);
 			ResultSet rs = stmt.executeQuery();
 			
 			// データをリストに格納
