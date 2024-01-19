@@ -116,19 +116,21 @@
         <!-- <h1 class="title-review">レビュー</h1> -->
         <!-- 商品データ -->
 
-        <div class="review">
+<!--         <div class="review">
             <img class="review-productimg" src="assets/img/chair.jpg" alt="">
             <h2 class="review-productname">${item.product_name}</h2>
             <!--総合評価-->
+<!-- 
             <h2 class="all-evalution">総合評価</h2>
             <div class="evaluation-div">
                 <p class="evaluation">3.0</p>
                 <p class="evaluation-star">☆☆☆☆☆</p>
-
+ -->
         <div class="review-body">
             <div class="review">
                 <img class="review-productimg" src="assets/img/chair.jpg" alt="">
-                <h2 class="review-productname">モノトーン椅子</h2>
+                <h2 class="review-productname">${ item.product_name }椅子</h2>
+                
                 <!--総合評価-->
                 <h2 class="all-evalution">総合評価</h2>
                 <div class="evaluation-div">
@@ -155,11 +157,12 @@
             <div class="review-div">
                 <h2 class="review-title">レビュータイトル</h2>
             </div>
-            <form class="review-send-form" action="get" href="#" name="myForm" onsubmit="return check();">
+            <form class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
+            	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
                     <input class="text-input customer-comment" type="text" placeholder="入力してください"
-                        onKeyUp="countLength(value, 'textlength3');">
+                        onKeyUp="countLength(value, 'textlength3');" name="review-title">
                     <p class="error-message">※入力してください</p>
                     <!-- <p id="textlength3">0</p> -->
     
@@ -190,8 +193,7 @@
                 <div class="review-send">
                     <a class="review-product-cart" href="Puroduct_detail">商品詳細ページへいく</a>
                     <!-- 送信アイコン -->
-                    <input id="set" class="review-submit-icon" type="image" src="assets/img/send-icon.png" type="submit"
-                        alt="">
+                    <input id="set" class="review-submit-icon" type="image" src="assets/img/send-icon.png" alt="">
                 </div>
             </form>
             </div>

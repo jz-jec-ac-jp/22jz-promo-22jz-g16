@@ -121,7 +121,7 @@
         <div class="history-data">
         
 	        <c:forEach var="item" items="${ list }">
-	        <a href="Product_detail?id=${ item.id }">
+	        <a href="Product_review?id=${ item.id }">
 	            <section class="history-product">
 	                <p class="ad-productname">${ item.product_name }</p>
 	                <div class="ad-product-man">

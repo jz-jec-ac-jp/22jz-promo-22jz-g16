@@ -251,7 +251,7 @@
             	 --%>
             	<a href="Product_list" class="cart-btn">一覧に戻る</a>
                 <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a>
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
+<!-- >>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git -->
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 

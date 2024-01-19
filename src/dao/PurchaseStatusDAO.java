@@ -2,7 +2,6 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PurchaseStatusDAO {
@@ -18,7 +17,7 @@ public class PurchaseStatusDAO {
         stmt.setString(1, delivery_status);
         System.out.println("delivery_status " + delivery_status);
          
-        ResultSet rs = stmt.executeQuery();
+//        ResultSet rs = stmt.executeQuery();
 
             // データをリストに格納
 //            while(rs.next()) {
