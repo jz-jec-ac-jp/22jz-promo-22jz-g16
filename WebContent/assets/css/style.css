@@ -1180,7 +1180,8 @@ footer a {
 #popup-overlay-light,
 #popup-overlay-table,
 #popup-overlay-category {
-    display: block;
+/*    display: block;*/
+	display: none;
     position: fixed;
     top: 0;
     left: 0;
