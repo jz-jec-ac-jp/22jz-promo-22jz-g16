@@ -9,10 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.FavoriteDAO;
 import dao.ShopcartDAO;
+import dao.UserDAO;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Product_favorite
@@ -25,12 +28,43 @@ public class Product_favorite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FavoriteDAO dao = new FavoriteDAO();
 		
-		List<Item> list = dao.get();
-		//Item item = dao.find(1);
+//		FavoriteDAO dao = new FavoriteDAO();
+//		
+//		List<Item> list = dao.get();
+//		//Item item = dao.find(1);
+//		
+//		request.setAttribute("list", list);
 		
-		request.setAttribute("list", list);
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		
+		if (loginUser == null) {			
+
+			System.out.println("お気に入り画面未ログイン");
+			HttpSession session = request.getSession();
+			session.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Product_login");
+		}
+		else {
+			UserDAO daoUser = new UserDAO();
+			daoUser.findByEmail(loginUser.getMail_adress());
+			System.out.println("");
+			System.out.println("user_mailadress " + loginUser.getMail_adress());
+			System.out.println("user_id " + loginUser.getId());
+//		
+			FavoriteDAO dao = new FavoriteDAO();
+			
+			List<Item> list = dao.get(loginUser.getId());
+			//Item item = dao.find(1);
+			
+			request.setAttribute("list", list);
+			
+			System.out.println("true  " + list);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 		
 		//request.setAttribute("item", item);
 		
@@ -46,9 +80,7 @@ public class Product_favorite extends HttpServlet {
 //		while()
 		
 		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
-		dispatcher.forward(request, response);
+
 	}
 
 	/**

@@ -216,69 +216,6 @@
 	
 	    </c:forEach>  
 	</div>
-    <%--      <div class="goods-item">
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
-        <figure>
-          <img class="p" src="assets/img/key-visuals.png" alt="">
-        </figure>
-        <p class="ad-productname">${ item.product_name }</p>
-        <p class="price">値段:${ item.price }(税込)</p>
-<<<<<<< HEAD
-      </div>
-      </a>
-    </c:forEach>  
-      
-      <%--  
-      <!-- </section> -->
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-      <div class="ur-product-list">
-        <div class="goods-item">
-          <figure>
-            <img class="p" src="assets/img/key-visuals.png" alt="">
-          </figure>
-          <p class="ad-productname">商品名 家具</p>
-          <p class="price">値段:5000円(税込)</p>
-        </div>
-      </div>
-    </div>
-    --%>
-
-
     
 
     <!--ページネーション-->

@@ -17,13 +17,14 @@ public class FavoriteDAO {
 	 * テーブルのデータをすべて取得するメソッド
 	 * @return データのリスト
 	 */
-	public List<Item> get() {
+	public List<Item> get(int userId) {
 		List<Item> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id";
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id where user_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, userId);
 			ResultSet rs = stmt.executeQuery();
 			
 			// データをリストに格納

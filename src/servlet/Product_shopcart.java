@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ShopcartDAO;
 import dao.UserDAO;
@@ -43,25 +44,33 @@ public class Product_shopcart extends HttpServlet {
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
-		
-		UserDAO daoUser = new UserDAO();
-		daoUser.findByEmail(loginUser.getMail_adress());
-		System.out.println("");
-		System.out.println("user_mailadress " + loginUser.getMail_adress());
-		System.out.println("user_id " + loginUser.getId());
+		if (loginUser == null) {			
+
+			System.out.println("ショップカート画面未ログイン");
+			HttpSession session = request.getSession();
+			session.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Product_login");
+		}
+		else {
+			UserDAO daoUser = new UserDAO();
+			daoUser.findByEmail(loginUser.getMail_adress());
+			System.out.println("");
+			System.out.println("user_mailadress " + loginUser.getMail_adress());
+			System.out.println("user_id " + loginUser.getId());
 //		
-		ShopcartDAO dao = new ShopcartDAO();
-		
-		List<Item> list = dao.get(loginUser.getId());
-		//Item item = dao.find(1);
-		
-		request.setAttribute("list", list);
-		
-		System.out.println("true  " + list);
-		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
-		dispatcher.forward(request, response);
+			ShopcartDAO dao = new ShopcartDAO();
+			
+			List<Item> list = dao.get(loginUser.getId());
+			//Item item = dao.find(1);
+			
+			request.setAttribute("list", list);
+			
+			System.out.println("true  " + list);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_shopcart.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 		
 		// 実際には、ここでDAO使って商品情報を取得
 		

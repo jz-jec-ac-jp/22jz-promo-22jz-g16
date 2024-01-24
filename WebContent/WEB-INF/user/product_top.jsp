@@ -174,192 +174,20 @@
       <p class="interior-description">5種類の家具からお選びください</p>
       <!-- 写真スライド -->
       <div class="wrap-product slide-paused  wow animated fadeInUp" ontouchstart="">
-        <ul class="slideshow">
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="/assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-        </ul>
-        <ul class="slideshow">
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          </li>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-          <li>
-            <div class="goods-item content-hover ">
-              <figure>
-                <img class="p" src="assets/img/key-visuals.png" alt="">
-              </figure>
-              <p class="ad-productname">商品名 家具</p>
-              <p class="price">値段:5000円(税込)</p>
-            </div>
-        </ul>
-        <!-- <ul class="slideshow">
-          <li class="content content-hover">tomato</li>
-          <li class="content content-hover">orange</li>
-          <li class="content content-hover">blue</li>
-          <li class="content content-hover">green</li>
-        </ul>
-        <ul class="slideshow">
-          <li class="content content-hover">tomato</li>
-          <li class="content content-hover">orange</li>
-          <li class="content content-hover">blue</li>
-          <li class="content content-hover">green</li>
-        </ul> -->
-
-      </div>
+         	<ul class="slideshow">
+          <c:forEach var="item" items="${ list }">
+	          <li>
+	            <div class="goods-item content-hover ">
+	              <figure>
+	                <img class="p" src="assets/img/key-visuals.png" alt="">
+	              </figure>
+	              <p class="ad-productname">${ item.product_name }</p>
+	              <p class="price">値段：${ item.product_price }</p>
+	            </div>
+	          </li>
+	       </c:forEach>
+	      </ul>
+	   </div> 
 
       <h1>サービス</h1>
       <p class="service">一人暮らしの方でも安心してご利用いただけます</p>
