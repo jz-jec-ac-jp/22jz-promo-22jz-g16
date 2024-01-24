@@ -54,6 +54,10 @@ public class ProductCard implements Serializable{
 	
 	public ProductCard() {}
 	
+	public ProductCard(int id) {
+		this.id = id;
+	}
+	
 	public ProductCard(int id, int user_id, String card_number, String card_Nominee, Timestamp create_date,
 			Timestamp update_date, String date_of_expiry) {
 //		super();

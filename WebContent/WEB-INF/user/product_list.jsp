@@ -203,9 +203,11 @@
 	   <c:forEach var="item" items="${ list }">
 	    <a href="Product_detail?id=${ item.id }">
 		   <div class="goods-item">
-		        <figure>
-		          <img class="p" src="assets/img/key-visuals.png" alt="">
-		        </figure>
+				<c:forEach var="img" items="${ item.imgUrl }">   	
+		        	<figure>
+		          		<img class="p" src="${ img.img_url }" alt="">
+		        	</figure>
+		        </c:forEach>
 		        <p class="ad-productname">${ item.product_name }</p>
 		        <p class="price">値段:${ item.product_price }(税込)</p>
 		        <c:forEach var="color" items="${ item.colorTexts }">

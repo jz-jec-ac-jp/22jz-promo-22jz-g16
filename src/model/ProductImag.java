@@ -42,7 +42,7 @@ public class ProductImag implements Serializable{
 		public ProductImag() {}
 		
 		public ProductImag(int id, int purchase_id, String img_url, Timestamp create_date, Timestamp update_date) {
-			super();
+//			super();
 			this.id = id;
 			this.purchase_id = purchase_id;
 			this.img_url = img_url;

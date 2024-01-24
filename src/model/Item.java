@@ -11,6 +11,10 @@ public class Item implements Serializable {
 	
 	//カラーテーブル用
 	List<ProductColor> colorTexts;
+	
+//	imgテーブル用
+	List<ProductImag> imgUrl;
+	
 //	Item colorText;
 	
 	public int getId() {
@@ -65,7 +69,14 @@ public class Item implements Serializable {
 		this.colorTexts = colorTexts;
 	}
 
-	
+	//img
+	public List<ProductImag> getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(List<ProductImag> imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
 
 
 	public Item() {}

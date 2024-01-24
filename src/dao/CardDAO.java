@@ -24,6 +24,7 @@ public class CardDAO {
 			stmt.setInt(1, user_id);
 			ResultSet rs = stmt.executeQuery();
 			
+			
 			// データをリストに格納
 			while(rs.next()) {
 				ProductCard card = rs2model(rs);
@@ -31,9 +32,11 @@ public class CardDAO {
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + card.getId());
-			
+				
+				
 				
 //				return card;
+
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -43,6 +46,7 @@ public class CardDAO {
 
 		
 	}
+	
 	
 	public ProductCard getCard(String card_number) {
 //		List<ProductCard> list = new ArrayList<>();
@@ -72,6 +76,40 @@ public class CardDAO {
 		}
 //		return list;
 		return null;
+
+		
+	}
+	
+	public int findCardId(String card_number) {
+//		List<ProductCard> list = new ArrayList<>();
+			int card = -1;
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT * FROM card_table where card_number = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setString(1, card_number);
+			ResultSet rs = stmt.executeQuery();
+			
+			
+			// データをリストに格納
+//			while(rs.next()) {
+//				ProductCard card = rs2model(rs);
+				card = rs2model02(rs);
+				int cardId = card.getId();
+//				list.add(card);
+				
+//				System.out.println("true_get " +  list.add(item));
+//				System.out.println("true_get()  " + card.getId());
+			
+				return card;
+//			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+			return card = 1;
+		}
+//		return list;
 
 		
 	}
@@ -112,6 +150,13 @@ public class CardDAO {
 	 * @param rs 変換前のデータ
 	 * @return 変換後のデータ
 	 */
+	
+	private  int rs2model02(ResultSet rs) throws SQLException {
+		int id = rs.getInt("id");/* ⑨ */
+		
+		return id;
+	}
+	
 	private  ProductCard rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 		int id = rs.getInt("id");/* ⑨ */

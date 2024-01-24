@@ -94,25 +94,35 @@ public class Product_shopcart extends HttpServlet {
 
 				ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 				
-				int Product_id = Integer.parseInt(request.getParameter("shopCart"));
-				int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
-//				int userId = (User)(request.getSession().getAttribute("user")).getId();
-				System.out.println("shopCart post");
+				if (loginUser == null) {			
+
+					System.out.println("ショップカート画面未ログイン");
+					HttpSession session = request.getSession();
+					session.setAttribute("msg", "ログインしてください");
+					response.sendRedirect("Product_login");
+				}
+				else {
 				
-				// CartDAOを用意してDBに登録
-				ShopcartDAO dao = new ShopcartDAO();
-				
-				dao.create(Product_id, userId);
-				
-				System.out.println("");
-				System.out.println("shopCartId = " + Product_id);
-				System.out.println("");
-				
-				// リクエストスコープにメッセージを保存
-				request.setAttribute("message", "カートに商品を追加しました。");
-				
-				// 自分を再表示
-				doGet(request, response);
+					int Product_id = Integer.parseInt(request.getParameter("shopCart"));
+					int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
+	//				int userId = (User)(request.getSession().getAttribute("user")).getId();
+					System.out.println("shopCart post");
+					
+					// CartDAOを用意してDBに登録
+					ShopcartDAO dao = new ShopcartDAO();
+					
+					dao.create(Product_id, userId);
+					
+					System.out.println("");
+					System.out.println("shopCartId = " + Product_id);
+					System.out.println("");
+					
+					// リクエストスコープにメッセージを保存
+					request.setAttribute("message", "カートに商品を追加しました。");
+					
+					// 自分を再表示
+					doGet(request, response);
+				}
 			}
 
 	}

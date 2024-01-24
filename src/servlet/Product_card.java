@@ -44,6 +44,7 @@ public class Product_card extends HttpServlet {
 			System.out.println("list " + list);
 			
 			request.setAttribute("list", list);
+//			request.setAttribute("cardId", list);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_card.jsp");
 			dispatcher.forward(request, response);
 		}

@@ -8,31 +8,31 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Item;
+import model.ProductImag;
 
 public class ImageDAO {
 	/**
 	 * テーブルのデータをすべて取得するメソッド
 	 * @return データのリスト
 	 */
-	public List<Item> get() {
-		List<Item> list = new ArrayList<>();
+	public List<ProductImag> get() {
+		List<ProductImag> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM item_table";
+			String sql = "SELECT * FROM item_table where product_name = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			
 			// データをリストに格納
 			while(rs.next()) {
-				Item  item = rs2model(rs);
+				ProductImag  item = rs2model(rs);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
-				System.out.println("true_Name()  " + item.getProduct_name());
-				System.out.println("true_Name()  " + item.getProduct_price());
+//				System.out.println("true_Name()  " + item.getProduct_name());
+//				System.out.println("true_Name()  " + item.getProduct_price());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -47,32 +47,34 @@ public class ImageDAO {
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド
 	 * @param id 主キーの値
 	 * @return 発見したデータ。なければnull
-	 */
-	public  Item find(int id) {
-		 Item  item = null;
-		DBManager manager = DBManager.getInstance();
-		try(Connection cn = manager.getConnection()) {
-			// プレースホルダで変数部分を定義
-			String sql = "SELECT * FROM item_table where id = ?";
-			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setInt(1, id);
-			ResultSet rs = stmt.executeQuery();
-			
-			// データをリストに格納
-			if (rs.next()) {
-				 item = rs2model(rs);
-				 
-				 
-				 System.out.println("true_find  " + item);
-				 System.out.println("true_get()  " + item.getId());
-				 System.out.println("true_Name()  " + item.getProduct_name());
-			}
-		} catch(SQLException e) {
-			e.printStackTrace();
-			System.out.println("error_find  " + e);
-		}
+	 */	
+	public  List<ProductImag> find(int itemId) {
+        List<ProductImag> list = new ArrayList<>();
 		
-		return   item;
+        
+        DBManager manager = DBManager.getInstance();
+        try(Connection cn = manager.getConnection()) {
+        String sql = "SELECT * FROM img_table WHERE item_id = ?";
+        PreparedStatement stmt = cn.prepareStatement(sql);
+//        一行入れる
+        stmt.setInt(1, itemId);
+        System.out.println("itemId " + itemId);
+         
+        ResultSet rs = stmt.executeQuery();
+
+            // データをリストに格納
+            while(rs.next()) {
+//                ProductColor itemColors = rs2model(rs);
+            	ProductImag img = rs2model(rs);
+                list.add(img);
+                System.out.println("imgDAO");
+//                setColor(itemColor);
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+            System.out.println("error_color " + e);
+        }
+        return list;
 	}
 
 	  /**
@@ -96,18 +98,21 @@ public class ImageDAO {
 	 * @param rs 変換前のデータ
 	 * @return 変換後のデータ
 	 */
-	private  Item rs2model(ResultSet rs) throws SQLException {
+	private  ProductImag rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 		int id = rs.getInt("id");/* ⑨ */
-		String product_name = rs.getString("product_name");
-		String product_detail = rs.getString("product_detail");
-		int product_price = rs.getInt("product_price");
-		int product_stock = rs.getInt("product_stock");
+//		String product_name = rs.getString("product_name");
+//		String product_detail = rs.getString("product_detail");
+//		int product_price = rs.getInt("product_price");
+//		int product_stock = rs.getInt("product_stock");
+		
+		int item_id =rs.getInt("item_id");
+		String img_url = rs.getString("img_url");
 		Timestamp create_date = rs.getTimestamp("create_date");
 		Timestamp update_date = rs.getTimestamp("update_date");
 		
 		
-		return new  Item(id, product_name, product_detail, product_price, product_stock, create_date, update_date);
+		return new  ProductImag(id, item_id, img_url, create_date, update_date);
 	}
 
 	

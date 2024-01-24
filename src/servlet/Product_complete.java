@@ -8,6 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.CardDAO;
+import dao.ProductHistoryDAO;
+import dao.ShopcartDAO;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Product_complete
@@ -36,6 +42,36 @@ public class Product_complete extends HttpServlet {
 //			dispatcher.forward(request, response);
 //		}
 		
+		// String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, delivery_status) VALUES (?, ?, ?, ?, ?)";
+		
+//		HttpSession session = request.getSession();
+//		session.setAttribute("pay", pay);
+//		
+//		System.out.println(pay);
+		
+		CardDAO daoCard = new CardDAO();
+		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		HttpSession session = request.getSession();
+		
+		String cardNumber = (String) session.getAttribute("card_number");
+		
+		int user_id = loginUser.getId();
+		String payMethod =  (String) request.getSession().getAttribute("pay");
+		System.out.println("payMethod " +  payMethod);		
+		int cardId =  daoCard.findCardId(cardNumber);
+		String delivery_status = "準備中";
+//		
+		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
+		daoHistory.create(user_id, payMethod, null, cardId, delivery_status);
+		
+//		
+		ShopcartDAO daoShopcart = new ShopcartDAO();
+		
+//		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		int userId = loginUser.getId();
+		daoShopcart.delete(userId);
+
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
 		dispatcher.forward(request, response);
@@ -47,7 +83,25 @@ public class Product_complete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String pay = request.getParameter("paymethood-box");
+		HttpSession session = request.getSession();
+		session.setAttribute("pay", pay);
+		
 		System.out.println(pay);
+		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+//		
+//		int user_id = loginUser.getId();
+//		int paypay = (int) session.getAttribute("pay");
+//		int cardId = (int) session.getAttribute("cardId");
+//		String delivery_status = "準備中";
+//		
+//		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
+//		daoHistory.create(user_id, paypay, null, cardId, delivery_status);
+		
+		ShopcartDAO daoShopcart = new ShopcartDAO();
+		
+		int userId = loginUser.getId();
+		daoShopcart.delete(userId);
 		
 		if (pay.equals("credit")) {
 			System.out.println("");
@@ -57,8 +111,7 @@ public class Product_complete extends HttpServlet {
 			
 		}
 		else if(pay.equals("cash")){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("Product_complete");
 		}
 		else if (pay.equals("")) {
 			response.sendRedirect("Product_purchase");

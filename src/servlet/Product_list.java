@@ -26,6 +26,7 @@ public class Product_list extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ItemDAO dao = new ItemDAO();
 		
+		
 		List<Item> list = dao.get();
 		//Item item = dao.find(1);
 		

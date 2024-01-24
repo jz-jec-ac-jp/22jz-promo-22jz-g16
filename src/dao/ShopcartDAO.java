@@ -102,6 +102,32 @@ public class ShopcartDAO {
 		return ret > 0;
 	}
 	
+	public boolean delete(int userId) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "DELETE FROM shopcart_table where product_id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, userId);
+			ret = stmt.executeUpdate();
+			System.out.println("shopCart delete");
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+		
+		
+		
+	}
+	
 //	/**
 //	 * カートデータに紐づくライセンス情報を検索して追加
 //	 * @param cart 追加対象のカートデータ

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -103,7 +104,33 @@ public class ProductHistoryDAO {
 	    /* 取得したライセンス情報を  item にセット */
 //	     item.setLicenses(licenses);
 //	  }
-
+	public boolean create(int user_id, String payMethod, Date  purchase_date,int card_id, String delivery_status ) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, delivery_status) VALUES (?, ?, ?, ?, ?)";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, user_id);
+			stmt.setString(2, payMethod);
+			stmt.setDate(3, purchase_date);
+			stmt.setInt(4, card_id);
+			stmt.setString(5, delivery_status);
+			
+			ret = stmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+	}
+	
 	
 	
 	/**

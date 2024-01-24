@@ -11,6 +11,7 @@ import java.util.List;
 //import model.License;
 import model. Item;
 import model.ProductColor;
+import model.ProductImag;
 
 public class  ItemDAO {
 	/**
@@ -29,6 +30,7 @@ public class  ItemDAO {
 			// データをリストに格納
 			while(rs.next()) {
 				Item  item = rs2model(rs);
+				setImg(item);
 				setColor(item);
 				list.add( item);
 				
@@ -37,6 +39,7 @@ public class  ItemDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
+				System.out.println("true_img()  " + item.getImgUrl());
 				
 
 			}
@@ -59,6 +62,12 @@ public class  ItemDAO {
 		ColorDAO dao = new ColorDAO();
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
+	}
+	
+	public void setImg(Item item) {
+		ImageDAO dao = new ImageDAO();
+		List<ProductImag> img = dao.find(item.getId());
+		item.setImgUrl(img);
 	}
 	
 	
