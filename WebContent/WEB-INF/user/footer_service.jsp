@@ -60,6 +60,7 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
+          
     
     
         <div id="header-animation" class="header-anim">
@@ -106,7 +107,45 @@
       </ol>
     </nav>
     
-    
+    <!-- ここから下 -->
+    <div class="footer_service">
+    <!-- 初めての方へ -->
+	    <div class="first_time_users">
+		    <h1 class="beginner's_guide">初めての方へ</h1>
+		    <p>初心者歓迎！</p>
+	    </div>
+	<!-- サイトの使い方 -->
+	    <div class="how_to">
+		    <h1 class="how_to_use">このサイトの使い方</h1>
+		    <p>こうやって使ってね</p>
+	    </div>
+    <!-- 質問 -->
+	    <h1 class="service_title">よくある質問</h1>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	    </div>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	    </div>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	    </div>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	    </div>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	    </div>
+	    <div class="service_question">
+		    <h3 class="service_q">Q.なんかの質問</h3>
+		    <p class="service_a">A.答え</p>
+	 </div>
+	    <!-- ここまで -->
       </main>
    <!-- footer -->
   <footer>

@@ -106,7 +106,27 @@
       </ol>
     </nav>
     
-    
+      <!-- お店について -->
+      <div class="store-explain">
+        <h1 class="top-store">Inair</h1>
+        <p class="store-description">
+          <!-- 創立5周年 <br>
+          東京都豊島区に3店舗を構える <br>
+          十店舗の場所　○○区 <br>
+          お店の特徴お店の特徴 -->
+          自分好みに空間全体を彩ってほしい <br> という思いから、 <br> 装飾を表す「<span class="description"> Interior </span>」と <br> 空間を表す「 <span
+            class="description"> air </span>」を掛け合わせて <br>「<span class="description"> Inair </span>」というサイト名にしました
+        </p>
+
+        <h1>１、スタイルを選ぶ</h1>
+
+        <p class="store-design">
+          当店では、「<span class="description">モノトーン風デザイン</span>」の家具と <br>「<span
+            class="description">カントリー風デザイン</span>」の家具を売っています<br>
+          <span class="description-border">広くない空間でも低価格でインテリアが楽しめます</span>
+        </p>
+      
+    </div>
       </main>
    <!-- footer -->
   <footer>

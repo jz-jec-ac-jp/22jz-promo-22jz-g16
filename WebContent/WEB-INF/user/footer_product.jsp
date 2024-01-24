@@ -106,6 +106,243 @@
       </ol>
     </nav>
     
+    <!-- カテゴリ -->
+    <h2 class="category">Category</h2>
+    <div class="category-list">
+      <!-- 椅子 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_chair();">
+          <figure>
+            <img src="assets/img/chair.jpg" alt="">
+          </figure>
+          <p>椅子</p>
+        </a>
+      </div>
+      <div id="popup-overlay-chair">
+        <div id="popup-window-chair" class="popup-window">
+          <section class="popup-header">
+            <h2>椅子のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_chair();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/chair.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/chair.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 机 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_table();">
+          <figure>
+            <img src="assets/img/table.jpg" alt="">
+          </figure>
+          <p>机</p>
+        </a>
+      </div>
+      <div id="popup-overlay-table">
+        <div id="popup-window-table" class="popup-window">
+          <section class="popup-header">
+            <h2>机のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_table();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/table.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/table.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="category-list-line">
+      <!-- 照明 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_light();">
+          <figure>
+            <img src="assets/img/light.jpg" alt="">
+          </figure>
+          <p>照明</p>
+        </a>
+      </div>
+      <div id="popup-overlay-light">
+        <div id="popup-window-light" class="popup-window">
+          <section class="popup-header">
+            <h2>照明のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_light();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/light.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/light.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 収納 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_storage();">
+          <figure>
+            <img src="assets/img/storage.jpg" alt="">
+          </figure>
+          <p>収納</p>
+        </a>
+      </div>
+      <div id="popup-overlay-storage">
+        <div id="popup-window-storage" class="popup-window">
+          <section class="popup-header">
+            <h2>収納のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_storage();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/storage.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/storage.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 雑貨 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_goods();">
+          <figure>
+            <img src="assets/img/table.jpg" alt="">
+          </figure>
+          <p>雑貨</p>
+        </a>
+      </div>
+    </div>
+    <div id="popup-overlay-goods">
+      <div id="popup-window-goods" class="popup-window">
+        <section class="popup-header">
+          <h2>椅子のカテゴリー</h2>
+          <div class="popup-close">
+            <a href="javascript:popup_close_goods();">×</a>
+          </div>
+        </section>
+        <div class="popup-body">
+          <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+          <ul class="popup-list">
+            <li>
+              <a href="Product_list">
+                <img src="assets/img/chair.jpg" alt="">
+                <p>モノトーン</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="popup-list">
+            <li>
+              <a href="Product_list">
+                <img src="assets/img/chair.jpg" alt="">
+                <p>カントリー風</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ランキング -->
+    <h2 class="ranking">Ranking</h2>
+    <ul class="ranking-list">
+      <li class="ranking-item">
+        <figure>
+          <img src="assets/img/light.jpg" alt="">
+        </figure>
+        <p>モノトーン照明</p>
+        <!-- <p>1位</p> -->
+      </li>
+      <li class="ranking-item">
+        <figure>
+          <img src="assets/img/table.jpg" alt="">
+        </figure>
+        <p>カントリー机</p>
+        <!-- <p>2位</p> -->
+      </li>
+      <li class="ranking-item">
+        <figure>
+          <img src="assets/img/table.jpg" alt="">
+        </figure>
+        <p>机</p>
+        <!-- <p>3位</p> -->
+      </li>
+      <li class="ranking-item">
+        <figure>
+          <img src="assets/img/table.jpg" alt="">
+        </figure>
+        <p>机</p>
+        <!-- <p>4位</p> -->
+      </li>
+      <li class="ranking-item">
+        <figure>
+          <img src="assets/img/table.jpg" alt="">
+        </figure>
+        <p>机</p>
+        <!-- <p>5位</p> -->
+      </li>
+    </ul>
     
       </main>
    <!-- footer -->
