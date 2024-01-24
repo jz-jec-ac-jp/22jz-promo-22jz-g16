@@ -32,9 +32,13 @@ public class Product_card_check extends HttpServlet {
 		
 			
 		String cardNumber =  (String) session.getAttribute("card_number");
+		String cardNum = request.getParameter("card_number");
 		
+		ProductCard cardCheckNum =  dao.getCard(cardNum);
 		ProductCard cardCheck =  dao.getCard(cardNumber);
 		
+		
+		request.setAttribute("cardCheckNum", cardCheckNum);
 		request.setAttribute("cardCheck", cardCheck);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/productCardCheck.jsp");
 		dispatcher.forward(request, response);

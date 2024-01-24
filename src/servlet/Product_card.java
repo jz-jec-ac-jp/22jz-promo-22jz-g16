@@ -36,12 +36,14 @@ public class Product_card extends HttpServlet {
 			response.sendRedirect("Product_login");
 		}
 		else {
-			CardDAO dao = new CardDAO();
-			List<ProductCard> cardCheck =  dao.get(loginUser.getId());
+			CardDAO daoCard = new CardDAO();
+			List<ProductCard> list =  daoCard.get(loginUser.getId());
 			
-			request.setAttribute("cardTrue", "cardTrue");
+//			request.setAttribute("cardTrue", "cardTrue");
+			System.out.println("loginId " + loginUser.getId());
+			System.out.println("list " + list);
 			
-			request.setAttribute("cardCheck", cardCheck);
+			request.setAttribute("list", list);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_card.jsp");
 			dispatcher.forward(request, response);
 		}

@@ -117,19 +117,38 @@
                 <h1 class="card-logo">Visa</h1>
                 <!-- カード番号 -->
                 <h2>カード番号（半角）*</h2>
-                <p>${ cardCheck.card_number }</p>
+                <c:if test="${ not empty cardCheck }">
+                	<p>${ cardCheck.card_number }</p>
+                </c:if>
+                
+                <c:if test="${ not empty cardCheckNum }">
+                	<p>${ cardCheckNum.card_number }</p>
+                </c:if>
 
                 <!-- 有効期限 -->
                 <h2>有効期限*</h2>
-                <p>${ cardCheck.date_of_expiry }</p>
+                <c:if test="${ not empty cardCheck }">
+                	<p>${ cardCheck.date_of_expiry }</p>
+                </c:if>
+                
+                 <c:if test="${ not empty cardCheckNum }">
+                	<p>${ cardCheckNum.date_of_expiry }</p>
+                </c:if>
                 
                 <!-- 名義人名 -->
                 <h2>名義人名（半角ローマ字）</h2>
-                <p>${ cardCheck.card_Nominee }</p>
+                <c:if test="${ not empty cardCheck }">                
+                 	<p>${ cardCheck.card_Nominee }</p>
+                </c:if>
+                
+                <c:if test="${ not empty cardCheckNum }">
+                	<p>${ cardCheckNum.card_Nominee }</p>
+                </c:if>
 
 
                 <!-- セキュリティ番号 -->
                 <h2>セキュリティ番号</h2>
+                
 
                 <!-- 確定ボタン -->
                 <div class="card-button">

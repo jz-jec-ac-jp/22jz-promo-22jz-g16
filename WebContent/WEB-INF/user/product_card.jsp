@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -113,19 +114,21 @@
         </nav>
         <div class="card-main">
 
-	            <c:if test="${not empty cardTrue}">
-					<form class="card-form" action="Product_card_check" method="get" ><!-- onsubmit="return check()" -->  
-	                  <button class="select-input-btn" type="button">
-	                      <select class="paymethood-pulldown text-input-select" name="card_number">
-	                         <option value="">登録済みカード一覧</option>
-			            		<c:forEach var="item" items="${ cardCheck }">
-			            		<%-- メッセージが存在するときのみ表示 --%>
-	                          	<option value="${ item.card_number }">${ item.card_Nominee }</option>
-				            	</c:forEach>
-	                      </select>
-	                  </button>
-				    </form>
-		        </c:if>
+	            
+			<form class="card-form" action="Product_card_check" method="get" ><!-- onsubmit="return check()" -->  
+                 <button class="select-input-btn" type="button">
+                     <select class="paymethood-pulldown text-input-select" name="card_number">
+                        <option value="">登録済みカード一覧</option>
+	            		<c:forEach var="item" items="${ list }">
+		            		<%-- メッセージが存在するときのみ表示 --%>
+                          	<option value="${ item.card_number }">${ item.card_number }</option>
+		            	</c:forEach>
+                     </select>
+                 </button>
+                 
+                 <button type="submit">確定</button>
+		    </form>
+				    
         
             <form class="card-form" action="#" method="post" ><!-- onsubmit="return check()" -->
                 <h1 class="card-logo">Visa</h1>
@@ -155,12 +158,13 @@
 
                 <!-- セキュリティ番号 -->
                 <h2>セキュリティ番号</h2>
-                <input class="security-number text-input" type="number" placeholder="入力してください">
+                <input class="security-number text-input" type="number" placeholder="入力してください" name="card-security-number">
                 <p class="error-message">※入力してください</p>
 
                 <!-- 確定ボタン -->
                 <div class="card-button">
-                    <input class="card-return" type="submit" value="戻る">
+                    
+                    <a href="Product_purchase" class="card-return">商品購入画面</a>
                     <input type="submit" class="card-submit" value="次へ" onclick="window.onbeforeunload = null">
                 </div>
             </form>

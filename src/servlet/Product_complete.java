@@ -60,6 +60,9 @@ public class Product_complete extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_complete.jsp");
 			dispatcher.forward(request, response);
 		}
+		else if (pay.equals("")) {
+			response.sendRedirect("Product_purchase");
+		}
 		
 	}
 

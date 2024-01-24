@@ -265,7 +265,8 @@
 	                        </button>
 	                        <p class="error-message-select">※入力してください</p>
 	                         <div class="product-button">
-				                <input class="return-btn" type="submit" value="戻る">
+
+				                <a href="Product_list" class="return-btn">商品リスト一覧</a>
 				                <button type="submit">購入する</button>
 				              
 				                <%--
