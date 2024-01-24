@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ItemDAO;
 import dao.ProductReviewDAO;
 import model.Item;
-
+import model.ProductUser;
 /**
  * Servlet implementation class Product_review
  */
@@ -65,17 +65,30 @@ public class Product_review extends HttpServlet {
 		System.out.println("review post");
 		System.out.println("");
 		
+		//name属性がpictのファイルをPartオブジェクトとして取得
+//		Part part=request.getPart("img");
+		//ファイル名を取得
+		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
+//		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		//アップロードするフォルダ
+//		String path=getServletContext().getRealPath("asssets/mg");
+		//実際にファイルが保存されるパス確認
+//		System.out.println(filename);
+//		request.setAttribute("filename", filename);
+		request.setCharacterEncoding("UTF-8");
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		
 		int product_id = Integer.parseInt(request.getParameter("product_id"));
-		System.out.println(product_id);
-		int user_id = 61;
-//		int review_rating = Integer.parseInt(request.getParameter("review_rating"));
+		int user_id = loginUser.getId();		
+		int review_rating = 5;
+//		int review_rating =  Integer.parseInt(request.getParameter("review_rating"));
 //		String pictur_movieUrl = request.getParameter("pictur_movieUrl");
-		String review_text = request.getParameter("review-text");
-		String review_title = request.getParameter("review-title");
+		String review_text = request.getParameter("review_text");
+		String review_title = request.getParameter("review_title");
 		
-		dao.create(product_id, user_id, review_text, review_title);
-		
-		doGet(request, response);
+		dao.create(product_id, user_id, review_rating,  review_text, review_title);
+//		
+	doGet(request, response);
 	}
 
 }

@@ -6,7 +6,8 @@ import java.time.LocalDateTime;
 public class ProductUser implements Serializable{
 
 	private int id;
-	private String name_kanji, name_kana, mail_adress, us_pasward , us_adress, tel_number, us_prefectur, street_address;
+	private String name_kanji, name_kana, mail_adress, us_pasward , us_adress, us_prefectur, street_address;
+	int tel_number;
 	private LocalDateTime  create_date, update_date;
 	public int getId() {
 		return id;
@@ -44,10 +45,10 @@ public class ProductUser implements Serializable{
 	public void setUs_adress(String us_adress) {
 		this.us_adress = us_adress;
 	}
-	public String getTel_number() {
+	public int getTel_number() {
 		return tel_number;
 	}
-	public void setTel_number(String tel_number) {
+	public void setTel_number(int tel_number) {
 		this.tel_number = tel_number;
 	}
 	public String getUs_prefectur() {
@@ -83,7 +84,7 @@ public class ProductUser implements Serializable{
 	}
 	
 	public ProductUser(int id, String name_kanji, String name_kana, String mail_adress, String us_pasward,
-			String us_adress, String tel_number, String us_prefectur, String street_address, LocalDateTime create_date,
+			String us_adress, int tel_number, String us_prefectur, String street_address, LocalDateTime create_date,
 			LocalDateTime update_date) {
 		
 		this.id = id;

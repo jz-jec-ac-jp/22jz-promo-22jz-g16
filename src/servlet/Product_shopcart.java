@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ShopcartDAO;
+import dao.UserDAO;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Product_shopcart
@@ -38,10 +40,19 @@ public class Product_shopcart extends HttpServlet {
 //		int id = Integer.parseInt(request.getParameter("id"));
 //		
 //		dao_shop.create(id, 1);
+		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		
+		
+		UserDAO daoUser = new UserDAO();
+		daoUser.findByEmail(loginUser.getMail_adress());
+		System.out.println("");
+		System.out.println("user_mailadress " + loginUser.getMail_adress());
+		System.out.println("user_id " + loginUser.getId());
 //		
 		ShopcartDAO dao = new ShopcartDAO();
 		
-		List<Item> list = dao.get();
+		List<Item> list = dao.get(loginUser.getId());
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);
@@ -71,14 +82,17 @@ public class Product_shopcart extends HttpServlet {
 //					doGet(request, response);
 //					return;
 //				}
+
+				ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 				
-				int Product_id = Integer.parseInt(request.getParameter("shopCartName"));
-				int userId = 1;		// ログイン実装してないのでユーザは1番固定
+				int Product_id = Integer.parseInt(request.getParameter("shopCart"));
+				int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
 //				int userId = (User)(request.getSession().getAttribute("user")).getId();
 				System.out.println("shopCart post");
 				
 				// CartDAOを用意してDBに登録
 				ShopcartDAO dao = new ShopcartDAO();
+				
 				dao.create(Product_id, userId);
 				
 				System.out.println("");

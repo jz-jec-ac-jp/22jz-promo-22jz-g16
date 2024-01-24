@@ -37,10 +37,22 @@ public class New_account extends HttpServlet {
 		System.out.println("new_account post");
 				UserDAO dao = new UserDAO();
 				
-				String mail_adress = request.getParameter("login-id");
-				String us_pasword = request.getParameter("password-txt");
+				String name_kanji = request.getParameter("name_kanji");
+				String name_kana = request.getParameter("name_kana");
+				String mail_adress = request.getParameter("mail_adress");
+				String us_pasward = request.getParameter("us_pasward");
+				String us_adress = request.getParameter("us_adress");
+				int tel_number = Integer.parseInt(request.getParameter("tel_number"));
+				String us_prefectur = request.getParameter("us_prefectur");
+				String street_address = request.getParameter("street_address");
 				
-				ProductUser user = dao.create(mail_adress, us_pasword);
+				System.out.println(name_kanji + name_kana + mail_adress + us_pasward + us_adress + tel_number + us_prefectur + street_address);
+				
+				ProductUser user = dao.create(name_kanji, name_kana, mail_adress, us_pasward,
+						us_adress, tel_number, us_prefectur, street_address);
+				
+				System.out.println("");
+				System.out.println("user " + user);
 				System.out.println("usercreate");
 				if (user != null) {
 					// ログインしてトップページ（今回はVoD一覧）へリダイレクト
