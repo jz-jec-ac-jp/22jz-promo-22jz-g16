@@ -54,6 +54,7 @@ public class Product_favorite extends HttpServlet {
 //		
 			FavoriteDAO dao = new FavoriteDAO();
 			
+			
 			List<Item> list = dao.get(loginUser.getId());
 			//Item item = dao.find(1);
 			
