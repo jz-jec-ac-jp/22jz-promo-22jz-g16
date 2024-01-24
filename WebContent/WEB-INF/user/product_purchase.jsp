@@ -3,7 +3,6 @@
 
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -255,7 +254,7 @@
                 
                 
                         <!--支払方法-->
-                        <form  action="Product_complete" method="get" ><!-- onsubmit="return check();" -->
+                        <form  action="Product_complete" method="post" ><!-- onsubmit="return check();" -->
 	                        <h2 class="payment-method">支払方法*</h2>
 	                        <button class="select-input-btn" type="button" onclick="check_select()">
 	                            <select class="paymethood-pulldown text-input-select" name="paymethood-box">

@@ -85,15 +85,7 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box-anim" placeholder="入力してください">
           </form>
-          <!--お気に入りアイコン  -->
-          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
-            <img src="/assets/img/header_favorite.png" alt="">
-          </a> -->
-          <!-- カートアイコン -->
-          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
-            <img src="/assets/img/header_cart.png" alt="">
-          </a> -->
-    
+
           <nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li class="nav-top"><a href="Product_top">ホーム</a></li>
@@ -133,10 +125,6 @@
       <div class="store-explain">
         <h1 class="top-store">Inair</h1>
         <p class="store-description">
-          <!-- 創立5周年 <br>
-          東京都豊島区に3店舗を構える <br>
-          十店舗の場所　○○区 <br>
-          お店の特徴お店の特徴 -->
           自分好みに空間全体を彩ってほしい <br> という思いから、 <br> 装飾を表す「<span class="description"> Interior </span>」と <br> 空間を表す「 <span
             class="description"> air </span>」を掛け合わせて <br>「<span class="description"> Inair </span>」というサイト名にしました
         </p>
@@ -177,13 +165,15 @@
          	<ul class="slideshow">
           <c:forEach var="item" items="${ list }">
 	          <li>
-	            <div class="goods-item content-hover ">
-	              <figure>
-	                <img class="p" src="assets/img/key-visuals.png" alt="">
-	              </figure>
-	              <p class="ad-productname">${ item.product_name }</p>
-	              <p class="price">値段：${ item.product_price }</p>
-	            </div>
+		          <a href="Product_detail?id=${ item.id }">       
+		            <div class="goods-item content-hover ">
+		              <figure>
+		                <img class="p" src="assets/img/key-visuals.png" alt="">
+		              </figure>
+		              <p class="ad-productname">${ item.product_name }</p>
+		              <p class="price">値段：${ item.product_price }</p>
+		            </div>
+		          </a>
 	          </li>
 	       </c:forEach>
 	      </ul>

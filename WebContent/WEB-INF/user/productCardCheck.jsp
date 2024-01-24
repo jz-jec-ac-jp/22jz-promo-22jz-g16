@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>ログイン画面</title>
+    <title>カード画面</title>
     <script src="assets/js/humberger.js"></script>
     <script src="assets/js/top-page.js" defer></script>
     <script src="assets/js/header-anim.js"></script>
     <script src="assets/js/form-aleart.js"></script>
-    <script src="assets/js/fonst-count.js"></script>
+
 </head>
 
 <body>
     <!-- header -->
-    <header class="header">
+    <header>
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -59,33 +58,30 @@
           </div>
         </div>
           <!-- 検索アイコン -->
-          <form class="search-form" action="Product_list" method="post">
+          <form class="search-form" action="get" href="#">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください" name="search">
+            <input type="search" class="search-box" placeholder="入力してください">
           </form>
     
-       <div id="header-animation" class="header-anim">
+    
+        <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
-           <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt=""> -->
+          <form class="search-form-anim" action="get" href="#">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-             <input type="search" class="search-box-anim" placeholder="入力してください">
-          </form> 
-        
-          
-          
-          
+            <input type="search" class="search-box-anim" placeholder="入力してください">
+          </form>
           <!--お気に入りアイコン  -->
-          <a class="favorite-icon-anim" href="Purchase_favorite">
-            <img src="assets/img/header_favorite.png" alt="">
+          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
+            <img src="/assets/img/header_favorite.png" alt="">
           </a> -->
           <!-- カートアイコン -->
-          <a class="cart-icon-anim" href="Product_shopcart">
-            <img src="assets/img/header_cart.png" alt="">
-          </a> 
+          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
+            <img src="/assets/img/header_cart.png" alt="">
+          </a> -->
     
-     <nav class="nav">
+          <nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li class="nav-top"><a href="Product_top">ホーム</a></li>
             <li><a href="Product_login">ログイン</a></li>
@@ -100,70 +96,53 @@
             </ul>
           </nav>
           <button type="button" id="navbtn" onclick="navClick()"></button>
-        </div> 
-          
-
+        </div>
     
       </header>
 
-
-    <!-- main -->
     <main>
         <!--パンくずリスト-->
         <nav>
             <ol class="breadcrumb">
                 <li><a href="Product_top">ホーム</a></li>
-                <li>ログイン</li>
+                <li><a href="Product_list">商品一覧</a></li>
+                <li><a href="Puroduct_detail">商品詳細</a></li>
+                <li><a href="Product_shopcart">カート</a></li>
+                <li><a href="Product_purchase">商品購入</a></li>
+                <li>カード</li>
             </ol>
         </nav>
-        
-        <h1 class="login-title">ログイン</h1>
-        <div class="login">
-            <!-- ログインフォーム -->
-            
-            <c:if test="${not empty msg}">
-	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p>${msg}</p>
-	        </c:if>
-	        
-	        <c:if test="${ not empty logincomplete }">
-	        	<p>${ logincomplete }</p>
-	        	<p>${ loginUserId }</p>
-	        	<a href="Product_logout">ログアウト</a>
-	        </c:if>
-            
-            <c:if test="${ not empty login }">
-	   
-	            <form class="login-form" action="#" method="post" ><!-- onsubmit="return check();" -->
-	            <div class="err-message">            
-	                <!-- ログインID入力 -->
-	                <h2 class="login-id">ログインID  </h2>
-	                <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
-	                <p class="error-message">※</p>
-	            </div>
-	
-		
-						<!-- パスワード入力 -->
-					<div class="err-message">
-		            	<h2 class="login-password ">パスワード</h2>
-		                <input class="password-txt text-input" type="text" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
-		                <p class="error-message">※</p>
-		                <p id="textlength2">0</p>
-					</div>   
-	
-	                <a class="password-forget" href="#">パスワードをお忘れの方</a>
-	                <!-- ログインボタン -->
-	                <input class="login-button" type="submit" value="ログイン">
-	
-	            </form>
-	            <!-- 新規会員登録はこちら -->
-	            <a class="account-create" href="New_account">新規会員登録はこちら</a>
-	        </c:if>
-	        </div>
+        <div class="card-main">
+            <form class="card-form" action="Product_complete" method="get" ><!-- onsubmit="return check()" -->
+                <h1 class="card-logo">Visa</h1>
+                <!-- カード番号 -->
+                <h2>カード番号（半角）*</h2>
+                <p>${ cardCheck.card_number }</p>
 
+                <!-- 有効期限 -->
+                <h2>有効期限*</h2>
+                <p>${ cardCheck.date_of_expiry }</p>
+                
+                <!-- 名義人名 -->
+                <h2>名義人名（半角ローマ字）</h2>
+                <p>${ cardCheck.card_Nominee }</p>
+
+
+                <!-- セキュリティ番号 -->
+                <h2>セキュリティ番号</h2>
+
+                <!-- 確定ボタン -->
+                <div class="card-button">
+                    <input class="card-return" type="submit" value="戻る">
+                    <input type="submit" class="card-submit" value="次へ" onclick="window.onbeforeunload = null">
+                </div>
+            </form>
+            <!-- エラー文や警告文 <div></div> -->
+        </div>
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
 
     </main>
+
 
     <!-- footer -->
     <footer>
@@ -209,3 +188,4 @@
 </body>
 
 </html>
+    

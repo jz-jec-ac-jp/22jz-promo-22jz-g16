@@ -7,7 +7,8 @@ public class ProductCard implements Serializable{
 
 	private int id, user_id;
 	private String card_number, card_Nominee;
-	private Timestamp  create_date, update_date, date_of_expiry;
+	private Timestamp  create_date, update_date;
+	private String date_of_expiry;
 	public int getId() {
 		return id;
 	}
@@ -44,18 +45,18 @@ public class ProductCard implements Serializable{
 	public void setUpdate_date(Timestamp update_date) {
 		this.update_date = update_date;
 	}
-	public Timestamp getDate_of_expiry() {
+	public String getDate_of_expiry() {
 		return date_of_expiry;
 	}
-	public void setDate_of_expiry(Timestamp date_of_expiry) {
+	public void setDate_of_expiry(String date_of_expiry) {
 		this.date_of_expiry = date_of_expiry;
 	}
 	
 	public ProductCard() {}
 	
 	public ProductCard(int id, int user_id, String card_number, String card_Nominee, Timestamp create_date,
-			Timestamp update_date, Timestamp date_of_expiry) {
-		super();
+			Timestamp update_date, String date_of_expiry) {
+//		super();
 		this.id = id;
 		this.user_id = user_id;
 		this.card_number = card_number;

@@ -112,29 +112,44 @@
             </ol>
         </nav>
         <div class="card-main">
-            <form class="card-form" action="#" method="get" onsubmit="return check()">
+
+	            <c:if test="${not empty cardTrue}">
+					<form class="card-form" action="Product_card_check" method="get" ><!-- onsubmit="return check()" -->  
+	                  <button class="select-input-btn" type="button">
+	                      <select class="paymethood-pulldown text-input-select" name="card_number">
+	                         <option value="">登録済みカード一覧</option>
+			            		<c:forEach var="item" items="${ cardCheck }">
+			            		<%-- メッセージが存在するときのみ表示 --%>
+	                          	<option value="${ item.card_number }">${ item.card_Nominee }</option>
+				            	</c:forEach>
+	                      </select>
+	                  </button>
+				    </form>
+		        </c:if>
+        
+            <form class="card-form" action="#" method="post" ><!-- onsubmit="return check()" -->
                 <h1 class="card-logo">Visa</h1>
                 <!-- カード番号 -->
                 <h2>カード番号（半角）*</h2>
-                <input class="card-number text-input" type="text" inputmode="numeric" pattern="\d*"
-                    placeholder="入力してください" pattern="[0-9]">
+                <input class="card-number text-input" type="text"
+                    placeholder="入力してください"  name="card_number">
                 <p class="error-message">※入力してください</p>
 
                 <!-- 有効期限 -->
                 <h2>有効期限*</h2>
                 <div class="expiration">
-                    <input class="expiration-month text-input" type="number" placeholder="例）12">
+                    <input class="expiration-month text-input" type="number" placeholder="例）12" name="date_of_expiry">
                     <p class="error-message error-month">※入力してください</p>
 
                     <p>月　/</p>
-                    <input class="expiration-year text-input" type="number" placeholder="例）27">
+                  <!--   <input class="expiration-year text-input" type="number" placeholder="例）27" name="date_of_expiry">
                     <p class="error-message error-year">※入力してください</p>
 
-                    <p>年</p>
+                    <p>年</p> -->
                 </div>
                 <!-- 名義人名 -->
                 <h2>名義人名（半角ローマ字）</h2>
-                <input class="holder-name text-input" type="text" placeholder="入力してください">
+                <input class="holder-name text-input" type="text" placeholder="入力してください" name="card_nominee">
                 <p class="error-message">※入力してください</p>
 
 

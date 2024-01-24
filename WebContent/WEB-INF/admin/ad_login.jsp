@@ -13,7 +13,7 @@
     <main>
         <!-- ログイン -->
         <h1 class="admin-login">ログイン</h1>
-        <p>ad@ad, ad</p>
+        <p>学校メールアドレス、学籍番号</p>
         
         <div class="ad-login">
 	        <c:if test="${not empty msg}">
