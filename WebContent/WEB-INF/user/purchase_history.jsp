@@ -128,10 +128,16 @@
 	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 	
 	                    <div class="introduction-div">
+	                    <!-- 
 	                        <p class="ad-product-man">サイズ:</p>
+	                     -->
+	                        <div class="color-column">
+	                        
+		                    <p>カラー：</p>
 		                    <c:forEach var="color" items="${ item.colorTexts }">
-				                       <p>${ color.purchase_color}</p>
+				                <p>${ color.purchase_color}</p>
 				            </c:forEach>
+	                        </div>
 				            <br><p class="size">サイズ：</p>
 	                        	</p><br>
 	                        </p>
@@ -140,9 +146,12 @@
 	                        <input class="cancel-button" type="submit" value="キャンセル">
 	                    </div>
 	                </div>
+	                <!-- 
+	                
 	                <div class="delivery-bottom">
 	                    <div class="delivery-route">○○ → ------ ○○ ----- ○○ ----- ○○ -----○○</div>
 	                </div>
+	                 -->
 	            </section>
 	         </c:forEach>
            </div>
@@ -222,7 +231,10 @@
             	
                 <input class="return-btn" type="submit" value="戻る">
             	 --%>
-            	<a href="Product_top" class="cart-btn">トップページに戻る</a>
+            	 <%--
+            	 
+            	<a href="Product_top" class="history-cart-btn">トップページに戻る</a>
+            	  --%>
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
            

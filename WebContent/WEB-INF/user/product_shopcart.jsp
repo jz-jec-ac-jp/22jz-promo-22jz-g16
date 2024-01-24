@@ -118,7 +118,54 @@
          <p>${login}</p>
      </c:if>
 
+<<<<<<< HEAD
 	<c:if test="${ empty login }">
+=======
+    <div class="year-total">
+      <h2 class="peace">個数:4個</h2>
+      <h2 class="total-pay">合計金額：40,000円(税込)</h2>
+    </div>
+    <!--商品データ-->
+    <div class="cart-product-div">
+      <!-- ここから -->
+      
+      
+      
+      <c:forEach var="item" items="${ list }">
+      <a href="Product_detail?id=${ item.id }">
+      <section class="history-product">
+        <p class="us-productname">${ item.product_name }</p>
+        <div class="us-detail-Product-name">
+          <figure class="purchase-product">
+            <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+          </figure>
+          <div class="introduction-div">
+            <p class="us-product-man">商品コード:${ item.id }</p>
+            
+            
+            <div class="color-column">
+            <p>カラー：</p>
+            <c:forEach var="color" items="${ item.getColorTexts() }">
+            <p class="us-color-size">${ color.purchase_color }</p>
+            </c:forEach>
+            </div>
+            
+            <br><p>サイズ:</p>
+            <p class="value">${item.product_price }(税込)</p>
+          </div>
+          <p class="peace">個数 ${item.product_stock}</p>
+          <div class="us-detail-peace">
+            <p class="postage">送料:500円</p>
+            <p class="total-value">小計:${item.product_price }(税込)</p>
+          </div>
+        </div>
+      </section>
+      </a>
+      </c:forEach>
+      
+	<div class="product-button">
+	<!-- 
+>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	
 	    <div class="year-total">
 	      <h2 class="peace">個数:4個</h2>

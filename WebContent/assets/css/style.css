@@ -740,6 +740,7 @@ footer a {
 	position: relative;
 }
 
+
 .err-message .error-message {
 	position: absolute;
 	top: 45px;
@@ -1587,6 +1588,10 @@ footer a {
 ショップカート画面 
 
 */
+.color-column{
+	display: flex;
+}
+
 
 .year-total .peace {
     text-align: center;
@@ -1696,8 +1701,8 @@ footer a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* margin: 30px 0; */
-    margin-bottom: 30px;
-    padding-bottom: 10px;
+/*    margin-bottom: 30px;*/
+    padding-bottom: 20px;
     border-bottom: 1px solid #362918;
 }
 
@@ -1943,6 +1948,10 @@ footer a {
 購入履歴画面
 
 */
+.cart-btn{
+	text-align:right;
+	margin-top: 10px;
+}
 
 /*合計金額*/
 
@@ -1972,7 +1981,7 @@ footer a {
 }
 
 .history-data .ad-productimg {
-    width: 50%;
+    width: 60%;
 }
 
 .history-data .ad-product-man {
@@ -1980,10 +1989,11 @@ footer a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 7px;
 }
 
 /* 購入履歴項目   違うクラスをふる */
+
 
 .history-data {
     margin: 0 auto;
@@ -1991,13 +2001,21 @@ footer a {
     justify-content: space-between;
 }
 
+
+
 .introduction-div {
-    padding: 3%;
-    height: 100px;
+/*	text-align: center;*/
+/*	display :block ;*/
+/*	flex-direction: column;*/
+/*	text-align: center;*/
+/*	margin: auto 0;*/
+/*	height: 80%;*/
+	/*padding: 0 ;*/
+/*    height: 200px;*/
 }
 
 .introduction-div p {
-    margin: 3px;
+    margin: 0 ;
 }
 
 .history-div .ad-productname {
@@ -2166,6 +2184,8 @@ footer a {
     font-size: 1.6rem;
     margin-bottom: 20%;
 }
+
+
 
 /* 
 
@@ -2408,8 +2428,8 @@ footer a {
 .h .history-list {
     /* margin: 10%; */
     border-bottom: 1px solid #362918;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+/*    padding-bottom: 30px;*/
+/*    margin-bottom: 30px;*/
 }
 
 .q {
