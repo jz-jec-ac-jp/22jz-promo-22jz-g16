@@ -110,41 +110,41 @@
     <!-- 店舗説明 -->
 	    <div class="shop_information"
 		    <figure>
-			    <img src="#" alt="">
+			    <img class="shop_img" src="" alt="">
 		    </figure>
 		    <div class="shop_detail">
 			    <h2>店舗名</h2>
-			    <p>○○店</p>
+			    <p>東京都豊島区 1号店</p>
 			    <h2>住所</h2>
-			    <p>○○県○○市○○</p>
+			    <p>東京都豊島区</p>
 			    <h2>電話番号</h2>
-			    <p>○○○○-○○-○○○○</p>
+			    <p>03-1510-4649</p>
 		    </div>
 	<!-- 店舗説明 -->
 	    <div class="shop_information"
 		    <figure>
-			    <img src="#" alt="">
+			    <img class="shop_img" src="#" alt="">
 		    </figure>
 		    <div class="shop_detail">
 			    <h2>店舗名</h2>
-			    <p>○○店</p>
+			    <p>東京都豊島区 2号店</p>
 			    <h2>住所</h2>
-			    <p>○○県○○市○○</p>
+			    <p>東京都豊島区</p>
 			    <h2>電話番号</h2>
-			    <p>○○○○-○○-○○○○</p>
+			    <p>03-2510-4649</p>
 		    </div>
 	<!-- 店舗説明 -->
 	    <div class="shop_information"
 		    <figure>
-			    <img src="#" alt="">
+			    <img class="shop_img" src="#" alt="">
 		    </figure>
 		    <div class="shop_detail">
 			    <h2>店舗名</h2>
-			    <p>○○店</p>
+			    <p>東京都豊島区 3号店</p>
 			    <h2>住所</h2>
-			    <p>○○県○○市○○</p>
+			    <p>東京都豊島区</p>
 			    <h2>電話番号</h2>
-			    <p>○○○○-○○-○○○○</p>
+			    <p>03-3510-4649</p>
 		    </div>
     </div>
       </main>
