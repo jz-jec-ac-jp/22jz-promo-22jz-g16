@@ -118,7 +118,10 @@
          <p>${login}</p>
      </c:if>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	<c:if test="${ empty login }">
 
     <div class="year-total">
@@ -415,7 +418,7 @@
   <footer>
     <!-- 店舗 -->
     <div class="footer-aligned">
-      <a href="#" class="footer-store">
+      <a href="Footer_shop" class="footer-store">
         <figure>
           <img src="assets/img/footer_store.png" alt="">
         </figure>
@@ -423,28 +426,28 @@
       </a>
       <div></div>
       <!-- 商品 -->
-      <a href="#" class="footer-shopping">
+      <a href="Footer_product" class="footer-shopping">
         <figure>
           <img src="assets/img/footer_shopping.png" alt="">
         </figure>
         <p>商品</p>
       </a>
       <!-- サービス -->
-      <a href="#" class="footer-service">
+      <a href="Footer_service" class="footer-service">
         <figure>
           <img src="assets/img/footer_service.png" alt="">
         </figure>
         <p>サービス</p>
       </a>
       <!-- お問い合わせ -->
-      <a href="#" class="footer-support">
+      <a href="Footer_inquiry" class="footer-support">
         <figure>
           <img src="assets/img/footer_service.png" alt="">
         </figure>
         <p>お問い合わせ</p>
       </a>
       <!-- サイトについて -->
-      <a href="#" class="footer-site">
+      <a href="Footer_about_Inair" class="footer-site">
         <figure>
           <img src="assets/img/footer_site.png" alt="">
         </figure>

@@ -109,8 +109,30 @@
                 <li>お問い合わせ</li>
             </ol>
         </nav>
+        <!-- ここから -->
+        <div class="footer_inquiry">
         
+	        <!-- お問い合わせフォーム -->
+	        <form class="inquiry_form" action="#" method="post">
+		        <!-- 注文番号 -->
+		        <h2 class="order_number">注文番号</h2>
+		        <input name="order_number" class="order_number_txt text_input" type="text" placeholder="番号を入力してください"  pattern=".*\S+.*">
+		        <!-- 商品コード -->
+		        <h2 class="product_cord">商品コード</h2>
+		        <input name="product_cord" class="product_cord_txt text_input" type="text" placeholder="コードを入力してください"  pattern=".*\S+.*">
+	        </form> 
         
+	        <!-- 投稿テキスト -->
+		     <div class="write-div">
+		           <h2>お問い合わせ内容</h2>
+		           <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
+		           minlength="5" placeholder="入力してください"></input>
+		           <p class="error-message">※入力してください</p>
+		           <p id="textlength4">0</p>   
+		     </div>
+		     <input class="confirm-button" type="submit" value="送信する">
+        </div>        
+	    <!-- ここまで -->
       </main>
       <!-- footer -->
     <footer>

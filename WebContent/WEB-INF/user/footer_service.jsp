@@ -60,6 +60,7 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください">
           </form>
+          
     
     
         <div id="header-animation" class="header-anim">
@@ -106,7 +107,45 @@
       </ol>
     </nav>
     
-    
+    <!-- ここから下 -->
+    <div class="footer_service">
+    <!-- 初めての方へ -->
+	    <div class="first_time_users">
+		    <h1 class="beginner's_guide">初めての方へ</h1>
+		    <p>初心者歓迎！</p>
+	    </div>
+	<!-- サイトの使い方 -->
+	    <div class="how_to">
+		    <h1 class="how_to_use">このサイトの使い方</h1>
+		    <p>こうやって使ってね</p>
+	    </div>
+    <!-- 質問 -->
+	    <h1 class="service_title">よくある質問</h1>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.クレジットカードは使えますか？</h2>
+		    <p class="service_a">A.VISA、MastarCard、JCB、AMEXなどのクレジットカードをご利用いただけます。一部ご利用できないカードがございますので、お問い合わせの際に確認させていただきます。</p>
+	    </div>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.送料はいくらかかりますか？</h2>
+		    <p class="service_a">A.離島などの地域に関わらず、日本国内であれば一律500円になります。</p>
+	    </div>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.納品までの期間はどのくらいかかりますか？</h2>
+		    <p class="service_a">A.通常、ご注文から3日以内に納品させていただいております。ただし、地域や天候、繁盛期によっては前後する可能性がございます。</p>
+	    </div>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.返品は可能ですか？</h2>
+		    <p class="service_a">A.タグの有無によっては返品・交換の対象外となることがあります。もし、商品の破損などがあった場合は交換・返金にて対応をさせていただきます。オンラインショップと実店舗は管理体制が異なりますので、ご購入された店舗にお問い合わせをお願いいたします。</p>
+	    </div>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.組み立て・設置はしてくれますか？</h2>
+		    <p class="service_a">A.照明、収納家具については組み立てサービスを行っております。</p>
+	    </div>
+	    <div class="service_question">
+		    <h2 class="service_q">Q.注文後にキャンセルすることは可能ですか？</h2>
+		    <p class="service_a">A.出荷準備前（注文誤訳30分以内）のご注文であればキャンセル可能です。お早めにご連絡ください。</p>
+	 </div>
+	    <!-- ここまで -->
       </main>
    <!-- footer -->
   <footer>
