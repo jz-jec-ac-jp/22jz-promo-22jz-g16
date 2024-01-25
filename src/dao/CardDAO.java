@@ -82,36 +82,37 @@ public class CardDAO {
 	
 	public int findCardId(String card_number) {
 //		List<ProductCard> list = new ArrayList<>();
-			int card = -1;
+			int card = 1;
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT * FROM card_table where card_number = ?";
+			String sql = "SELECT id FROM card_table where card_number = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, card_number);
 			ResultSet rs = stmt.executeQuery();
 			
+//			rs.next();
 			
 			// データをリストに格納
-//			while(rs.next()) {
+			while(rs.next()) {
 //				ProductCard card = rs2model(rs);
-				card = rs2model02(rs);
-				int cardId = card.getId();
+				card = rs.getInt("id");
+//			card = ((ProductCard) rs).getId();
+//				int cardId = card.getId();
 //				list.add(card);
 				
 //				System.out.println("true_get " +  list.add(item));
 //				System.out.println("true_get()  " + card.getId());
 			
 				return card;
-//			}
+			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 			System.out.println("error_get  " + e);
-			return card = 1;
 		}
 //		return list;
 
-		
+		return card;
 	}
 
 	public boolean create( int userid,  String card_number, String card_nominee, String date_of_expiry) {
@@ -151,11 +152,6 @@ public class CardDAO {
 	 * @return 変換後のデータ
 	 */
 	
-	private  int rs2model02(ResultSet rs) throws SQLException {
-		int id = rs.getInt("id");/* ⑨ */
-		
-		return id;
-	}
 	
 	private  ProductCard rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */

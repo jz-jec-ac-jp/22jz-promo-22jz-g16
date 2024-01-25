@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.CardDAO;
 import dao.ProductHistoryDAO;
 import dao.ShopcartDAO;
+import model.Item;
 import model.ProductUser;
 
 /**
@@ -54,16 +56,21 @@ public class Product_complete extends HttpServlet {
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		HttpSession session = request.getSession();
 		
-		String cardNumber = (String) session.getAttribute("card_number");
+		ShopcartDAO dao = new ShopcartDAO();
+		List<Item> shopCartList = dao.get(loginUser.getId());
 		
+//		System.out.println("shopCartList " + shopCartList);
+		
+		String cardNumber = (String) session.getAttribute("card_number");
 		int user_id = loginUser.getId();
 		String payMethod =  (String) request.getSession().getAttribute("pay");
 		System.out.println("payMethod " +  payMethod);		
 		int cardId =  daoCard.findCardId(cardNumber);
+		System.out.println("complete cardId  " + cardId);
 		String delivery_status = "準備中";
 //		
 		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-		daoHistory.create(user_id, payMethod, null, cardId, delivery_status);
+		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList);
 		
 //		
 		ShopcartDAO daoShopcart = new ShopcartDAO();
@@ -88,20 +95,31 @@ public class Product_complete extends HttpServlet {
 		
 		System.out.println(pay);
 		
-		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+//		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+//		
+//		CardDAO daoCard = new CardDAO();
+//		
+////		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+////		HttpSession session = request.getSession();
+//		
+//		String cardNumber = (String) session.getAttribute("card_number");
 //		
 //		int user_id = loginUser.getId();
-//		int paypay = (int) session.getAttribute("pay");
-//		int cardId = (int) session.getAttribute("cardId");
+//		String payMethod =  (String) request.getSession().getAttribute("pay");
+//		System.out.println("payMethod " +  payMethod);		
+//		int cardId =  daoCard.findCardId(cardNumber);
+//		System.out.println("complete cardId  " + cardId);
 //		String delivery_status = "準備中";
-//		
+////		
 //		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-//		daoHistory.create(user_id, paypay, null, cardId, delivery_status);
-		
-		ShopcartDAO daoShopcart = new ShopcartDAO();
-		
-		int userId = loginUser.getId();
-		daoShopcart.delete(userId);
+//		daoHistory.create(user_id, payMethod, cardId, delivery_status);
+//		
+////		
+//		ShopcartDAO daoShopcart = new ShopcartDAO();
+//		
+////		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+//		int userId = loginUser.getId();
+//		daoShopcart.delete(userId);
 		
 		if (pay.equals("credit")) {
 			System.out.println("");
@@ -111,6 +129,7 @@ public class Product_complete extends HttpServlet {
 			
 		}
 		else if(pay.equals("cash")){
+			session.setAttribute("card_number", "1");
 			response.sendRedirect("Product_complete");
 		}
 		else if (pay.equals("")) {

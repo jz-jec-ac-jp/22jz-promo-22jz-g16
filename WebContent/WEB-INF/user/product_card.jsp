@@ -115,7 +115,7 @@
         <div class="card-main">
 
 	            
-			<form class="card-form" action="Product_card_check" method="get" ><!-- onsubmit="return check()" -->  
+			<form class="card-form" action="Product_card_check" method="get"><!-- onsubmit="return check()" -->  
                  <button class="select-input-btn" type="button">
                      <select class="paymethood-pulldown text-input-select" name="card_number">
                         <option value="">登録済みカード一覧</option>

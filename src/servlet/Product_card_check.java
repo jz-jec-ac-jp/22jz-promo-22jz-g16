@@ -30,9 +30,18 @@ public class Product_card_check extends HttpServlet {
 		
 //		int card_number = Integer.parseInt(request.getParameter("card_number"));
 		
-			
+//		session.setAttribute("card_number", card_number);
 		String cardNumber =  (String) session.getAttribute("card_number");
+		
+		System.out.println("card_check  cardNumber" + cardNumber);
+		
 		String cardNum = request.getParameter("card_number");
+		
+		if (cardNum != null) {
+			session.setAttribute("card_number", cardNum);
+		}
+		
+		System.out.println("card_check  cardNum" + cardNum);
 		
 		ProductCard cardCheckNum =  dao.getCard(cardNum);
 		ProductCard cardCheck =  dao.getCard(cardNumber);

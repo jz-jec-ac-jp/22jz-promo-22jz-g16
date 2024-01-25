@@ -44,10 +44,10 @@ public class Product_shopcart extends HttpServlet {
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
+		HttpSession session = request.getSession();
 		if (loginUser == null) {			
 
 			System.out.println("ショップカート画面未ログイン");
-			HttpSession session = request.getSession();
 			session.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Product_login");
 		}
@@ -64,6 +64,7 @@ public class Product_shopcart extends HttpServlet {
 			//Item item = dao.find(1);
 			
 			request.setAttribute("list", list);
+			session.setAttribute("shopCartList", list);
 			
 			System.out.println("true  " + list);
 			

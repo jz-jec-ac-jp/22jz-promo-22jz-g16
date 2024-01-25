@@ -130,6 +130,10 @@ public class UserDAO {
 			stmt.setString(7, us_prefectur);
 			stmt.setString(8, street_address);
 			
+			String sqlUser = "INSERT INTO card_table (user_id) values (select id from user_table where us_pasward = ?";
+			PreparedStatement stmtUser = cn.prepareStatement(sqlUser);
+			stmtUser.setString(1, us_pasward);
+			
 			ret = stmt.executeUpdate();
 			System.out.println("");
 			System.out.println("ret " + ret);

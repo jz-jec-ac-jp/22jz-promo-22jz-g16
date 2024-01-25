@@ -9,9 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dao.ItemDAO;
+import dao.ShopcartDAO;
+import dao.UserDAO;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Product_purchase
@@ -24,14 +27,38 @@ public class Product_purchase extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ItemDAO dao = new ItemDAO();
-		List<Item> list = dao.get();
-		//Item item = dao.find(1);
 		
-		request.setAttribute("list", list);
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_purchase.jsp");
-		dispatcher.forward(request, response);
+		if (loginUser == null) {			
+
+			System.out.println("商品購入画面未ログイン");
+			HttpSession session = request.getSession();
+			session.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Product_login");
+		}
+		else {
+			UserDAO daoUser = new UserDAO();
+			daoUser.findByEmail(loginUser.getMail_adress());
+			System.out.println("");
+			System.out.println("user_mailadress " + loginUser.getMail_adress());
+			System.out.println("user_id " + loginUser.getId());
+//		
+			ShopcartDAO dao = new ShopcartDAO();
+			
+			List<Item> list = dao.get(loginUser.getId());
+			//Item item = dao.find(1);
+			
+			request.setAttribute("list", list);
+			
+			System.out.println("true  " + list);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_purchase.jsp");
+			dispatcher.forward(request, response);
+			
+		}
+		
+
 	}
 
 	/**
