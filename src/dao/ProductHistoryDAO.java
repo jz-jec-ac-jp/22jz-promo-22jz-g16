@@ -130,6 +130,7 @@ public class ProductHistoryDAO {
 //            preparedStatement.registerOutParameter(3, java.sql.Types.NUMERIC);
 
 			
+			
 			for (int i = 0; i < shopCartList.size(); i++) {
 				
 				Item cartItem = shopCartList.get(i);
