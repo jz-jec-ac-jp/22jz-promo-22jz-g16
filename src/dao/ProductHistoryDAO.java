@@ -104,7 +104,7 @@ public class ProductHistoryDAO {
 	    /* 取得したライセンス情報を  item にセット */
 //	     item.setLicenses(licenses);
 //	  }
-	public boolean create(int user_id, String payMethod,int card_id, String delivery_status, List<Item> shopCartList ) {
+	public boolean create(int user_id, String payMethod,int card_id, String delivery_status) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -124,24 +124,21 @@ public class ProductHistoryDAO {
 			stmt.setString(5, delivery_status);
 			stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
 			stmt.setTimestamp(7, Timestamp.valueOf(LocalDateTime.now()));
-			
 			ret = stmt.executeUpdate();
+			
 			 // 自動採番された値を取得するためのOUTパラメータを登録
 //            preparedStatement.registerOutParameter(3, java.sql.Types.NUMERIC);
 
-			
-			
-			for (int i = 0; i < shopCartList.size(); i++) {
-				
-				Item cartItem = shopCartList.get(i);
-				
-				String sqlPurchase = "INSERT INTO purchase_table (Purchase_history, product_id, create_date, update_date) VALUES (SELECT MAX(id) FROM history_table  ,  ?, ?, ?)";
-				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
-				stmt.setInt(1, cartItem.getId());
-				stmtCart.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
-				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
-				ret = stmtCart.executeUpdate();
-			}
+//			
+//			for (int i = 0; i < shopCartList.size(); i++) {
+//				Item cartItem = shopCartList.get(i);
+//				String sqlPurchase = "INSERT INTO purchase_table (Purchase_history, product_id, create_date, update_date) VALUES (SELECT MAX(id) FROM history_table  ,  ?, ?, ?)";
+//				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
+//				stmt.setInt(1, cartItem.getId());
+//				stmtCart.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+//				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+//				ret = stmtCart.executeUpdate();
+//			}
 			
 			
 		} catch(SQLException e) {

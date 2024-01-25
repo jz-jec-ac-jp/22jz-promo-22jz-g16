@@ -70,7 +70,7 @@ public class Product_complete extends HttpServlet {
 		String delivery_status = "準備中";
 //		
 		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList);
+		daoHistory.create(user_id, payMethod, cardId, delivery_status);
 		
 //		
 		ShopcartDAO daoShopcart = new ShopcartDAO();
