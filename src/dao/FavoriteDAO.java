@@ -22,10 +22,12 @@ public class FavoriteDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id where user_id = ?";
+			String sql = " SELECT  i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM favorit_table INNER JOIN item_table i ON favorit_table.product_id = i.id where user_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, userId);
 			ResultSet rs = stmt.executeQuery();
+			
+			
 			
 			// データをリストに格納
 			while(rs.next()) {
@@ -142,7 +144,42 @@ public class FavoriteDAO {
 //	     item.setLicenses(licenses);
 //	  }
 
-	
+	public List<Integer> findProductId(int user_id) {
+//		List<ProductCard> list = new ArrayList<>();
+			List<Integer> product_id =  new ArrayList<>();;
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT i.product_id FROM favorit_table p INNER JOIN shopcart_table i ON p.product_id = i.product_id where i.user_id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, user_id);
+			ResultSet rs = stmt.executeQuery();
+			
+//			rs.next();
+			
+			// データをリストに格納
+			while(rs.next()) {
+//				ProductCard card = rs2model(rs);
+				int id = rs.getInt("id");
+//			card = ((ProductCard) rs).getId();
+//				int cardId = card.getId();
+				product_id.add(id);
+				
+//				System.out.println("true_get " +  list.add(item));
+//				System.out.println("true_get()  " + card.getId());
+			
+//				return card;
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+//		return list;
+
+		return product_id;
+	}
+
+
 	
 	/**
 	 * ResultSetの行データをモデルの形に変換するメソッド

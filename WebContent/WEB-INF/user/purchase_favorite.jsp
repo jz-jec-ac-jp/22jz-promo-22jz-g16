@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>お気に入り画面</title>
+    <script src="assets/js/cansel_button.js"></script>
     <script src="assets/js/humberger.js"></script>
     <script src="assets/js/top-page.js" defer></script>
     <script src="assets/js/header-anim.js"></script>
+    
 
 
 </head>
@@ -132,7 +134,10 @@
 		                        <p class="value">${ item.product_price}(税込)</p>
 		                       
 	                        <!--カートに入れる-->
+	                        <button Class="btn" onclick="cartButton()">カートに入れる</button>
+	                        <!-- 
 	                        <input class="confirm" type="submit" value="カートに入れる"></input>
+	                         -->
 	                    </div>
 	                </div>
 	            </section>

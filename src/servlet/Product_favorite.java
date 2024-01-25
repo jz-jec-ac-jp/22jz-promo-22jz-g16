@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.FavoriteDAO;
-import dao.ShopcartDAO;
 import dao.UserDAO;
 import model.Item;
 import model.ProductUser;
@@ -56,6 +55,12 @@ public class Product_favorite extends HttpServlet {
 			
 			
 			List<Item> list = dao.get(loginUser.getId());
+			List<Integer> itemId = dao.findProductId(loginUser.getId());
+			
+			for (int i = 0; i < itemId.size(); i++) {
+				
+			}
+			
 			//Item item = dao.find(1);
 			
 			request.setAttribute("list", list);
@@ -80,8 +85,6 @@ public class Product_favorite extends HttpServlet {
 //		
 //		while()
 		
-		
-
 	}
 
 	/**
@@ -90,7 +93,7 @@ public class Product_favorite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //		request.setCharacterEncoding("UTF-8");
-		ShopcartDAO daoShopCart = new ShopcartDAO();
+		FavoriteDAO daoShopCart = new FavoriteDAO();
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
