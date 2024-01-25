@@ -112,7 +112,7 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "DELETE FROM shopcart_table where product_id = ?";
+			String sql = "DELETE FROM shopcart_table where user_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, userId);
 			ret = stmt.executeUpdate();
