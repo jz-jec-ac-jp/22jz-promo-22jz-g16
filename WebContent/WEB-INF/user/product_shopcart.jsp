@@ -118,10 +118,7 @@
          <p>${login}</p>
      </c:if>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	<c:if test="${ empty login }">
 
     <div class="year-total">
