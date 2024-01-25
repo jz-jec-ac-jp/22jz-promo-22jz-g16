@@ -32,7 +32,7 @@ public class  ItemDAO {
 				Item  item = rs2model(rs);
 				setImg(item);
 				setColor(item);
-				list.add( item);
+				list.add(item);
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
@@ -94,10 +94,9 @@ public class  ItemDAO {
 				 
 				 
 				 System.out.println("true_find  " + item);
-				 System.out.println("true_get()  " + item.getId());
+				 System.out.println("true_getid()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
 				 System.out.println("true_color()  " + item.getColorTexts());
-				 
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -129,7 +128,6 @@ public class  ItemDAO {
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
 				 System.out.println("true_color()  " + item.getColorTexts());
-				 
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
