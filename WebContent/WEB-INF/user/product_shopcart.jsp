@@ -146,6 +146,7 @@
 		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }(税込)</p>
+		      		<button>削除</button>
 		          </div>
 		        </div>
 		      </section>

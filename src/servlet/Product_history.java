@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ItemDAO;
+import dao.ProductHistoryDAO;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Product_history
@@ -24,9 +25,10 @@ public class Product_history extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ItemDAO dao = new ItemDAO();
+		ProductHistoryDAO dao = new ProductHistoryDAO();
 		
-		List<Item> list = dao.get();
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		List<Item> list = dao.get(loginUser.getId());
 		//Item item = dao.find(1);
 		
 		request.setAttribute("list", list);

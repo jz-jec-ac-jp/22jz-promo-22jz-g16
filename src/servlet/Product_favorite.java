@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.FavoriteDAO;
+import dao.ShopcartDAO;
 import dao.UserDAO;
 import model.Item;
 import model.ProductUser;
@@ -93,12 +94,14 @@ public class Product_favorite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //		request.setCharacterEncoding("UTF-8");
-		FavoriteDAO daoShopCart = new FavoriteDAO();
+		ShopcartDAO daoShopCart = new ShopcartDAO();
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
-		int productId = Integer.parseInt(request.getParameter("id"));
 		int id = loginUser.getId();
+		int productId = Integer.parseInt(request.getParameter("id"));
+		
+		System.out.println("favorite doPost------------------");
 		
 		daoShopCart.create(productId, id);
 		

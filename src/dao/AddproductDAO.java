@@ -56,7 +56,7 @@ public class AddproductDAO {
 	        stmtSize.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
 	        ret = stmtSize.executeUpdate();	        
 	        
-	        String sqlWeight = "INSERT INTO weight_table (product_id, size_name, create_date, update_date) VALUES ((SELECT MAX(id) from item_table), ?, ?, ?)";
+	        String sqlWeight = "INSERT INTO weight_table (producr_id, purchase_weight, siza_id, create_date, update_date) VALUES ((SELECT MAX(id) from item_table), ?, (SELECT MAX(id) FROM size_table), ?, ?)";
 	        PreparedStatement stmtWeight= cn.prepareStatement(sqlWeight);
 	        stmtWeight.setString(1, productWeight);
 	        stmtWeight.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));

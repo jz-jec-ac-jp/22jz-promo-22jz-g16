@@ -93,6 +93,8 @@ public class ShopcartDAO {
 			stmt.setInt(1, product_id);
 			stmt.setInt(2, user_id);
 			
+			System.out.println("shopcart create-----------------");
+			
 			ret = stmt.executeUpdate();
 			
 		} catch(SQLException e) {
