@@ -92,9 +92,10 @@ public class Product_favorite extends HttpServlet {
 //		request.setCharacterEncoding("UTF-8");
 		ShopcartDAO daoShopCart = new ShopcartDAO();
 		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
 		int productId = Integer.parseInt(request.getParameter("id"));
-		int id = 1;
+		int id = loginUser.getId();
 		
 		daoShopCart.create(productId, id);
 		
