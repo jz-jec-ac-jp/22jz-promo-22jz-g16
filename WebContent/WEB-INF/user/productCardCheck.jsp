@@ -148,7 +148,8 @@
 
                 <!-- 確定ボタン -->
                 <div class="card-button">
-                    <input class="card-return" type="submit" value="戻る">
+                    <!-- <input class="card-return" type="submit" value="戻る"> -->
+                    <a href="Product_card" class="card_return" >戻る</a>
                     <input type="submit" class="card-submit" value="次へ" onclick="window.onbeforeunload = null">
                 </div>
             </form>

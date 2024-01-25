@@ -104,7 +104,7 @@ public class ProductHistoryDAO {
 	    /* 取得したライセンス情報を  item にセット */
 //	     item.setLicenses(licenses);
 //	  }
-	public boolean create(int user_id, String payMethod,int card_id, String delivery_status) {
+	public boolean create(int user_id, String payMethod,int card_id, String delivery_status, List<Item> shopCartList ) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -115,7 +115,7 @@ public class ProductHistoryDAO {
 		try(Connection cn = manager.getConnection()) {
 //			try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, delivery_status, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING your_auto_increment_column INTO ?";
+			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, delivery_status, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, user_id);
 			stmt.setString(2, payMethod);
@@ -130,15 +130,16 @@ public class ProductHistoryDAO {
 //            preparedStatement.registerOutParameter(3, java.sql.Types.NUMERIC);
 
 //			
-//			for (int i = 0; i < shopCartList.size(); i++) {
-//				Item cartItem = shopCartList.get(i);
-//				String sqlPurchase = "INSERT INTO purchase_table (Purchase_history, product_id, create_date, update_date) VALUES (SELECT MAX(id) FROM history_table  ,  ?, ?, ?)";
-//				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
-//				stmt.setInt(1, cartItem.getId());
-//				stmtCart.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
-//				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
-//				ret = stmtCart.executeUpdate();
-//			}
+			for (int i = 0; i < shopCartList.size(); i++) {
+				Item cartItem = shopCartList.get(i);
+				String sqlPurchase = "INSERT INTO purchase_table (purchase_history, product_id, create_date, update_date) VALUES ((SELECT MAX(id) FROM history_table) , ?, ?, ?)";
+				
+				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
+				stmtCart.setInt(1, cartItem.getId());
+				stmtCart.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+				ret = stmtCart.executeUpdate();
+			}
 			
 			
 		} catch(SQLException e) {

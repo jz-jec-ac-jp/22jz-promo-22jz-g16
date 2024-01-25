@@ -498,6 +498,20 @@
           <input type="number" class="ad-new-num" placeholder="例）50" name="productStock">
         </div>
       </div>
+      
+            <!-- サイズー -->
+      <div class="ad-value">
+        <div class="ad-new-vaca">
+          <p>サイズ</p>
+          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize">
+        </div>
+        <!-- 重量 -->
+        <div class="ad-new-vaca">
+          <p>重量</p>
+          <input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight">
+        </div>
+      </div>
+      
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
       <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>

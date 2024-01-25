@@ -19,7 +19,7 @@ public class AddproductDAO {
 	*/
 	
 	
-	public boolean create(String product_name, String product_detail, int product_price, int product_stock) {
+	public boolean create(String product_name, String product_detail, int product_price, int product_stock, String productSize, String productWeight) {
 	    int ret = -1;
 	    
 //	    // ①データの存在確認
@@ -46,8 +46,26 @@ public class AddproductDAO {
 	        stmt.setInt(4, product_stock);
 	        stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
 	        stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
-	        
 	        ret = stmt.executeUpdate();
+	        
+	        
+	        String sqlSize = "INSERT INTO size_table (product_id, size_name, create_date, update_date) VALUES ((SELECT MAX(id) from item_table), ?, ?, ?)";
+	        PreparedStatement stmtSize = cn.prepareStatement(sqlSize);
+	        stmtSize.setString(1, productSize);
+	        stmtSize.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+	        stmtSize.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+	        ret = stmtSize.executeUpdate();	        
+	        
+	        String sqlWeight = "INSERT INTO weight_table (product_id, size_name, create_date, update_date) VALUES ((SELECT MAX(id) from item_table), ?, ?, ?)";
+	        PreparedStatement stmtWeight= cn.prepareStatement(sqlWeight);
+	        stmtWeight.setString(1, productWeight);
+	        stmtWeight.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+	        stmtWeight.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+	        ret = stmtWeight.executeUpdate();
+	        
+	        
+	        
+	        
 	        System.out.println(ret);
 	        
 			 System.out.println("true_find  " );
@@ -63,6 +81,8 @@ public class AddproductDAO {
 	    return ret >= 0;
 	    
 	}
+	
+	
 	
 	public List<Item> get() {
 		List<Item> list = new ArrayList<>();
