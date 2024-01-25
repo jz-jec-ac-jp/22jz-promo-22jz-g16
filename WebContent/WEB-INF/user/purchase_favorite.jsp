@@ -41,7 +41,6 @@
             </a>
             <nav class="nav">
               <h1 class="Inair"><a href="">Inair</a></h1>
-              <li class="nav-top"><a href="Product_top">ホーム</a></li>
               <li><a href="Product_login">ログイン</a></li>
               <li><a href="Product_shopcart">カート</a></li>
               <li><a href="Product_favorite">お気に入り</a></li>
