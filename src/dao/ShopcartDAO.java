@@ -115,10 +115,10 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = " UPDATE shopcart_table SET (product_count) = WHERE ";
+			String sql = " UPDATE purchase_table SET product_count = ? WHERE id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setInt(1, id);
-			stmt.setInt(2, count);
+			stmt.setInt(1, count);
+			stmt.setInt(2, id);
 			
 			System.out.println("shopcart update-----------------");
 			

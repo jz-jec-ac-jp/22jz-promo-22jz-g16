@@ -88,8 +88,8 @@ public class Product_shopcart extends HttpServlet {
 				// できるならちゃんとエラーチェック
 //				ItemDAO itemDAO = new ItemDAO();
 //				if (itemDAO.find(ph.getLicense().getId()) == null) {
-//					request.setAttribute("message", "商品の追加に失敗しました。対象の商品が見つかりません。");
-//					doGet(request, response);
+//					request.("message", "商品の追加に失敗しました。対象の商品が見つかりません。");
+//					doGet(setAttributerequest, response);
 //					return;
 //				}
 
@@ -103,26 +103,40 @@ public class Product_shopcart extends HttpServlet {
 					response.sendRedirect("Product_login");
 				}
 				else {
-				
-					int Product_id = Integer.parseInt(request.getParameter("shopCart"));
-					int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
-	//				int userId = (User)(request.getSession().getAttribute("user")).getId();
-					System.out.println("shopCart post");
-					
-					// CartDAOを用意してDBに登録
-					ShopcartDAO dao = new ShopcartDAO();
-					
-					dao.create(Product_id, userId);
-					
-					System.out.println("");
-					System.out.println("shopCartId = " + Product_id);
-					System.out.println("");
-					
-					// リクエストスコープにメッセージを保存
-					request.setAttribute("message", "カートに商品を追加しました。");
-					
+					if(request.getParameter("mode").equals("change")) {
+						//数量変更する
+						String tempcount = request.getParameter("count");
+						String id = request.getParameter("id");
+						ShopcartDAO shopcartdao = new ShopcartDAO();
+						System.out.println("countは"+tempcount);
+						System.out.println("idは"+id);
+						shopcartdao.update(Integer.parseInt(id), Integer.parseInt(tempcount));
+						
+					}else {
+						int Product_id = Integer.parseInt(request.getParameter("shopCart"));
+						int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
+		//				int userId = (User)(request.getSession().getAttribute("user")).getId();
+						System.out.println("shopCart post");
+						
+						// CartDAOを用意してDBに登録
+						ShopcartDAO dao = new ShopcartDAO();
+						
+						dao.create(Product_id, userId);
+						
+						
+						
+						System.out.println("");
+						System.out.println("shopCartId = " + Product_id);
+						System.out.println("");
+						
+						// リクエストスコープにメッセージを保存
+						request.setAttribute("message", "カートに商品を追加しました。");
+						
+					}
 					// 自分を再表示
 					doGet(request, response);
+				
+					
 				}
 			}
 
