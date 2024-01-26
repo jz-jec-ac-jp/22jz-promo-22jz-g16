@@ -44,21 +44,6 @@
 	      </div>
 	      <!-- 注文データ一覧 -->
       	</form>
-   <!-- DB接続テスト -->
-   <!-- 
-   <c:forEach var="item" items="${ list }">
-
-	  <a href="Product_detail?id=${ item.id }">
-	   <div class="goods-item">
-	        <figure>
-	          <img class="p" src="assets/img/key-visuals.png" alt="">
-	        </figure>
-	        <p class="ad-productname">${ item.product_name }</p>
-	        <p class="price">値段:${ item.product_price }(税込)</p>
-       </div>
-	  </a>
-    </c:forEach> -->  
-    <!-- --------------  -->
     
     <c:forEach var="item" items="${ list }" varStatus="count">
       <li class="ad-order-list">
@@ -80,19 +65,8 @@
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">
           <!--  <p>出荷準備中</p> -->
-         
-          
-         <!--  <h2 class="payment-method">支払方法*</h2> -->
-           <!-- <input class="select-input-btn" type="button" onclick="check_select()"> -->
-           
+       
            <form action="#" method="post" ><!-- onsubmit="return check();" -->
-               <!-- 
-               <select class="paymethood-pulldown text-input-select" name="paymethood-box">
-                   <option value="">お選びください</option>
-                   <option value="準備中">準備中<input type="hidden" name="credit"></option>
-                   <option value="発送済み">発送済み<input type="hidden" name="cache"></option>
-               </select>
-                -->
                 
                	<input type="hidden" value="${ item.id }" name="productId">
                	<input type="hidden" value="${ idList[count.index] }" name="historyId">
@@ -101,14 +75,8 @@
                    <option value="preparation">準備中</option>
                    <option value="completion">発送済み</option>
                </select>
-               <!-- 
-               <input type="radio" name="preparation">準備中
-               <input type="radio" name="completion">完了
-                -->
                <button type="submit">確定</button>
             </form>
-           <!-- </input> -->
-           <!-- <p class="error-message-select">※入力してください</p> -->
          
           
           <p>在庫数：${ item.product_stock }</p>
