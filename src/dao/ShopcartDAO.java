@@ -111,6 +111,7 @@ public class ShopcartDAO {
 		// できるなら存在確認
 		
 		
+		
 		// DBにデータを追加
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
