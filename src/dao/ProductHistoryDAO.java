@@ -60,16 +60,17 @@ public class ProductHistoryDAO {
 		item.setColorTexts(color);
 	}
 	
-//	管理者画面用
-	public List<Item> getProductAdmin() {
-		List<Item> list = new ArrayList<>();
+//		管理者用
+	public int getHistoryId(int productId) {
+//		List<Item> list = new ArrayList<>();
+		int userHistoryId = -1;
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id ";
+			String sql = "SELECT p.id FROM history_table p INNER JOIN purchase_table i ON i.product_id = ? ";
 			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
 			PreparedStatement stmt = cn.prepareStatement(sql);
-//			stmt.setInt(1, id);
+			stmt.setInt(1, productId);
 			ResultSet rs = stmt.executeQuery();
 			
 //			System.out.println("whileの前");
@@ -79,23 +80,22 @@ public class ProductHistoryDAO {
 			// データをリストに格納
 			while(rs.next()) {
 //				System.out.println("whileの後");
-				Item  item = rs2model(rs);
-				setColor(item);
-				list.add( item);
+				userHistoryId = rs.getInt("id");
+				System.out.println("history id " + userHistoryId);
+//				Item  item = rs2model(rs);
+//				setColor(item);
+//				list.add( item);
 	
 				
+//				return userMailAdress;
 //				System.out.println("true_get " +  list.add(item));
-				System.out.println("true_get()  " + item.getId());
-				System.out.println("true_Name()  " + item.getProduct_name());
-				System.out.println("true_Name()  " + item.getProduct_price());
-				System.out.println("true_color()  " + item.getColorTexts());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 			System.out.println("error_get  " + e);
 		}
+		return userHistoryId;
 		
-		return list;
 	}
 	
 //	管理者用
@@ -134,6 +134,46 @@ public class ProductHistoryDAO {
 		return userMailAdress;
 		
 	}
+	
+	
+//	管理者画面用
+	public List<Item> getProductAdmin() {
+		List<Item> list = new ArrayList<>();
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id ";
+			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
+			PreparedStatement stmt = cn.prepareStatement(sql);
+//			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			
+//			System.out.println("whileの前");
+//			System.out.println(stmt);
+//			System.out.println(rs.next());
+			
+			// データをリストに格納
+			while(rs.next()) {
+//				System.out.println("whileの後");
+				Item  item = rs2model(rs);
+				setColor(item);
+				list.add( item);
+	
+				
+//				System.out.println("true_get " +  list.add(item));
+				System.out.println("true_get()  " + item.getId());
+				System.out.println("true_Name()  " + item.getProduct_name());
+				System.out.println("true_Name()  " + item.getProduct_price());
+				System.out.println("true_color()  " + item.getColorTexts());
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+		
+		return list;
+	}
+	
 	
 	
 	/**
@@ -192,15 +232,15 @@ public class ProductHistoryDAO {
 		try(Connection cn = manager.getConnection()) {
 //			try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, delivery_status, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, user_id);
 			stmt.setString(2, payMethod);
 			stmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
 			stmt.setInt(4, card_id);
-			stmt.setString(5, delivery_status);
+//			stmt.setString(5, delivery_status);
+			stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
 			stmt.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
-			stmt.setTimestamp(7, Timestamp.valueOf(LocalDateTime.now()));
 			ret = stmt.executeUpdate();
 			
 			 // 自動採番された値を取得するためのOUTパラメータを登録
@@ -209,13 +249,15 @@ public class ProductHistoryDAO {
 //			
 			for (int i = 0; i < shopCartList.size(); i++) {
 				Item cartItem = shopCartList.get(i);
-				String sqlPurchase = "INSERT INTO purchase_table (purchase_history, product_id, create_date, update_date) VALUES ((SELECT MAX(id) FROM history_table) , ?, ?, ?)";
+				String sqlPurchase = "INSERT INTO purchase_table (purchase_history, product_id, delivery_status,  create_date, update_date) VALUES ((SELECT MAX(id) FROM history_table), ?, ?, ?, ?)";
 				
 				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
 				stmtCart.setInt(1, cartItem.getId());
-				stmtCart.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+				stmtCart.setString(2, delivery_status);
 				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+				stmtCart.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
 				ret = stmtCart.executeUpdate();
+				
 			}
 			
 			

@@ -60,12 +60,13 @@
     </c:forEach> -->  
     <!-- --------------  -->
     
-    <c:forEach var="item" items="${ list }">
+    <c:forEach var="item" items="${ list }" varStatus="count">
       <li class="ad-order-list">
         <div class="ad-product-man">
           <img class="ad-productimg" src="assets/img/adlogin_shopping.png" alt="">
           <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
           <p>${ userMailAdress }</p>
+          <p>${ idList[count.index] }</p>
         </div>
         <div class="ad-product-del">
           <p>配送日時<br>2023/05/02</p>
@@ -93,7 +94,9 @@
                </select>
                 -->
                 
-               <select class="paymethood-pulldown text-input-select" name="comparison">
+               	<input type="hidden" value="${ item.id }" name="productId">
+               	<input type="hidden" value="${ idList[count.index] }" name="historyId">
+               <select class="paymethood-pulldown text-input-select" name="comparison-box">
                    <option value="">お選びください</option>
                    <option value="preparation">準備中</option>
                    <option value="completion">発送済み</option>
