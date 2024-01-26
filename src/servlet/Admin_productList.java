@@ -32,6 +32,7 @@ public class Admin_productList extends HttpServlet {
 		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 		HttpSession session = request.getSession();
 		
+		
 		if (loginUser == null) {			
 			System.out.println("ログイン画面未ログイン");
 			request.setAttribute("msg", "ログインしてください");
@@ -45,6 +46,9 @@ public class Admin_productList extends HttpServlet {
 			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 			List<Item> list = daoHistory.get(loginUser.getId());
 			
+			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
+			List<Integer> idList = daoPurchase.getId();
+			
 			String userMailAdress = daoHistory.getUserAdmin();
 			
 			//Item item = dao.find(1);
@@ -52,6 +56,7 @@ public class Admin_productList extends HttpServlet {
 			System.out.println(list);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");
@@ -70,23 +75,31 @@ public class Admin_productList extends HttpServlet {
 //		boolean completion = request.getParameter("completion") != null;
 		
 		String status = request.getParameter("comparison-box");
-		System.out.println(status);
+		System.out.println( "status " + status);
 		
+		int productId = Integer.parseInt(request.getParameter("productId"));
+		
+//		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 		PurchaseStatusDAO dao = new PurchaseStatusDAO();
+		
+		int HistoryId = Integer.parseInt(request.getParameter("historyId"));
+		
+		System.out.println("HistoryId " + HistoryId);
+		System.out.println("ProductId " + productId);
 		
 		if (status.equals("preparation")) {
 			System.out.println("");
 			System.out.println("test");
-			System.out.println(status);
+			System.out.println("準備中 " + status);
 			System.out.println("");
-			dao.find("準備中");
+			dao.find("準備中", productId, HistoryId);
 		}
 		else if (status.equals("completion")) {
 			System.out.println("");
 			System.out.println("test");
-			System.out.println(status);
+			System.out.println( "完了 " + status);
 			System.out.println("");
-			dao.find("完了");
+			dao.find("完了", productId, HistoryId);
 		}
 		
 		

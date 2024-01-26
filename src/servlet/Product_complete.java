@@ -72,6 +72,9 @@ public class Product_complete extends HttpServlet {
 		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList);
 		
+//		PrdocutPurchaseDAO daoPurchase = new PrdocutPurchaseDAO();
+//		daoPurchase.create(delivery_status);
+		
 //		
 		ShopcartDAO daoShopcart = new ShopcartDAO();
 		
