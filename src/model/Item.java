@@ -78,9 +78,9 @@ public class Item implements Serializable {
 	public void setImgUrl(List<ProductImag> imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-	public void setProduct_count(List<Productount> Product_counts) {
-		this.product_count = product_count ;
-	}
+//	public void setProduct_count(List<Productount> Product_counts) {
+//		this.product_count = product_count ;
+//	}
 
 
 

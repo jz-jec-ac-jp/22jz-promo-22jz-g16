@@ -5,16 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-<<<<<<< HEAD
+//=======
+import java.time.LocalDateTime;
+//<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Item;
 import model.ProductColor;
-import model.ProductPurchase;
-=======
-import java.time.LocalDateTime;
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
+
 
 public class PrdocutPurchaseDAO {
 
@@ -42,7 +41,7 @@ public class PrdocutPurchaseDAO {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
 				setColor(item);
-				setCount(item);
+//				setCount(item);
 				list.add( item);
 				
 				
@@ -51,7 +50,7 @@ public class PrdocutPurchaseDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
-				System.out.println("true_count()  " + item.getProduct_count());
+//				System.out.println("true_count()  " + item.getProduct_count());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -66,11 +65,11 @@ public class PrdocutPurchaseDAO {
 		item.setColorTexts(color);
 	}
 
-	public void setCount(Item item) {
-		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
-		List<ProductPurchase> count = dao.find(item.getId());
-		item.setProduct_count(count);
-	}
+//	public void setCount(Item item) {
+//		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
+//		List<ProductPurchase> count = dao.find(item.getId());
+//		item.setProduct_count(count);
+//	}
 	
 	
 	public  void find(String delivery_status) {
@@ -101,7 +100,7 @@ public class PrdocutPurchaseDAO {
      }
 //     return list;
 	}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	private  Item rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 		int id = rs.getInt("id");/* ⑨ */
@@ -114,7 +113,8 @@ public class PrdocutPurchaseDAO {
 		
 		
 		return new Item(id, product_name, product_detail, product_price, product_stock, create_date, update_date);
-=======
+	}
+//=======
 	
 	
 	public boolean create(String delivery_status) {
@@ -157,6 +157,6 @@ public class PrdocutPurchaseDAO {
 	    
 	    return ret >= 0;
 	    
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
+//>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	}
 }

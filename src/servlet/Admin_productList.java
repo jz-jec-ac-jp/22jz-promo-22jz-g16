@@ -44,7 +44,7 @@ public class Admin_productList extends HttpServlet {
 			System.out.println("AdminLoginUser " + loginUser.getAd_mailadress());
 			
 			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-			List<Item> list = daoHistory.get(loginUser.getId());
+			List<Item> list = daoHistory.get();
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getId();
