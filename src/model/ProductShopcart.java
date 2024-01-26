@@ -38,6 +38,7 @@ public class ProductShopcart implements Serializable{
 		this.update_date = update_date;
 	}
 	
+	
 	public ProductShopcart() {}
 	
 	public ProductShopcart(int id, int product_id, int user_id, Timestamp create_date, Timestamp update_date) {

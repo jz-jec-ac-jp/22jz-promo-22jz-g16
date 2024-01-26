@@ -134,8 +134,8 @@
 			                </c:forEach>
                             <br><p class="size">サイズ:</p>
                             <p class="value">${ item.product_price }(税込)</p>
-                        </div
-                        <p class="peace">個数 1</p>
+                        </div>
+                        <p class="peace">${ProductShopcart.purchase_count }個</p>
                         <div class="us-detail-peace">
                             <p class="postage">送料:500円</p>
                             <p class="total-value">小計:${ item.product_price }(税込)</p>
@@ -261,9 +261,11 @@
 	                        </button>
 	                        <p class="error-message-select">※入力してください</p>
 	                         <div class="product-button">
-
-				                <a href="Product_list" class="return-btn">商品リスト一覧</a>
-				                <button type="submit">購入する</button>
+	                         
+								<form action="product_compleate" method="post">
+					                <a href="Product_list" class="return-btn">商品リスト一覧</a>
+					                <button type="submit">購入する</button>
+								</form>
 				              
 				                <%--
 				                

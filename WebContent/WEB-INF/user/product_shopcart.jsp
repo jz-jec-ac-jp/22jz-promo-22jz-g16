@@ -126,31 +126,36 @@
       <!-- ここから -->
 	      
 	      <c:forEach var="item" items="${ list }">
-		      <a href="Product_detail?id=${ item.id }">
 		      <section class="history-product">
 		        <p class="us-productname">${ item.product_name }</p>
 		        <div class="us-detail-Product-name">
+		      <a href="Product_detail?id=${ item.id }">
 		          <figure class="purchase-product">
 		            <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
 		          </figure>
+			  </a>
 		          <div class="introduction-div">
 		            <p class="us-product-man">商品コード:${ item.id }</p>
-		            
 		            <c:forEach var="color" items="${ item.getColorTexts() }">
 		            <p class="us-color-size">カラー:${ color.purchase_color }</p>
 		            </c:forEach>
 		            <br><p>サイズ:</p>
 		            <p class="value">${item.product_price }(税込)</p>
 		          </div>
-		          <p class="peace">個数 ${item.product_stock}</p>
 		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }(税込)</p>
 		      		<button>削除</button>
+		          <!--  
+		          <p class="peace">個数</p>
+		          -->
+		          <form action="Product_shopcart" method="post" id="form_product_shopcart">
+			          <label for="count" id="label_count">個数</label>
+			          <input class="purchase_count" type="number" name="count" min="1"  value="1">
+		          </form>
 		          </div>
 		        </div>
 		      </section>
-		      </a>
 	      </c:forEach>
 	      </div>
 	      
@@ -201,10 +206,10 @@
 	    <!-- <div class="cart-product-div"> -->
 	      <!-- ここから -->
 	      
-	      
+	     
 		<div class="product-button">
 	       <a href="Product_top" class="cart-btn">戻る</a>
-	       <a href="Product_purchase?id=${ item.id }" class="cart-btn">確認画面へ進む</a>
+	       <a href="Product_purchase" class="cart-btn">確認画面へ進む</a>
 	     </div>
 	</c:if>
 
