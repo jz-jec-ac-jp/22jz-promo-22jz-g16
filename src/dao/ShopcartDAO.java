@@ -10,7 +10,6 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
-import model.ProductPurchase;
 
 public class ShopcartDAO {
 	/**
@@ -55,8 +54,8 @@ public class ShopcartDAO {
 	}
 	public void setCount(Item item) {
 		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
-		List<ProductPurchase> count = dao.find(item.getId());
-		item.setProduct_count(count);
+//		List<ProductPurchase> count = dao.find(item.getId());
+//		item.setProduct_count(count);
 	}
 	
 	/**

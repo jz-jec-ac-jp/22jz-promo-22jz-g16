@@ -86,14 +86,14 @@ public class Item implements Serializable {
 	public void setImgUrl(List<ProductImag> imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-<<<<<<< HEAD
-	
-	
-=======
+//<<<<<<< HEAD
+//	
+//	
+//=======
 //	public void setProduct_count(List<Productount> Product_counts) {
 //		this.product_count = product_count ;
 //	}
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
+//>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 
 
 
