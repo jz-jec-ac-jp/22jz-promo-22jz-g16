@@ -138,6 +138,7 @@ public class ShopcartDAO {
 		
 		
 		// DBにデータを追加
+		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
