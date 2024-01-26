@@ -83,6 +83,13 @@ public class ProductUser implements Serializable{
 		this.us_pasward = us_pasward;
 	}
 	
+	public ProductUser( String  us_prefectur, String us_adress, String street_address, int tel_number) {
+		this.us_prefectur = us_prefectur;
+		this.us_adress = us_adress;
+		this.street_address = street_address;
+		this.tel_number = tel_number;
+	}
+	
 	public ProductUser(int id, String name_kanji, String name_kana, String mail_adress, String us_pasward,
 			String us_adress, int tel_number, String us_prefectur, String street_address, LocalDateTime create_date,
 			LocalDateTime update_date) {

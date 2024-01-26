@@ -55,12 +55,13 @@
         </div>
         <div class="ad-product-del">
           <p>配送日時<br>2023/05/02</p>
-          <p>配送元の住所<br>〒169-8522
-            東京都新宿区百人町1-25-4
-            TEL：03-3363-7761（代表）</p>
-          <p>配送場所<br>〒169-8522
-            東京都新宿区百人町1-25-4
-            TEL：03-3363-7761（代表）</p>
+          <p>配送元の住所 〒169-8522</p>
+          <p>東京都新宿区百人町1-25-4</p>
+          <p>TEL：03-3363-7761（代表）</p>
+        	<p>配送場所</p>
+          <p>〒169-8522</p>
+          <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address }</p>
+          <p>TEL：${ userDetailList[count.index].tel_number  }</p>
         </div>
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">

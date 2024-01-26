@@ -15,6 +15,7 @@ import dao.ProductHistoryDAO;
 import dao.PurchaseStatusDAO;
 import model.AdminUser;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Admin_productList
@@ -46,10 +47,18 @@ public class Admin_productList extends HttpServlet {
 			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 			List<Item> list = daoHistory.get();
 			
+			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getId();
+			List<ProductUser> userDetailList = daoPurchase.getUserDetail();
+			
+			System.out.println( "");
+			System.out.println( "userDetailList " + userDetailList);
+			System.out.println( "");
 			
 			String userMailAdress = daoHistory.getUserAdmin();
+			
+			
 			
 			//Item item = dao.find(1);
 			System.out.println("Admin_productList servlet");
@@ -58,6 +67,7 @@ public class Admin_productList extends HttpServlet {
 			request.setAttribute("list", list);
 			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
+			request.setAttribute("userDetailList", userDetailList);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");
 			dispatcher.forward(request, response);
