@@ -15,6 +15,8 @@ public class Item implements Serializable {
 //	imgテーブル用
 	List<ProductImag> imgUrl;
 	
+	//顧客個数カウント
+	List<ProductPurchase> product_count;
 //	Item colorText;
 	
 	public int getId() {
@@ -75,6 +77,9 @@ public class Item implements Serializable {
 	}
 	public void setImgUrl(List<ProductImag> imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+	public void setProduct_count(List<Productount> Product_counts) {
+		this.product_count = product_count ;
 	}
 
 

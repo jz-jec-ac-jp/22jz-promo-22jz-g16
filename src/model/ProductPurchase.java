@@ -8,6 +8,8 @@ public class ProductPurchase implements Serializable{
 	private int id, Purchase_history, product_id, purchase_count, total_stock;
 	private Timestamp  create_date, update_date;
 	private String delivery_status;
+	
+	
 	public int getId() {
 		return id;
 	}
