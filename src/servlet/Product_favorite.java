@@ -56,17 +56,17 @@ public class Product_favorite extends HttpServlet {
 			
 			
 			List<Item> list = dao.get(loginUser.getId());
-			List<Integer> itemId = dao.findProductId(loginUser.getId());
+			//List<Integer> itemId = dao.findProductId(loginUser.getId());
 			
-			for (int i = 0; i < itemId.size(); i++) {
+//			for (int i = 0; i < itemId.size(); i++) {
 				
+			request.setAttribute("list", list);
 			}
 			
 			//Item item = dao.find(1);
 			
-			request.setAttribute("list", list);
-			
-			System.out.println("true  " + list);
+//			
+//			System.out.println("true  " + list);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
 			dispatcher.forward(request, response);
@@ -86,7 +86,7 @@ public class Product_favorite extends HttpServlet {
 //		
 //		while()
 		
-	}
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

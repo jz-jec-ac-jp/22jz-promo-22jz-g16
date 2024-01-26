@@ -14,10 +14,6 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
-//<<<<<<< HEAD
-//=======
-//
-//>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 
 public class PrdocutPurchaseDAO {
 
@@ -45,6 +41,8 @@ public class PrdocutPurchaseDAO {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
 				setColor(item);
+//				setCount(item);
+				
 //<<<<<<< HEAD
 //=======
 //				setCount(item);
@@ -57,6 +55,7 @@ public class PrdocutPurchaseDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
+//				System.out.println("true_Name()  " + item.getProduct_count());
 //				System.out.println("true_count()  " + item.getProduct_count());
 			}
 		} catch(SQLException e) {
@@ -71,6 +70,11 @@ public class PrdocutPurchaseDAO {
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
 	}
+//	public void setCount(Item item) {
+//		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
+//		List<ProductPurchase> count = dao.find(item.getId());
+//		item.setProduct_count(count);
+//	}
 
 //<<<<<<< HEAD
 //=======

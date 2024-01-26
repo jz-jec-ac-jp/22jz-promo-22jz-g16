@@ -146,6 +146,7 @@
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }(税込)</p>
 		      		<button>削除</button>
+		      		<button onclick="removeExample(this)">削除</button>
 		          <!--  
 		          <p class="peace">個数</p>
 		          -->
@@ -409,7 +410,7 @@
         </div>
       </div>
 
-      <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
+      <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button>
   </main>
 
 

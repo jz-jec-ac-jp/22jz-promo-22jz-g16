@@ -19,7 +19,7 @@ public class ShopcartDAO {
 	 */
 	public List<Item> get(int userId) {
 		List<Item> list = new ArrayList<>();
-		String sql = "SELECT s.product_count, i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id where user_id = ?";
+		String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id where user_id = ?";
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			
@@ -31,14 +31,12 @@ public class ShopcartDAO {
 			while(rs.next()) {
 				Item  item = rs2model(rs);
 				setColor(item);
-				setCount(item);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getColorTexts());
-				System.out.println("true_Name()  " + item.getProduct_count());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -52,11 +50,7 @@ public class ShopcartDAO {
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
 	}
-	public void setCount(Item item) {
-		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
-//		List<ProductPurchase> count = dao.find(item.getId());
-//		item.setProduct_count(count);
-	}
+	
 	
 	/**
 	 * カートテーブルの中から、主キーが id であるレコードを返すメソッド
@@ -101,6 +95,32 @@ public class ShopcartDAO {
 			stmt.setInt(2, user_id);
 			
 			System.out.println("shopcart create-----------------");
+			
+			ret = stmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+	}
+	
+	public boolean update(int id, int count ) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = " UPDATE shopcart_table SET (product_count) = WHERE ";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, id);
+			stmt.setInt(2, count);
+			
+			System.out.println("shopcart update-----------------");
 			
 			ret = stmt.executeUpdate();
 			
