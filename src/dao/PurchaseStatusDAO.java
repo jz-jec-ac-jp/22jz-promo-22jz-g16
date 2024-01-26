@@ -68,22 +68,45 @@ public class PurchaseStatusDAO {
      return id;
 	}
 	
-	public  List<ProductUser> getUserDetail() {
+	public  List<ProductUser> getUserDetail(List<Integer> idList) {
 //      list = new ArrayList<>();
 	List<ProductUser> detail = new ArrayList<>();
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {
-     String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address、u.tel_number  FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
+     String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address,u.tel_number FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
      PreparedStatement stmt = cn.prepareStatement(sql);
       
      ResultSet rs = stmt.executeQuery();
      
-	     while(rs.next()) {
-				ProductUser userDetail = rs2model(rs);
-				detail.add(userDetail);
-				
-	     }
+     String sqlUserId = "SELECT u.id FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
+     PreparedStatement stmtUser = cn.prepareStatement(sqlUserId);
+      
+     ResultSet rsUser = stmtUser.executeQuery();
+     
+     
+     int userId = rsUser.getInt("u.id");
+     System.out.println("userId" + userId);
+     System.out.println("getUserId ------------------- ");
+     for (int i = 0; i < idList.size(); i++) {
+    	 System.out.println("idList" + idList.get(i));
+    	 if (userId == idList.get(i)) {
+			ProductUser userDetail = rs2model(rs);
+			detail.add(userDetail);
+			System.out.println("i " + i);
+
+    	 }
+    	 else {    		 
+    		 rs.next();
+    	 }
+    	  rsUser.next();
+     }
+     
+//	     while(rs.next()) {
+//				ProductUser userDetail = rs2model(rs);
+//				detail.add(userDetail);
+//				
+//	     }
      } catch(SQLException e) {
          e.printStackTrace();
          System.out.println("error_color " + e);

@@ -50,7 +50,7 @@ public class Admin_productList extends HttpServlet {
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getId();
-			List<ProductUser> userDetailList = daoPurchase.getUserDetail();
+			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
 			
 			System.out.println( "");
 			System.out.println( "userDetailList " + userDetailList);

@@ -62,6 +62,7 @@
           <p>〒169-8522</p>
           <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address }</p>
           <p>TEL：${ userDetailList[count.index].tel_number  }</p>
+          <p> ${ count.index }</p>
         </div>
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">
