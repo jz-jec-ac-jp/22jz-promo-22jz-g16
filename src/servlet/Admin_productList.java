@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ProductHistoryDAO;
 import dao.PurchaseStatusDAO;
+import model.AdminUser;
 import model.Item;
 
 /**
@@ -26,17 +28,35 @@ public class Admin_productList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 		
-		List<Item> list = daoHistory.get();
-		//Item item = dao.find(1);
-		System.out.println("Admin_productList servlet");
-		System.out.println(list);
+		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
+		HttpSession session = request.getSession();
 		
-		request.setAttribute("list", list);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");
-		dispatcher.forward(request, response);
+		if (loginUser == null) {			
+			System.out.println("ログイン画面未ログイン");
+			request.setAttribute("msg", "ログインしてください");
+			request.setAttribute("loginFalse", "ログインしてください");
+			response.sendRedirect("Admin_login");
+		}
+		else {
+			session.setAttribute("loginUserId", loginUser.getAd_mailadress());
+			System.out.println("AdminLoginUser " + loginUser.getAd_mailadress());
+			
+			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
+			List<Item> list = daoHistory.get(loginUser.getId());
+			
+			String userMailAdress = daoHistory.getUserAdmin();
+			
+			//Item item = dao.find(1);
+			System.out.println("Admin_productList servlet");
+			System.out.println(list);
+			
+			request.setAttribute("list", list);
+			request.setAttribute("userMailAdress", userMailAdress);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logic.AuthLogic;
-import model.ProductUser;
+import logic.AdminLogic;
+import model.AdminUser;
 
 /**
  * Servlet implementation class Admin_login
@@ -26,18 +26,20 @@ public class Admin_login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-//		// すでにログイン済みならビデオ一覧へリダイレクト
-//		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
-//		if (loginUser != null) {
-//			System.out.println("login済み get");
-//			response.sendRedirect("Product_top");
-//		}
-//		else {
-//			
+//		HttpSession session = request.getSession();
+		// すでにログイン済みならビデオ一覧へリダイレクト
+		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
+		if (loginUser != null) {
+			System.out.println("AdminLogin済み get");
+//			response.sendRedirect("Admin_top");
+			request.setAttribute("loginTrue", "ログイン済みです");
+			request.setAttribute("msg", "ログイン済みです");
+		}
+		else {
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/login.jsp");
 //			dispatcher.forward(request, response);
-//		}
+			request.setAttribute("loginFalse", "ログインしてください");
+		}
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/ad_login.jsp");
@@ -56,19 +58,30 @@ public class Admin_login extends HttpServlet {
 		
 		System.out.println(" email  " + email + " password  " + password);
 		
-		AuthLogic logic = new AuthLogic();
-		ProductUser user = logic.login(email, password);
+//		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 		
-		if (user != null) {
-			// ログインしてトップページ（今回はVoD一覧）へリダイレクト
-			System.out.println("login済み");
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", user);
-			response.sendRedirect("Admin_productList");
-		} else {
+		AdminLogic logic = new AdminLogic();
+		System.out.println("AdminLogin before user");
+		AdminUser user = logic.login(email, password);
+		System.out.println("AdminLogin after user " + user);
+		
+		HttpSession session = request.getSession();
+		
+		if (user == null) {
 			// エラー時はエラーメッセージを追加し自分へ戻る
 			request.setAttribute("msg", "ログインに失敗しました");
-			doGet(request, response);
+			request.setAttribute("loginFalse", "ログインしてください");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/ad_login.jsp");
+			dispatcher.forward(request, response);
+			
+		} else {
+
+			// ログインしてトップページ（今回はVoD一覧）へリダイレクト
+			session.setAttribute("loginUser", user);
+			System.out.println("login済み");
+			request.setAttribute("loginTrue", "ログイン済みです");
+			request.setAttribute("msg", "ログイン済みです");
+			response.sendRedirect("Admin_productList");
 		}
 		
 //		doGet(request, response);

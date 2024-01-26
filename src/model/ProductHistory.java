@@ -9,7 +9,7 @@ public class ProductHistory implements Serializable{
 	private int pay_method;
 	private Timestamp purchase_date;
 	private int card_id;
-	private String delivery_status;
+//	private String delivery_status;
 	private Timestamp  create_date;
 	private Timestamp update_date;
 	
@@ -44,12 +44,12 @@ public class ProductHistory implements Serializable{
 	public void setCard_id(int card_id) {
 		this.card_id = card_id;
 	}
-	public String getDelivery_status() {
-		return delivery_status;
-	}
-	public void setDelivery_status(String delivery_status) {
-		this.delivery_status = delivery_status;
-	}
+//	public String getDelivery_status() {
+//		return delivery_status;
+//	}
+//	public void setDelivery_status(String delivery_status) {
+//		this.delivery_status = delivery_status;
+//	}
 	public Timestamp getCreate_date() {
 		return create_date;
 	}
@@ -73,7 +73,7 @@ public class ProductHistory implements Serializable{
 		this.pay_method = pay_method;
 		this.purchase_date = purchase_date;
 		this.card_id = card_id;
-		this.delivery_status = delivery_status;
+//		this.delivery_status = delivery_status;
 		this.create_date = create_date;
 		this.update_date = update_date;
 	}

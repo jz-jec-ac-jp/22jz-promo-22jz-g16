@@ -73,7 +73,7 @@ public class AdminUserDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = " SELECT * FROM user_table WHERE mail_adress = ? ";
+			String sql = " SELECT * FROM admin_user_table WHERE ad_mailadress = ? ";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, email);
 			ResultSet rs = stmt.executeQuery();
@@ -143,8 +143,8 @@ public class AdminUserDAO {
 	 */
 	
 	private AdminUser rs2model(ResultSet rs) throws SQLException {
-		String mail_adress = rs.getString("mail_adress");
-		String us_pasward = rs.getString("us_pasward");
+		String mail_adress = rs.getString("ad_mailadress");
+		String us_pasward = rs.getString("ad_password");
 		
 		return new AdminUser(mail_adress, us_pasward);
 	}

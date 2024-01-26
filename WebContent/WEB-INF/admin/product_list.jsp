@@ -26,7 +26,10 @@
       <a href="Admin_productStatus">
         <li class="ad-del-list">配送管理</li>
       </a>
-        <li class="ad-username">ユーザー名</li>
+      <a href="Admin_login">
+        <li>ログイン画面</li>
+      </a>
+        <li class="ad-username">${ loginUserId }</li>
     </ul>
   </header>
 
@@ -61,7 +64,8 @@
       <li class="ad-order-list">
         <div class="ad-product-man">
           <img class="ad-productimg" src="assets/img/adlogin_shopping.png" alt="">
-          <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>
+          <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
+          <p>${ userMailAdress }</p>
         </div>
         <div class="ad-product-del">
           <p>配送日時<br>2023/05/02</p>

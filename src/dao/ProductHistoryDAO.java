@@ -60,6 +60,82 @@ public class ProductHistoryDAO {
 		item.setColorTexts(color);
 	}
 	
+//	管理者画面用
+	public List<Item> getProductAdmin() {
+		List<Item> list = new ArrayList<>();
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id ";
+			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
+			PreparedStatement stmt = cn.prepareStatement(sql);
+//			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			
+//			System.out.println("whileの前");
+//			System.out.println(stmt);
+//			System.out.println(rs.next());
+			
+			// データをリストに格納
+			while(rs.next()) {
+//				System.out.println("whileの後");
+				Item  item = rs2model(rs);
+				setColor(item);
+				list.add( item);
+	
+				
+//				System.out.println("true_get " +  list.add(item));
+				System.out.println("true_get()  " + item.getId());
+				System.out.println("true_Name()  " + item.getProduct_name());
+				System.out.println("true_Name()  " + item.getProduct_price());
+				System.out.println("true_color()  " + item.getColorTexts());
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+		
+		return list;
+	}
+	
+//	管理者用
+	public String getUserAdmin() {
+//		List<Item> list = new ArrayList<>();
+		String userMailAdress = null;
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			String sql = "SELECT mail_adress FROM history_table p INNER JOIN user_table i ON p.user_id = i.id ";
+			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
+			PreparedStatement stmt = cn.prepareStatement(sql);
+//			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			
+//			System.out.println("whileの前");
+//			System.out.println(stmt);
+//			System.out.println(rs.next());
+			
+			// データをリストに格納
+			while(rs.next()) {
+//				System.out.println("whileの後");
+				userMailAdress = rs.getString("mail_adress");
+//				Item  item = rs2model(rs);
+//				setColor(item);
+//				list.add( item);
+	
+				
+//				return userMailAdress;
+//				System.out.println("true_get " +  list.add(item));
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+		return userMailAdress;
+		
+	}
+	
+	
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド
 	 * @param id 主キーの値

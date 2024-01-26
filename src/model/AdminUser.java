@@ -51,7 +51,7 @@ public class AdminUser  implements Serializable {
 	
 	public AdminUser(int id, String ad_mailadress, String ad_password, LocalDateTime create_date,
 			LocalDateTime update_date) {
-		super();
+//		super();
 		this.id = id;
 		this.ad_mailadress = ad_mailadress;
 		this.ad_password = ad_password;

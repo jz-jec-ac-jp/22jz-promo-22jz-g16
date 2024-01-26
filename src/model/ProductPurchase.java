@@ -7,6 +7,7 @@ public class ProductPurchase implements Serializable{
 
 	private int id, Purchase_history, product_id;
 	private Timestamp  create_date, update_date;
+	private String delivery_status;
 	public int getId() {
 		return id;
 	}
@@ -38,16 +39,25 @@ public class ProductPurchase implements Serializable{
 		this.update_date = update_date;
 	}
 	
+	public String getDelivery_status() {
+		return delivery_status;
+	}
+	public void setDelivery_status(String delivery_status) {
+		this.delivery_status = delivery_status;
+	}
 	public ProductPurchase() {}
-	
-	public ProductPurchase(int id, int purchase_history, int product_id, Timestamp create_date, Timestamp update_date) {
-		super();
+	public ProductPurchase(int id, int purchase_history, int product_id, Timestamp create_date, Timestamp update_date,
+			String delivery_status) {
+//		super();
 		this.id = id;
 		Purchase_history = purchase_history;
 		this.product_id = product_id;
 		this.create_date = create_date;
 		this.update_date = update_date;
+		this.delivery_status = delivery_status;
 	}
+	
+
 	
 	
 }

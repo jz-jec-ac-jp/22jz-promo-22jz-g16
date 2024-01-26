@@ -25,7 +25,10 @@
       <a href="Admin_productStatus">
         <li class="ad-del-list">配送管理</li>
       </a>
-        <li class="ad-username">ユーザー名</li>
+      <a href="Admin_login">
+        <li>ログイン画面</li>
+      </a>
+        <li class="ad-username">${ loginUserId }</li>
     </ul>
   </header>
   

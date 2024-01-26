@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -29,7 +31,10 @@
       <a href="Admin_productStatus">
         <li class="ad-del-list">配送管理</li>
       </a>
-        <li class="ad-username">ユーザー名</li>
+      <a href="Admin_login">
+        <li>ログイン画面</li>
+      </a>
+        <li class="ad-username">${ loginUserId }</li>
     </ul>
   </header>
 

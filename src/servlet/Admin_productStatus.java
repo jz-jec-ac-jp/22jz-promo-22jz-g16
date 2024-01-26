@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductHistoryDAO;
+import model.AdminUser;
 import model.Item;
 
 /**
@@ -25,18 +26,28 @@ public class Admin_productStatus extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
+		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 		
-		List<Item> list = daoHistory.get();
-		//Item item = dao.find(1);
-		System.out.println("Admin_productStatus servlet");
-		System.out.println(list);
-		
-		request.setAttribute("list", list);
-		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_status.jsp");
-		dispatcher.forward(request, response);
+		if (loginUser == null) {			
+
+			System.out.println("お気に入り画面未ログイン");
+//			HttpSession session = request.getSession();
+			request.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Admin_login");
+		}
+		else {
+			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
+			List<Item> list = daoHistory.get(loginUser.getId());
+			//Item item = dao.find(1);
+			System.out.println("Admin_productStatus servlet");
+			System.out.println(list);
+			
+			request.setAttribute("list", list);
+			
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_status.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**

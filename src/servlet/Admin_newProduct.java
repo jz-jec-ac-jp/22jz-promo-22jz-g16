@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AddproductDAO;
+import model.AdminUser;
 
 /**
  * Servlet implementation class Admin_newProduct
@@ -23,8 +24,20 @@ public class Admin_newProduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
-		dispatcher.forward(request, response);
+		
+		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
+//		HttpSession session = request.getSession();
+		
+		if (loginUser == null) {			
+			System.out.println("管理者 新規商品登録画面 未ログイン");
+			request.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Admin_login");
+		}
+		else {
+			request.setAttribute("loginTrue", "ログイン済みです");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**
