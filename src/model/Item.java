@@ -70,7 +70,15 @@ public class Item implements Serializable {
 	public void setColorTexts(List<ProductColor> colorTexts) {
 		this.colorTexts = colorTexts;
 	}
-
+	
+	//顧客個数カウント
+	public List<ProductPurchase> getProduct_count() {
+		return product_count;
+	}
+	public void setProduct_count(List<ProductPurchase> product_count) {
+		this.product_count = product_count ;
+	}
+	
 	//img
 	public List<ProductImag> getImgUrl() {
 		return imgUrl;
@@ -78,9 +86,8 @@ public class Item implements Serializable {
 	public void setImgUrl(List<ProductImag> imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-	public void setProduct_count(List<Productount> Product_counts) {
-		this.product_count = product_count ;
-	}
+	
+	
 
 
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductPurchase;
 
 public class ShopcartDAO {
 	/**
@@ -19,7 +20,7 @@ public class ShopcartDAO {
 	 */
 	public List<Item> get(int userId) {
 		List<Item> list = new ArrayList<>();
-		String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id where user_id = ?";
+		String sql = "SELECT s.product_count, i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id where user_id = ?";
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			
@@ -31,12 +32,14 @@ public class ShopcartDAO {
 			while(rs.next()) {
 				Item  item = rs2model(rs);
 				setColor(item);
+				setCount(item);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getColorTexts());
+				System.out.println("true_Name()  " + item.getProduct_count());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -49,6 +52,11 @@ public class ShopcartDAO {
 		ColorDAO dao = new ColorDAO();
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
+	}
+	public void setCount(Item item) {
+		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
+		List<ProductPurchase> count = dao.find(item.getId());
+		item.setProduct_count(count);
 	}
 	
 	/**
