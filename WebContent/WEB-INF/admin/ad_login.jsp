@@ -15,19 +15,19 @@
     <main>
         <!-- ログイン -->
         <h1 class="admin-login">ログイン</h1>
-        <p>学校メールアドレス、学籍番号_Admin</p>
+        <p class="ad-msg">学校メールアドレス、学籍番号_Admin</p>
         
         <div class="ad-login">
 	            <%-- メッセージが存在するときのみ表示 --%>
 	        <c:if test="${not empty msg}">
-	            <p>${msg}</p>
+	            <p class="ad-msg">${msg}</p>
 	        </c:if>
 	         
 	        
 	        <c:if test="${ not empty loginTrue }">
-	        	<p>${ loginUserId }</p>
-	        	<a href="Admin_logout">ログアウト</a>
-	        	<a href="Admin_productList">一覧</a>
+	        	<p class="logoutMsg">${ loginUserId }</p>
+	        	<a href="Admin_logout" class="logoutMsg">ログアウト</a>
+	        	<a href="Admin_productList" class="list">一覧</a>
 	        </c:if>
 	        
 	        <c:if test="${ not empty loginFalse }">
@@ -44,7 +44,7 @@
 	                <input type="submit" class="ad-login-button" value="ログイン" />
 	                -->
 	                
-	                <button class="login-button" type="submit">ログイン</button>
+	                <button class="ad-login-button" type="submit">ログイン</button>
 	            </form>
 	        </c:if>
         </div>
