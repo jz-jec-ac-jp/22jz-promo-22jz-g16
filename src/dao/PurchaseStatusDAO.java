@@ -49,14 +49,14 @@ public class PurchaseStatusDAO {
 	List<Integer> id = new ArrayList<>();
      
      DBManager manager = DBManager.getInstance();
-     try(Connection cn = manager.getConnection()) {
-     String sql = "SELECT purchase_history FROM purchase_table";
+     try(Connection cn = manager.getConnection()) {//purchase_history
+     String sql = "SELECT h.user_id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
      PreparedStatement stmt = cn.prepareStatement(sql);
       
      ResultSet rs = stmt.executeQuery();
      
 	     while(rs.next()) {
-				int userId = rs.getInt("purchase_history");
+				int userId = rs.getInt("user_id");
 				id.add(userId);
 				
 	     }
@@ -79,28 +79,30 @@ public class PurchaseStatusDAO {
       
      ResultSet rs = stmt.executeQuery();
      
-     String sqlUserId = "SELECT u.id FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
+     String sqlUserId = "SELECT h.user_id FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
      PreparedStatement stmtUser = cn.prepareStatement(sqlUserId);
       
      ResultSet rsUser = stmtUser.executeQuery();
      
-     
-     int userId = rsUser.getInt("u.id");
+     rs.next();
+     boolean user = rsUser.next();
+     System.out.println("user boolean " + user);
+     int userId = rsUser.getInt("user_id");
      System.out.println("userId" + userId);
      System.out.println("getUserId ------------------- ");
      for (int i = 0; i < idList.size(); i++) {
-    	 System.out.println("idList" + idList.get(i));
+    	 System.out.println("idList[" + i + "] " + idList.get(i));
     	 if (userId == idList.get(i)) {
 			ProductUser userDetail = rs2model(rs);
 			detail.add(userDetail);
-			System.out.println("i " + i);
 
     	 }
-    	 else {    		 
+    	 else {
     		 rs.next();
     	 }
     	  rsUser.next();
      }
+
      
 //	     while(rs.next()) {
 //				ProductUser userDetail = rs2model(rs);

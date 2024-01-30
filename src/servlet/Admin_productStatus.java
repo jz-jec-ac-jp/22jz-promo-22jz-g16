@@ -9,10 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ProductHistoryDAO;
+import dao.PurchaseStatusDAO;
 import model.AdminUser;
 import model.Item;
+import model.ProductUser;
 
 /**
  * Servlet implementation class Admin_productStatus
@@ -26,24 +29,45 @@ public class Admin_productStatus extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
+		HttpSession session = request.getSession();
+		
 		
 		if (loginUser == null) {			
-
-			System.out.println("お気に入り画面未ログイン");
-//			HttpSession session = request.getSession();
+			System.out.println("ログイン画面未ログイン");
 			request.setAttribute("msg", "ログインしてください");
+			request.setAttribute("loginFalse", "ログインしてください");
 			response.sendRedirect("Admin_login");
 		}
 		else {
+			session.setAttribute("loginUserId", loginUser.getAd_mailadress());
+			System.out.println("AdminLoginUser " + loginUser.getAd_mailadress());
+			
 			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-			List<Item> list = daoHistory.get(loginUser.getId());
+			List<Item> list = daoHistory.get();
+			
+			
+			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
+			List<Integer> idList = daoPurchase.getId();
+			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
+			
+			System.out.println( "");
+			System.out.println( "userDetailList " + userDetailList);
+			System.out.println( "");
+			
+			String userMailAdress = daoHistory.getUserAdmin();
+			
+			
+			
 			//Item item = dao.find(1);
-			System.out.println("Admin_productStatus servlet");
+			System.out.println("Admin_productList servlet");
 			System.out.println(list);
 			
 			request.setAttribute("list", list);
-			
+			request.setAttribute("idList", idList);
+			request.setAttribute("userMailAdress", userMailAdress);
+			request.setAttribute("userDetailList", userDetailList);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_status.jsp");
 			dispatcher.forward(request, response);

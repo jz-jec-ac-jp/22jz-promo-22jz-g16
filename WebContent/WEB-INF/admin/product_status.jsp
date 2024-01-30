@@ -33,13 +33,18 @@
   </header>
   
   <main>
-  	<c:forEach var="item" items="${ list }">
+  	<c:forEach var="item" items="${ list }" varStatus="count">
 	    <!-- ＊＊まとまり＊＊ -->
 	    <!-- 商品 -->
 	    <div class="ad">
 	      <div class="ad-product-status">
 	        <img class="ad-producting" src="assets/img/chair.jpg" alt="">
-	        <p class="ad-productname">題名：${ item.product_name }<br>色：black　　個数：１ </p>
+	        <div>
+		        <p>題名：${ item.product_name }</p>
+		        <p>色：black　　個数：１</p>
+		        <p>${ userMailAdress }</p>
+	            <p>userId : ${ idList[count.index] }</p>
+	        </div>
 	      </div>
 	      <!-- 配送 -->
 	      <div class="ad-status">
@@ -54,15 +59,18 @@
 	          〒169-8522 東京都新宿区百人町1-25-4
 	        </p>
 	        <!-- 配送場所 -->
-	        <p>
-	          配送場所 <br>
-	          〒169-8522 東京都新宿区百人町1-25-4
+	        <p>配送場所 <p>
+	          <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address } TEL：${ userDetailList[count.index].tel_number}</p>
 	        </p>
 	      </div>
 	    </div>
 	    <!-- 配送ステータス -->
 	    <ul class="progressbar">
-	      <li>池袋倉庫　<span>10:00</span></li>
+	      <li>
+	      	<c:if test="${ not empty  }">
+	      		<p>準備中</p>
+	      	</c:if>
+	      </li>
 	      <li>○○　<span>14:00</span></li>
 	      <li>○○　<span>20:00</span></li>
 	      <li>自宅　<span>21:00</span></li>

@@ -51,7 +51,7 @@
           <img class="ad-productimg" src="assets/img/adlogin_shopping.png" alt="">
           <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
           <p>${ userMailAdress }</p>
-          <p>${ idList[count.index] }</p>
+          <p>userId : ${ idList[count.index] }</p>
         </div>
         <div class="ad-product-del">
           <p>配送日時<br>2023/05/02</p>
@@ -62,7 +62,6 @@
           <p>〒169-8522</p>
           <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address }</p>
           <p>TEL：${ userDetailList[count.index].tel_number  }</p>
-          <p> ${ count.index }</p>
         </div>
         <div class="ad-del-man">
           <img src="assets/img/ad_delbell.png" alt="">
