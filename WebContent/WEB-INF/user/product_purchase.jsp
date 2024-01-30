@@ -135,7 +135,7 @@
                             <br><p class="size">サイズ:</p>
                             <p class="value">${ item.product_price }(税込)</p>
                         </div>
-                        <p class="peace">${Product_shopcart.purchase_count }個</p>
+                        <p class="peace">${item.product_count }個</p>
                         <div class="us-detail-peace">
                             <p class="postage">送料:500円</p>
                             <p class="total-value">小計:${ item.product_price }(税込)</p>

@@ -47,12 +47,12 @@ public class ProductWeight implements Serializable{
 	
 	public ProductWeight() {}
 	
-	public ProductWeight(int id, int producr_id, int siza_id, String purchase_weight, Timestamp create_date,
+	public ProductWeight(int id, int producr_id, String purchase_weight, Timestamp create_date,
 			Timestamp update_date) {
 		super();
 		this.id = id;
 		this.producr_id = producr_id;
-		this.siza_id = siza_id;
+//		this.siza_id = siza_id;
 		this.purchase_weight = purchase_weight;
 		this.create_date = create_date;
 		this.update_date = update_date;

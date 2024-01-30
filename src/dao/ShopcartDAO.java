@@ -121,6 +121,7 @@ public class ShopcartDAO {
 			stmt.setInt(1, count);
 			stmt.setInt(2, id);
 			
+			System.out.println("");
 			System.out.println("shopcart update-----------------");
 			
 			ret = stmt.executeUpdate();

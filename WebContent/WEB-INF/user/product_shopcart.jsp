@@ -146,16 +146,16 @@
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }(税込)</p>
 		          <form action="Product_shopcart" method="post" id="form_product_shopcart">
-			          <label for="count" id="label_count">個数</label>
+			          <label for="count" id="label_count">個数 : ${ item.product_count }</label>
 			          <input class="purchase_count" type="number" name="count" min="1"  value="1">
 			          <input type="hidden" name="mode" value="change">
 			          <input type="hidden" name="id" value="${ item.id}">
-		      		<button type="submit">個数変更</button>
+		      		<button class="change_button" type="submit">個数変更</button>
 		          </form>
 		      	
 		      		
 		      		<form action="#">
-		      		<button onclick="removeExample(this)">削除</button>
+		      		<button class="" onclick="removeExample(this)">削除</button>
 		      		</form>
 		          <!--  
 		          <p class="peace">個数</p>

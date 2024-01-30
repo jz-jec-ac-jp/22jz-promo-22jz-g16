@@ -148,9 +148,15 @@
 			</c:forEach>
          
             <p>サイズ</p>
-            <p>*****</p>
+             <c:forEach var="size" items="${ item.size_name }">
+			   <p>${ size.size_name }</p>
+			</c:forEach>
+            
             <p>重量</p>
-            <p>*****</p>
+            <c:forEach var="weight" items="${ item.weight_name }">
+			   <p>${ weight.weight_name }</p>
+			</c:forEach>
+			
         </div>
 
         <div class="product-content">

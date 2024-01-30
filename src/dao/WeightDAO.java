@@ -8,31 +8,31 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ProductColor;
+import model.ProductWeight;
 
-public class ColorDAO {
-	
-	public  List<ProductColor> find(int colorId) {
-        List<ProductColor> list = new ArrayList<>();
+public class WeightDAO {
+	public  List<ProductWeight> find(int weightId) {
+        List<ProductWeight> list = new ArrayList<>();
 		
+        System.out.println("weight_____" + weightId);
         
         DBManager manager = DBManager.getInstance();
         try(Connection cn = manager.getConnection()) {
-        String sql = "SELECT * FROM color_table WHERE product_id = ?";
+        String sql = "SELECT * FROM weight_table WHERE producr_id = ?";
         PreparedStatement stmt = cn.prepareStatement(sql);
 //        一行入れる
-        stmt.setInt(1, colorId);
-        System.out.println("color_id " + colorId);
+        stmt.setInt(1, weightId);
+        System.out.println("weight_id " + weightId);
          
         ResultSet rs = stmt.executeQuery();
 
             // データをリストに格納
             while(rs.next()) {
 //                ProductColor itemColors = rs2model(rs);
-            	ProductColor itemColor = rs2model(rs);
-                list.add(itemColor);
+            	ProductWeight itemWeight = rs2model(rs);
+                list.add(itemWeight);
 //                setColor(itemColor);
-                System.out.println("color_next");
+                System.out.println("weight_next");
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -53,7 +53,7 @@ public class ColorDAO {
 	 * @param rs 変換前のデータ
 	 * @return 変換後のデータ
 	 */
-	private  ProductColor rs2model(ResultSet rs) throws SQLException {
+	private  ProductWeight rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 //		int id = rs.getInt("id");/* ⑨ */
 //		String product_name = rs.getString("product_name");
@@ -64,14 +64,14 @@ public class ColorDAO {
 //		Timestamp update_date = rs.getTimestamp("update_date");
 //		
 		int id = rs.getInt("id");
-		int product_id = rs.getInt("product_id");
-		String color_name = rs.getString("purchase_color");
+		int product_id = rs.getInt("producr_id");
+		String purchase_weight = rs.getString("purchase_weight");
 		Timestamp create_date = rs.getTimestamp("create_date");
 		Timestamp update_date = rs.getTimestamp("update_date");
 		
 		System.out.println("rs2model");
 		
-		return new ProductColor(id, product_id, color_name, create_date, update_date);
+		return new ProductWeight(id, product_id, purchase_weight, create_date, update_date);
 	
 	}
 }

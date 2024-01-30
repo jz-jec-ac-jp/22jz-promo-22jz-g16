@@ -15,9 +15,14 @@ public class Item implements Serializable {
 //	imgテーブル用
 	List<ProductImag> imgUrl;
 	
+//	sizeテーブル用
+	List<ProductSize> size_name;
+	
 	//顧客個数カウント
 	List<ProductPurchase> product_count;
-//	Item colorText;
+	
+//	weightテーブル用
+	List<ProductWeight> weight_name;
 	
 	public int getId() {
 		return id;
@@ -86,6 +91,20 @@ public class Item implements Serializable {
 	public void setImgUrl(List<ProductImag> imgUrl) {
 		this.imgUrl = imgUrl;
 	}
+	//size
+		public List<ProductSize> getSize_name() {
+			return size_name;
+		}
+		public void setSize_name(List<ProductSize> size_name) {
+			this.size_name = size_name;
+		}
+		//weight
+		public List<ProductWeight> getWeight_name() {
+			return weight_name;
+		}
+		public void setWeight_name(List<ProductWeight> weight_name) {
+			this.weight_name = weight_name;
+		}
 //<<<<<<< HEAD
 //	
 //	

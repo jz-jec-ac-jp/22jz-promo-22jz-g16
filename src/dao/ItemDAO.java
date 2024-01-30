@@ -12,6 +12,8 @@ import java.util.List;
 import model. Item;
 import model.ProductColor;
 import model.ProductImag;
+import model.ProductSize;
+import model.ProductWeight;
 
 public class  ItemDAO {
 	/**
@@ -32,6 +34,8 @@ public class  ItemDAO {
 				Item  item = rs2model(rs);
 				setImg(item);
 				setColor(item);
+				setSize(item);
+				setWeight(item);
 				list.add(item);
 				
 //				System.out.println("true_get " +  list.add(item));
@@ -40,6 +44,8 @@ public class  ItemDAO {
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
 				System.out.println("true_img()  " + item.getImgUrl());
+				System.out.println("true_size()  " + item.getSize_name() );
+				System.out.println("true_weight()  " + item.getWeight_name() );
 				
 
 			}
@@ -58,17 +64,7 @@ public class  ItemDAO {
 //		item.setColorTexts(colors);
 //	}
 	
-	public void setColor(Item item) {
-		ColorDAO dao = new ColorDAO();
-		List<ProductColor> color = dao.find(item.getId());
-		item.setColorTexts(color);
-	}
-	
-	public void setImg(Item item) {
-		ImageDAO dao = new ImageDAO();
-		List<ProductImag> img = dao.find(item.getId());
-		item.setImgUrl(img);
-	}
+
 	
 	
 	/**
@@ -90,6 +86,8 @@ public class  ItemDAO {
 			if (rs.next()) {
 				 item = rs2model(rs);
 				 setColor(item);
+				 setWeight(item);
+				 setSize(item);
 				 
 				 
 				 
@@ -97,6 +95,8 @@ public class  ItemDAO {
 				 System.out.println("true_getid()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
 				 System.out.println("true_color()  " + item.getColorTexts());
+				 System.out.println("true_size()  " + item.getSize_name());
+				 System.out.println("true_weight()  " + item.getWeight_name());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -120,6 +120,8 @@ public class  ItemDAO {
 			if (rs.next()) {
 				Item item = rs2model(rs);
 				setColor(item);
+				setSize(item);
+				setWeight(item);
 				list.add(item);
 				 
 				 
@@ -128,6 +130,9 @@ public class  ItemDAO {
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
 				 System.out.println("true_color()  " + item.getColorTexts());
+				 System.out.println("true_size()  " + item.getSize_name());
+				 System.out.println("true_weight()  " + item.getWeight_name());
+				 
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -137,7 +142,28 @@ public class  ItemDAO {
 		return   list;
 	}
 
-
+	public void setColor(Item item) {
+		ColorDAO dao = new ColorDAO();
+		List<ProductColor> color = dao.find(item.getId());
+		item.setColorTexts(color);
+	}
+	
+	public void setImg(Item item) {
+		ImageDAO dao = new ImageDAO();
+		List<ProductImag> img = dao.find(item.getId());
+		item.setImgUrl(img);
+	}
+	public void setSize(Item item) {
+		SizeDAO dao = new SizeDAO();
+		List<ProductSize> size = dao.find(item.getId());
+		item.setSize_name(size);
+	}
+	public void setWeight(Item item) {
+		WeightDAO dao = new WeightDAO();
+		System.out.println("weight!!!!!!!!!!!!!");
+		List<ProductWeight> weight = dao.find(item.getId());
+		item.setWeight_name(weight);
+	}
 	  /**
 	   * ビデオデータに紐づくライセンス情報を検索して追加
 	   * @param  item 追加対象のビデオデータ
