@@ -49,14 +49,14 @@ public class Admin_productStatus extends HttpServlet {
 			
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
-			List<Integer> idList = daoPurchase.getId();
+			List<Integer> idList = daoPurchase.getUserId();
 			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
 			
 			System.out.println( "");
 			System.out.println( "userDetailList " + userDetailList);
 			System.out.println( "");
 			
-			String userMailAdress = daoHistory.getUserAdmin();
+			List<String> userMailAdress = daoHistory.getUserAdmin();
 			
 			
 			

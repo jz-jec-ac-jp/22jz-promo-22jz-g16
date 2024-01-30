@@ -140,9 +140,9 @@ public class ProductHistoryDAO {
 	}
 	
 //	管理者用
-	public String getUserAdmin() {
+	public List<String> getUserAdmin() {
 //		List<Item> list = new ArrayList<>();
-		String userMailAdress = null;
+		List<String> userMailAdress =  new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
@@ -159,7 +159,8 @@ public class ProductHistoryDAO {
 			// データをリストに格納
 			while(rs.next()) {
 //				System.out.println("whileの後");
-				userMailAdress = rs.getString("mail_adress");
+				String user = rs.getString("mail_adress");
+				userMailAdress.add(user);
 //				Item  item = rs2model(rs);
 //				setColor(item);
 //				list.add( item);

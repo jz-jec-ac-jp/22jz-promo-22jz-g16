@@ -44,7 +44,7 @@ public class PurchaseStatusDAO {
 //        return list;
 	}
 	
-	public  List<Integer> getId() {
+	public  List<Integer> getUserId() {
 //      list = new ArrayList<>();
 	List<Integer> id = new ArrayList<>();
      
@@ -68,40 +68,80 @@ public class PurchaseStatusDAO {
      return id;
 	}
 	
+	public  List<Integer> getProductId() {
+//      list = new ArrayList<>();
+	List<Integer> id = new ArrayList<>();
+     
+     DBManager manager = DBManager.getInstance();
+     try(Connection cn = manager.getConnection()) {//purchase_history
+     String sql = "SELECT i.id FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id";
+     PreparedStatement stmt = cn.prepareStatement(sql);
+      
+     ResultSet rs = stmt.executeQuery();
+     
+	     while(rs.next()) {
+				int productId = rs.getInt("user_id");
+				id.add(productId);
+				
+	     }
+     } catch(SQLException e) {
+         e.printStackTrace();
+         System.out.println("error_color " + e);
+     }
+//     return list;
+     return id;
+	}
+	
+	
 	public  List<ProductUser> getUserDetail(List<Integer> idList) {
 //      list = new ArrayList<>();
 	List<ProductUser> detail = new ArrayList<>();
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {
-     String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address,u.tel_number FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
-     PreparedStatement stmt = cn.prepareStatement(sql);
-      
-     ResultSet rs = stmt.executeQuery();
+	    
+	     
+	     for (int i = 0; i < idList.size(); i++) {
+//	    	 String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address,u.tel_number FROM user_table u INNER JOIN history_table h ON u.id = h.user_i";
+	    	 String sql = "SELECT us_prefectur, us_adress, street_address, tel_number FROM user_table WHERE id = ?";
+		     PreparedStatement stmt = cn.prepareStatement(sql);
+		     stmt.setInt(1, idList.get(i));
+		     ResultSet rs = stmt.executeQuery();
+		     
+		     while (rs.next()) {
+		    	 ProductUser user = rs2model(rs);
+		    	 detail.add(user);
+		     }
+	     }
      
-     String sqlUserId = "SELECT h.user_id FROM user_table u INNER JOIN history_table h ON u.id = h.user_id";
-     PreparedStatement stmtUser = cn.prepareStatement(sqlUserId);
-      
-     ResultSet rsUser = stmtUser.executeQuery();
-     
-     rs.next();
-     boolean user = rsUser.next();
-     System.out.println("user boolean " + user);
-     int userId = rsUser.getInt("user_id");
-     System.out.println("userId" + userId);
-     System.out.println("getUserId ------------------- ");
-     for (int i = 0; i < idList.size(); i++) {
-    	 System.out.println("idList[" + i + "] " + idList.get(i));
-    	 if (userId == idList.get(i)) {
-			ProductUser userDetail = rs2model(rs);
-			detail.add(userDetail);
-
-    	 }
-    	 else {
-    		 rs.next();
-    	 }
-    	  rsUser.next();
-     }
+//     boolean userRs = rsUser.next();
+//     boolean rsRs = rs.next();
+//     System.out.println("user boolean " + userRs);
+//     int userId = rsUser.getInt("user_id");
+//     int userIdBefore = userId;
+//     System.out.println("userId" + userId);
+//     System.out.println("getUserId ------------------- ");
+//     for (int i = 0; i < idList.size(); i++) {
+//    	 System.out.println("userId" + userId);
+//    	 System.out.println("idList[" + i + "] " + idList.get(i));
+//    	 if (userId == idList.get(i)) {
+//    		 System.out.println(userId + " == " + idList.get(i));
+//			ProductUser userDetail = rs2model(rs);
+//			detail.add(userDetail);
+//			userIdBefore = userId;
+//    	 }
+//    	 else if (idList.get(i) == userIdBefore) {
+//    		 
+//    	 }
+//    	 else {
+//    		 rsUser.next();
+//    		 userId = rsUser.getInt("user_id");
+//    		 System.out.println("nextUserId " + userId);
+// 			ProductUser userDetail = rs2model(rs);
+// 			detail.add(userDetail);
+//    	 }
+//    	 rs.next();
+//     }
 
      
 //	     while(rs.next()) {
