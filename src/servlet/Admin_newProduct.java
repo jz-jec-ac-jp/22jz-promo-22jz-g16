@@ -53,12 +53,17 @@ public class Admin_newProduct extends HttpServlet {
 		String productDetail = request.getParameter("productDetail");
 		int productValue = Integer.parseInt(request.getParameter("productValue"));
 		int productStock = Integer.parseInt(request.getParameter("productStock"));
+		String productColor = request.getParameter("productColor");
 		
 		String productSize = request.getParameter("productSize");
 		String productWeight = request.getParameter("productWeight");
 		
+		String category_img = request.getParameter("category_img");
+		
+
+		
 		System.out.println("admin_newProduct doPost");
-		daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight);
+		daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight, productColor, category_img);
 		
 //		ShopcartDAO dao = new ShopcartDAO();
 ////		

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +43,46 @@ public class ImageDAO {
 		return list;
 	}
 
+	public boolean create(int itemId, String img1, String img2, String img3) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+//			try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+			// プレースホルダで変数部分を定義
+//			String sql = "INSERT INTO img_table (item_id, img_url , create_date, update_date) VALUES (?, ?, ?, ?)";
+//			PreparedStatement stmt = cn.prepareStatement(sql);
+//			stmt.setInt(1, itemId);
+//			stmt.setString(2, img1);
+//			stmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+//			stmt.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+//			ret = stmt.executeUpdate();
+			
+			 // 自動採番された値を取得するためのOUTパラメータを登録
+//            preparedStatement.registerOutParameter(3, java.sql.Types.NUMERIC);
+
+//			
+			for (int i = 1; i <= 3; i++) {
+				String sql = "INSERT INTO img_table (item_id, img_url , create_date, update_date) VALUES (?, ?, ?, ?)";
+				PreparedStatement stmt = cn.prepareStatement(sql);
+				stmt.setInt(1, itemId);
+				stmt.setString(2, "img" + i);
+				stmt.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+				stmt.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+				ret = stmt.executeUpdate();
+			}
+			
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+	}
 	
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド

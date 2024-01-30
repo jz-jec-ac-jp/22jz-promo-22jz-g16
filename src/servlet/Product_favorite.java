@@ -61,6 +61,8 @@ public class Product_favorite extends HttpServlet {
 //			for (int i = 0; i < itemId.size(); i++) {
 				
 			request.setAttribute("list", list);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
+			dispatcher.forward(request, response);
 			}
 			
 			//Item item = dao.find(1);
@@ -68,8 +70,7 @@ public class Product_favorite extends HttpServlet {
 //			
 //			System.out.println("true  " + list);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_favorite.jsp");
-			dispatcher.forward(request, response);
+
 			
 		}
 		

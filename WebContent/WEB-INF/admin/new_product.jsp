@@ -471,21 +471,24 @@
         <input type="search" class="new-search-txtbox" placeholder="キーワードを入力">
       </div>
 
-      <!-- 写真を追加する -->
-      <div class="ad-new-img">
-        <figure>
-          <img src="assets/img/add-icon.png" alt="">
-        </figure>
-        <figure>
-          <img src="assets/img/chair.jpg" alt="">
-        </figure>
-        <figure>
-          <img src="assets/img/chair.jpg" alt="">
-        </figure>
-        <figure>
-          <img src="assets/img/chair.jpg" alt="">
-        </figure>
+        <!-- <button class="select-input-btn" type="button"> -->
+          <select class="paymethood-pulldown text-input-select" name="category_img">
+             <option value="">商品写真一覧</option>
+   				<%-- メッセージが存在するときのみ表示 --%>
+               	<option value="カントリー椅子">カントリー椅子</option>
+               	<option value="モノトーン椅子">モノトーン椅子</option>
+               	<option value="カントリー時計">カントリー時計</option>
+               	<option value="モノトーン時計">モノトーン時計</option>
+               	<option value="カントリー照明">カントリー照明</option>
+               	<option value="モノトーン照明">モノトーン照明</option>
+               	<option value="カントリー机">カントリー机</option>
+               	<option value="モノトーン机">モノトーン机</option>
+               	<option value="カントリー棚">カントリー棚</option>
+               	<option value="モノトーン棚">モノトーン棚</option>
+               	
 
+          </select>
+      <!-- </button> -->
       </div>
       <!-- 商品名 -->
       <p class="ad-product-name">商品名</p>
@@ -516,7 +519,16 @@
           <input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight">
         </div>
       </div>
-      
+        
+        <div class="ad-value">
+	        <div class="ad-new-vaca">
+	          <p>カラー</p>
+	          <input type="text" class="ad-new-value" placeholder="例）黒" name="productColor">
+	        </div>
+       		<div class="ad-new-vaca">
+          
+        </div>
+      </div>
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
       <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
