@@ -30,6 +30,7 @@ public class Admin_productStatus extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
+		
 		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 		HttpSession session = request.getSession();
 		
@@ -46,17 +47,18 @@ public class Admin_productStatus extends HttpServlet {
 			
 			ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 			List<Item> list = daoHistory.get();
+			List<String> userMailAdress = daoHistory.getUserAdmin();
 			
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getUserId();
+//			List<Integer> productIdList = daoPurchase.getProductId();
 			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
 			
 			System.out.println( "");
 			System.out.println( "userDetailList " + userDetailList);
 			System.out.println( "");
 			
-			List<String> userMailAdress = daoHistory.getUserAdmin();
 			
 			
 			

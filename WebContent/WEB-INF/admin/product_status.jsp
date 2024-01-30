@@ -42,7 +42,7 @@
 	        <div>
 		        <p>題名：${ item.product_name }</p>
 		        <p>色：black　　個数：１</p>
-		        <p>${ userMailAdress }</p>
+		        <p>${ userMailAdress[count.index] }</p>
 	            <p>userId : ${ idList[count.index] }</p>
 	        </div>
 	      </div>
@@ -67,9 +67,7 @@
 	    <!-- 配送ステータス -->
 	    <ul class="progressbar">
 	      <li>
-	      	<c:if test="${ not empty  }">
-	      		<p>準備中</p>
-	      	</c:if>
+
 	      </li>
 	      <li>○○　<span>14:00</span></li>
 	      <li>○○　<span>20:00</span></li>
