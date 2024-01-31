@@ -27,6 +27,7 @@ public class PrdocutPurchaseDAO {
 		List<Item> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
+		
 		try(Connection cn = manager.getConnection()) {
 			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN history_table i ON p.product_id = i.id";
 			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
