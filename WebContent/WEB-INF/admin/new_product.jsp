@@ -472,7 +472,7 @@
       </div>
 
         <!-- <button class="select-input-btn" type="button"> -->
-          <select class="paymethood-pulldown text-input-select" name="category_img">
+          <select class="productCategory" name="category_img">
              <option value="">商品写真一覧</option>
    				<%-- メッセージが存在するときのみ表示 --%>
                	<option value="カントリー椅子">カントリー椅子</option>

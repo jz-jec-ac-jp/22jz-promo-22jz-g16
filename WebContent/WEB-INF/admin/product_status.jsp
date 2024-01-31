@@ -50,16 +50,16 @@
 	      <div class="ad-status">
 	        <!-- 配送日時 -->
 	        <p class="status-time">
-	          配送日時<br>
+	          < 配送日時 ><br>
 	          2023/9/30 <br>
 	        </p>
 	        <!-- 配送元住所 -->
 	        <p class="status-address">
-	          配送元住所 <br>
+	          < 配送元住所 ><br>
 	          〒169-8522 東京都新宿区百人町1-25-4
 	        </p>
 	        <!-- 配送場所 -->
-	        <p>配送場所 <p>
+	        <p>< 配送場所 ><p>
 	          <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address } TEL：${ userDetailList[count.index].tel_number}</p>
 	        </p>
 	      </div>

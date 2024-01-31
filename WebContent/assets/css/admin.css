@@ -27,6 +27,7 @@ main {
 
 a {
     text-decoration: none;
+    color: #141414;
 }
 
 ul {
@@ -111,9 +112,9 @@ header {
 
 .ad-login-form {
 	display: block;
-	width: 20vw	;
+/*	width: 20vw	;*/
+/*	width: 10vw;*/
 	margin: 0 auto;
-	margin: 0;
 }
 
 .ad-login-form input{
@@ -130,7 +131,7 @@ header {
 
 .ad-login {
     margin: auto;
-    width: 20%;
+/*    width: 20%;*/
     text-align: center;
 }
 
@@ -223,7 +224,7 @@ header {
 }
 
 .ad-product-del p {
-    margin: 5% 0;
+    margin: 2% 0;
 }
 
 
@@ -242,6 +243,23 @@ header {
 .ad-del-man p {
     margin: auto;
     font-size: 1.2rem;
+}
+
+.listForm {
+	margin: auto;
+}
+
+.listFormButton  {
+	display: block;
+	margin: 15px auto;
+}
+
+.ad-del-man .productStock {
+	font-size: 1.5rem;
+}
+
+.comparisonSelect {
+	padding: 3px;	
 }
 
 /*
@@ -285,6 +303,10 @@ header {
     margin-top: 10%;
 }
 
+.new-search-form input, .new-search-form text, .new-search-form select {
+	text-align: center;
+} 
+
 .new-search-icon {
     border: none;
 }
@@ -308,7 +330,11 @@ header {
 .ad-product-name,
 .ad-new-vaca,
 .ad-product-content {
-    margin-top: 10%;
+    margin-top: 5%;
+}
+
+.ad-new-vaca {
+	margin: 0 5px;
 }
 
 .ad-new-product-name,
@@ -326,13 +352,18 @@ header {
 
 
 .ad-value p {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .ad-new-contents {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     resize: none;
+}
+
+.productCategory {
+	margin-top: 20px;
+	height: 30px;
 }
 
 
