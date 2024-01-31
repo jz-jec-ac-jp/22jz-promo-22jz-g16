@@ -132,8 +132,15 @@
                             <c:forEach var="color" items="${ item.colorTexts }">
 			                   <p class="us-color-size">カラー:${ color.purchase_color}</p>
 			                </c:forEach>
-                            <br><p class="size">サイズ:</p>
+			                
+			                
+             				<c:forEach var="size" items="${ item.size_name }">
+			   					<p class="size">サイズ:${ size.size_name }</p>
+							</c:forEach>
+			                
+                            <br><p class="size">サイズ:${ size.size_name }</p>
                             <p class="value">${ item.product_price }(税込)</p>
+                        
                         </div>
                         <p class="peace">${item.product_count }個</p>
                         <div class="us-detail-peace">

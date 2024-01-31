@@ -28,8 +28,8 @@ public class SizeDAO {
             // データをリストに格納
             while(rs.next()) {
 //                ProductColor itemColors = rs2model(rs);
-            	ProductSize itemColor = rs2model(rs);
-                list.add(itemColor);
+            	ProductSize itemSize = rs2model(rs);
+                list.add(itemSize);
 //                setColor(itemColor);
                 System.out.println("size_next");
             }
