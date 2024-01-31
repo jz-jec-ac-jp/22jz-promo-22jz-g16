@@ -14,6 +14,7 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductSize;
 
 public class PrdocutPurchaseDAO {
 
@@ -26,6 +27,7 @@ public class PrdocutPurchaseDAO {
 		List<Item> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
+		
 		try(Connection cn = manager.getConnection()) {
 			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN history_table i ON p.product_id = i.id";
 			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
@@ -41,6 +43,7 @@ public class PrdocutPurchaseDAO {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
 				setColor(item);
+				setSize(item);
 //				setCount(item);
 				
 //<<<<<<< HEAD
@@ -55,7 +58,7 @@ public class PrdocutPurchaseDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
-//				System.out.println("true_Name()  " + item.getProduct_count());
+				System.out.println("true_Size()  " + item.getSize_name());
 //				System.out.println("true_count()  " + item.getProduct_count());
 			}
 		} catch(SQLException e) {
@@ -69,6 +72,11 @@ public class PrdocutPurchaseDAO {
 		ColorDAO dao = new ColorDAO();
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
+	}
+	public void setSize(Item item) {
+		SizeDAO dao = new SizeDAO();
+		List<ProductSize> size = dao.find(item.getId());
+		item.setSize_name(size);
 	}
 //	public void setCount(Item item) {
 //		PrdocutPurchaseDAO dao = new PrdocutPurchaseDAO();
