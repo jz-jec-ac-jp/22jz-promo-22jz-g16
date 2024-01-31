@@ -86,7 +86,6 @@ public class PurchaseStatusDAO {
 	     while(rs.next()) {
 				int userId = rs.getInt("id");
 				id.add(userId);
-				
 	     }
      } catch(SQLException e) {
          e.printStackTrace();
