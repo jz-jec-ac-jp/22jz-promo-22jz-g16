@@ -140,9 +140,8 @@
         <div class="detaile">
             <p>商品コード</p>
             <p>${ item.id }</p>
-            <p>カラー</p>
            
-            
+            <p>カラー</p>
             <c:forEach var="color" items="${ item.colorTexts }">
 			   <p>${ color.purchase_color}</p>
 			</c:forEach>
@@ -151,10 +150,10 @@
              <c:forEach var="size" items="${ item.size_name }">
 			   <p>${ size.size_name }</p>
 			</c:forEach>
-            
-            <p>重量</p>
-            <c:forEach var="weight" items="${ item.weight_name }">
-			   <p>${ weight.weight_name }</p>
+			
+			<p>重量</p>
+             <c:forEach var="weight" items="${ item.weight_name }">
+			   <p>${ weight.purchase_weight}</p>
 			</c:forEach>
 			
         </div>
