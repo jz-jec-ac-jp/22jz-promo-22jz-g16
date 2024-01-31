@@ -86,16 +86,17 @@ public class PrdocutPurchaseDAO {
 //>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	
 	
-	public  void find(String delivery_status) {
+	public  void find(String delivery_status, int userId) {
 //      list = new ArrayList<>();
 		
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {
-     String sql = "UPDATE history_table SET delivery_status = ? where id=1";
+     String sql = "UPDATE history_table SET delivery_status = ? where id=?";
      PreparedStatement stmt = cn.prepareStatement(sql);
 //     一行入れる
      stmt.setString(1, delivery_status);
+     stmt.setInt(1, userId);
      System.out.println("delivery_status " + delivery_status);
       
 //     ResultSet rs = stmt.executeQuery();

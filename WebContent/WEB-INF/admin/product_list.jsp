@@ -72,9 +72,11 @@
                	<input type="hidden" value="${ item.id }" name="productId">
                	<input type="hidden" value="${ idList[count.index] }" name="historyId">
                <select class="comparisonSelect" name="comparison-box">
+               		<option value="">配送状況選択</option>
                    <option value="preparation">準備中</option>
                    <option value="completion">発送済み</option>
                </select>
+               <p>${ listPurchaseStatus[count.index] }</p>
                
                <button type="submit" class="listFormButton">確定</button>
             </form>

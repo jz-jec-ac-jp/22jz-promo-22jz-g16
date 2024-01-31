@@ -44,19 +44,47 @@ public class PurchaseStatusDAO {
 //        return list;
 	}
 	
+		public  List<String> findProductStatus() {
+	         List<String> statusList = new ArrayList<>();
+			
+	        
+	        DBManager manager = DBManager.getInstance();
+	        try(Connection cn = manager.getConnection()) {
+	        String sql = "SELECT delivery_status FROM purchase_table";
+	        PreparedStatement stmt = cn.prepareStatement(sql);
+
+	        System.out.println("delivery_status whileBefore");
+	         
+	        ResultSet rs = stmt.executeQuery();
+
+	            // データをリストに格納
+	            while(rs.next()) {
+	                String deliveryStatus = rs.getString("delivery_status");
+	                statusList.add(deliveryStatus);
+
+	                System.out.println("delivery_status " + deliveryStatus);
+	            }
+	        } catch(SQLException e) {
+	            e.printStackTrace();
+	            System.out.println("error_color " + e);
+	        }
+	        
+	        return statusList;
+		}
+	
 	public  List<Integer> getUserId() {
 //      list = new ArrayList<>();
 	List<Integer> id = new ArrayList<>();
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {//purchase_history
-     String sql = "SELECT h.user_id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
+     String sql = "SELECT h.id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
      PreparedStatement stmt = cn.prepareStatement(sql);
       
      ResultSet rs = stmt.executeQuery();
      
 	     while(rs.next()) {
-				int userId = rs.getInt("user_id");
+				int userId = rs.getInt("id");
 				id.add(userId);
 				
 	     }
