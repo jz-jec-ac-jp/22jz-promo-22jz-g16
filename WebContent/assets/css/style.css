@@ -1498,11 +1498,12 @@ footer a {
 
 .imgContents {
 	display: flex;
+	width: 30vw;
 }
 
 .imgContents img {
-	width: 50vw;
-	height: 20vh;
+	width: 30vw;
+/*	height: 30vh;*/
 }
 
 /*

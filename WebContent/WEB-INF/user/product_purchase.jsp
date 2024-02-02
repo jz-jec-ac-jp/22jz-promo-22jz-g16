@@ -144,13 +144,13 @@
              				<c:forEach var="size" items="${ item.size_name }">
 			   					<p class="size">サイズ:${ size.size_name }</p>
 							</c:forEach>
-                            <p class="value">${ item.product_price }(税込)</p>
+                            <p class="value">${ item.product_price }円(税込)</p>
                         
                         </div>
                         <p class="peace">${ productCount[count.index] }個</p>
                         <div class="us-detail-peace">
                             <p class="postage">送料:500円</p>
-                            <p class="total-value">小計:${ item.product_price }(税込)</p>
+                            <p class="total-value">小計:${ item.product_price }円(税込)</p>
                         </div>
                     </div>
                 </section>

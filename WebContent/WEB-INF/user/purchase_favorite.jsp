@@ -20,7 +20,7 @@
 
 <body>
     <!-- header -->
-    <header class="header">
+    <header>
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -72,17 +72,9 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box-anim" placeholder="入力してください">
           </form>
-          <!--お気に入りアイコン  -->
-          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
-            <img src="/assets/img/header_favorite.png" alt="">
-          </a> -->
-          <!-- カートアイコン -->
-          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
-            <img src="/assets/img/header_cart.png" alt="">
-          </a> -->
-    
+
           <nav class="nav">
-            <h1 class="Inair"><a href="Product_top">Inair</a></h1>
+            <h1 class="Inair"><a href="">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
             <li><a href="Product_history">商品履歴</a></li>
@@ -144,7 +136,7 @@
 	                        	<br>
 	                        </p>
 		                     
-		                        <p class="value">${ item.product_price}(税込)</p>
+		                        <p class="value">${ item.product_price}円(税込)</p>
 		                       
 	                        <!--カートに入れる-->
 	                        <button Class="btn" onclick="cartButton()">カートに入れる</button>
