@@ -11,7 +11,9 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductImag;
 import model.ProductSize;
+import model.ProductWeight;
 
 public class ProductHistoryDAO {
 	/**
@@ -39,8 +41,10 @@ public class ProductHistoryDAO {
 			while(rs.next()) {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
+				setImg(item);
 				setColor(item);
 				setSize(item);
+				setWeight(item);
 				list.add( item);
 	
 				
@@ -64,10 +68,23 @@ public class ProductHistoryDAO {
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
 	}
+	
+	public void setImg(Item item) {
+		ImageDAO dao = new ImageDAO();
+		List<ProductImag> img = dao.find(item.getId());
+		item.setImgUrl(img);
+	}
 	public void setSize(Item item) {
 		SizeDAO dao = new SizeDAO();
 		List<ProductSize> size = dao.find(item.getId());
+		System.out.println("size!!!!!!!!!!!!!");
 		item.setSize_name(size);
+	}
+	public void setWeight(Item item) {
+		WeightDAO dao = new WeightDAO();
+		System.out.println("weight!!!!!!!!!!!!!");
+		List<ProductWeight> weight = dao.find(item.getId());
+		item.setWeight_name(weight);
 	}
 	
 	//管理者

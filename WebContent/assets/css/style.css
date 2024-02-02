@@ -257,7 +257,9 @@ select:focus {
     z-index: 999;
 }
 
-
+.imgOverflow {
+	overflow: hidden;
+}
 
 /* header  */
 

@@ -123,15 +123,13 @@
 	                <div class="ad-product-man">
 	
 		        		            
-				       <div class="slide-wrap">
-				          <c:forEach var="img" items="${ item.imgUrl }">
-				         	<div class="slide-box">
-				              <figure>
-				                <img class="imgDetail" src="${ img.img_url }" alt="">
-				              </figure>
-				         	 </div>
-				            </c:forEach>
-				       	</div>
+			            <div class="imgContents imgOverflow">
+				            <c:forEach var="img" items="${ item.imgUrl }">
+					              <figure>
+					                <img class="" src="${ img.img_url }" alt="">
+					              </figure>
+				              </c:forEach>
+			            </div>
 			        
 	                    <div class="q">
 	                        <p class="ad-product-man">
