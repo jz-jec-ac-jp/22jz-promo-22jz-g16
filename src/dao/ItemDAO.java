@@ -85,9 +85,10 @@ public class  ItemDAO {
 			// データをリストに格納
 			if (rs.next()) {
 				 item = rs2model(rs);
-				 setColor(item);
-				 setWeight(item);
-				 setSize(item);
+				setImg(item);
+				setColor(item);
+				setSize(item);
+				setWeight(item);
 				 
 				 
 				 

@@ -39,8 +39,8 @@
   		<form  action="#" method="post" ><!-- onsubmit="return check();" -->
 	      <!-- 準備中と完了のタブ切り替え -->
 	      <div class="ad-tab-switch">
-	        <option type="submit" href="#">準備中</option>
-	        <option type="submit" href="#">完了</option>
+	        <a  href="#">準備中</a>
+	        <a  href="#">完了</a>
 	      </div>
 	      <!-- 注文データ一覧 -->
       	</form>
@@ -70,13 +70,13 @@
            <form action="#" method="post" class="listForm" ><!-- onsubmit="return check();" -->
                 
                	<input type="hidden" value="${ item.id }" name="productId">
-               	<input type="hidden" value="${ idList[count.index] }" name="historyId">
+               	<input type="hidden" value="${ historyIdList[count.index] }" name="historyId">
                <select class="comparisonSelect" name="comparison-box">
                		<option value="">配送状況選択</option>
                    <option value="preparation">準備中</option>
                    <option value="completion">発送済み</option>
                </select>
-               <p>${ listPurchaseStatus[count.index] }</p>
+               <p class="deliveryStatus">${ listPurchaseStatus[count.index] }</p>
                
                <button type="submit" class="listFormButton">確定</button>
             </form>

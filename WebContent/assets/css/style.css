@@ -1034,6 +1034,7 @@ footer a {
     margin-top: 10px;
     width: 160px;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .slideshow .goods-item img {
@@ -1491,6 +1492,15 @@ footer a {
 
 .item-day {
     font-size: 1.3rem;
+}
+
+.imgContents {
+	display: flex;
+}
+
+.imgContents img {
+	width: 50vw;
+	height: 20vh;
 }
 
 /*
@@ -2354,6 +2364,47 @@ footer a {
     display: flex;
 }
 
+ 
+/* 通常（PC）ではタイル表示 */
+.slide-wrap {
+  background-color: #ccc;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+.slide-box {
+  height: auto;
+  margin: .5%;
+  width: 24%;
+}
+.slide-box a {
+  background-color: #fff;
+  color: #222;
+  display: block;
+  text-decoration: none;
+}
+.slide-box img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.slide-box p {
+  font-weight: bold;
+  padding: 10px;
+  margin:.5rem auto;
+}
+@media screen and (max-width: 768px) {
+/* スマホサイズでスライダー表示 */
+  .slide-wrap {
+    overflow-x: scroll;
+  }
+  .slide-box {
+    flex: 0 0 70%;
+    margin: auto 1% auto auto;
+  }
+}
+
 /*
 
 商品一覧ページ
@@ -2424,6 +2475,22 @@ footer a {
 
 .Pagination-Item-Link:not(.isActive):hover {
     opacity: 0.5;
+}
+
+.productList .goods-item {
+    width: 40vw;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.imgContentsList {
+	display: flex;
+}
+
+
+.imgContentsList img {
+	width: 40vw;
+	height: 20vh;
 }
 
 /*
@@ -2823,6 +2890,7 @@ footer a {
     商品詳細 
     
     */
+    
 
     .product-img {
         width: 50%;
@@ -2860,15 +2928,34 @@ footer a {
         width: 30%;
         font-size: 1.6rem;
     }
+	
+	/* 横スクロールで画像をスライドさせる */
+/*	.image-horizontal-scroll{*/
+/*		overflow-x: scroll;*/
+/*		white-space: nowrap;*/
+/*		-webkit-overflow-scrolling: touch;*/
+/*	}*/
+	
+/*	.box{*/
+		
+/*		width: 90%;*/
+/*		margin: 10px;*/
+/*	}*/
+/*	.box img {*/
+/*		display: block;*/
+/*	}*/
+
+	
+
 
     /*
     
     レビュー画面 
     
     */
-    .review-productimg {
+/*    .review-productimg {*/
         /* width: 60%; */
-    }
+/*    }*/
 
     /* .review-body {
         width: 60%;

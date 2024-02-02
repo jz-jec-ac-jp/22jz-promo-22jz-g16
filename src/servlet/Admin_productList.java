@@ -51,10 +51,12 @@ public class Admin_productList extends HttpServlet {
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getUserId();
+			List<Integer> historyIdList = daoPurchase.getUserHistoryId();
 //			List<Integer> productIdList = daoPurchase.getProductId();
 			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
 			
 			System.out.println( "");
+			System.out.println( "idList " + idList);
 			System.out.println( "userDetailList " + userDetailList);
 			System.out.println( "");
 			
@@ -70,6 +72,7 @@ public class Admin_productList extends HttpServlet {
 			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
 			request.setAttribute("userDetailList", userDetailList);
+			request.setAttribute("historyIdList", historyIdList);
 			request.setAttribute("listPurchaseStatus", listPurchaseStatus);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");

@@ -266,6 +266,11 @@ header {
 	padding: 3px;	
 }
 
+.listForm .deliveryStatus {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
 /*
 
 ここまでが管理者一覧画面

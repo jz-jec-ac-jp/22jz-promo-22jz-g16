@@ -78,6 +78,29 @@ public class PurchaseStatusDAO {
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {//purchase_history
+     String sql = "SELECT h.user_id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
+     PreparedStatement stmt = cn.prepareStatement(sql);
+      
+     ResultSet rs = stmt.executeQuery();
+     
+	     while(rs.next()) {
+				int userId = rs.getInt("user_id");
+				id.add(userId);
+	     }
+     } catch(SQLException e) {
+         e.printStackTrace();
+         System.out.println("error_color " + e);
+     }
+//     return list;
+     return id;
+	}
+	
+	public  List<Integer> getUserHistoryId() {
+//      list = new ArrayList<>();
+	List<Integer> id = new ArrayList<>();
+     
+     DBManager manager = DBManager.getInstance();
+     try(Connection cn = manager.getConnection()) {//purchase_history
      String sql = "SELECT h.id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
      PreparedStatement stmt = cn.prepareStatement(sql);
       

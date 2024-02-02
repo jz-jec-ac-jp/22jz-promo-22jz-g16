@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <title>商品詳細画面</title>
     <script src="assets/js/humberger.js"></script>
     <script src="assets/js/top-page.js" defer></script>
@@ -108,9 +109,15 @@
                 <li>商品詳細</li>
             </ol>
         </nav>
-        <figure>
-            <img class="product-img" src="assets/img/chair.jpg" alt="">
-        </figure>
+        <div class="slide-wrap">
+          <c:forEach var="img" items="${ item.imgUrl }">
+         	<div class="slide-box">
+              <figure>
+                <img class="imgDetail" src="${ img.img_url }" alt="">
+              </figure>
+         	 </div>
+            </c:forEach>
+        </div>
          
          
         <h1 class="detail-product-name">${item.product_name}</h1>
