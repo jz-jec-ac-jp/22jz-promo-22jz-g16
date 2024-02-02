@@ -124,15 +124,13 @@
                     <p class="us-productname">${ item.product_name }</p>
                     <div class="us-detail-Product-name">
             
-				       <div class="slide-wrap">
-				          <c:forEach var="img" items="${ item.imgUrl }">
-				         	<div class="slide-box">
-				              <figure>
-				                <img class="imgDetail" src="${ img.img_url }" alt="">
-				              </figure>
-				         	 </div>
-				            </c:forEach>
-				       	</div>
+			            <div class="imgContents imgOverflow">
+				            <c:forEach var="img" items="${ item.imgUrl }">
+					              <figure>
+					                <img class="" src="${ img.img_url }" alt="">
+					              </figure>
+				              </c:forEach>
+			            </div>
                         <div class="introduction-div">
                             <p class="us-product-man">商品コード：${ item.id }</p>
                             
