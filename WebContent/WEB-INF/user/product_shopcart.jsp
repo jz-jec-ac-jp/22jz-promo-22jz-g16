@@ -150,7 +150,7 @@
 		          </div>
 		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
-		            <p class="total-value">小計:${item.product_price }(税込)</p>
+		            <p class="total-value">小計:${item.product_price }円(税込)</p>
 		          <form action="#" method="post" id="form_product_shopcart">
 			          <label for="count" id="label_count">個数 : ${ productCount[count.index] }</label>
 			          <input class="purchase_count" type="number" name="count" min="1"  value="1">

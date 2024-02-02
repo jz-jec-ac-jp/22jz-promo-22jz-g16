@@ -106,7 +106,7 @@ public class Product_shopcart extends HttpServlet {
 					response.sendRedirect("Product_login");
 				}
 				else {
-					if(request.getParameter("mode").equals("change")) {
+					if(request.getParameter("mode") != null) {
 						//数量変更する
 						int tempcount = Integer.parseInt(request.getParameter("count"));
 						int id =Integer.parseInt( request.getParameter("id"));

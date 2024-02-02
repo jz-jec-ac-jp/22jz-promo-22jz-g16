@@ -171,7 +171,7 @@
 				              </c:forEach>
 			            </div>
 		              <p class="ad-productname">${ item.product_name }</p>
-		              <p class="price">値段：${ item.product_price }</p>
+		              <p class="price">値段：${ item.product_price }円</p>
 		            </div>
 		          </a>
 	          </li>
