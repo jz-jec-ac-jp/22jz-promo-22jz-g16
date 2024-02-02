@@ -1631,13 +1631,19 @@ footer a {
 	font-size: 15px;
 }
 
+
 .color-column{
 	display: flex;
 }
 
 .change_button{
 	margin-left: 25px;
-	
+	background: #7c7c7c;
+    color: #FFF;
+    width: fit-content;
+    padding: 1px 15px;
+    border-radius:10px;
+    margin-top: 10px;
 }
 
 
@@ -1650,11 +1656,11 @@ footer a {
 
 .deleate_button{
 	display: block;
-	margin: 3vh  auto;
+	margin: 1vh  auto;
 	background: #7c7c7c;
     color: #FFF;
     width: fit-content;
-    padding: 10px 15px;
+    padding: 1px 15px;
     border-radius:10px;
 }
 .cart-div .year-total {
@@ -2140,7 +2146,7 @@ footer a {
 }
 
 .card-form input {
-    margin-bottom: 10%;
+/*    margin-bottom: 10%;*/
     width: 100%;
 }
 
@@ -2167,7 +2173,7 @@ footer a {
 
 .error-month{
     position: absolute;
-    top: 30px;
+    top: 15px;
 }
 
 .error-year{
@@ -2187,6 +2193,7 @@ footer a {
 
 .card-button {
     display: flex;
+    margin: 20px 0;
 }
 
 .card-form .card-submit {
@@ -2202,7 +2209,13 @@ footer a {
     width: fit-content;
     margin-left: 0;
 }
-
+.card-Confirm{
+	background: #7c7c7c;
+    color: #FFF;
+    width: fit-content;
+    padding: 1px 15px;
+    border-radius:10px;
+}
 /* 
 
 ここまでがカード情報

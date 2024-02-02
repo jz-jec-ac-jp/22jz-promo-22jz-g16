@@ -124,7 +124,7 @@
                      </select>
                  </button>
                  
-                 <button type="submit">確定</button>
+                 <button class="card-Confirm" type="submit">確定</button>
 		    </form>
 				    
         
@@ -139,10 +139,9 @@
                 <!-- 有効期限 -->
                 <h2>有効期限*</h2>
                 <div class="expiration">
-                    <input class="expiration-month text-input" type="number" placeholder="例）12" name="date_of_expiry">
+                    <input class="expiration-month text-input" type="number" placeholder="例 年月）2712" name="date_of_expiry">
                     <p class="error-message error-month">※入力してください</p>
-
-                    <p>月　/</p>
+					
                   <!--   <input class="expiration-year text-input" type="number" placeholder="例）27" name="date_of_expiry">
                     <p class="error-message error-year">※入力してください</p>
 

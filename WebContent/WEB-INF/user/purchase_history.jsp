@@ -162,6 +162,7 @@
 	                </div>
 	                 -->
 	            </section>
+	            </a>
 	         </c:forEach>
            </div>
             
@@ -235,7 +236,10 @@
 
         <button id="scroll-to-top-btn"><img class="page-top-img" src="/assets/img/page-top.png" alt=""></button>
         <!-- </div> -->
+        <!-- 
         <div class="product-button">
+            </div>
+         -->
             	<%--
             	
                 <input class="return-btn" type="submit" value="戻る">
@@ -245,11 +249,10 @@
             	<a href="Product_top" class="history-cart-btn">トップページに戻る</a>
             	  --%>
                 <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
-            </div>
            
     </main>
-    <!-- footer -->
-    <footer>
+     <!-- footer -->
+  <footer>
         <!-- 店舗 -->
         <div class="footer-aligned">
             <a href="Footer_shop" class="footer-store">

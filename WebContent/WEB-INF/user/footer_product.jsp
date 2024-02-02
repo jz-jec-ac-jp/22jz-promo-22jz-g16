@@ -351,7 +351,6 @@
         </figure>
         <p>店舗</p>
       </a>
-      <div></div>
       <!-- 商品 -->
       <a href="Footer_product" class="footer-shopping">
         <figure>
