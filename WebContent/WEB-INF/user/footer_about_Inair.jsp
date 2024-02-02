@@ -53,20 +53,21 @@
           </div>
         </div>
           <!-- 検索アイコン -->
-          <form class="search-form" action="get" href="#">
+          <form class="search-form" action="Product_list" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください">
+            <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
     
     
         <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
-          <form class="search-form-anim" action="get" href="#">
+          <form class="search-form" action="Product_list" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
             <!-- 検索ボックス -->
-            <input type="search" class="search-box-anim" placeholder="入力してください">
+            <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
+    
           <!--お気に入りアイコン  -->
           <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
             <img src="/assets/img/header_favorite.png" alt="">

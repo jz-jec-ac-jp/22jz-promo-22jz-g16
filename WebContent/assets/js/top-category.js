@@ -16,7 +16,7 @@
 // };
 
 // -----------------------------------
-
+//椅子
 /* ポップアップを開く */
 function popup_open_chair() {
     var popup = document.getElementById('popup-overlay-chair');
@@ -46,9 +46,9 @@ addEventListener('touchstart', overlay_popup_close_chair);
 function overlay_popup_close_chair(e) {
     var popup = document.getElementById('popup-overlay-chair');
     var popup_window = document.getElementById('popup-window-chair')
-    popup_window.style.display = "none";
     popup.classList.remove('popup-message');
     if (e.target == popup) {
+    popup_window.style.display = "none";
         popup.style.display = 'none';
     }
 }
@@ -70,8 +70,8 @@ function popup_open_table() {
 function popup_close_table() {
     var popup = document.getElementById('popup-overlay-table');
     var popup_window = document.getElementById('popup-window-table')
-    popup_window.style.display = "none";
-    popup.style.display = "none";
+//    popup_window.style.display = "none";
+//    popup.style.display = "none";
     popup.classList.remove('popup-message');
 }
 
@@ -87,10 +87,10 @@ addEventListener('touchstart', overlay_popup_close_table);
 function overlay_popup_close_table(e) {
     var popup = document.getElementById('popup-overlay-table');
     var popup_window = document.getElementById('popup-window-table')
-    popup_window.style.display = "none";
     popup.classList.remove('popup-message');
 
     if (e.target == popup) {
+    popup_window.style.display = "none";
         popup.style.display = 'none';
     }
 }
@@ -127,9 +127,9 @@ addEventListener('touchstart', overlay_popup_close_light);
 function overlay_popup_close_light(e) {
     var popup = document.getElementById('popup-overlay-light');
     var popup_window = document.getElementById('popup-window-light')
-    popup_window.style.display = "none";
     popup.classList.remove('popup-message');
     if (e.target == popup) {
+    popup_window.style.display = "none";
         popup.style.display = 'none';
     }
 }
@@ -166,9 +166,9 @@ addEventListener('touchstart', overlay_popup_close_storage);
 function overlay_popup_close_storage(e) {
     var popup = document.getElementById('popup-overlay-storage');
     var popup_window = document.getElementById('popup-window-storage')
-    popup_window.style.display = "none";
     popup.classList.remove('popup-message');
     if (e.target == popup) {
+    popup_window.style.display = "none";
         popup.style.display = 'none';
     }
 }
@@ -205,9 +205,9 @@ addEventListener('touchstart', overlay_popup_close_goods);
 function overlay_popup_close_goods(e) {
     var popup = document.getElementById('popup-overlay-goods');
     var popup_window = document.getElementById('popup-window-goods')
-    popup_window.style.display = "none";
     popup.classList.remove('popup-message');
     if (e.target == popup) {
+    popup_window.style.display = "none";
         popup.style.display = 'none';
     }
 }

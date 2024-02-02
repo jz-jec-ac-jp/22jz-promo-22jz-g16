@@ -120,6 +120,7 @@ public class  ItemDAO {
 			// データをリストに格納
 			if (rs.next()) {
 				Item item = rs2model(rs);
+				setImg(item);
 				setColor(item);
 				setSize(item);
 				setWeight(item);
