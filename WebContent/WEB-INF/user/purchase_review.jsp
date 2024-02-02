@@ -18,7 +18,6 @@
     <!-- <script src="/assets/js/input-aleart.js" defer></script> -->
     <!-- <script src="/assets/js/page-aleart-check.js"></script> -->
 
-
 </head>
 
 <body>
