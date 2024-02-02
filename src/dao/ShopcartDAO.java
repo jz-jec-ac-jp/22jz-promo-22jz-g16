@@ -124,21 +124,50 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = " UPDATE purchase_table SET product_count = ? WHERE id = ?";
+			String sql = "UPDATE purchase_table SET product_count = ? WHERE product_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, count);
 			stmt.setInt(2, id);
-			
+			System.out.println("count.update" + count);
+			System.out.println("id.update" + id);
 			System.out.println("");
-			System.out.println("shopcart update-----------------");
 			
 			ret = stmt.executeUpdate();
+			System.out.println("shopcart update-----------------");
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		return ret > 0;
+	}
+	
+	public  List<Integer> ProductCount() {
+        List<Integer> countList = new ArrayList<>();
+		
+       
+       DBManager manager = DBManager.getInstance();
+       try(Connection cn = manager.getConnection()) {
+       String sql = "SELECT product_count FROM purchase_table";
+       PreparedStatement stmt = cn.prepareStatement(sql);
+
+       System.out.println("product_count whileBefore");
+        
+       ResultSet rs = stmt.executeQuery();
+
+           // データをリストに格納
+           while(rs.next()) {
+               int ProductCount = rs.getInt("product_count");
+               countList.add(ProductCount);
+
+               System.out.println("product_count " + ProductCount);
+           }
+       } catch(SQLException e) {
+           e.printStackTrace();
+           System.out.println("error_count " + e);
+       }
+       
+       return countList;
 	}
 	
 	public boolean delete(int userId) {

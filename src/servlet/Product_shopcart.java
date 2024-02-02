@@ -61,7 +61,10 @@ public class Product_shopcart extends HttpServlet {
 			ShopcartDAO dao = new ShopcartDAO();
 			
 			List<Item> list = dao.get(loginUser.getId());
+			List<Integer> productCount = dao. ProductCount();
+
 			//Item item = dao.find(1);
+			request.setAttribute("productCount", productCount);
 			
 			request.setAttribute("list", list);
 			session.setAttribute("shopCartList", list);
@@ -105,12 +108,12 @@ public class Product_shopcart extends HttpServlet {
 				else {
 					if(request.getParameter("mode").equals("change")) {
 						//数量変更する
-						String tempcount = request.getParameter("count");
-						String id = request.getParameter("id");
+						int tempcount = Integer.parseInt(request.getParameter("count"));
+						int id =Integer.parseInt( request.getParameter("id"));
 						ShopcartDAO shopcartdao = new ShopcartDAO();
 						System.out.println("countは"+tempcount);
 						System.out.println("idは"+id);
-						shopcartdao.update(Integer.parseInt(id), Integer.parseInt(tempcount));
+						shopcartdao.update(id, tempcount);
 						
 					}else {
 						int Product_id = Integer.parseInt(request.getParameter("shopCart"));
