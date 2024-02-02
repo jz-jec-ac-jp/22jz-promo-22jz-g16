@@ -178,7 +178,7 @@
                         <img src="assets/img/chair.jpg" alt="">
                     </figure>
                 </div>
-    
+   
                 <div class="write-div">
                     <h2>レビュー</h2>
                     <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
