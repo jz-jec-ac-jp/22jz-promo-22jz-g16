@@ -85,7 +85,7 @@
             <img src="assets/img/header_cart.png" alt="">
           </a> 
     
-     <nav class="nav">
+     	<nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
