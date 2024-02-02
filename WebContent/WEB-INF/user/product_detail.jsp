@@ -179,7 +179,7 @@
 
         <div class="product-review">
             <div class="product-review-item">
-                <h2>レビュー</h2>
+                <h2>レビュータイトル</h2>
                 <p>総合評価</p>
                 <p>4.0</p>
                 <p>☆☆☆☆</p>
@@ -204,38 +204,20 @@
                         <!-- ↓↓最初隠したいコンテンツ↓↓ -->
                         <div class="contents">
                         
-                        <p>aa : ${ reviewList.review_title }</p>
-                        
-                            <div class="product-review">
-                                <div class="product-review-item">
-                                    <h2>レビュー</h2>
-                                    <p>総合評価</p>
-                                    <p>4.0</p>
-                                    <p>☆☆☆☆</p>
-                                </div>
-                                <div class="product-review-star">
-                                    <p>☆☆☆☆☆</p>
-                                    <p>☆☆☆☆</p>
-                                    <p>☆☆☆</p>
-                                    <p>☆☆</p>
-                                    <p>☆</p>
-                                </div>
-                            </div>
-                            <div class="product-review">
-                                <div class="product-review-item">
-                                    <h2>レビュー</h2>
-                                    <p>総合評価</p>
-                                    <p>4.0</p>
-                                    <p>☆☆☆☆</p>
-                                </div>
-                                <div class="product-review-star">
-                                    <p>☆☆☆☆☆</p>
-                                    <p>☆☆☆☆</p>
-                                    <p>☆☆☆</p>
-                                    <p>☆☆</p>
-                                    <p>☆</p>
-                                </div>
-                            </div>
+				          <c:forEach var="review" items="${ reviewList }">
+	                            <div class="product-review">
+	                                <div class="product-review-item">
+	                                    <h2>評価</h2>
+	                                    <h2>タイトル</h2>
+	                                    <h2>内容</h2>
+	                                </div>
+	                                <div class="product-review-star">
+	                                    <p>${ review.review_rating }</p>
+	                                    <p>${ review.review_title }</p>
+	                                    <p>${ review.review_text }</p>
+	                                </div>
+	                            </div>				         	
+				            </c:forEach>
                         </div>
                         <!-- ↑↑最初隠したいコンテンツ ↑↑-->
                     </div>

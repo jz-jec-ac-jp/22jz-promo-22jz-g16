@@ -103,7 +103,10 @@ public class Product_favorite extends HttpServlet {
 		
 		System.out.println("favorite doPost------------------");
 		
-		daoShopCart.create(productId, id);
+		boolean find =  daoShopCart.findProduct(productId, id);
+		if (!find) {			
+			daoShopCart.create(productId, id);
+		}
 		
 		
 		// TODO Auto-generated method stub

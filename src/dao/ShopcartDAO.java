@@ -103,6 +103,38 @@ public class ShopcartDAO {
 		return  cart;
 	}
 	
+	public boolean findProduct(int product_id, int user_id) {
+		
+		int num = -1;
+		// DBにデータを追加
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "SELECT id FROM shopcart_table WHERE product_id = ? AND user_id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, product_id);
+			stmt.setInt(2, user_id);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()) {				
+				int id = -1;
+				id = rs.getInt("id");
+				System.out.println("aaa  " + id);
+				if (id != -1) {
+					num = 1;
+				}
+			}
+			
+			System.out.println("findProduct() -----------------");
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return num > 0;
+	}
+	
 	public boolean create(int product_id, int user_id ) {
 		int ret = -1;
 		

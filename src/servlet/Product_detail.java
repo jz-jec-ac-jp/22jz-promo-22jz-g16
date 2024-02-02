@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,7 +41,7 @@ public class Product_detail extends HttpServlet {
 		Item item = dao.find(id);
 		
 		ProductReviewDAO daoReview = new ProductReviewDAO();
-		ProductReview reviewList = daoReview.get(id);
+		List<ProductReview> reviewList = daoReview.get(id);
 		
 		
 //		request.setAttribute("list", list);
@@ -65,7 +66,10 @@ public class Product_detail extends HttpServlet {
 		int id = loginUser.getId();
 		System.out.println("detail post userId " + id);
 		
-		dao.create(favoriteId, id);
+		boolean find =  dao.findFavorite(favoriteId, id);
+		if (!find) {			
+			dao.create(favoriteId, id);
+		}
 		
 		
 		// TODO Auto-generated method stub

@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.ProductReview;
 
@@ -16,8 +18,8 @@ public class ProductReviewDAO {
 	 * @return カートデータ
 	 * String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM shopcart_table s INNER JOIN item_table i ON s.product_id = i.id";
 	 */
-	public ProductReview get(int id) {
-		ProductReview review = null;
+	public List<ProductReview> get(int id) {
+		List<ProductReview> list = new ArrayList<>();
 		String sql = "SELECT * FROM review_table WHERE product_id = ?";
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
@@ -28,8 +30,8 @@ public class ProductReviewDAO {
 			
 			// データをリストに格納
 			while(rs.next()) {
-				review = rs2model(rs);
-//				list.add( review);
+				ProductReview review = rs2model(rs);
+				list.add( review);
 			
 			}
 		} catch(SQLException e) {
@@ -37,7 +39,7 @@ public class ProductReviewDAO {
 			System.out.println("error_get  " + e);
 		}
 		
-		return review;
+		return list;
 	}
 //	public void setColor(Item item) {
 //		ColorDAO dao = new ColorDAO();
