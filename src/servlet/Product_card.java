@@ -28,11 +28,10 @@ public class Product_card extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
-		HttpSession session = request.getSession();
+//		HttpSession session = request.getSession();
 		
 		if (loginUser == null) {
 			System.out.println("カード画面未ログイン");
-			session.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Product_login");
 		}
 		else {

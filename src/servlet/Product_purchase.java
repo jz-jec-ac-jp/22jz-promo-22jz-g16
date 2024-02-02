@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.ShopcartDAO;
 import dao.UserDAO;
@@ -33,8 +32,7 @@ public class Product_purchase extends HttpServlet {
 		if (loginUser == null) {			
 
 			System.out.println("商品購入画面未ログイン");
-			HttpSession session = request.getSession();
-			session.setAttribute("msg", "ログインしてください");
+			
 			response.sendRedirect("Product_login");
 		}
 		else {

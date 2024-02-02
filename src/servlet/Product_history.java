@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ProductHistoryDAO;
 import model.Item;
@@ -25,13 +26,29 @@ public class Product_history extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ProductHistoryDAO dao = new ProductHistoryDAO();
 		
-		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
-		List<Item> list = dao.get(loginUser.getId());
-		//Item item = dao.find(1);
 		
-		request.setAttribute("list", list);
+		
+		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
+		
+		HttpSession session = request.getSession();
+		if (loginUser == null) {			
+
+			System.out.println("購入履歴画面未ログイン");
+			session.setAttribute("msg", "ログインしてください");
+			response.sendRedirect("Product_login");
+		}
+		else {
+			List<Item> list = dao.get(loginUser.getId());
+			//Item item = dao.find(1);
+			
+			request.setAttribute("list", list);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_history.jsp");
+			dispatcher.forward(request, response);
+		}		
+		
 		
 		//request.setAttribute("item", item);
 		
@@ -46,8 +63,6 @@ public class Product_history extends HttpServlet {
 //		
 //		while()
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_history.jsp");
-		dispatcher.forward(request, response);
 	}
 
 	/**

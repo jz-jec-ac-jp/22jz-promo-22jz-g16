@@ -109,6 +109,7 @@
 
             <!-- </li> -->
             <!-- 商品データ -->
+
           
             <c:forEach var="item" items="${list }">
 	          <form action="#" method="post">
@@ -120,7 +121,18 @@
 	                    <p class="evaluation">☆☆☆☆☆</p>
 	                </div>
 	                <div class="ad-product-man">
-	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+	
+		        		            
+				       <div class="slide-wrap">
+				          <c:forEach var="img" items="${ item.imgUrl }">
+				         	<div class="slide-box">
+				              <figure>
+				                <img class="imgDetail" src="${ img.img_url }" alt="">
+				              </figure>
+				         	 </div>
+				            </c:forEach>
+				       	</div>
+			        
 	                    <div class="q">
 	                        <p class="ad-product-man">
 	                        

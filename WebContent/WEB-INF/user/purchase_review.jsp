@@ -128,6 +128,7 @@
                 <h2 class="review-productname">${ item.product_name }椅子</h2>
                 
                 <!--総合評価-->
+            <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
                 <h2 class="all-evalution">総合評価</h2>
                 <div class="evaluation-div">
                     <p class="evaluation">3.0</p>
@@ -153,19 +154,18 @@
             <div class="review-div">
                 <h2 class="review-title">レビュータイトル</h2>
             </div>
-            <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
             	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
-                    <input class="text-input customer-comment" type="text" placeholder="入力してください"
-                        onKeyUp="countLength(value, 'textlength3');" name="review-title">
+                    <input name="review-title" class="text-input customer-comment" type="text" placeholder="入力してください"
+                        onKeyUp="countLength(value, 'textlength3');" >
                     <p class="error-message">※入力してください</p>
                     <!-- <p id="textlength3">0</p> -->
     
                 </div>
                 <!--商品・動画-->
                 <h2 class="picture-movie">写真・動画</h2>
-                <input type="file" name="img" value="写真・画像" multiple>
+                <!-- <input type="file" name="img" value="写真・画像" multiple> -->
     
                 <div class="product-photo">
                     <figure>
@@ -178,7 +178,7 @@
                         <img src="assets/img/chair.jpg" alt="">
                     </figure>
                 </div>
-    
+   
                 <div class="write-div">
                     <h2>レビュー</h2>
                     <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"

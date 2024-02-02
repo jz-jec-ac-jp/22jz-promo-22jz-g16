@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.FavoriteDAO;
 import dao.ItemDAO;
+import dao.ProductReviewDAO;
 import model.Item;
+import model.ProductReview;
 import model.ProductUser;
 
 /**
@@ -37,10 +39,13 @@ public class Product_detail extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Item item = dao.find(id);
 		
+		ProductReviewDAO daoReview = new ProductReviewDAO();
+		ProductReview reviewList = daoReview.get(id);
+		
 		
 //		request.setAttribute("list", list);
 		request.setAttribute("item", item);
-		
+		request.setAttribute("reviewList", reviewList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/product_detail.jsp");
 		dispatcher.forward(request, response);

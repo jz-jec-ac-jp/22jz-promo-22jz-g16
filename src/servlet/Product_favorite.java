@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.FavoriteDAO;
 import dao.ShopcartDAO;
@@ -41,8 +40,8 @@ public class Product_favorite extends HttpServlet {
 		if (loginUser == null) {			
 
 			System.out.println("お気に入り画面未ログイン");
-			HttpSession session = request.getSession();
-			session.setAttribute("msg", "ログインしてください");
+//			HttpSession session = request.getSession();
+			request.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Product_login");
 		}
 		else {
