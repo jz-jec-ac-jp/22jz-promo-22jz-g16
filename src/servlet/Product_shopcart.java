@@ -98,8 +98,8 @@ public class Product_shopcart extends HttpServlet {
 				if (loginUser == null) {			
 
 					System.out.println("ショップカート画面未ログイン");
-					HttpSession session = request.getSession();
-					session.setAttribute("msg", "ログインしてください");
+					
+					
 					response.sendRedirect("Product_login");
 				}
 				else {

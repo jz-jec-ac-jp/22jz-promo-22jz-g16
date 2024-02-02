@@ -438,7 +438,7 @@ header #header-animation {
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 101;
 }
 
 #navbtn::before,

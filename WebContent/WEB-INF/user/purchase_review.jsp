@@ -157,15 +157,15 @@
             	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
-                    <input class="text-input customer-comment" type="text" placeholder="入力してください"
-                        onKeyUp="countLength(value, 'textlength3');" name="review-title">
+                    <input name="review-title" class="text-input customer-comment" type="text" placeholder="入力してください"
+                        onKeyUp="countLength(value, 'textlength3');" >
                     <p class="error-message">※入力してください</p>
                     <!-- <p id="textlength3">0</p> -->
     
                 </div>
                 <!--商品・動画-->
                 <h2 class="picture-movie">写真・動画</h2>
-                <input type="file" name="img" value="写真・画像" multiple>
+                <!-- <input type="file" name="img" value="写真・画像" multiple> -->
     
                 <div class="product-photo">
                     <figure>

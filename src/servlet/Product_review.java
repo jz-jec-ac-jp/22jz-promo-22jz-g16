@@ -85,6 +85,13 @@ public class Product_review extends HttpServlet {
 		String review_text = request.getParameter("review_text");
 		String review_title = request.getParameter("review_title");
 		
+		System.out.println("");
+		System.out.println(product_id);
+		System.out.println(user_id);
+		System.out.println(review_text);
+		System.out.println(review_title);
+		System.out.println("");
+		
 		dao.create(product_id, user_id, review_rating,  review_text, review_title);
 //		
 	doGet(request, response);

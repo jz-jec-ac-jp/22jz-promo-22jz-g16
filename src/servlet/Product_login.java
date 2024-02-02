@@ -32,6 +32,7 @@ public class Product_login extends HttpServlet {
 //			response.sendRedirect("Product_top");
 //			request.setAttribute("login", "ログイン済みです");
 			request.setAttribute("logincomplete", "ログイン済みです");
+//			request.setAttribute("login", "ログイン済みです");
 			request.setAttribute("loginUserId", loginUser.getMail_adress());
 		}
 		else {

@@ -203,6 +203,9 @@
                         <!-- <p>&lt;details&gt;要素を使う場合の開閉アニメーションはJavaScriptで補います。</p> -->
                         <!-- ↓↓最初隠したいコンテンツ↓↓ -->
                         <div class="contents">
+                        
+                        <p>aa : ${ reviewList.review_title }</p>
+                        
                             <div class="product-review">
                                 <div class="product-review-item">
                                     <h2>レビュー</h2>
