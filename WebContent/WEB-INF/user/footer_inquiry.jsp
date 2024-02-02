@@ -54,6 +54,15 @@
     
           </div>
         </div>
+           <!-- 検索アイコン -->
+          <form class="search-form" action="Product_list" method="post">
+            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
+            <!-- 検索ボックス -->
+            <input type="search" class="search-box" placeholder="入力してください" name="search">
+          </form>
+    
+    
+       <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
           <form class="search-form" action="Product_list" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
@@ -61,13 +70,6 @@
             <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
     
-       <div id="header-animation" class="header-anim">
-          <!-- 検索アイコン -->
-           <form class="search-form-anim" action="get" href="#">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt=""> -->
-            <!-- 検索ボックス -->
-             <input type="search" class="search-box-anim" placeholder="入力してください">
-          </form> 
         
           
           

@@ -1227,18 +1227,19 @@ footer a {
     }
 
     10%,
-    90% {
+    100% {
         transform: none;
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
     }
 
-    100% {
-        transform: translateY(15%);
-        opacity: 0;
-        pointer-events: none;
+/*    100% {*/
+/*        transform: translateY(15%);*/
+/*        opacity: 0;*/
+/*        pointer-events: none;*/
 
-    }
+/*    }*/
 }
 
 
