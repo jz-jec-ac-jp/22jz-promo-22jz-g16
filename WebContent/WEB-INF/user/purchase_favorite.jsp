@@ -82,7 +82,7 @@
           </a> -->
     
           <nav class="nav">
-            <h1 class="Inair"><a href="">Inair</a></h1>
+            <h1 class="Inair"><a href="Product_top">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
             <li><a href="Product_history">商品履歴</a></li>
