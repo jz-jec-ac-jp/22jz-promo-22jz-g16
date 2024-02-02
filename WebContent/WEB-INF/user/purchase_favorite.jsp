@@ -157,6 +157,7 @@
 				          </form>
 				      	   <form class="cart_deleate" action="#" method="post">
 				          	<input type="hidden" name="productId" value="${ item.id}">
+				          	<p>${ item.id }</p>
 				      		<button class="deleate_button" >削除</button><!-- onclick="removeExample(this)" -->
 				      	  </form>
 	                    </div>

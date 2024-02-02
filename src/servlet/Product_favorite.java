@@ -99,25 +99,33 @@ public class Product_favorite extends HttpServlet {
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
-		int id = loginUser.getId();
-		int productId = Integer.parseInt(request.getParameter("id"));
-		
-		System.out.println("favorite doPost------------------");
-		
-		boolean find =  daoShopCart.findProduct(productId, id);
-		if (!find) {			
-			daoShopCart.create(productId, id);
-		}
 		
 		if (request.getParameter("productId") != null) {
 			int itemId = Integer.parseInt(request.getParameter("productId"));
 			daoFavorite.productDelete(loginUser.getId(), itemId);
+			doGet(request, response);
 			
+		}
+		else {
+			
+			
+			int id = loginUser.getId();
+			int productId = Integer.parseInt(request.getParameter("id"));
+			
+			System.out.println("favorite doPost------------------");
+			
+			boolean find =  daoShopCart.findProduct(productId, id);
+			if (!find) {			
+				daoShopCart.create(productId, id);
+			}
+			
+			
+			
+			// TODO Auto-generated method stub
+			doGet(request, response);
 		}
 		
 		
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
