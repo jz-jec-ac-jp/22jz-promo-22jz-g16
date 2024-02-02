@@ -121,7 +121,13 @@
 	            <section class="history-product">
 	                <p class="ad-productname">${ item.product_name }</p>
 	                <div class="ad-product-man">
-	                    <img class="ad-productimg" src="assets/img/chair.jpg" alt="">
+	                    <div class="imgContents imgOverflow">
+				            <c:forEach var="img" items="${ item.imgUrl }">
+					              <figure>
+					                <img class="" src="${ img.img_url }" alt="">
+					              </figure>
+				              </c:forEach>
+			            </div>
 	
 	                    <div class="introduction-div">
 	                    <!-- 

@@ -124,8 +124,17 @@
  -->
         <div class="review-body">
             <div class="review">
-                <img class="review-productimg" src="assets/img/chair.jpg" alt="">
-                <h2 class="review-productname">${ item.product_name }椅子</h2>
+            
+	       <div class="slide-wrap">
+	          <c:forEach var="img" items="${ item.imgUrl }">
+	         	<div class="slide-box">
+	              <figure>
+	                <img class="imgDetail" src="${ img.img_url }" alt="">
+	              </figure>
+	         	 </div>
+	            </c:forEach>
+	       	</div>
+                <h2 class="review-productname">${ item.product_name }</h2>
                 
                 <!--総合評価-->
             <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
@@ -164,10 +173,10 @@
     
                 </div>
                 <!--商品・動画-->
-                <h2 class="picture-movie">写真・動画</h2>
+                <!-- <h2 class="picture-movie">写真・動画</h2> -->
                 <!-- <input type="file" name="img" value="写真・画像" multiple> -->
     
-                <div class="product-photo">
+                <!-- <div class="product-photo">
                     <figure>
                         <img src="assets/img/add-icon.png" alt="">
                     </figure>
@@ -177,7 +186,7 @@
                     <figure>
                         <img src="assets/img/chair.jpg" alt="">
                     </figure>
-                </div>
+                </div> -->
    
                 <div class="write-div">
                     <h2>レビュー</h2>
