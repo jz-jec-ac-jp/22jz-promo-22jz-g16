@@ -137,8 +137,6 @@
              				<c:forEach var="size" items="${ item.size_name }">
 			   					<p class="size">サイズ:${ size.size_name }</p>
 							</c:forEach>
-			                
-                            <br><p class="size">サイズ:${ size.size_name }</p>
                             <p class="value">${ item.product_price }(税込)</p>
                         
                         </div>

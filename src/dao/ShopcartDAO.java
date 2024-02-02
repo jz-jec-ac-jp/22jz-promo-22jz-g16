@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductSize;
 
 public class ShopcartDAO {
 	/**
@@ -31,12 +32,14 @@ public class ShopcartDAO {
 			while(rs.next()) {
 				Item  item = rs2model(rs);
 				setColor(item);
+				setSize(item);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + item.getId());
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getColorTexts());
+				System.out.println("true_Size()  " + item.getSize_name());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -50,7 +53,12 @@ public class ShopcartDAO {
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
 	}
-	
+	public void setSize(Item item) {
+		SizeDAO dao = new SizeDAO();
+		List<ProductSize> size = dao.find(item.getId());
+		System.out.println("size!!!!!!!!!!!!!");
+		item.setSize_name(size);
+	}
 	
 	/**
 	 * カートテーブルの中から、主キーが id であるレコードを返すメソッド

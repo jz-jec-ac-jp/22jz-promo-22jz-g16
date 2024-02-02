@@ -157,6 +157,7 @@ public class  ItemDAO {
 	public void setSize(Item item) {
 		SizeDAO dao = new SizeDAO();
 		List<ProductSize> size = dao.find(item.getId());
+		System.out.println("size!!!!!!!!!!!!!");
 		item.setSize_name(size);
 	}
 	public void setWeight(Item item) {

@@ -11,6 +11,7 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductSize;
 
 public class ProductHistoryDAO {
 	/**
@@ -39,6 +40,7 @@ public class ProductHistoryDAO {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
 				setColor(item);
+				setSize(item);
 				list.add( item);
 	
 				
@@ -47,6 +49,7 @@ public class ProductHistoryDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
+				System.out.println("true_size()  " + item.getSize_name());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -61,7 +64,11 @@ public class ProductHistoryDAO {
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
 	}
-	
+	public void setSize(Item item) {
+		SizeDAO dao = new SizeDAO();
+		List<ProductSize> size = dao.find(item.getId());
+		item.setSize_name(size);
+	}
 	
 	//管理者
 	public List<Item> get() {

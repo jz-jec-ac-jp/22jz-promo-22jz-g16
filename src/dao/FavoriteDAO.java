@@ -11,6 +11,7 @@ import java.util.List;
 
 import model.Item;
 import model.ProductColor;
+import model.ProductSize;
 
 public class FavoriteDAO {
 	/**
@@ -33,6 +34,7 @@ public class FavoriteDAO {
 			while(rs.next()) {
 				Item  item = rs2model(rs);
 				setColor(item);
+				setSize(item);
 				list.add( item);
 				
 //				System.out.println("true_get " +  list.add(item));
@@ -40,6 +42,7 @@ public class FavoriteDAO {
 				System.out.println("true_Name()  " + item.getProduct_name());
 				System.out.println("true_Name()  " + item.getProduct_price());
 				System.out.println("true_color()  " + item.getColorTexts());
+				System.out.println("true_size()  " + item.getSize_name());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -53,6 +56,11 @@ public class FavoriteDAO {
 		ColorDAO dao = new ColorDAO();
 		List<ProductColor> color = dao.find(item.getId());
 		item.setColorTexts(color);
+	}
+	public void setSize(Item item) {
+		SizeDAO dao = new SizeDAO();
+		List<ProductSize> size = dao.find(item.getId());
+		item.setSize_name(size);
 	}
 	/**
 	 * テーブルの中から、主キーが id であるレコードを返すメソッド
@@ -77,6 +85,7 @@ public class FavoriteDAO {
 				 System.out.println("true_find  " + item);
 				 System.out.println("true_get()  " + item.getId());
 				 System.out.println("true_Name()  " + item.getProduct_name());
+				 System.out.println("true_size()  " + item.getSize_name());
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

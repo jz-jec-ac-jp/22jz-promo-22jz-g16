@@ -127,8 +127,11 @@
 	                            <c:forEach var="color" items="${ item.colorTexts }">
 			                       <p>${ color.purchase_color}</p>
 			                    </c:forEach>
-		                        <br><p class="size">サイズ：</p>
-	                        	</p><br>
+		                        <br>
+			                     <c:forEach var="size" items="${ item.size_name }">
+			   						<p>サイズ：${ size.size_name }</p>
+								</c:forEach>
+	                        	<br>
 	                        </p>
 		                     
 		                        <p class="value">${ item.product_price}(税込)</p>
