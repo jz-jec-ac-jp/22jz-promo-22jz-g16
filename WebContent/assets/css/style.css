@@ -1704,7 +1704,7 @@ footer a {
 .cart-div .paymethood-pulldown {
     display: block;
     margin-left: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-right: 20px;
     padding-right: 3px;
 }
@@ -1755,6 +1755,7 @@ footer a {
 
 .cart-product-div {
     width: fit-content;
+    margin: 0 auto;
 }
 
 .cart-product-div .us-detail-Product-name {
@@ -2405,6 +2406,7 @@ footer a {
 .product-button {
     display: flex;
     justify-content: space-around;
+    margin: 20px 0;
 }
 
 
