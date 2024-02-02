@@ -212,17 +212,20 @@ select:focus {
 .purchase-button,
 .review-product-cart,
 .review-submit-icon,
-.card-submit {
+.card-submit,
+.purchase_btn {
     background: #7c7c7c;
     color: #FFF;
     width: fit-content;
     padding: 10px 15px;
+    border-radius:10px;
 }
 .btn {
     background: #7c7c7c;
     color: #FFF;
     width: fit-content;
     padding: 5px 5px;
+    border-radius:10px;
 }
 
 
@@ -1634,6 +1637,7 @@ footer a {
 
 .change_button{
 	margin-left: 25px;
+	
 }
 
 
@@ -1647,6 +1651,11 @@ footer a {
 .deleate_button{
 	display: block;
 	margin: 3vh  auto;
+	background: #7c7c7c;
+    color: #FFF;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius:10px;
 }
 .cart-div .year-total {
     text-align: center;
@@ -1995,6 +2004,7 @@ footer a {
 .cart-btn{
 	text-align:right;
 	margin-top: 10px;
+	border-radius:10px;
 }
 
 /*合計金額*/
@@ -2954,6 +2964,7 @@ footer a {
     .cart-btn {
         width: 30%;
         font-size: 1.6rem;
+        
     }
 	
 	/* 横スクロールで画像をスライドさせる */

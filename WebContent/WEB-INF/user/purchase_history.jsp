@@ -152,7 +152,7 @@
 		                       <br>
 	                        <p class="delivery-situation">2023/09/21に発送済</p>
 	                        <p class="value">${ item.product_price }円(税込)</p>
-	                        <input class="cancel-button" type="submit" value="キャンセル">
+	                        
 	                    </div>
 	                </div>
 	                <!-- 

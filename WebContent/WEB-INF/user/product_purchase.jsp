@@ -276,7 +276,7 @@
 	                         
 								<form action="product_compleate" method="post">
 					                <a href="Product_list" class="return-btn">商品リスト一覧</a>
-					                <button type="submit">購入する</button>
+					                <button class="purchase_btn" type="submit">購入する</button>
 								</form>
 				              
 				                <%--
