@@ -111,7 +111,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_chair();">
           <figure>
-            <img src="assets/img/chair.jpg" alt="">
+            <img src="assets/img/monotone_chair1.jpg" alt="">
           </figure>
           <p>椅子</p>
         </a>
@@ -129,13 +129,13 @@
             <ul>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/chair.jpg" alt="">
+                  <img src="assets/img/monotone_chair1.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/chair.jpg" alt="">
+                  <img src="assets/img/country_chair1.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -149,7 +149,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_table();">
           <figure>
-            <img src="assets/img/table.jpg" alt="">
+            <img src="assets/img/country_table.jpg" alt="">
           </figure>
           <p>机</p>
         </a>
@@ -167,13 +167,13 @@
             <ul>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/table.jpg" alt="">
+                  <img src="assets/img/monotone_table.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/table.jpg" alt="">
+                  <img src="assets/img/country_table.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -190,7 +190,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_light();">
           <figure>
-            <img src="assets/img/light.jpg" alt="">
+            <img src="assets/img/country_light1.jpg" alt="">
           </figure>
           <p>照明</p>
         </a>
@@ -208,13 +208,13 @@
             <ul>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/light.jpg" alt="">
+                  <img src="assets/img/monotone_lighit1.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/light.jpg" alt="">
+                  <img src="assets/img/country_light1.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -228,7 +228,7 @@
       <div class="category-item">
         <a href="javascript:popup_open_storage();">
           <figure>
-            <img src="assets/img/storage.jpg" alt="">
+            <img src="assets/img/monotone_deskbord.jpg" alt="">
           </figure>
           <p>収納</p>
         </a>
@@ -246,13 +246,13 @@
             <ul>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/storage.jpg" alt="">
+                  <img src="assets/img/monotone_deskbord.jpg" alt="">
                   <p>モノトーン</p>
                 </a>
               </li>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="assets/img/storage.jpg" alt="">
+                  <img src="" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>
@@ -265,79 +265,77 @@
       <div class="category-item">
         <a href="javascript:popup_open_goods();">
           <figure>
-            <img src="assets/img/table.jpg" alt="">
+            <img src="assets/img/country_clock1.jpg" alt="">
           </figure>
           <p>雑貨</p>
         </a>
       </div>
-    </div>
-    <div id="popup-overlay-goods">
-      <div id="popup-window-goods" class="popup-window">
-        <section class="popup-header">
-          <h2>椅子のカテゴリー</h2>
-          <div class="popup-close">
-            <a href="javascript:popup_close_goods();">×</a>
+      <div id="popup-overlay-goods">
+        <div id="popup-window-goods" class="popup-window">
+          <section class="popup-header">
+            <h2>雑貨のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_goods();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_clock1.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/country_clock1.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
           </div>
-        </section>
-        <div class="popup-body">
-          <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-          <ul class="popup-list">
-            <li>
-              <a href="Product_list">
-                <img src="assets/img/chair.jpg" alt="">
-                <p>モノトーン</p>
-              </a>
-            </li>
-          </ul>
-          <ul class="popup-list">
-            <li>
-              <a href="Product_list">
-                <img src="assets/img/chair.jpg" alt="">
-                <p>カントリー風</p>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
-    </div>
+      </div>
 
-
+    
     <!-- ランキング -->
     <h2 class="ranking">Ranking</h2>
     <ul class="ranking-list">
       <li class="ranking-item">
         <figure>
-          <img src="assets/img/light.jpg" alt="">
+          <img src="assets/img/monotone_chair1.jpg" alt="">
         </figure>
-        <p>モノトーン照明</p>
+        <p>モノトーン椅子</p>
         <!-- <p>1位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="assets/img/table.jpg" alt="">
+          <img src="assets/img/country_chair1.jpg" alt="">
         </figure>
-        <p>カントリー机</p>
+        <p>カントリー椅子</p>
         <!-- <p>2位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="assets/img/table.jpg" alt="">
+          <img src="assets/img/country_clock1.jpg" alt="">
         </figure>
-        <p>机</p>
+        <p>カントリー時計</p>
         <!-- <p>3位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="assets/img/table.jpg" alt="">
+          <img src="assets/img/monotone_table.jpg" alt="">
         </figure>
-        <p>机</p>
+        <p>モノトーン机</p>
         <!-- <p>4位</p> -->
       </li>
       <li class="ranking-item">
         <figure>
-          <img src="assets/img/table.jpg" alt="">
+          <img src="assets/img/country_light1.jpg" alt="">
         </figure>
-        <p>机</p>
+        <p>カントリー照明</p>
         <!-- <p>5位</p> -->
       </li>
     </ul>
