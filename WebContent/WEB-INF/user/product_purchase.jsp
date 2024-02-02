@@ -20,9 +20,7 @@
 
 <body>
     <div class="animation-bg">
-        <!-- header -->
-       <!-- header -->
-    <header class="header">
+    <header>
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -65,35 +63,6 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
-    
-    
-    
-        <div id="header-animation" class="header-anim">
-          <!-- 検索アイコン -->
-          <form class="search-form" action="Product_list" method="post">
-            <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
-            <!-- 検索ボックス -->
-            <input type="search" class="search-box" placeholder="入力してください" name="search">
-          </form>
-    
-
-    
-          <nav class="nav">
-            <h1 class="Inair"><a href="">Inair</a></h1>
-            <li><a href="Product_login">ログイン</a></li>
-            <li><a href="Product_favorite">お気に入り</a></li>
-            <li><a href="Product_history">商品履歴</a></li>
-            <li><a href="Footer_shop">店舗</a></li>
-            <li><a href="Footer_product">商品</a></li>
-            <li><a href="Footer_service">サービス</a></li>
-            <li><a href="Footer_inquiry">お問い合わせ</a></li>
-            <li><a href="Footer_about_Inair">Inairについて</a></li>
-            </ul>
-          </nav>
-          <button class="nav1" type="button" id="navbtn" onclick="navClick()"></button>
-        </div>
-    
-      </header>
 
         <main>
             <!--パンくずリスト-->
