@@ -97,7 +97,7 @@
             <li><a href="Footer_about_Inair">Inairについて</a></li>
             </ul>
           </nav>
-          <button type="button" id="navbtn" onclick="navClick()"></button>
+          <button class="nav1" type="button" id="navbtn" onclick="navClick()"></button>
         </div>
     
       </header>

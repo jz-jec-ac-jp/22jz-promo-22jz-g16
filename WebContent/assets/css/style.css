@@ -344,7 +344,7 @@ header #header-animation {
 .header-anim .search-icon {
     position: absolute;
     /* margin-left: 30%; */
-    left: -40px;
+    left: -10px;
     min-width: 20px;
     /* width: 10%; */
 }
@@ -628,10 +628,10 @@ header .search-form {
 header .search-icon {
     position: absolute;
     display: block;
-    left: 9px;
+    left: -1px;
     border: none;
     padding: 0;
-    max-width: 7%;
+    max-width: 12%;
 }
 
 header .search-box {
@@ -790,10 +790,12 @@ footer a {
 トップページ
 
 */
-.navbtn1{
-	margin: 50px;
-}
 
+.header-anim .nav1{
+	position: absolute;
+	margin-left: 80vw;
+	margin-top: 5px;
+}
 .container {
     position: relative;
     width: 100vw;

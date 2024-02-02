@@ -82,7 +82,7 @@
             <img src="/assets/img/header_cart.png" alt="">
           </a> -->
     
-          <nav class="nav">
+          <nav class="nav ">
             <h1 class="Inair"><a href="Product_top">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
@@ -94,7 +94,7 @@
             <li><a href="Footer_about_Inair">Inairについて</a></li>
             </ul>
           </nav>
-          <button type="button" id="navbtn1" onclick="navClick()"></button>
+          <button class="nav1" type="button" id="navbtn" onclick="navClick()"></button>
         </div>
     
       </header>
