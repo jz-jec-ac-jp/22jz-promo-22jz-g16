@@ -1613,14 +1613,18 @@ footer a {
 ショップカート画面 
 
 */
+.change_peace{
+	font-size: 15px;
+}
+
 .color-column{
 	display: flex;
 }
 
-
-.year-total .peace {
-    text-align: center;
+.change_button{
+	margin-left: 25px;
 }
+
 
 .cart-div .ad-product-man .ad-productimg {
     width: 40vw;
@@ -1628,7 +1632,10 @@ footer a {
 }
 
 
-
+.deleate_button{
+	display: block;
+	margin: 3vh  auto;
+}
 .cart-div .year-total {
     text-align: center;
 }

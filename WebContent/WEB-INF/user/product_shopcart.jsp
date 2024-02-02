@@ -149,28 +149,39 @@
 		            <c:forEach var="size" items="${ item.size_name }">
 			   			<p>サイズ：${ size.size_name }</p>
 					</c:forEach>
-		           
 		            <p class="value">${item.product_price }(税込)</p>
+					
+		           
 		          </div>
 		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }円(税込)</p>
-		          <form action="#" method="post" id="form_product_shopcart">
-			          <label for="count" id="label_count">個数 : ${ productCount[count.index] }</label>
-			          <input class="purchase_count" type="number" name="count" min="1"  value="1">
-			          <input type="hidden" name="mode" value="change">
-			          <input type="hidden" name="id" value="${ item.id}">
-		      		<button class="change_button" type="submit">個数変更</button>
-		          </form>
+		            <div>
+			          <form class="cart_form" action="#" method="post" id="form_product_shopcart">
+				          <label class="change_peace" for="count" id="label_count">個数 : ${ productCount[count.index] }</label>
+				          <input class="purchase_count" type="number" name="count" min="1"  value="1">
+				          <input type="hidden" name="mode" value="change">
+				          <input type="hidden" name="id" value="${ item.id}">
+			      		<button class="change_button" type="submit">個数変更</button>
+			          </form>
+			          <!-- 
+		      		<form class="cart_deleate" action="#">
+		      		<button class="deleate_button" onclick="removeExample(this)">削除</button>
+		      		</form>
+			           -->
+			          
+		            </div>
 		      	
 		      		
-		      		<form action="#">
-		      		<button class="" onclick="removeExample(this)">削除</button>
-		      		</form>
 		          <!--  
-		          <p class="peace">個数</p>
-		          -->
+		          <p class="peace">個数</p>		          -->
 		          </div>
+		          <div>
+		          <form class="cart_deleate" action="#">
+		      		<button class="deleate_button" onclick="removeExample(this)">削除</button>
+		      		</form>
+		      	
+		      	</div>
 		        </div>
 		      </section>
 	      </c:forEach>
