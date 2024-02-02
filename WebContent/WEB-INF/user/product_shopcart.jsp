@@ -125,7 +125,7 @@
     <div class="cart-product-div">
       <!-- ここから -->
 	      
-	      <c:forEach var="item" items="${ list }">
+	      <c:forEach var="item" items="${ list }" varStatus="count">
 		      <section class="history-product">
 		        <p class="us-productname">${ item.product_name }</p>
 		        <div class="us-detail-Product-name">
@@ -151,8 +151,8 @@
 		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
 		            <p class="total-value">小計:${item.product_price }(税込)</p>
-		          <form action="Product_shopcart" method="post" id="form_product_shopcart">
-			          <label for="count" id="label_count">個数 : ${ item.product_count }</label>
+		          <form action="#" method="post" id="form_product_shopcart">
+			          <label for="count" id="label_count">個数 : ${ productCount[count.index] }</label>
 			          <input class="purchase_count" type="number" name="count" min="1"  value="1">
 			          <input type="hidden" name="mode" value="change">
 			          <input type="hidden" name="id" value="${ item.id}">

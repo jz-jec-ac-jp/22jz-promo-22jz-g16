@@ -103,10 +103,10 @@
             <!--パンくずリスト-->
             <nav>
                 <ol class="breadcrumb">
-                    <li><a href="/user/product_top/">ホーム</a></li>
-                    <li><a href="/user/product_list/">商品一覧</a></li>
-                    <li><a href="/user/puroduct_detail/">商品詳細</a></li>
-                    <li><a href="/user/product_shopcart/">カート</a></li>
+                    <li><a href="Product_top">ホーム</a></li>
+                    <li><a href="Product_list">商品一覧</a></li>
+                    <li><a href="Puroduct_detail">商品詳細</a></li>
+                    <li><a href="Product_shopcart">カート</a></li>
                     <li>商品購入</li>
                 </ol>
             </nav>
@@ -118,7 +118,7 @@
                 </div>
                 
                 
-                <c:forEach var="item" items="${ list }">
+                <c:forEach var="item" items="${ list }" varStatus="count">
                 <a href="Product_detail?id=${ item.id }">
                 <section>
                     <p class="us-productname">${ item.product_name }</p>
@@ -140,7 +140,7 @@
                             <p class="value">${ item.product_price }(税込)</p>
                         
                         </div>
-                        <p class="peace">${item.product_count }個</p>
+                        <p class="peace">${ productCount[count.index] }個</p>
                         <div class="us-detail-peace">
                             <p class="postage">送料:500円</p>
                             <p class="total-value">小計:${ item.product_price }(税込)</p>

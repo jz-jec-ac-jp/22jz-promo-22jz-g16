@@ -123,6 +123,33 @@ public class PrdocutPurchaseDAO {
      }
 //     return list;
 	}
+	public  List<Integer> ProductCount() {
+        List<Integer> countList = new ArrayList<>();
+		
+       
+       DBManager manager = DBManager.getInstance();
+       try(Connection cn = manager.getConnection()) {
+       String sql = "SELECT product_count FROM purchase_table";
+       PreparedStatement stmt = cn.prepareStatement(sql);
+
+       System.out.println("product_count whileBefore");
+        
+       ResultSet rs = stmt.executeQuery();
+
+           // データをリストに格納
+           while(rs.next()) {
+               int ProductCount = rs.getInt("product_count");
+               countList.add(ProductCount);
+
+               System.out.println("product_count " + ProductCount);
+           }
+       } catch(SQLException e) {
+           e.printStackTrace();
+           System.out.println("error_count " + e);
+       }
+       
+       return countList;
+	}
 //<<<<<<< HEAD
 //=======
 //<<<<<<< HEAD
