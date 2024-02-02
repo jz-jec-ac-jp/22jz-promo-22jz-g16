@@ -199,13 +199,16 @@
 	   <c:forEach var="item" items="${ list }">
 	    <a href="Product_detail?id=${ item.id }" class="productList">
 		   <div class="goods-item">
-			   	<div class="imgContentsList">
-					<c:forEach var="img" items="${ item.imgUrl }">   	
-			        	<figure>
-			          		<img class="" src="${ img.img_url }" alt="">
-			        	</figure>
-			        </c:forEach>
-			   	</div>
+		        <div class="slide-wrap">
+		          <c:forEach var="img" items="${ item.imgUrl }">
+		         	<div class="slide-box">
+		              <figure>
+		                <img class="imgDetail" src="${ img.img_url }" alt="">
+		              </figure>
+		         	 </div>
+		            </c:forEach>
+		            
+		        	</div>
 			        <p class="ad-productname">${ item.product_name }</p>
 		        <p class="price">値段:${ item.product_price }(税込)</p>
 		        <c:forEach var="color" items="${ item.colorTexts }">

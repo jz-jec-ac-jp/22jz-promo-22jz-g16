@@ -128,6 +128,7 @@
                 <h2 class="review-productname">${ item.product_name }椅子</h2>
                 
                 <!--総合評価-->
+            <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
                 <h2 class="all-evalution">総合評価</h2>
                 <div class="evaluation-div">
                     <p class="evaluation">3.0</p>
@@ -153,7 +154,6 @@
             <div class="review-div">
                 <h2 class="review-title">レビュータイトル</h2>
             </div>
-            <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
             	<input type="hidden" name="product_id" value="${ item.id }">
                 <div class="customer-review">
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->

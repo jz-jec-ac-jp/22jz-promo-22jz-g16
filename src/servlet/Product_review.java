@@ -78,12 +78,37 @@ public class Product_review extends HttpServlet {
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
 		int product_id = Integer.parseInt(request.getParameter("product_id"));
-		int user_id = loginUser.getId();		
-		int review_rating = 5;
+		int user_id = loginUser.getId();
+		
+		String reviewStar1 = request.getParameter("review1");
+		String reviewStar2 = request.getParameter("review2");
+		String reviewStar3 = request.getParameter("review3");
+		String reviewStar4 = request.getParameter("review4");
+		String reviewStar5 = request.getParameter("review5");
+
+		
+		int review_rating = 0;
+		if (reviewStar1 != null) {
+			System.out.println("review 1");
+			review_rating = 1;
+		} else if (reviewStar2 != null) {
+			System.out.println("review 2");
+			review_rating = 2;
+		} else if (reviewStar3 != null) {
+			System.out.println("review 3");
+			review_rating = 3;
+		} else if (reviewStar4 != null) {
+			System.out.println("review 4");
+			review_rating = 4;
+		} else if (reviewStar5 != null) {
+			System.out.println("review 5");
+			review_rating = 5;
+		}
+				
 //		int review_rating =  Integer.parseInt(request.getParameter("review_rating"));
 //		String pictur_movieUrl = request.getParameter("pictur_movieUrl");
-		String review_text = request.getParameter("review_text");
-		String review_title = request.getParameter("review_title");
+		String review_text = request.getParameter("review-text");
+		String review_title = request.getParameter("review-title");
 		
 		System.out.println("");
 		System.out.println(product_id);
