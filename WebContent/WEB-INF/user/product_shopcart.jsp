@@ -176,6 +176,7 @@
 	      </c:forEach>
 	      </div>
 	      
+	      
 	            
       
      <!--  <c:forEach var="item" items="${ list }">
