@@ -95,6 +95,7 @@ public class Product_favorite extends HttpServlet {
 		
 //		request.setCharacterEncoding("UTF-8");
 		ShopcartDAO daoShopCart = new ShopcartDAO();
+		FavoriteDAO daoFavorite = new FavoriteDAO();
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 //		System.out.println("aaaa");
@@ -106,6 +107,12 @@ public class Product_favorite extends HttpServlet {
 		boolean find =  daoShopCart.findProduct(productId, id);
 		if (!find) {			
 			daoShopCart.create(productId, id);
+		}
+		
+		if (request.getParameter("productId") != null) {
+			int itemId = Integer.parseInt(request.getParameter("productId"));
+			daoFavorite.productDelete(loginUser.getId(), itemId);
+			
 		}
 		
 		

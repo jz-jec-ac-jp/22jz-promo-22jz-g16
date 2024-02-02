@@ -179,9 +179,10 @@
 		          <p class="peace">個数</p>		          -->
 		          </div>
 		          <div>
-		          <form class="cart_deleate" action="#">
-		      		<button class="deleate_button" onclick="removeExample(this)">削除</button>
-		      		</form>
+		          <form class="cart_deleate" action="#" method="post">
+		          	<input type="hidden" name="productId" value="${ item.id}">
+		      		<button class="deleate_button" >削除</button><!-- onclick="removeExample(this)" -->
+		      	  </form>
 		      	
 		      	</div>
 		        </div>

@@ -107,41 +107,42 @@ public class  ItemDAO {
 		return   item;
 	}
 	
-	public   List<Item>findString(String productName) {
-		List<Item> list = new ArrayList<>();
+	public   List<Item> findString(String productName) {
+List<Item> list = new ArrayList<>();
+		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			// プレースホルダで変数部分を定義
-			String sql = "SELECT * FROM item_table where product_name LIKE ?";
+			String sql = "SELECT * FROM item_table WHERE product_name LIKE ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setString(1, "%" + productName + "%");
 			ResultSet rs = stmt.executeQuery();
 			
 			// データをリストに格納
-			if (rs.next()) {
-				Item item = rs2model(rs);
+			while(rs.next()) {
+				Item  item = rs2model(rs);
 				setImg(item);
 				setColor(item);
 				setSize(item);
 				setWeight(item);
 				list.add(item);
-				 
-				 
-				 
-				 System.out.println("true_find  " + item);
-				 System.out.println("true_get()  " + item.getId());
-				 System.out.println("true_Name()  " + item.getProduct_name());
-				 System.out.println("true_color()  " + item.getColorTexts());
-				 System.out.println("true_size()  " + item.getSize_name());
-				 System.out.println("true_weight()  " + item.getWeight_name());
-				 
+				
+//				System.out.println("true_get " +  list.add(item));
+				System.out.println("true_get()  " + item.getId());
+				System.out.println("true_Name()  " + item.getProduct_name());
+				System.out.println("true_Name()  " + item.getProduct_price());
+				System.out.println("true_color()  " + item.getColorTexts());
+				System.out.println("true_img()  " + item.getImgUrl());
+				System.out.println("true_size()  " + item.getSize_name() );
+				System.out.println("true_weight()  " + item.getWeight_name() );
+				
+
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
-			System.out.println("error_find  " + e);
+			System.out.println("error_get  " + e);
 		}
 		
-		return   list;
+		return list;
 	}
 
 	public void setColor(Item item) {

@@ -238,6 +238,33 @@ public class FavoriteDAO {
 	}
 
 
+	public boolean productDelete(int userId, int productId) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "DELETE FROM favorit_table WHERE user_id = ? AND product_id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, userId);
+			stmt.setInt(2, productId);
+			ret = stmt.executeUpdate();
+			System.out.println("shopCart product delete");
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+		
+		
+		
+	}
 	
 	/**
 	 * ResultSetの行データをモデルの形に変換するメソッド

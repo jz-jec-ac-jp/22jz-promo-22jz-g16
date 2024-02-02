@@ -139,6 +139,11 @@
 		                       
 	                        <!--カートに入れる-->
 	                        <button Class="btn" onclick="cartButton()">カートに入れる</button>
+	                        
+	                          <form class="cart_deleate" action="#" method="post">
+					          	<input type="hidden" name="productId" value="${ item.id}">
+					      		<button class="deleate_button" >削除</button><!-- onclick="removeExample(this)" -->
+					      	  </form>
 	                        <!-- 
 	                        <input class="confirm" type="submit" value="カートに入れる"></input>
 	                         -->
