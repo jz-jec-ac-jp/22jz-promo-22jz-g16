@@ -84,7 +84,7 @@ a {
 /* テキストボックス */
 input {
     display: block;
-    width: 70%;
+    width: 71%;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 3px;
@@ -790,7 +790,9 @@ footer a {
 トップページ
 
 */
-
+.navbtn1{
+	margin: 50px;
+}
 
 .container {
     position: relative;
