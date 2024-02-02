@@ -1516,8 +1516,8 @@ footer a {
 }
 
 .imgContents img {
-	width: 30vw;
-/*	height: 30vh;*/
+	width: 50vw;
+	height: 20vh;
 }
 
 /*
@@ -2401,6 +2401,7 @@ footer a {
 }
 
 
+
 .product-button {
     display: flex;
     justify-content: space-around;
@@ -2409,6 +2410,10 @@ footer a {
 
 .product-list {
     display: flex;
+}
+
+.slide-box figure .imgDetail {
+	width: 70vw;
 }
 
  

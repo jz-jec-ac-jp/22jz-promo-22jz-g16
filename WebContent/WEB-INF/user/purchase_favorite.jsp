@@ -137,6 +137,7 @@
 		                     
 		                        <p class="value">${ item.product_price}円(税込)</p>
 		                       
+<<<<<<< HEAD
 	                          <form class="cart_deleate" action="#" method="post">
 					          	<input type="hidden" name="productId" value="${ item.id}">
 					      		<button class="deleate_button" >削除</button><!-- onclick="removeExample(this)" -->
@@ -144,14 +145,24 @@
 	                        <!--カートに入れる-->
 	                        <button Class="btn" onclick="cartButton()">カートに入れる</button>
 	                        
+=======
+	                        <!--カートに入れる-->
+	                        <button Class="btn" onclick="cartButton()">カートに入れる</button>
+	                        
+
+>>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
 	                        <!-- 
 	                        <input class="confirm" type="submit" value="カートに入れる"></input>
 	                         -->
+				          </form>
+				      	   <form class="cart_deleate" action="#" method="post">
+				          	<input type="hidden" name="productId" value="${ item.id}">
+				      		<button class="deleate_button" >削除</button><!-- onclick="removeExample(this)" -->
+				      	  </form>
 	                    </div>
 	                </div>
 	            </section>
               </a>
-	          </form>
             </c:forEach>
             
             

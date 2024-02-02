@@ -72,10 +72,12 @@ public class Product_card extends HttpServlet {
 		String card_number = request.getParameter("card_number");
 		String card_nominee = request.getParameter("card_nominee");
 		String date_of_expiry = request.getParameter("date_of_expiry");
+		String card_security_number = request.getParameter("card-security-number");
 		
 		dao.create(userid, card_number, card_nominee,  date_of_expiry);
 		
 		session.setAttribute("card_number", card_number);
+		session.setAttribute("card_security_number", card_security_number);
 		response.sendRedirect("Product_card_check");
 	
 	}
