@@ -1516,8 +1516,9 @@ footer a {
 }
 
 .imgContents img {
-	width: 50vw;
+	width: 32vw;
 	height: 20vh;
+/*	margin: 0 -30px;*/
 }
 
 /*
@@ -2570,6 +2571,7 @@ footer a {
     border-bottom: 1px solid #362918;
 /*    padding-bottom: 30px;*/
 /*    margin-bottom: 30px;*/
+	width: 80vw;
 }
 
 .q {
