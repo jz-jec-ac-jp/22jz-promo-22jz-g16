@@ -18,7 +18,7 @@
 
 <body>
     <!-- header -->
-    <header>
+    <header class="header">
         <div class="head">
           <!-- ハンバーガーメニュー -->
           <!-- </div> -->
@@ -63,8 +63,7 @@
           </form>
     
     
-    
-        <div id="header-animation" class="header-anim">
+       <div id="header-animation" class="header-anim">
           <!-- 検索アイコン -->
           <form class="search-form" action="Product_list" method="post">
             <input type="image" class="search-icon" src="assets/img/header_search.png" alt="">
@@ -72,16 +71,20 @@
             <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
     
+        
+          
+          
+          
           <!--お気に入りアイコン  -->
-          <!-- <a class="favorite-icon-anim" href="/user/purchase_favorite/index.html">
-            <img src="/assets/img/header_favorite.png" alt="">
+          <a class="favorite-icon-anim" href="Purchase_favorite">
+            <img src="assets/img/header_favorite.png" alt="">
           </a> -->
           <!-- カートアイコン -->
-          <!-- <a class="cart-icon-anim" href="/user/product_shopcart/index.html">
-            <img src="/assets/img/header_cart.png" alt="">
-          </a> -->
+          <a class="cart-icon-anim" href="Product_shopcart">
+            <img src="assets/img/header_cart.png" alt="">
+          </a> 
     
-          <nav class="nav">
+     	<nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
@@ -94,7 +97,9 @@
             </ul>
           </nav>
           <button class="nav1" type="button" id="navbtn" onclick="navClick()"></button>
-        </div>
+        </div> 
+          
+
     
       </header>
 

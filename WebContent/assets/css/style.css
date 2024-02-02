@@ -2131,7 +2131,13 @@ footer a {
 カード情報
 
 */
-
+.card_return {
+	background: #7c7c7c;
+    color: #FFF;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius:10px;
+}
 .card-main {
     width: 70%;
     /* position: absolute;
