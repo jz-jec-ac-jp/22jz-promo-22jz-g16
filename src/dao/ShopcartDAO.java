@@ -161,7 +161,10 @@ public class ShopcartDAO {
 		return ret > 0;
 	}
 	
-	public boolean update(int id, int count ) {
+	
+	
+//	<!-- 変更したよーーーーーーーーーーーーーーーー -->
+	public boolean update(int id, int count, List<Item> shopCartList) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -171,6 +174,36 @@ public class ShopcartDAO {
 		// DBにデータを追加
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
+			
+
+			
+			for (int i = 0; i < shopCartList.size(); i++) {
+				Item item = shopCartList.get(i);
+				String sqlItem = "SELECT product_stock FROM item_table WHERE id = ?";
+				PreparedStatement stmtItem = cn.prepareStatement(sqlItem);
+				stmtItem.setInt(1, item.getId());
+				ResultSet retItem = stmtItem.executeQuery();
+				
+				while (retItem.next()) {
+					if (retItem.getInt("product_stock") <= count) {
+						int itemCount = retItem.getInt("product_stock");
+						String sql = "UPDATE item_table SET product_count = ? WHERE product_id = ?";
+						PreparedStatement stmt = cn.prepareStatement(sql);
+						stmt.setInt(1, itemCount - count);
+						stmt.setInt(2, id);
+						System.out.println("countMinus.update" + count);
+						System.out.println("id countMinus.update" + id);
+						System.out.println("");
+						
+						ret = stmt.executeUpdate();
+					}
+					else  {
+						return ret < 0;
+					}
+				}
+				
+			}
+			
 			// プレースホルダで変数部分を定義
 			String sql = "UPDATE purchase_table SET product_count = ? WHERE product_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);

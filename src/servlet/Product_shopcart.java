@@ -62,11 +62,17 @@ public class Product_shopcart extends HttpServlet {
 			
 			List<Item> list = dao.get(loginUser.getId());
 			List<Integer> productCount = dao. ProductCount();
+			
+			int num = 0;
+			for (int i = 0; i < list.size(); i++) {
+				num++;
+			}
 
 			//Item item = dao.find(1);
 			request.setAttribute("productCount", productCount);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("num", num);
 			session.setAttribute("shopCartList", list);
 			
 			System.out.println("true  " + list);
@@ -109,13 +115,20 @@ public class Product_shopcart extends HttpServlet {
 
 				else {
 					if(request.getParameter("mode") != null) {
+						ShopcartDAO daoShopCart = new ShopcartDAO();
+						List<Item> shopCartList = daoShopCart.get(loginUser.getId());
 						//数量変更する
 						int tempcount = Integer.parseInt(request.getParameter("count"));
 						int id =Integer.parseInt( request.getParameter("id"));
 						ShopcartDAO shopcartdao = new ShopcartDAO();
 						System.out.println("countは"+tempcount);
 						System.out.println("idは"+id);
-						shopcartdao.update(id, tempcount);
+						
+//						<!-- 変更したよーーーーーーーーーーーーーーーー -->
+						boolean com = shopcartdao.update(id, tempcount, shopCartList);
+						if (!com) {
+							request.setAttribute("shopFalse", "在庫が足りません。注文キャンセルします。");
+						}
 						
 					} else if (request.getParameter("productId") != null) {
 						int productId = Integer.parseInt(request.getParameter("productId"));

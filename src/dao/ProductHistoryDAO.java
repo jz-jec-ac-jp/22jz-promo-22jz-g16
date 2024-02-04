@@ -298,6 +298,7 @@ public class ProductHistoryDAO {
 		try(Connection cn = manager.getConnection()) {
 //			try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 			// プレースホルダで変数部分を定義
+			
 			String sql = "INSERT INTO history_table (user_id, pay_mothod, purchase_date, card_id, create_date, update_date) VALUES (?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, user_id);

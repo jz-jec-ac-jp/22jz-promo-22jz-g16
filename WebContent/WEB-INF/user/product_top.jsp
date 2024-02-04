@@ -186,14 +186,14 @@
           <figure>
             <img src="assets/img/furniture.png" alt="">
           </figure>
-          <p class="furniture">組み立て時間が気になる方</p>
+          <p class="furniture">家具の組み立て無料</p>
         </div>
 
         <div class="delivery-link">
           <figure>
             <img src="assets/img/delivery.png" alt="">
           </figure>
-          <p class="delivery">配送料金が気なる方</p>
+          <p class="delivery">配送料金一律500円</p>
         </div>
       </div>
 

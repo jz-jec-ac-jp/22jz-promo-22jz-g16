@@ -55,6 +55,19 @@ public class Admin_productStatus extends HttpServlet {
 //			List<Integer> productIdList = daoPurchase.getProductId();
 			List<ProductUser> userDetailList = daoPurchase.getUserDetail(idList);
 			
+			List<String> userStatus = daoPurchase.findProductStatus();
+			
+			
+//			<!-- 変更したよーーーーーーーーーーーーーーーー -->
+			for (String status : userStatus) {				
+				if (status.equals("準備中")) {
+					request.setAttribute("wait", "準備中");
+				}
+				else if (status.equals("完了")) {
+					request.setAttribute("comp", "出荷中");
+				}
+			}
+			
 			System.out.println( "");
 			System.out.println( "userDetailList " + userDetailList);
 			System.out.println( "");

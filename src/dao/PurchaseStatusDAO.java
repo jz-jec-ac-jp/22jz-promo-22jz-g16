@@ -207,6 +207,35 @@ public class PurchaseStatusDAO {
      return detail;
 	}
 	
+//	
+//	public List<String> getUserStatus(List<Integer> idList) {
+////      list = new ArrayList<>();
+//	List<ProductUser> detail = new ArrayList<>();
+//     
+//     DBManager manager = DBManager.getInstance();
+//     try(Connection cn = manager.getConnection()) {
+//	    
+//	     
+//	     for (int i = 0; i < idList.size(); i++) {
+//	    	 String sql = "SELECT  FROM user_table WHERE id = ?";
+//		     PreparedStatement stmt = cn.prepareStatement(sql);
+//		     stmt.setInt(1, idList.get(i));
+//		     ResultSet rs = stmt.executeQuery();
+//		     
+//		     while (rs.next()) {
+//		    	 ProductUser user = rs2model(rs);
+//		    	 detail.add(user);
+//		     }
+//	     }
+//     } catch(SQLException e) {
+//         e.printStackTrace();
+//         System.out.println("error_color " + e);
+//     }
+////     return list;
+//     return detail;
+//	}
+	
+	
 	private  ProductUser rs2model(ResultSet rs) throws SQLException {
 		/* 中略。rsの値を取得し、それぞれの変数に代入 */
 //		int id = rs.getInt("id");/* ⑨ */

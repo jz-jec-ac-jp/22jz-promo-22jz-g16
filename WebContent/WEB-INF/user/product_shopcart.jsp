@@ -117,10 +117,15 @@
      </c:if>
 
 
-	<c:if test="${ empty login }">
+	<c:if test="${ not empty login }">
+	
+	<!-- 変更したよーーーーーーーーーーーーーーーー -->
+	<c:if test="${ not empty shopFalse}">
+		<p>${ shopFalse }</p>
+	</c:if>
 
     <div class="year-total">
-      <h2 class="peace">個数:4個</h2>
+      <h2 class="peace">個数:${ num }個</h2>
       <h2 class="total-pay">合計金額：40,000円(税込)</h2>
     </div>
     <!--商品データ-->
