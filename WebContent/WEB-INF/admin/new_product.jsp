@@ -107,12 +107,18 @@
                 <li>商品詳細</li>
             </ol>
         </nav>
-        <figure>
-            <img class="product-img" src="assets/img/chair.jpg" alt="">
-        </figure>
-        <h1 class="detail-product-name">モノトーン椅子</h1>
+        <div class="slide-wrap">
+          <c:forEach var="img" items="${ item.imgUrl }">
+         	<div class="slide-box">
+              <figure>
+                <img class="imgDetail" src="${ img.img_url }" alt="">
+              </figure>
+         	 </div>
+            </c:forEach>
+        </div>
+        <h1 class="detail-product-name">${ item.product_name }</h1>
         <div class="product">
-            <p>5000円</p>
+            <p>${ item.product_price }円</p>
             <figure>
                 <img src="assets/img/header_favorite.png" alt="">
             </figure>
@@ -124,20 +130,23 @@
 
         <div class="detaile">
             <p>商品コード</p>
-            <p>*****</p>
+            <p>${ item.id }</p>
             <p>カラー</p>
-            <p>*****</p>
+            <c:forEach var="color" items="${ item.colorTexts }">
+			   <p>${ color.purchase_color}</p>
+			</c:forEach>
             <p>サイズ</p>
-            <p>*****</p>
+            <c:forEach var="size" items="${ item.size_name }">
+			   <p>${ size.size_name }</p>
+			</c:forEach>
             <p>重量</p>
-            <p>*****</p>
+            <c:forEach var="weight" items="${ item.weight_name }">
+			   <p>${ weight.purchase_weight}</p>
+			</c:forEach>
         </div>
 
         <div class="product-content">
-            <p>
-                これも仮 <br>
-                背中にフィットし、やさしく身体を支えてくれる背もたれのデザインが魅力のダイニングチェアです。フレームはあたたかみのある風合いのナラ材を落ち着いた印象のBWN色で仕上げており、上品な佇まいです。
-            </p>
+			<p>${ item.product_detail }</p>
         </div>
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
@@ -158,7 +167,7 @@
             </div>
         </div>
 
-        <div class="wrap">
+          <div class="wrap">
 
             <div class="wrap">
 
@@ -168,36 +177,21 @@
                         <!-- <p>&lt;details&gt;要素を使う場合の開閉アニメーションはJavaScriptで補います。</p> -->
                         <!-- ↓↓最初隠したいコンテンツ↓↓ -->
                         <div class="contents">
-                            <div class="product-review">
-                                <div class="product-review-item">
-                                    <h2>レビュー</h2>
-                                    <p>総合評価</p>
-                                    <p>4.0</p>
-                                    <p>☆☆☆☆</p>
-                                </div>
-                                <div class="product-review-star">
-                                    <p>☆☆☆☆☆</p>
-                                    <p>☆☆☆☆</p>
-                                    <p>☆☆☆</p>
-                                    <p>☆☆</p>
-                                    <p>☆</p>
-                                </div>
-                            </div>
-                            <div class="product-review">
-                                <div class="product-review-item">
-                                    <h2>レビュー</h2>
-                                    <p>総合評価</p>
-                                    <p>4.0</p>
-                                    <p>☆☆☆☆</p>
-                                </div>
-                                <div class="product-review-star">
-                                    <p>☆☆☆☆☆</p>
-                                    <p>☆☆☆☆</p>
-                                    <p>☆☆☆</p>
-                                    <p>☆☆</p>
-                                    <p>☆</p>
-                                </div>
-                            </div>
+                        
+				          <c:forEach var="review" items="${ reviewList }">
+	                            <div class="product-review">
+	                                <div class="product-review-item">
+	                                    <h2>評価</h2>
+	                                    <h2>タイトル</h2>
+	                                    <h2>内容</h2>
+	                                </div>
+	                                <div class="product-review-star">
+	                                    <p>${ review.review_rating }</p>
+	                                    <p>${ review.review_title }</p>
+	                                    <p>${ review.review_text }</p>
+	                                </div>
+	                            </div>				         	
+				            </c:forEach>
                         </div>
                         <!-- ↑↑最初隠したいコンテンツ ↑↑-->
                     </div>
@@ -211,207 +205,222 @@
             </div>
 
             <div class="product-button">
+            	<%--
+            	
                 <input class="return-btn" type="submit" value="戻る">
-                <input class="cart-btn" type="submit" value="カートに入れる">
+<<<<<<< HEAD
+                 <form  action="Product_shopcart" method="post">
+                 <input type="hidden" name="shopCartName" value="${ item.id }">
+			        <button type="submit"><カートに入れる</button>
+			      </form>
+                <!-- <a href="Product_shopcart?id=${ item.id }" class="cart-btn">カートに入れる</a> -->
+=======
+            	 --%>
+            	<a href="Product_list" class="cart-btn">一覧に戻る</a>
+            	<form action="Product_shopcart" method="post">
+            		<input type="hidden" value="${ item.id }" name="shopCart">
+	                <button class="cart-btn" type="submit">カートに入れる</button>
+            	</form>
+<!-- >>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git -->
+                <%--><input class="cart-btn" type="submit" value="カートに入れる"> --%>
             </div>
 
-            <!-- カテゴリ -->
-            <h2 class="category">Category</h2>
-            <div class="category-list">
-                <!-- 椅子 -->
-                <div class="category-item">
-                    <a href="javascript:popup_open_chair();">
-                        <figure>
-                            <img src="assets/img/chair.jpg" alt="">
-                        </figure>
-                        <p>椅子</p>
-                    </a>
-                </div>
-                <div id="popup-overlay-chair">
-                    <div id="popup-window-chair" class="popup-window">
-                        <section class="popup-header">
-                            <h2>椅子のカテゴリー</h2>
-                            <div class="popup-close">
-                                <a href="javascript:popup_close_chair();">×</a>
-                            </div>
-                        </section>
-                        <div class="popup-body">
-                            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-                            <ul>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/chair.jpg" alt="">
-                                        <p>モノトーン</p>
-                                    </a>
-                                </li>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/chair.jpg" alt="">
-                                        <p>カントリー風</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 机 -->
-                <div class="category-item">
-                    <a href="javascript:popup_open_table();">
-                        <figure>
-                            <img src="assets/img/table.jpg" alt="">
-                        </figure>
-                        <p>机</p>
-                    </a>
-                </div>
-                <div id="popup-overlay-table">
-                    <div id="popup-window-table" class="popup-window">
-                        <section class="popup-header">
-                            <h2>机のカテゴリー</h2>
-                            <div class="popup-close">
-                                <a href="javascript:popup_close_table();">×</a>
-                            </div>
-                        </section>
-                        <div class="popup-body">
-                            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-                            <ul>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/table.jpg" alt="">
-                                        <p>モノトーン</p>
-                                    </a>
-                                </li>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/table.jpg" alt="">
-                                        <p>カントリー風</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+             <!-- カテゴリ -->
+    <h2 class="category">Category</h2>
+    <div class="category-list">
+      <!-- 椅子 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_chair();">
+          <figure>
+            <img src="assets/img/monotone_chair1.jpg" alt="">
+          </figure>
+          <p>椅子</p>
+        </a>
+      </div>
+      <div id="popup-overlay-chair">
+        <div id="popup-window-chair" class="popup-window">
+          <section class="popup-header">
+            <h2>椅子のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_chair();">×</a>
             </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_chair1.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/country_chair1.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
 
-            <div class="category-list-line">
-                <!-- 照明 -->
-                <div class="category-item">
-                    <a href="javascript:popup_open_light();">
-                        <figure>
-                            <img src="assets/img/light.jpg" alt="">
-                        </figure>
-                        <p>照明</p>
-                    </a>
-                </div>
-                <div id="popup-overlay-light">
-                    <div id="popup-window-light" class="popup-window">
-                        <section class="popup-header">
-                            <h2>照明のカテゴリー</h2>
-                            <div class="popup-close">
-                                <a href="javascript:popup_close_light();">×</a>
-                            </div>
-                        </section>
-                        <div class="popup-body">
-                            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-                            <ul>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/light.jpg" alt="">
-                                        <p>モノトーン</p>
-                                    </a>
-                                </li>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/light.jpg" alt="">
-                                        <p>カントリー風</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 収納 -->
-                <div class="category-item">
-                    <a href="javascript:popup_open_storage();">
-                        <figure>
-                            <img src="assets/img/storage.jpg" alt="">
-                        </figure>
-                        <p>収納</p>
-                    </a>
-                </div>
-                <div id="popup-overlay-storage">
-                    <div id="popup-window-storage" class="popup-window">
-                        <section class="popup-header">
-                            <h2>収納のカテゴリー</h2>
-                            <div class="popup-close">
-                                <a href="javascript:popup_close_storage();">×</a>
-                            </div>
-                        </section>
-                        <div class="popup-body">
-                            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-                            <ul>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/storage.jpg" alt="">
-                                        <p>モノトーン</p>
-                                    </a>
-                                </li>
-                                <li class="popup-list">
-                                    <a href="user/product_list/index.html">
-                                        <img src="assets/img/storage.jpg" alt="">
-                                        <p>カントリー風</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 雑貨 -->
-                <div class="category-item">
-                    <a href="javascript:popup_open_goods();">
-                        <figure>
-                            <img src="assets/img/table.jpg" alt="">
-                        </figure>
-                        <p>雑貨</p>
-                    </a>
-                </div>
+      <!-- 机 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_table();">
+          <figure>
+            <img src="assets/img/country_table.jpg" alt="">
+          </figure>
+          <p>机</p>
+        </a>
+      </div>
+      <div id="popup-overlay-table">
+        <div id="popup-window-table" class="popup-window">
+          <section class="popup-header">
+            <h2>机のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_table();">×</a>
             </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_table.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/country_table.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-            <div id="popup-overlay-goods">
-                <div id="popup-window-goods" class="popup-window">
-                    <section class="popup-header">
-                        <h2>椅子のカテゴリー</h2>
-                        <div class="popup-close">
-                            <a href="javascript:popup_close_goods();">×</a>
-                        </div>
-                    </section>
-                    <div class="popup-body">
-                        <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
-                        <ul>
-                            <li class="popup-list">
-                                <a href="user/product_list/index.html">
-                                    <img src="assets/img/chair.jpg" alt="">
-                                    <p>モノトーン</p>
-                                </a>
-                            </li>
-                            <li class="popup-list">
-                                <a href="user/product_list/index.html">
-                                    <img src="assets/img/chair.jpg" alt="">
-                                    <p>カントリー風</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    </div>
+
+
+    <div class="category-list-line">
+      <!-- 照明 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_light();">
+          <figure>
+            <img src="assets/img/country_light1.jpg" alt="">
+          </figure>
+          <p>照明</p>
+        </a>
+      </div>
+      <div id="popup-overlay-light">
+        <div id="popup-window-light" class="popup-window">
+          <section class="popup-header">
+            <h2>照明のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_light();">×</a>
             </div>
-            <%--<button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button> --%>
-		</div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_lighit1.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/country_light1.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 収納 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_storage();">
+          <figure>
+            <img src="assets/img/monotone_deskbord.jpg" alt="">
+          </figure>
+          <p>収納</p>
+        </a>
+      </div>
+      <div id="popup-overlay-storage">
+        <div id="popup-window-storage" class="popup-window">
+          <section class="popup-header">
+            <h2>収納のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_storage();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_deskbord.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 雑貨 -->
+      <div class="category-item">
+        <a href="javascript:popup_open_goods();">
+          <figure>
+            <img src="assets/img/country_clock1.jpg" alt="">
+          </figure>
+          <p>雑貨</p>
+        </a>
+      </div>
+      <div id="popup-overlay-goods">
+        <div id="popup-window-goods" class="popup-window">
+          <section class="popup-header">
+            <h2>雑貨のカテゴリー</h2>
+            <div class="popup-close">
+              <a href="javascript:popup_close_goods();">×</a>
+            </div>
+          </section>
+          <div class="popup-body">
+            <!-- <p>※ポップアップに表示する内容はこちらに記述します。</p> -->
+            <ul>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/monotone_clock1.jpg" alt="">
+                  <p>モノトーン</p>
+                </a>
+              </li>
+              <li class="popup-list">
+                <a href="Product_list">
+                  <img src="assets/img/country_clock1.jpg" alt="">
+                  <p>カントリー風</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+            <!-- <button id="scroll-to-top-btn"><img class="page-top-img" src="assets/img/page-top.png" alt=""></button> -->		
+            </div>
       </div>
 
 
@@ -460,17 +469,29 @@
 
     <!-- 検索フォーム -->
     <!-- 準備中と完了のタブ切り替え -->
-    <form class="new-search-form" action="#" method="post">
-      <div class="ad-tab-switch">
-        <a href="#">追加</a>
-        <a href="#">編集</a>
-      </div>
+      
+      <!-- 変更したよーーーーーーーーーーーーーーーー -->
+      
+	      <div class="tab-switch">
+	       <select class="" name="createEdit-box">
+	           <option value="create">追加</option>
+	           <option value="edit">編集</option>
+	       </select>
+		    
+		    
+	      </div>
+       
+     
+     
+    <form class="search-form" action="#" method="get">
       <div class="ad-search">
         <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
         <!-- 検索ボックス -->
-        <input type="search" class="new-search-txtbox" placeholder="キーワードを入力">
+        <input type="search" class="new-search-txtbox" placeholder="キーワードを入力" name="serchItem">
       </div>
+	</form>
 
+    <form class="new-search-form" action="#" method="post">
         <!-- <button class="select-input-btn" type="button"> -->
           <select class="productCategory" name="category_img">
              <option value="">商品写真一覧</option>
@@ -492,7 +513,10 @@
       </div>
       <!-- 商品名 -->
       <p class="ad-product-name">商品名</p>
-      <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子" name="productName">
+      
+      <!-- 変更したよーーーーーーーーーーーーーーーー -->
+      <input type="hidden" value="${ item.id }" name="searchProductId">
+      <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子" name="productName" value="${ item.product_name }">
       <!-- <div class="ad-new-product"> -->
       <!-- 値段 -->
       <div class="ad-value">

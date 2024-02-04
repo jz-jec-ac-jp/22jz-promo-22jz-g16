@@ -300,7 +300,8 @@ header {
 .new-search-form {
     position: absolute;
     right: 1%;
-    top: 5%;
+/*    top: 15%;*/
+   margin-top: 10px;
 /*    max-width: 40vw;*/
     display: flex;
     flex-direction: column;
@@ -308,9 +309,30 @@ header {
 /*    height: 80vh;*/
 }
 
-.new-search-form .ad-tab-switch {
-    margin-top: 10%;
+.tab-switch {
+	display: block;
+    margin-top: 20px;
+    margin-left: 36vw;
 }
+
+.tab-switch select {
+	width: 70px;
+	height: 30px;
+}
+.adNewProduct {
+	position: relative;
+}
+
+.search-form {
+/*	position: absolute;*/
+	width: 20vw;
+/*	margin: 100px auto;*/
+	margin-top: 30px;
+	margin-left: auto;
+
+	
+}
+
 
 
 .new-search-form input, .new-search-form text, .new-search-form select {
@@ -374,6 +396,12 @@ header {
 .productCategory {
 	margin-top: 20px;
 	height: 30px;
+}
+
+.edit-search-form {
+	display: block;
+	margin-top: 50px;
+	padding-bottom: 50px;
 }
 
 

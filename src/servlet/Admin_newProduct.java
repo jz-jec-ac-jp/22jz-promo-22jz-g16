@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AddproductDAO;
+import dao.ItemDAO;
 import model.AdminUser;
+import model.Item;
 
 /**
  * Servlet implementation class Admin_newProduct
@@ -28,7 +31,11 @@ public class Admin_newProduct extends HttpServlet {
 		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 //		HttpSession session = request.getSession();
 		
-		if (loginUser == null) {			
+		
+		
+		
+		
+		if (loginUser != null) {			
 			System.out.println("管理者 新規商品登録画面 未ログイン");
 			request.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Admin_login");
@@ -60,6 +67,21 @@ public class Admin_newProduct extends HttpServlet {
 		
 		String category_img = request.getParameter("category_img");
 		
+		String createEdit = request.getParameter("createEdit-box");
+		if (createEdit.equals("edit")) {
+			
+			request.setCharacterEncoding("UTF-8");
+			
+			ItemDAO dao = new ItemDAO();
+			
+			String search = request.getParameter("searchProductId");
+			List<Item> list = dao.findString(search);
+			
+			request.setAttribute("list", list);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
+			dispatcher.forward(request, response);
+		}
 
 		
 		System.out.println("admin_newProduct doPost");
