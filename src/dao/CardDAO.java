@@ -30,6 +30,7 @@ public class CardDAO {
 				ProductCard card = rs2model(rs);
 				list.add(card);
 				
+				
 //				System.out.println("true_get " +  list.add(item));
 				System.out.println("true_get()  " + card.getId());
 				

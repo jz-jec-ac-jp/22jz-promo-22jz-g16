@@ -119,7 +119,7 @@
         
         <div class="history-data">
         
-	        <c:forEach var="item" items="${ list }">
+	        <c:forEach var="item" items="${ list }" varStatus="count">
 	        <a href="Product_review?id=${ item.id }">
 	            <section class="history-product">
 	                <p class="ad-productname">${ item.product_name }</p>
@@ -146,7 +146,7 @@
 				   					<p class="size">サイズ:${ size.size_name }</p>
 								</c:forEach>
 		                       <br>
-	                        <p class="delivery-situation">2023/09/21に発送済</p>
+	                        <p class="delivery-situation">${ date[count.index] }に注文済み</p>
 	                        <p class="value">${ item.product_price }円(税込)</p>
 	                        
 	                    </div>

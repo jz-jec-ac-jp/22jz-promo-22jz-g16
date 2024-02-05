@@ -247,34 +247,38 @@ public class ProductHistoryDAO {
 	 * @param id 主キーの値
 	 * @return 発見したデータ。なければnull
 	 */
-	public  Item find(int id) {
-		 Item  item = null;
+	public  List<String> find(int id) {
+		List<String>  dateList = new ArrayList<>();
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "SELECT * FROM item_table where id = ?";
+			String sql = "SELECT create_date FROM history_table where user_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 			
 			// データをリストに格納
 			if (rs.next()) {
-				 item = rs2model(rs);
+				 String date = rs.getString("create_date");
+				 dateList.add(date);
 				 
 				 
-				 System.out.println("true_find  " + item);
-				 System.out.println("true_get()  " + item.getId());
-				 System.out.println("true_Name()  " + item.getProduct_name());
+				 
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
 			System.out.println("error_find  " + e);
 		}
 		
-		return   item;
+		return   dateList;
 	}
 
-	  /**
+//	  private Object getString(String string) {
+//		// TODO 自動生成されたメソッド・スタブ
+//		return null;
+//	}
+
+	/**
 	   * ビデオデータに紐づくライセンス情報を検索して追加
 	   * @param  item 追加対象のビデオデータ
 	   */

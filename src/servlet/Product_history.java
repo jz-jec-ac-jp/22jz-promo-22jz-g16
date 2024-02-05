@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ProductHistoryDAO;
+import dao.PurchaseStatusDAO;
 import model.Item;
 import model.ProductUser;
 
@@ -42,9 +43,13 @@ public class Product_history extends HttpServlet {
 		}
 		else {
 			List<Item> list = dao.get(loginUser.getId());
+			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
+			List<Integer> productIdList = daoPurchase.getUserId(loginUser.getId());
+			List<String> date = dao.find(productIdList);
 			//Item item = dao.find(1);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("date", date);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_history.jsp");
 			dispatcher.forward(request, response);
 		}		

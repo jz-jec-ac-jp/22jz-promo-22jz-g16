@@ -117,7 +117,7 @@
      </c:if>
 
 
-	<c:if test="${ not empty login }">
+	<c:if test="${ empty login }">
 	
 	<!-- 変更したよーーーーーーーーーーーーーーーー -->
 	<c:if test="${ not empty shopFalse}">
