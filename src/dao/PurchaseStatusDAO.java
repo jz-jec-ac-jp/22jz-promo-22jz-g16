@@ -101,8 +101,9 @@ public class PurchaseStatusDAO {
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {//purchase_history
-     String sql = "SELECT h.user_id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id";
+     String sql = "SELECT h.user_id FROM purchase_table p INNER JOIN history_table h ON p.Purchase_history = h.id WHERE user_id = ?";
      PreparedStatement stmt = cn.prepareStatement(sql);
+     stmt.setInt(1, userId);
       
      ResultSet rs = stmt.executeQuery();
      
@@ -228,6 +229,71 @@ public class PurchaseStatusDAO {
      }
 //     return list;
      return detail;
+	}
+	
+	public  List<String> getUserDate(List<Integer> idList) {
+//      list = new ArrayList<>();
+	List<String> date = new ArrayList<>();
+     
+     DBManager manager = DBManager.getInstance();
+     try(Connection cn = manager.getConnection()) {
+	    
+	     
+	     for (int i = 0; i < idList.size(); i++) {
+//	    	 String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address,u.tel_number FROM user_table u INNER JOIN history_table h ON u.id = h.user_i";
+	    	 String sql = "SELECT create_date FROM purchase_table WHERE (SELECT user_id FROM history_table WHERE user_id = ?) = ?";
+		     PreparedStatement stmt = cn.prepareStatement(sql);
+		     stmt.setInt(1, idList.get(i));
+		     stmt.setInt(2, idList.get(i));
+		     ResultSet rs = stmt.executeQuery();
+		     
+		     while (rs.next()) {
+		    	 String userDate = rs.getString("create_date");
+		    	 date.add(userDate);
+		     }
+	     }
+     
+//     boolean userRs = rsUser.next();
+//     boolean rsRs = rs.next();
+//     System.out.println("user boolean " + userRs);
+//     int userId = rsUser.getInt("user_id");
+//     int userIdBefore = userId;
+//     System.out.println("userId" + userId);
+//     System.out.println("getUserId ------------------- ");
+//     for (int i = 0; i < idList.size(); i++) {
+//    	 System.out.println("userId" + userId);
+//    	 System.out.println("idList[" + i + "] " + idList.get(i));
+//    	 if (userId == idList.get(i)) {
+//    		 System.out.println(userId + " == " + idList.get(i));
+//			ProductUser userDetail = rs2model(rs);
+//			detail.add(userDetail);
+//			userIdBefore = userId;
+//    	 }
+//    	 else if (idList.get(i) == userIdBefore) {
+//    		 
+//    	 }
+//    	 else {
+//    		 rsUser.next();
+//    		 userId = rsUser.getInt("user_id");
+//    		 System.out.println("nextUserId " + userId);
+// 			ProductUser userDetail = rs2model(rs);
+// 			detail.add(userDetail);
+//    	 }
+//    	 rs.next();
+//     }
+
+     
+//	     while(rs.next()) {
+//				ProductUser userDetail = rs2model(rs);
+//				detail.add(userDetail);
+//				
+//	     }
+     } catch(SQLException e) {
+         e.printStackTrace();
+         System.out.println("error_color " + e);
+     }
+//     return list;
+     return date;
 	}
 	
 //	

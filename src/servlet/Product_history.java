@@ -44,8 +44,9 @@ public class Product_history extends HttpServlet {
 		else {
 			List<Item> list = dao.get(loginUser.getId());
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
-			List<Integer> productIdList = daoPurchase.getUserId(loginUser.getId());
-			List<String> date = dao.find(productIdList);
+			List<Integer> idList = daoPurchase.getUserId(loginUser.getId());
+			List<String> date = daoPurchase.getUserDate(idList);
+//			List<String> date = dao.find(idList);
 			//Item item = dao.find(1);
 			
 			request.setAttribute("list", list);

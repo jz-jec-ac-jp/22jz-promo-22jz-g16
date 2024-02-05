@@ -247,24 +247,28 @@ public class ProductHistoryDAO {
 	 * @param id 主キーの値
 	 * @return 発見したデータ。なければnull
 	 */
-	public  List<String> find(int id) {
+	public  List<String> find(List<Integer> id) {
 		List<String>  dateList = new ArrayList<>();
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			// プレースホルダで変数部分を定義
-			String sql = "SELECT create_date FROM history_table where user_id = ?";
-			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setInt(1, id);
-			ResultSet rs = stmt.executeQuery();
 			
-			// データをリストに格納
-			if (rs.next()) {
-				 String date = rs.getString("create_date");
-				 dateList.add(date);
-				 
-				 
-				 
+			for (int i = 0; i < id.size(); i++) {
+				// プレースホルダで変数部分を定義
+				String sql = "SELECT create_date FROM history_table where user_id = ?";
+				PreparedStatement stmt = cn.prepareStatement(sql);
+				stmt.setInt(1, id.get(i));
+				ResultSet rs = stmt.executeQuery();
+				
+				// データをリストに格納
+				while (rs.next()) {
+					String date = rs.getString("create_date");
+					dateList.add(date);
+					
+					
+					
+				}
 			}
+				
 		} catch(SQLException e) {
 			e.printStackTrace();
 			System.out.println("error_find  " + e);
