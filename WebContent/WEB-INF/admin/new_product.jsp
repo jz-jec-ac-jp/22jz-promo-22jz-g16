@@ -471,28 +471,27 @@
     <!-- 準備中と完了のタブ切り替え -->
       
       <!-- 変更したよーーーーーーーーーーーーーーーー -->
-      
-	      <div class="tab-switch">
-	       <select class="" name="createEdit-box">
-	           <option value="create">追加</option>
-	           <option value="edit">編集</option>
-	       </select>
-		    
-		    
-	      </div>
-       
-     
-     
     <form class="search-form" action="#" method="get">
+     
       <div class="ad-search">
         <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
         <!-- 検索ボックス -->
-        <input type="search" class="new-search-txtbox" placeholder="キーワードを入力" name="serchItem">
+        <input type="search" class="new-search-txtbox" placeholder="キーワードを入力" name="searchProductId">
+      
       </div>
 	</form>
 
     <form class="new-search-form" action="#" method="post">
         <!-- <button class="select-input-btn" type="button"> -->
+        
+          <p class="textColor">※注意</p>
+	       <select class="" name="createEdit-box">
+	           <option value="create">追加</option>
+	           <option value="edit">編集</option>
+	       </select>
+		    
+	      
+        
           <select class="productCategory" name="category_img">
              <option value="">商品写真一覧</option>
    				<%-- メッセージが存在するときのみ表示 --%>
@@ -515,19 +514,20 @@
       <p class="ad-product-name">商品名</p>
       
       <!-- 変更したよーーーーーーーーーーーーーーーー -->
-      <input type="hidden" value="${ item.id }" name="searchProductId">
+      <input type="hidden" name="idProduct" value="${ item.id }">
+      <p>商品ID：${ item.id }</p>
       <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子" name="productName" value="${ item.product_name }">
       <!-- <div class="ad-new-product"> -->
       <!-- 値段 -->
       <div class="ad-value">
         <div class="ad-new-vaca">
           <p>値段</p>
-          <input type="number" class="ad-new-value" placeholder="例）3000" name="productValue">
+          <input type="number" class="ad-new-value" placeholder="例）3000" name="productValue" value="${ item.product_price }">
         </div>
         <!-- 個数 -->
         <div class="ad-new-vaca">
           <p>個数</p>
-          <input type="number" class="ad-new-num" placeholder="例）50" name="productStock">
+          <input type="number" class="ad-new-num" placeholder="例）50" name="productStock" value="${ item.product_stock }">
         </div>
       </div>
       
@@ -535,11 +535,17 @@
       <div class="ad-value">
         <div class="ad-new-vaca">
           <p>サイズ</p>
-          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize">
+            <c:forEach var="size" items="${ item.size_name }">
+			   <p>${ size.size_name }</p>
+			</c:forEach>
+          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize" >
         </div>
         <!-- 重量 -->
         <div class="ad-new-vaca">
           <p>重量</p>
+           <c:forEach var="weight" items="${ item.weight_name }">
+			   <p>${ weight.purchase_weight}</p>
+			</c:forEach>
           <input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight">
         </div>
       </div>
@@ -547,6 +553,9 @@
         <div class="ad-value">
 	        <div class="ad-new-vaca">
 	          <p>カラー</p>
+	          <c:forEach var="color" items="${ item.colorTexts }">
+			    <p>${ color.purchase_color}</p>
+			  </c:forEach>
 	          <input type="text" class="ad-new-value" placeholder="例）黒" name="productColor">
 	        </div>
        		<div class="ad-new-vaca">
@@ -555,7 +564,8 @@
       </div>
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
-      <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
+      <p>${ item.product_detail }</p>
+      <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"  ></textarea>
       <button type="submit">追加</button>
     </form>
   </main>

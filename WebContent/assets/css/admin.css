@@ -283,6 +283,10 @@ header {
 
 */
 
+.textColor {
+	color: orangered;
+}
+
 .ad-search {
     display: flex;
     justify-content: space-between;

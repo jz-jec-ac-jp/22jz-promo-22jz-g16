@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,17 +34,38 @@ public class Admin_newProduct extends HttpServlet {
 		
 		
 		
-		if (loginUser != null) {			
+		if (loginUser == null) {			
 			System.out.println("管理者 新規商品登録画面 未ログイン");
 			request.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Admin_login");
 		}
+		else if (request.getParameter("searchProductId") != null) {
+			
+			
+//			String createEdit = request.getParameter("createEdit-box");
+				
+			request.setCharacterEncoding("UTF-8");
+			
+			ItemDAO dao = new ItemDAO();
+			
+			String search = request.getParameter("searchProductId");
+			Item item = dao.findStringAdmin(search);
+			System.out.println("edit");
+			
+			request.setAttribute("item", item);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
+			dispatcher.forward(request, response);
+		}
 		else {
+		
 			request.setAttribute("loginTrue", "ログイン済みです");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
+		
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -66,26 +86,18 @@ public class Admin_newProduct extends HttpServlet {
 		String productWeight = request.getParameter("productWeight");
 		
 		String category_img = request.getParameter("category_img");
-		
-		String createEdit = request.getParameter("createEdit-box");
-		if (createEdit.equals("edit")) {
-			
-			request.setCharacterEncoding("UTF-8");
-			
-			ItemDAO dao = new ItemDAO();
-			
-			String search = request.getParameter("searchProductId");
-			List<Item> list = dao.findString(search);
-			
-			request.setAttribute("list", list);
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
-			dispatcher.forward(request, response);
-		}
 
+		if (request.getParameter("createEdit-box").equals("edit")) {
+			ItemDAO dao = new ItemDAO();
+			int id = Integer.parseInt(request.getParameter("idProduct"));
+			dao.updateProduct(id, productName, productDetail, productValue, productStock, productColor, productSize, productWeight, category_img);
+		}
+		else {
+			
+			System.out.println("admin_newProduct doPost");
+			daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight, productColor, category_img);
+		}
 		
-		System.out.println("admin_newProduct doPost");
-		daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight, productColor, category_img);
 		
 //		ShopcartDAO dao = new ShopcartDAO();
 ////		

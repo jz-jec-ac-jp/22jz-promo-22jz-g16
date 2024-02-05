@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,8 +108,43 @@ public class  ItemDAO {
 		return   item;
 	}
 	
+	public  Item findStringAdmin(String name) {
+		 Item  item = null;
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "SELECT * FROM item_table WHERE product_name = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setString(1, name);
+			ResultSet rs = stmt.executeQuery();
+			
+			// データをリストに格納
+			if (rs.next()) {
+				 item = rs2model(rs);
+				setImg(item);
+				setColor(item);
+				setSize(item);
+				setWeight(item);
+				 
+				 
+				 
+				 System.out.println("true_find  " + item);
+				 System.out.println("true_getid()  " + item.getId());
+				 System.out.println("true_Name()  " + item.getProduct_name());
+				 System.out.println("true_color()  " + item.getColorTexts());
+				 System.out.println("true_size()  " + item.getSize_name());
+				 System.out.println("true_weight()  " + item.getWeight_name());
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_find  " + e);
+		}
+		
+		return   item;
+	}
+	
 	public   List<Item> findString(String productName) {
-List<Item> list = new ArrayList<>();
+		List<Item> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
@@ -181,6 +217,81 @@ List<Item> list = new ArrayList<>();
 	    /* 取得したライセンス情報を  item にセット */
 //	     item.setLicenses(licenses);
 //	  }
+	
+	
+	public  void updateProduct(int id, String productName, String productDetail, int productValue, int productStock, String productColor, String productSize, String productWeight, String category_img) {
+//      list = new ArrayList<>();
+		
+     
+     DBManager manager = DBManager.getInstance();
+     try(Connection cn = manager.getConnection()) {
+     String sql = "UPDATE item_table SET product_name = ?, product_detail = ?, product_price = ?, product_stock = ?, update_date = ? WHERE id = ?";
+     PreparedStatement stmt = cn.prepareStatement(sql);
+     
+//     一行入れる
+     stmt.setString(1, productName);
+     stmt.setString(2, productDetail);
+     stmt.setInt(3, productValue);
+     stmt.setInt(4, productStock);
+     stmt.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
+     stmt.setInt(6, id);
+     
+      
+     stmt.executeUpdate();
+     
+     String sqlColor = "UPDATE color_table SET purchase_color = ?, update_date = ? WHERE product_id = ?";
+     PreparedStatement stmtColor = cn.prepareStatement(sqlColor);
+     
+//     一行入れる
+     stmtColor.setString(1, productColor);
+     stmtColor.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+     stmtColor.setInt(3, id);
+      
+     stmtColor.executeUpdate();
+     
+     String sqlSize = "UPDATE size_table SET size_name = ?, update_date = ? WHERE product_id = ?";
+     PreparedStatement stmtSize = cn.prepareStatement(sqlSize);
+     
+//     一行入れる
+     stmtSize.setString(1, productSize);
+     stmtSize.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+     stmtSize.setInt(3, id);
+      
+     stmtSize.executeUpdate();
+     
+     String sqlWeight = "UPDATE weight_table SET purchase_weight = ?, update_date = ? WHERE producr_id = ?";
+     PreparedStatement stmtWeight = cn.prepareStatement(sqlWeight);
+     
+//     一行入れる
+     stmtWeight.setString(1, productWeight);
+     stmtWeight.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+     stmtWeight.setInt(3, id);
+      
+     stmtWeight.executeUpdate();
+     
+     String sqlImg = "UPDATE img_table SET img_url = ?, update_date = ? WHERE item_id = ?";
+     PreparedStatement stmtImg = cn.prepareStatement(sqlImg);
+     
+//     一行入れる
+     stmtImg.setString(1, category_img);
+     stmtImg.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+     stmtImg.setInt(3, id);
+      
+     stmtImg.executeUpdate();
+
+         // データをリストに格納
+//         while(rs.next()) {
+////             ProductColor itemColors = rs2model(rs);
+//         
+////             setColor(itemColor);
+//             System.out.println("delivery_status");
+//         }
+     } catch(SQLException e) {
+         e.printStackTrace();
+         System.out.println("error_color " + e);
+     }
+//     return list;
+	}
 
 	
 	
