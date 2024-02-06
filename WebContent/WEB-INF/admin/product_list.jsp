@@ -81,7 +81,6 @@
                <button type="submit" class="listFormButton">確定</button>
             </form>
          
-          
           <p class="productStock">在庫数：${ item.product_stock }</p>
           <p>${ itemStock[count.index] }</p>
         </div>
