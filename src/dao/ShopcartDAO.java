@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -205,10 +206,11 @@ public class ShopcartDAO {
 			}
 			
 			// プレースホルダで変数部分を定義
-			String sql = "UPDATE purchase_table SET product_count = ? WHERE product_id = ?";
+			String sql = "UPDATE purchase_table SET product_count = ?, update_date = ? WHERE product_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, count);
-			stmt.setInt(2, id);
+			stmt.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+			stmt.setInt(3, id);
 			System.out.println("count.update" + count);
 			System.out.println("id.update" + id);
 			System.out.println("");

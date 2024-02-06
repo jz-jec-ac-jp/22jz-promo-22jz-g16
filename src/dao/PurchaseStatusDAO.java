@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class PurchaseStatusDAO {
         
         DBManager manager = DBManager.getInstance();
         try(Connection cn = manager.getConnection()) {
-        String sql = "UPDATE purchase_table SET delivery_status = ? WHERE purchase_history = ? AND product_id = ?";
+        String sql = "UPDATE purchase_table SET delivery_status = ?, update_date = ? WHERE purchase_history = ? AND product_id = ?";
         PreparedStatement stmt = cn.prepareStatement(sql);
         
         System.out.println("PurchasehStatus status " + delivery_status);
@@ -24,8 +26,9 @@ public class PurchaseStatusDAO {
         System.out.println("PurchasehStatus productId " + productId);
 //        一行入れる
         stmt.setString(1, delivery_status);
-        stmt.setInt(2, HistoryId);
-        stmt.setInt(3, productId);
+        stmt.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+        stmt.setInt(3, HistoryId);
+        stmt.setInt(4, productId);
         System.out.println("delivery_status " + delivery_status);
          
         stmt.executeUpdate();

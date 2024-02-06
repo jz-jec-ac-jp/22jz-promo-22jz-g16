@@ -100,11 +100,12 @@ public class PrdocutPurchaseDAO {
      
      DBManager manager = DBManager.getInstance();
      try(Connection cn = manager.getConnection()) {
-     String sql = "UPDATE history_table SET delivery_status = ? where id=?";
+     String sql = "UPDATE history_table SET delivery_status = ?, update_date where id=?";
      PreparedStatement stmt = cn.prepareStatement(sql);
 //     一行入れる
      stmt.setString(1, delivery_status);
-     stmt.setInt(1, userId);
+     stmt.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+     stmt.setInt(3, userId);
      System.out.println("delivery_status " + delivery_status);
       
 //     ResultSet rs = stmt.executeQuery();
