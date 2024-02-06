@@ -127,7 +127,7 @@ public class Product_shopcart extends HttpServlet {
 //						<!-- 変更したよーーーーーーーーーーーーーーーー -->
 						boolean com = shopcartdao.update(id, tempcount, shopCartList);
 						if (!com) {
-							request.setAttribute("shopFalse", "在庫が足りません。注文キャンセルします。");
+							request.setAttribute("shopFalse", "在庫が足りません。注文をキャンセルします。");
 						}
 						
 					} else if (request.getParameter("productId") != null) {

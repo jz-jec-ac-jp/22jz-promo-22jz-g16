@@ -83,6 +83,7 @@
          
           
           <p class="productStock">在庫数：${ item.product_stock }</p>
+          <p>${ itemStock[count.index] }</p>
         </div>
        </li>
       </c:forEach>  

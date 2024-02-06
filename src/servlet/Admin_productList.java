@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -48,6 +49,16 @@ public class Admin_productList extends HttpServlet {
 			List<Item> list = daoHistory.get();
 			List<String> userMailAdress = daoHistory.getUserAdmin();
 			
+			List<String> itemStock = new ArrayList<>();
+			for (Item item : list) {
+				if (item.getProduct_stock() < 10 ) {
+					itemStock.add("補充してください");
+				}
+				else {
+					itemStock.add("");
+				}
+			}
+			
 			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getUserId();
@@ -69,6 +80,7 @@ public class Admin_productList extends HttpServlet {
 			System.out.println(list);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("itemStock", itemStock);
 			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
 			request.setAttribute("userDetailList", userDetailList);
