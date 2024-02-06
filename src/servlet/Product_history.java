@@ -49,6 +49,23 @@ public class Product_history extends HttpServlet {
 //			List<String> date = dao.find(idList);
 			//Item item = dao.find(1);
 			
+			
+			
+			List<String> userStatus = daoPurchase.findProductStatus(loginUser.getId());
+			
+			
+//			<!-- 変更したよーーーーーーーーーーーーーーーー -->
+			for (String status : userStatus) {				
+				if (status.equals("準備中")) {
+					request.setAttribute("wait", "準備中");
+				}
+				else if (status.equals("完了")) {
+					request.setAttribute("comp", "出荷中");
+				}
+			}
+			
+			
+			
 			request.setAttribute("list", list);
 			request.setAttribute("date", date);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/user/purchase_history.jsp");

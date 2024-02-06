@@ -74,6 +74,37 @@ public class PurchaseStatusDAO {
 	        
 	        return statusList;
 		}
+		
+//		<!-- 変更したよーーーーーーーーーーーーーーーー -->
+		public  List<String> findProductStatus(int id) {
+	         List<String> statusList = new ArrayList<>();
+			
+	        
+	        DBManager manager = DBManager.getInstance();
+	        try(Connection cn = manager.getConnection()) {
+	        String sql = "SELECT delivery_status FROM purchase_table WHERE (SELECT user_id FROM history_table user_id = ?) = ?";
+	        PreparedStatement stmt = cn.prepareStatement(sql);
+	        stmt.setInt(1, id);
+	        stmt.setInt(2, id);
+
+	        System.out.println("delivery_status whileBefore");
+	         
+	        ResultSet rs = stmt.executeQuery();
+
+	            // データをリストに格納
+	            while(rs.next()) {
+	                String deliveryStatus = rs.getString("delivery_status");
+	                statusList.add(deliveryStatus);
+
+	                System.out.println("delivery_status " + deliveryStatus);
+	            }
+	        } catch(SQLException e) {
+	            e.printStackTrace();
+	            System.out.println("error_color " + e);
+	        }
+	        
+	        return statusList;
+		}
 	
 	public  List<Integer> getUserId() {
 //      list = new ArrayList<>();

@@ -151,6 +151,20 @@
 	                        
 	                    </div>
 	                </div>
+	                
+	                	    <!-- 変更したよーーーーーーーーーーーーーーーー -->
+				    <ul class="progressbar">
+				      <li>
+						<c:if test="${ not empty wait ] }">
+							<p>準備中</p>
+						</c:if>
+				      </li>
+				      <li>
+				      	<c:if test="${ not empty comp }">
+				      		<p>出荷中</p>
+				      	</c:if>
+				      </li>
+				    </ul>
 	                <!-- 
 	                
 	                <div class="delivery-bottom">
