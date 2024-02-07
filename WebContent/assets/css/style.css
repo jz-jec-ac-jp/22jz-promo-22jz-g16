@@ -1512,7 +1512,7 @@ footer a {
 
 .imgContents {
 	display: flex;
-	width: 80vw;
+	width: 33vw;
 }
 
 .imgContents img {
@@ -2570,7 +2570,9 @@ footer a {
     display: flex;
     align-items: end;
 }
-
+ history-data imgContents img{
+	width: 52vw;
+}
 .h .history-list {
     /* margin: 10%; */
     border-bottom: 1px solid #362918;
