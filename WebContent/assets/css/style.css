@@ -386,7 +386,7 @@ header #header-animation {
 
 .nav a {
     color: #141414;
-    font-size: 1.3rem;
+/*    font-size: 1.3rem;*/
 }
 
 
@@ -407,9 +407,11 @@ header #header-animation {
 .nav .Inair {
     margin-top: 20px;
     margin-bottom: 0;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
-
+.nav title_Inair {
+	font-size: 10rem;
+}
 
 .nav .nav-color {
     list-style: none;
@@ -1785,7 +1787,6 @@ footer a {
 }
 
 
-
 .cart-product-div .us-detail-peace {
     display: block;
     margin-bottom: 10px;
@@ -2566,6 +2567,11 @@ footer a {
 お気に入りページ
 
 */
+.favorite_button{
+	background-color: #ffffff;
+	border-style: none;
+}
+
 
 .history-title {
 	margin-top: 15px;

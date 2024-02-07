@@ -81,7 +81,8 @@
           </a> -->
     
           <nav class="nav">
-            <h1 class="Inair"><a href="">Inair</a></h1>
+            <h1 class="Inair"><a class="title_Inair" href="Product_top">Inair</a></h1>
+            <ul>
             <li><a href="Product_login">ログイン</a></li>
             <li><a href="Product_list">商品一覧</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
@@ -91,6 +92,7 @@
             <li><a href="Footer_service">サービス</a></li>
             <li><a href="Footer_inquiry">お問い合わせ</a></li>
             <li><a href="Footer_about_Inair">Inairについて</a></li>
+          
             </ul>
           </nav>
           <button class="nav1" type="button" id="navbtn" onclick="navClick()"></button>

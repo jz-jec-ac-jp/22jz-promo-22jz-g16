@@ -70,7 +70,7 @@
                 <ol class="breadcrumb">
                     <li><a href="Product_top">ホーム</a></li>
                     <li><a href="Product_list">商品一覧</a></li>
-                    <li><a href="Puroduct_detail">商品詳細</a></li>
+                    <li><a href="Product_detail">商品詳細</a></li>
                     <li><a href="Product_shopcart">カート</a></li>
                     <li>商品購入</li>
                 </ol>
