@@ -511,11 +511,11 @@
       <!-- </button> -->
       </div>
       <!-- 商品名 -->
-      <p class="ad-product-name">商品名</p>
       
       <!-- 変更したよーーーーーーーーーーーーーーーー -->
       <input type="hidden" name="idProduct" value="${ item.id }">
-      <p>商品ID：${ item.id }</p>
+      <p class="ad-product-name">商品ID：${ item.id }</p>
+      <p>商品名</p>
       <input type="text" class="ad-new-productname" placeholder="例）モノトーン椅子" name="productName" value="${ item.product_name }">
       <!-- <div class="ad-new-product"> -->
       <!-- 値段 -->
@@ -536,17 +536,15 @@
         <div class="ad-new-vaca">
           <p>サイズ</p>
             <c:forEach var="size" items="${ item.size_name }">
-			   <p>${ size.size_name }</p>
+	          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize" value="${ size.size_name }">
 			</c:forEach>
-          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize" >
         </div>
         <!-- 重量 -->
         <div class="ad-new-vaca">
           <p>重量</p>
            <c:forEach var="weight" items="${ item.weight_name }">
-			   <p>${ weight.purchase_weight}</p>
+          	<input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight" value="${ weight.purchase_weight}">
 			</c:forEach>
-          <input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight">
         </div>
       </div>
         
@@ -554,9 +552,8 @@
 	        <div class="ad-new-vaca">
 	          <p>カラー</p>
 	          <c:forEach var="color" items="${ item.colorTexts }">
-			    <p>${ color.purchase_color}</p>
+	          <input type="text" class="ad-new-value" placeholder="例）黒" name="productColor" value="${color.purchase_color }">
 			  </c:forEach>
-	          <input type="text" class="ad-new-value" placeholder="例）黒" name="productColor">
 	        </div>
        		<div class="ad-new-vaca">
           
@@ -565,7 +562,7 @@
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
       <p>${ item.product_detail }</p>
-      <textarea name="contents" class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"  ></textarea>
+      <textarea class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
       <button type="submit">追加</button>
     </form>
   </main>

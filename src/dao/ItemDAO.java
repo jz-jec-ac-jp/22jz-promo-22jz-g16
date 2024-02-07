@@ -269,15 +269,82 @@ public class  ItemDAO {
       
      stmtWeight.executeUpdate();
      
-     String sqlImg = "UPDATE img_table SET img_url = ?, update_date = ? WHERE item_id = ?";
-     PreparedStatement stmtImg = cn.prepareStatement(sqlImg);
+     
+     List<String> imgs = new ArrayList<>();
+		if(category_img.equals("カントリー椅子")) {
+			System.out.println("カントリー椅子");
+			imgs.add("assets/img/country_chair1.jpg");
+			imgs.add("assets/img/country_chair2.jpg");
+			imgs.add("assets/img/country_chair3.jpg");
+		} else if (category_img.equals("モノトーン椅子")) {
+			System.out.println("モノトーン椅子");
+			imgs.add("assets/img/monotone_chair1.jpg");
+			imgs.add("assets/img/monotone_chair2.jpg");
+			imgs.add("assets/img/monotone_chair3.jpg");
+			
+		} else if (category_img.equals("カントリー時計")) {
+			System.out.println("カントリー時計");
+			imgs.add("assets/img/country_clock1.jpg");
+			imgs.add("assets/img/country_clock2.jpg");
+			imgs.add("assets/img/country_clock3.jpg");
+			
+		} else if (category_img.equals("モノトーン時計")) {
+			System.out.println("モノトーン時計");
+			imgs.add("assets/img/monotone_clock1.jpg");
+			imgs.add("assets/img/monotone_clock2.jpg");
+			imgs.add("assets/img/monotone_clock3.jpg");
+			
+		} else if (category_img.equals("カントリー照明")) {
+			System.out.println("カントリー照明");
+			imgs.add("assets/img/country_light1.jpg");
+			imgs.add("assets/img/country_light2.jpg");
+			
+		} else if (category_img.equals("モノトーン照明")) {
+			System.out.println("モノトーン照明");
+			imgs.add("assets/img/monotone_light1.jpg");
+			imgs.add("assets/img/monotone_light2.jpg");
+			imgs.add("assets/img/monotone_light3.jpg");
+			
+		} else if (category_img.equals("カントリー机")) {
+			System.out.println("カントリー机");
+			imgs.add("assets/img/country_table.jpg");
+			
+		} else if (category_img.equals("モノトーン机")) {
+			System.out.println("モノトーン机");
+			imgs.add("assets/img/monotone_table.jpg");
+			
+		} else if (category_img.equals("カントリー棚")) {
+			System.out.println("カントリー棚");
+			imgs.add("assets/img/country_chair.jpg");
+			
+		} else if (category_img.equals("モノトーン棚")) {
+			System.out.println("モノトーン棚");
+			imgs.add("assets/img/monotone_deskbord.jpg");
+		}
+		
+		String sqlImgDelete = "DELETE FROM img_table WHERE item_id = ?";
+		PreparedStatement stmtImgDelete = cn.prepareStatement(sqlImgDelete);
+		stmtImgDelete.setInt(1, id);
+		stmtImgDelete.executeUpdate();
+		
+		for (int i = 0; i < imgs.size(); i++) {
+			String sqlImg = "INSERT INTO img_table (item_id, img_url ,update_date) VALUES (?, ?, ?)";
+			PreparedStatement stmtImg = cn.prepareStatement(sqlImg);
+			 stmtImg.setInt(1, id);
+			stmtImg.setString(2, imgs.get(i));
+			stmtImg.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+			stmtImg.executeUpdate();
+		}
+     
+//     String sqlImg = "UPDATE img_table SET img_url = ?, update_date = ? WHERE item_id = ?";
+//     PreparedStatement stmtImg = cn.prepareStatement(sqlImg);
      
 //     一行入れる
-     stmtImg.setString(1, category_img);
-     stmtImg.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
-     stmtImg.setInt(3, id);
-      
-     stmtImg.executeUpdate();
+//     stmtImg.setString(1, category_img);
+//     stmtImg.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+//     stmtImg.setInt(3, id);
+//      
+//     stmtImg.executeUpdate();
 
          // データをリストに格納
 //         while(rs.next()) {

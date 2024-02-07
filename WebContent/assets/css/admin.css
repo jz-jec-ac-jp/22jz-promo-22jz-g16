@@ -178,6 +178,201 @@ header {
 
 */
 
+/* 通常（PC）ではタイル表示 */
+
+
+.wrap {
+    margin: 2em auto;
+    padding: 0;
+    width: 90%;
+}
+
+.wrap label {
+    display: block;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+    /* background: #999; */
+    background: #7c7c7c;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.wrap input[type="checkbox"] {
+    display: none;
+}
+
+.wrap .contents {
+    display: block;
+    margin: 10px 0;
+    background: #e4e4e4;
+    border-radius: 20px;
+}
+
+.details__summary {
+    text-align: center;
+    background: #c4c4c4;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+
+/* .details {
+    color: #287E39;
+    line-height: 2;
+    border: 1px solid #B9F9B2;
+    width: 80%;
+    margin: 0 auto 20px;
+    &__summary {
+      position: relative;
+      display: block;
+      background: #F3FFF3;
+      cursor: pointer;
+      margin: 0;
+      padding: 10px 40px 10px 16px;
+      &::-webkit-details-marker {
+        display: none;
+      }
+      &::before {
+        display: block;
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        top: calc(50% - 6px);
+        right: 16px;
+        width: 6px;
+        height: 6px;
+        border: 6px solid transparent;
+        border-left: 6px solid #287E39;
+        transition: all 0.4s ease-out;
+        transform-origin: 3px 6px;
+        transform: rotate(90deg);
+        .details[open] & {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    &__content {
+      overflow: hidden;
+      margin: 0;
+      padding-left: 16px;
+      padding-right: 16px;
+      > * {
+        margin: 0;
+        padding-top: 16px;
+        &:last-child {
+          padding-bottom: 16px;
+        }
+      }
+    }
+  } */
+
+/*  */
+
+.product {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-star {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-relation {
+    color: #00A692;
+}
+
+.product-img {
+    display: block;
+    margin: 0 auto;
+    width: 73vw;
+    margin-top: 10px;
+}
+
+.detail-product-name {
+    text-align: center;
+}
+
+.detaile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.product-AR {
+    display: block;
+    margin: 10% auto;
+}
+
+.product-review {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.product-button {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+
+.product-list {
+    display: flex;
+}
+
+.slide-box figure .imgDetail {
+	width: 20vw;
+	height: 30vh;
+}
+
+ 
+/* 通常（PC）ではタイル表示 */
+.slide-wrap {
+  background-color: #ccc;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+.slide-box {
+  height: auto;
+  margin: .5%;
+  width: 100%;
+}
+.slide-box a {
+  background-color: #fff;
+  color: #222;
+  display: block;
+  text-decoration: none;
+}
+.slide-box img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.slide-box p {
+  font-weight: bold;
+  padding: 10px;
+  margin:.5rem auto;
+}
+
+/* スマホサイズでスライダー表示 */
+  .slide-wrap {
+    overflow-x: scroll;
+  }
+  .slide-box {
+    flex: 0 0 70%;
+    margin: auto 1% auto auto;
+  }
+
+
+
+
 .ad-tab-switch {
     font-size: 1.3rem;
     margin: 4% 0;
@@ -306,7 +501,7 @@ header {
     right: 1%;
 /*    top: 15%;*/
    margin-top: 10px;
-/*    max-width: 40vw;*/
+    max-width: 22vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
