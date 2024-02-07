@@ -139,7 +139,9 @@
 	                <!-- ログインID入力 -->
 	                <h2 class="login-id">ログインID  </h2>
 	                <input class="id-txt text-input" type="text" name="login-id" placeholder="入力してください">
+	                <!-- 
 	                <p class="error-message">※</p>
+                 	-->
 	            </div>
 	
 		
@@ -147,8 +149,10 @@
 					<div class="err-message">
 		            	<h2 class="login-password ">パスワード</h2>
 		                <input class="password-txt text-input" type="password" name="password-txt" placeholder="入力してください" onKeyUp="countLength(value, 'textlength2');">
+		                <!-- 
 		                <p class="error-message">※</p>
 		                <p id="textlength2">0</p>
+                 		-->
 					</div>   
 	
 	                <a class="password-forget" href="#">パスワードをお忘れの方</a>
