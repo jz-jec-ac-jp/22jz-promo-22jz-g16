@@ -156,7 +156,7 @@
 
                 <!--電話番号-->
                 <h2 class="telephone-number">電話番号*</h2>
-                <input name="tel_number" class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用" pattern="[0-9]{3}[0-9]{4}[0-9]{4}">
+                <input name="telNumber" class="telephone-txt text-input" type="number" name="phone-txt" placeholder="携帯用">
                 <p class="error-message">※</p>
 
                 <input class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="FAX">

@@ -42,7 +42,7 @@ public class New_account extends HttpServlet {
 				String mail_adress = request.getParameter("mail_adress");
 				String us_pasward = request.getParameter("us_pasward");
 				String us_adress = request.getParameter("us_adress");
-				int tel_number = Integer.parseInt(request.getParameter("tel_number"));
+				int tel_number = Integer.parseInt(request.getParameter("telNumber"));
 				String us_prefectur = request.getParameter("us_prefectur");
 				String street_address = request.getParameter("street_address");
 				
