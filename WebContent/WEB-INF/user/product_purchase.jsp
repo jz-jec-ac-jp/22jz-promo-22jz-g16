@@ -63,7 +63,7 @@
             <!-- 検索ボックス -->
             <input type="search" class="search-box" placeholder="入力してください" name="search">
           </form>
-
+	</header>
         <main>
             <!--パンくずリスト-->
             <nav>

@@ -39,6 +39,7 @@
             <nav class="nav">
               <h1 class="Inair"><a href="">Inair</a></h1>
               <li><a href="Product_login">ログイン</a></li>
+              <li><a href="Product_list">商品一覧</a></li>
               <li><a href="Product_favorite">お気に入り</a></li>
               <li><a href="Product_history">商品履歴</a></li>
               <li><a href="Footer_shop">店舗</a></li>
@@ -80,6 +81,7 @@
           <nav class="nav">
             <h1 class="Inair"><a href="">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
+            <li><a href="Product_list">商品一覧</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
             <li><a href="Product_history">商品履歴</a></li>
             <li><a href="Footer_shop">店舗</a></li>

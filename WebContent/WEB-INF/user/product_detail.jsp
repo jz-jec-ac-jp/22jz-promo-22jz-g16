@@ -46,6 +46,7 @@
             <nav class="nav">
               <h1 class="Inair"><a href="Product_top">Inair</a></h1>
               <li><a href="Product_login">ログイン</a></li>
+              <li><a href="Product_list">商品一覧</a></li>
               <li><a href="Product_favorite">お気に入り</a></li>
               <li><a href="Product_history">商品履歴</a></li>
               <li><a href="Footer_shop">店舗</a></li>
@@ -88,6 +89,7 @@
           <nav class="nav">
             <h1 class="Inair"><a href="Product_top">Inair</a></h1>
             <li><a href="Product_login">ログイン</a></li>
+            <li><a href="Product_list">商品一覧</a></li>
             <li><a href="Product_favorite">お気に入り</a></li>
             <li><a href="Product_history">商品履歴</a></li>
             <li><a href="Footer_shop">店舗</a></li>
@@ -179,19 +181,22 @@
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
 
-        <div class="product-review">
-            <div class="product-review-item">
-                <h2>レビュータイトル</h2>
-                <p>総合評価</p>
-                <p>4.0</p>
-                <p>☆☆☆☆</p>
-            </div>
+		<!-- 
             <div class="product-review-star">
                 <p>☆☆☆☆☆</p>
                 <p>☆☆☆☆</p>
                 <p>☆☆☆</p>
                 <p>☆☆</p>
                 <p>☆</p>
+                
+                <p>総合評価</p>
+                <p>4.0</p>
+                <p>☆☆☆☆</p>
+            </div>
+		 -->
+        <div class="product-review">
+            <div class="product-review-item">
+                <h2>レビューはこちら▼</h2>
             </div>
         </div>
 
