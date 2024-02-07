@@ -61,6 +61,7 @@ public class Admin_productList extends HttpServlet {
 			}
 			
 			
+			
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getUserId();
 			List<Integer> historyIdList = daoPurchase.getUserHistoryId();
