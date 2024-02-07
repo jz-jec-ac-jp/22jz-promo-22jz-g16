@@ -24,7 +24,7 @@ public class AuthLogic {
 		ProductUser user = dao.findByEmail(mail_adrres);
 		
 		System.out.println("login authlogic " + user + "mailAdress " + mail_adrres);
-		if ((user != null) && (BCrypt.checkpw(us_password,user.getUs_pasward()))) {
+		if ((user != null) && (BCrypt.checkpw(us_password, user.getUs_pasward()))) {
 			return user;
 		}		
 //		return user;

@@ -58,7 +58,8 @@ public class Admin_newProduct extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		else {
-		
+			Item item = null;
+			request.setAttribute("item", item);
 			request.setAttribute("loginTrue", "ログイン済みです");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
 			dispatcher.forward(request, response);
@@ -78,6 +79,9 @@ public class Admin_newProduct extends HttpServlet {
 		String productName = request.getParameter("productName");
 //		String productName = "testdayo";
 		String productDetail = request.getParameter("productDetail");
+		
+		System.out.println("productDetail  " + productDetail);
+		
 		int productValue = Integer.parseInt(request.getParameter("productValue"));
 		int productStock = Integer.parseInt(request.getParameter("productStock"));
 		String productColor = request.getParameter("productColor");

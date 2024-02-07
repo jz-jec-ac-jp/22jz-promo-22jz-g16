@@ -50,7 +50,7 @@
       <li class="ad-order-list">
         <div class="ad-product-man">
           <!-- <img class="ad-productimg" src="assets/img/adlogin_shopping.png" alt=""> -->
-          <img class="ad-productimg" src="${ item.imgURL }" alt="">
+          <img class="ad-productimg" src="${ item.imgUrl }" alt="">
           <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
           <p>${ userMailAdress[count.index] }</p>
           <p>userId : ${ idList[count.index] }</p>
