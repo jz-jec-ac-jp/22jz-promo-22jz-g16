@@ -128,7 +128,7 @@
 
     <div class="year-total">
       <h2 class="peace">個数:${ num }個</h2>
-      <h2 class="total-pay">合計金額：40,000円(税込)</h2>
+      
     </div>
     <!--商品データ-->
     <div class="cart-product-div">
