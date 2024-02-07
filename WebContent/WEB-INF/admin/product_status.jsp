@@ -38,10 +38,25 @@
 	    <!-- 商品 -->
 	    <div class="ad">
 	      <div class="ad-product-status">
-	        <img class="ad-producting" src="assets/img/chair.jpg" alt="">
+	      
+	       <div class="flex">         
+	        <div class="slide-wrap">
+	          <c:forEach var="img" items="${ item.imgUrl }">
+	         	<div class="slide-box">
+	              <figure>
+	                <img class="imgDetail" src="${ img.img_url }" alt="">
+	              </figure>
+	         	 </div>
+	            </c:forEach>
+		        </div>
+	         </div>
+	         
 	        <div>
 		        <p>題名：${ item.product_name }</p>
-		        <p>色：black　　個数：１</p>
+		        <c:forEach var="color" items="${ item.colorTexts }">
+				   	<p>色： ${ color.purchase_color}</p>
+				</c:forEach>
+				<p>個数：${ productCount[count.index] } </p> 
 		        <p>${ userMailAdress[count.index] }</p>
 	            <p>userId : ${ idList[count.index] }</p>
 	        </div>
@@ -84,6 +99,8 @@
 	      </li>
 	    </ul>
 	     -->
+	     
+	     <ul><li><p></p><li></ul>
 	    <!-- ＊＊まとまり＊＊ -->
 	 </c:forEach>
 

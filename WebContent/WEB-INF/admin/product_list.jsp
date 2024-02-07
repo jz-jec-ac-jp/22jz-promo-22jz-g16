@@ -91,7 +91,7 @@
                	<input type="hidden" value="${ historyIdList[count.index] }" name="historyId">
                <select class="comparisonSelect" name="comparison-box">
                		<option value="">配送状況選択</option>
-                   <option value="preparation">準備中</option>
+                   <option value="preparation">配送準備中</option>
                    <option value="completion">発送済み</option>
                </select>
                <p class="deliveryStatus">${ listPurchaseStatus[count.index] }</p>

@@ -76,9 +76,9 @@ public class Admin_productList extends HttpServlet {
 			System.out.println( "userDetailList " + userDetailList);
 			System.out.println( "");
 			
-//			PurchaseStatusDAO daoPurchaseStatus = new PurchaseStatusDAO();
+			PurchaseStatusDAO daoPurchaseStatus = new PurchaseStatusDAO();
 			
-//			List<String> listPurchaseStatus = daoPurchaseStatus.findProductStatus();
+			List<String> listPurchaseStatus = daoPurchaseStatus.findProductStatus();
 			
 			//Item item = dao.find(1);
 			System.out.println("Admin_productList servlet");
@@ -92,7 +92,7 @@ public class Admin_productList extends HttpServlet {
 			request.setAttribute("userMailAdress", userMailAdress);
 			request.setAttribute("userDetailList", userDetailList);
 			request.setAttribute("historyIdList", historyIdList);
-//			request.setAttribute("listPurchaseStatus", listPurchaseStatus);
+			request.setAttribute("listPurchaseStatus", listPurchaseStatus);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/product_list.jsp");
 			dispatcher.forward(request, response);
@@ -125,16 +125,16 @@ public class Admin_productList extends HttpServlet {
 		if (status.equals("preparation")) {
 			System.out.println("");
 			System.out.println("test");
-			System.out.println("準備中 " + status);
+			System.out.println("配送準備中" + status);
 			System.out.println("");
-			dao.find("準備中", productId, HistoryId);
+			dao.find("配送準備中", productId, HistoryId);
 		}
 		else if (status.equals("completion")) {
 			System.out.println("");
 			System.out.println("test");
-			System.out.println( "完了 " + status);
+			System.out.println( "配送中" + status);
 			System.out.println("");
-			dao.find("完了", productId, HistoryId);
+			dao.find("配送中", productId, HistoryId);
 		}
 		
 		

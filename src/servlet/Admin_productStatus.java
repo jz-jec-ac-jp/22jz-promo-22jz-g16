@@ -58,6 +58,8 @@ public class Admin_productStatus extends HttpServlet {
 			
 			List<String> userStatus = daoPurchase.findProductStatus();
 			
+			List<Integer> productCount = daoHistory.getProductCount();
+			
 			
 //			<!-- 変更したよーーーーーーーーーーーーーーーー -->
 			List<String> listStatus = new ArrayList<>();
@@ -84,6 +86,7 @@ public class Admin_productStatus extends HttpServlet {
 			System.out.println(list);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("productCount", productCount);
 			request.setAttribute("listStatus", listStatus);
 			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
