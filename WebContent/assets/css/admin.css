@@ -180,6 +180,13 @@ header {
 
 /* 通常（PC）ではタイル表示 */
 
+.flex {
+	display: flex;
+	height: 50%;
+}
+
+
+
 
 .wrap {
     margin: 2em auto;

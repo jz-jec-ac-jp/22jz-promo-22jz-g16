@@ -27,10 +27,10 @@ public class ProductHistoryDAO {
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id ";
+			String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id WHERE (SELECT id FROM user_table WHERE id = ?) = ?";
 			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
 			PreparedStatement stmt = cn.prepareStatement(sql);
-//			stmt.setInt(1, id);
+			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 			
 //			System.out.println("whileの前");
@@ -107,7 +107,10 @@ public class ProductHistoryDAO {
 			while(rs.next()) {
 //				System.out.println("whileの後");
 				Item  item = rs2model(rs);
+				setImg(item);
 				setColor(item);
+				setSize(item);
+				setWeight(item);
 				list.add( item);
 	
 				

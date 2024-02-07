@@ -269,6 +269,73 @@ public class PurchaseStatusDAO {
      return detail;
 	}
 	
+	
+	public  List<String> getUserMail(List<Integer> idList) {
+//      list = new ArrayList<>();
+	List<String> detail = new ArrayList<>();
+     
+     DBManager manager = DBManager.getInstance();
+     try(Connection cn = manager.getConnection()) {
+	    
+	     
+	     for (int i = 0; i < idList.size(); i++) {
+//	    	 String sql = "SELECT u.us_prefectur, u.us_adress, u.street_address,u.tel_number FROM user_table u INNER JOIN history_table h ON u.id = h.user_i";
+	    	 String sql = "SELECT mail_adress FROM user_table WHERE id = ?";
+		     PreparedStatement stmt = cn.prepareStatement(sql);
+		     stmt.setInt(1, idList.get(i));
+		     ResultSet rs = stmt.executeQuery();
+		     
+		     while (rs.next()) {
+		    	 String mailUser = rs.getString("mail_adress");
+		    	 detail.add(mailUser);
+		     }
+	     }
+     
+//     boolean userRs = rsUser.next();
+//     boolean rsRs = rs.next();
+//     System.out.println("user boolean " + userRs);
+//     int userId = rsUser.getInt("user_id");
+//     int userIdBefore = userId;
+//     System.out.println("userId" + userId);
+//     System.out.println("getUserId ------------------- ");
+//     for (int i = 0; i < idList.size(); i++) {
+//    	 System.out.println("userId" + userId);
+//    	 System.out.println("idList[" + i + "] " + idList.get(i));
+//    	 if (userId == idList.get(i)) {
+//    		 System.out.println(userId + " == " + idList.get(i));
+//			ProductUser userDetail = rs2model(rs);
+//			detail.add(userDetail);
+//			userIdBefore = userId;
+//    	 }
+//    	 else if (idList.get(i) == userIdBefore) {
+//    		 
+//    	 }
+//    	 else {
+//    		 rsUser.next();
+//    		 userId = rsUser.getInt("user_id");
+//    		 System.out.println("nextUserId " + userId);
+// 			ProductUser userDetail = rs2model(rs);
+// 			detail.add(userDetail);
+//    	 }
+//    	 rs.next();
+//     }
+
+     
+//	     while(rs.next()) {
+//				ProductUser userDetail = rs2model(rs);
+//				detail.add(userDetail);
+//				
+//	     }
+     } catch(SQLException e) {
+         e.printStackTrace();
+         System.out.println("error_color " + e);
+     }
+//     return list;
+     return detail;
+	}
+	
+	
+	
 	public List<Integer> getUserHistory(List<Integer> idList) {
 		
 		List<Integer> userHistory = new ArrayList<>();
