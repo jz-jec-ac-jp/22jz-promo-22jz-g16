@@ -538,6 +538,11 @@
             <c:forEach var="size" items="${ item.size_name }">
 	          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize" value="${ size.size_name }">
 			</c:forEach>
+			
+			<c:if test="${ empty item.size_name }">
+				<input type="text" class="ad-new-value" placeholder="例）M" name="productSize" value="${ size.size_name }">
+			</c:if>
+			
         </div>
         <!-- 重量 -->
         <div class="ad-new-vaca">
@@ -545,7 +550,12 @@
            <c:forEach var="weight" items="${ item.weight_name }">
           	<input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight" value="${ weight.purchase_weight}">
 			</c:forEach>
+	        <c:if test="${ empty item.weight_name }">
+	        	<input type="text" class="ad-new-num" placeholder="例）5kg" name="productWeight" value="${ weight.purchase_weight}">
+	        </c:if>
         </div>
+        
+        
       </div>
         
         <div class="ad-value">
@@ -554,6 +564,11 @@
 	          <c:forEach var="color" items="${ item.colorTexts }">
 	          <input type="text" class="ad-new-value" placeholder="例）黒" name="productColor" value="${color.purchase_color }">
 			  </c:forEach>
+			  
+			  <c:if test="${ empty item.colorTexts }">
+			  	<input type="text" class="ad-new-value" placeholder="例）黒" name="productColor" value="${color.purchase_color }">
+			  </c:if>
+			  
 	        </div>
        		<div class="ad-new-vaca">
           

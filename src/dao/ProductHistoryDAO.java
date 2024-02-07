@@ -327,6 +327,33 @@ public class ProductHistoryDAO {
 		return   stock - minusCount;
 	}
 	
+	public List<Integer> getProductCount() {
+		List<Integer>  count = new ArrayList<>();
+//		int minusCount = count;
+//		int stock = 0;
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			
+			
+				// プレースホルダで変数部分を定義
+				String sql = "SELECT product_count FROM purchase_table";
+				PreparedStatement stmt = cn.prepareStatement(sql);
+//				stmt.setInt(1, id);
+				ResultSet rs = stmt.executeQuery();
+				
+				while (rs.next()) {
+					
+					count.add(rs.getInt("product_count"));
+				}
+				
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_find  " + e);
+		}
+		
+		return   count;
+	}
+	
 	public boolean create(int user_id, String payMethod,int card_id, String delivery_status, List<Item> shopCartList, List<Integer> productCount) {
 		int ret = -1;
 		
@@ -356,13 +383,14 @@ public class ProductHistoryDAO {
 //			
 			for (int i = 0; i < shopCartList.size(); i++) {
 				Item cartItem = shopCartList.get(i);
-				String sqlPurchase = "INSERT INTO purchase_table (purchase_history, product_id, delivery_status,  create_date, update_date) VALUES ((SELECT MAX(id) FROM history_table), ?, ?, ?, ?)";
+				String sqlPurchase = "INSERT INTO purchase_table (purchase_history, product_id, delivery_status,  create_date, update_date, product_count) VALUES ((SELECT MAX(id) FROM history_table), ?, ?, ?, ?, ?)";
 				
 				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
 				stmtCart.setInt(1, cartItem.getId());
 				stmtCart.setString(2, delivery_status);
 				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
 				stmtCart.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+				stmtCart.setInt(5, productCount.get(i));
 				ret = stmtCart.executeUpdate();
 				
 			}

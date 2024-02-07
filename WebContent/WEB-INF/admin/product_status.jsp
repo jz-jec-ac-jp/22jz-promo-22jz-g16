@@ -60,7 +60,8 @@
 	        </p>
 	        <!-- 配送場所 -->
 	        <p>< 配送場所 ><p>
-	          <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address } TEL：${ userDetailList[count.index].tel_number}</p>
+	          <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address }</p> 
+	          <p>TEL：${ userDetailList[count.index].tel_number}</p>
 	        </p>
 	      </div>
 	    </div>
@@ -68,6 +69,8 @@
 	    
 	    
 	    <!-- 変更したよーーーーーーーーーーーーーーーー -->
+	    
+	    <!-- 
 	    <ul class="progressbar">
 	      <li>
 			<c:if test="${ listStatus[count.index] }">
@@ -80,6 +83,7 @@
 	      	</c:if>
 	      </li>
 	    </ul>
+	     -->
 	    <!-- ＊＊まとまり＊＊ -->
 	 </c:forEach>
 

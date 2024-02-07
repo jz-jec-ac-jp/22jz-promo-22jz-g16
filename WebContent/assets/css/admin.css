@@ -180,12 +180,18 @@ header {
 
 /* 通常（PC）ではタイル表示 */
 
-.flex {
+.flex .slide-wrap {
 	display: flex;
-	height: 50%;
+/*	width: 10vw;*/
+	height: 25vh;
+	border: none;
 }
 
-
+.flex .slide-wrap .imgDetail {
+	width: 30vw;
+	height: 20vh;
+	border: none;
+}
 
 
 .wrap {
@@ -335,24 +341,27 @@ header {
 .slide-box figure .imgDetail {
 	width: 20vw;
 	height: 30vh;
+	border: none;
 }
 
  
 /* 通常（PC）ではタイル表示 */
 .slide-wrap {
-  background-color: #ccc;
+/*  background-color: #ccc;*/
   display: flex;
   margin: 0 auto;
   max-width: 1024px;
   width: 100%;
+  border: none;
 }
 .slide-box {
   height: auto;
-  margin: .5%;
+/*  margin: .5%;*/
   width: 100%;
+  border: none;
 }
 .slide-box a {
-  background-color: #fff;
+/*  background-color: #fff;*/
   color: #222;
   display: block;
   text-decoration: none;
@@ -371,10 +380,12 @@ header {
 /* スマホサイズでスライダー表示 */
   .slide-wrap {
     overflow-x: scroll;
+    
   }
   .slide-box {
     flex: 0 0 70%;
-    margin: auto 1% auto auto;
+/*    margin: auto 1% auto auto;*/
+    border: none;
   }
 
 
@@ -400,7 +411,7 @@ header {
     justify-content: space-between;
 }
 
-.ad-order-list div {
+.ad-order-list .div {
     border-left: 1px solid #362918;
     padding: 1%;
 }
@@ -1415,6 +1426,7 @@ header {
     align-items: center;
     justify-content: space-around;
     width: 45%;
+    height: 20vh; 	
     padding: 1%;
     border: 1px solid #362918;
 }
@@ -1431,6 +1443,7 @@ header {
     border: 1px solid #362918;
     padding: 1%;
     width: 35%;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

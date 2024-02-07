@@ -49,22 +49,29 @@
     
     <c:forEach var="item" items="${ list }" varStatus="count">
       <li class="ad-order-list">
-        <div class="ad-product-man">
+        <div class="ad-product-man div">
           
-            <div  class="flex">            
-	            <c:forEach var="img" items="${ item.imgUrl }">
-		              <figure>
-		                <img class="" src="${ img.img_url }" alt="">
-		              </figure>
-	              </c:forEach>
-            
-            </div>
+         <div class="flex">         
+	        <div class="slide-wrap">
+	          <c:forEach var="img" items="${ item.imgUrl }">
+	         	<div class="slide-box">
+	              <figure>
+	                <img class="imgDetail" src="${ img.img_url }" alt="">
+	              </figure>
+	         	 </div>
+	            </c:forEach>
+	        </div>
+         </div>
            
-          <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
+          <p class="ad-product-name">${ item.product_name }</p>
+           <c:forEach var="color" items="${ item.colorTexts }">
+		   	<p>色： ${ color.purchase_color}</p>
+			</c:forEach>
+          <p>個数：${ productCount[count.index] } </p>          
           <p>${ userMailList[count.index] }</p>
           <p>userId : ${ idList[count.index] }</p>
         </div>
-        <div class="ad-product-del">
+        <div class="ad-product-del div">
           <p>< 配送日時 ><br>2023/05/02</p>
           <p>< 配送元の住所 > <br> 〒169-8522</p>
           <p>東京都新宿区百人町1-25-4</p>
@@ -74,7 +81,7 @@
           <p>${ userDetailList[count.index].us_prefectur }県 ${ userDetailList[count.index].us_adress } ${ userDetailList[count.index].street_address }</p>
           <p>TEL：${ userDetailList[count.index].tel_number  }</p>
         </div>
-        <div class="ad-del-man">
+        <div class="ad-del-man div">
           <img src="assets/img/ad_delbell.png" alt="">
           <!--  <p>出荷準備中</p> -->
        
