@@ -163,7 +163,7 @@
          	<ul class="slideshow">
           <c:forEach var="item" items="${ list }">
 	          <li>
-		          <a href="Product_detail?id=${ item.id }">       
+		          <a class="animation_img" href="Product_detail?id=${ item.id }">       
 		            <div class="goods-item content-hover ">
 			            <div class="imgContents">
 				            <c:forEach var="img" items="${ item.imgUrl }">

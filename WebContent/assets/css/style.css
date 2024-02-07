@@ -795,6 +795,10 @@ footer a {
 トップページ
 
 */
+.animation_img .imgContents img{
+	width: 47vw;
+	height: 20vh;
+}
 
 .header-anim .nav1{
 	position: absolute;
