@@ -31,7 +31,7 @@ public class ProductHistoryDAO {
 			//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, id);
-			stmt.setInt(2, id);
+		
 			ResultSet rs = stmt.executeQuery();
 			
 //			System.out.println("whileの前");
