@@ -233,10 +233,10 @@
         </a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link" href="/user/product_list/"><span>1</span></a>
+        <a class="Pagination-Item-Link isActive" href="/user/product_list/"><span>1</span></a>
       </li>
       <li class="Pagination-Item">
-        <a class="Pagination-Item-Link isActive" href="/user/product_list/"><span>2</span></a>
+        <a class="Pagination-Item-Link" href="/user/product_list/"><span>2</span></a>
       </li>
       <li class="Pagination-Item">
         <a class="Pagination-Item-Link" href="/user/product_list/"><span>3</span></a>
