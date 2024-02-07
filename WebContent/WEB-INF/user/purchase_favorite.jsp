@@ -133,7 +133,7 @@
 			        
 	                    <div class="q">
 	                        <p class="ad-product-man">
-	                        <p>商品ID：${ item.id }</p>
+	                        <p>商品コード：${ item.id }</p>
 	                            <c:forEach var="color" items="${ item.colorTexts }">
 			                       <p>カラー：${ color.purchase_color}</p>
 			                    </c:forEach>
