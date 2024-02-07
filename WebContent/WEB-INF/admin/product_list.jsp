@@ -60,7 +60,6 @@
             
             </div>
            
-           <p>${ count.index}</p>
           <p class="ad-product-name">${ item.product_name }<br>色：black　　個数：１ </p>          
           <p>${ userMailList[count.index] }</p>
           <p>userId : ${ idList[count.index] }</p>
