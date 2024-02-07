@@ -475,7 +475,7 @@ public class PurchaseStatusDAO {
 		String us_prefectur = rs.getString("us_prefectur");
 		String us_adress = rs.getString("us_adress");
 		String street_address = rs.getString("street_address");
-		int tel_number = rs.getInt("tel_number");
+		String tel_number = rs.getString("tel_number");
 		
 		
 		return new ProductUser( us_prefectur, us_adress, street_address, tel_number);
