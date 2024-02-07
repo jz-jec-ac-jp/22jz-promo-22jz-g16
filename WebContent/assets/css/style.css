@@ -1516,7 +1516,7 @@ footer a {
 }
 
 .imgContents img {
-	width: 32vw;
+	width: 43vw;
 	height: 20vh;
 /*	margin: 0 -30px;*/
 }
@@ -2276,6 +2276,10 @@ footer a {
 */
 
 /*  */
+    .product-content p {
+/*        width: 50vw;*/
+        margin: 10% 10%;
+    }
 
 .wrap {
     margin: 2em auto;
@@ -2422,7 +2426,8 @@ footer a {
 }
 
 .slide-box figure .imgDetail {
-	width: 70vw;
+	width: 85vw;
+	height: 50vh;
 }
 
  
@@ -2437,7 +2442,7 @@ footer a {
 .slide-box {
   height: auto;
   margin: .5%;
-  width: 24%;
+  width: 100%;
 }
 .slide-box a {
   background-color: #fff;
@@ -2963,9 +2968,9 @@ footer a {
         margin: 5% auto;
     }
 
-    .product-content {
-        width: 50vw;
-        margin: 10% auto;
+    .product-content p {
+/*        width: 50vw;*/
+        margin: 10% 5%;
     }
 
     .details__summary {

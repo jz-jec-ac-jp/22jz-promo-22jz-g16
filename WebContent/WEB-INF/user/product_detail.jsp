@@ -181,19 +181,22 @@
 
         <input class="product-AR" type="submit" value="ARで表示してみよう！！">
 
-        <div class="product-review">
-            <div class="product-review-item">
-                <h2>レビュータイトル</h2>
-                <p>総合評価</p>
-                <p>4.0</p>
-                <p>☆☆☆☆</p>
-            </div>
+		<!-- 
             <div class="product-review-star">
                 <p>☆☆☆☆☆</p>
                 <p>☆☆☆☆</p>
                 <p>☆☆☆</p>
                 <p>☆☆</p>
                 <p>☆</p>
+                
+                <p>総合評価</p>
+                <p>4.0</p>
+                <p>☆☆☆☆</p>
+            </div>
+		 -->
+        <div class="product-review">
+            <div class="product-review-item">
+                <h2>レビューはこちら▼</h2>
             </div>
         </div>
 
