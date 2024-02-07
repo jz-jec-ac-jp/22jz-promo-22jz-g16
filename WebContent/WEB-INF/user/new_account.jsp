@@ -163,25 +163,13 @@
                 <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"
              
                 <!--電話番号-->
-<<<<<<< HEAD
-                <h2 class="telephone-number">電話番号*</h2>
-                <input name="telNumber" class="telephone-txt text-input" type="number" name="phone-txt" placeholder="携帯用">
-=======
+          
 
                 <h2 class="telephone-number">電話番号</h2>
-                <input name="tel_number" class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用">
+                <input name="telNumber" class="telephone-txt text-input" type="text" placeholder="携帯用">
 
-                <h2 class="telephone-number">電話番号</h2>
-                <input name="tel_number" class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用" pattern="[0-9]{3}[0-9]{4}[0-9]{4}">
-				<!-- 
->>>>>>> branch 'main' of https://github.com/jz-jec-ac-jp/22jz-promo-22jz-g16.git
-                <p class="error-message">※</p>
-                 -->
-
-                <input class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="FAX">
-                <!-- 
-                <p class="error-message">※</p>
-                 -->
+                
+         
 
                 <!--住所１（市区町村）-->
                 <h2 class="addres-txt">住所１(市区町村)</h2>

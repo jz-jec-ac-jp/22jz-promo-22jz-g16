@@ -101,7 +101,7 @@ public class UserDAO {
 	 * @return 成功時は追加したデータ、失敗時はnull
 	 */
 	public ProductUser create(String name_kanji, String name_kana, String mail_adress, String us_pasward,
-			String us_adress, int tel_number, String us_prefectur, String street_address) {
+			String us_adress, String tel_number, String us_prefectur, String street_address) {
 		int ret = -1;
 		System.out.println("datacreate");
 		
@@ -126,7 +126,7 @@ public class UserDAO {
 			stmt.setString(3, mail_adress);
 			stmt.setString(4, hashed);
 			stmt.setString(5, us_adress);
-			stmt.setInt(6, tel_number);
+			stmt.setString(6, tel_number);
 			stmt.setString(7, us_prefectur);
 			stmt.setString(8, street_address);
 			ret = stmt.executeUpdate();
@@ -169,7 +169,7 @@ public class UserDAO {
 		String mail_adress = rs.getString("mail_adress");
 		String us_pasward = rs.getString("us_pasward");
 		String us_adress = rs.getString("us_adress");
-		int tel_number = rs.getInt("tel_number");
+		String tel_number = rs.getString("tel_number");
 		String us_prefectur = rs.getString("us_prefectur");
 		String street_address = rs.getString("street_address");
 		LocalDateTime create_date = rs.getTimestamp("create_date").toLocalDateTime();
