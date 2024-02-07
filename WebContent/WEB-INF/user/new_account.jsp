@@ -125,10 +125,10 @@
 		            <p class="error-message">${msg}</p>
 	            </c:if>
                 <!--氏名-->
-                <h2 class="us-login-id">氏名*</h2>
+                <h2 class="us-login-id">氏名</h2>
                 <!--姓（カナ）名前（かな）-->
                 <h2 class="name-kana">姓（カナ）名前（かな）</h2>
-                <input name="name_kana"  class="name-kana-txt text-input" type="text" placeholder="何か変える"  pattern=".*\S+.*">
+                <input name="name_kana"  class="name-kana-txt text-input" type="text" placeholder="入力してください"  pattern=".*\S+.*">
                 <p class="error-message">※</p>
 
                 <!--姓（漢字）名前（漢字）-->
@@ -137,7 +137,7 @@
                 <p class="error-message">※</p>
 
                 <!--ログインID入力-->
-                <h2 class="us-login-id">ログインID*</h2>
+                <h2 class="us-login-id">ログインID</h2>
                 <input name="mail_adress" class="id-txt text-input" type="email" name="login-id" placeholder="入力してください">
                 <p class="error-message">※</p>
 
@@ -145,7 +145,7 @@
                 <p class="error-message">※</p>
 
                 <!--パスワード-->
-                <h2 class="us-login-password">パスワード*</h2>
+                <h2 class="us-login-password">パスワード</h2>
                 <input name="us_pasward" class="password-txt text-input" type="password" name="password-txt" placeholder="パスワード入力欄" onKeyUp="countLength(value, 'textlength0');">
                 <p class="error-message">※</p>
                 <p id="textlength0">0</p>
@@ -155,7 +155,7 @@
                 <p id="textlength1">0</p>
 
                 <!--電話番号-->
-                <h2 class="telephone-number">電話番号*</h2>
+                <h2 class="telephone-number">電話番号</h2>
                 <input name="tel_number" class="telephone-txt text-input" type="tel" name="phone-txt" placeholder="携帯用">
                 <p class="error-message">※</p>
 
@@ -163,7 +163,7 @@
                 <p class="error-message">※</p>
 
                 <!--住所１（市区町村）-->
-                <h2 class="addres-txt">住所１(市区町村)*</h2>
+                <h2 class="addres-txt">住所１(市区町村)</h2>
                 <button class="select-input-btn" type="button" onclick="check_select()">
                     <select class="text-input-select" name="us_prefectur">
                         <option value="">お選びください</option>
@@ -216,15 +216,21 @@
                         <option value="沖縄">沖縄</option>
                     </select>
                 </button>
+                <!-- 
                 <p class="error-message-select">※</p>
+                 -->
 
                 <input id="name" class="telephone-txt text-input" type="text" name="us_adress" placeholder="市区町村を入力">
+                <!-- 
                 <p class="error-message">※</p>
+                 -->
 
                 <!--都道府県-->
-                <h2 class="prefectur">都道府県(番地)*</h2>
+                <h2 class="prefectur">都道府県(番地)</h2>
                 <input class="prefectur-txt text-input" type="text" name="street_address" placeholder="住所２（番地）">
+                <!-- 
                 <p class="error-message">※</p>
+                 -->
                 <!--確定ボタン-->
                 <input class="confirm-button" type="submit" value="確定">
                 <!-- 
