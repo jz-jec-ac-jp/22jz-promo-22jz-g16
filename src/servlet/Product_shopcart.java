@@ -134,6 +134,11 @@ public class Product_shopcart extends HttpServlet {
 							request.setAttribute("shopFalse", "在庫が足りません。注文をキャンセルします。");
 //							response.sendRedirect("Product_shopcart");
 						}
+						else if (com >= 0) {
+							System.out.println("購入できるよ");
+							System.out.println("L" + loginUser.getId() + "I" + id + "T" + tempcount);
+							daoShopCart.updateProductCount(loginUser.getId(), id, tempcount);
+						}
 					
 						
 //						} else if (request.getParameter("productId") != null) {
@@ -149,8 +154,9 @@ public class Product_shopcart extends HttpServlet {
 					else if (request.getParameter("productId") != null) {
 						System.out.println("----------------------------------- detele");
 						int id = Integer.parseInt(request.getParameter("productId"));
-						productDelete(loginUser.getId(), id);
+						dao.productDelete(loginUser.getId(), id);
 					}
+
 					else {
 						int Product_id = Integer.parseInt(request.getParameter("shopCart"));
 						int userId = loginUser.getId();		// ログイン実装してないのでユーザは1番固定
@@ -182,9 +188,9 @@ public class Product_shopcart extends HttpServlet {
 			}
 
 
-	private void productDelete(int id, int id2) {
+//	private void productDelete(int id, int id2) {
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}
 
-	}
+//	}

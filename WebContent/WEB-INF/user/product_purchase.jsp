@@ -78,8 +78,8 @@
             <!--商品データ-->
             <div class="cart-product-div">
                 <div class="year-total">
-                    <h2 class="peace">個数:5個</h2>
-                    <h2 class="total-pay">合計金額：50,000円(税込)</h2>
+                    <h2 class="peace">個数:個</h2>
+                    <h2 class="total-pay">合計金額：円(税込)</h2>
                 </div>
                 
                 

@@ -145,7 +145,7 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO shopcart_table (product_id, user_id, product_count) VALUES (?, ?)";
+			String sql = "INSERT INTO shopcart_table (product_id, user_id, product_count) VALUES (?, ?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, product_id);
 			stmt.setInt(2, user_id);
@@ -281,6 +281,58 @@ public class ShopcartDAO {
 		return ret > 0;
 		
 		
+		
+	}
+	
+	
+	public boolean updateProductCount(int userId, int productId, int productCount) {
+//		int num = -1;
+//		// DBにデータを追加
+//		DBManager manager = DBManager.getInstance();
+//		try(Connection cn = manager.getConnection()) {
+//			// プレースホルダで変数部分を定義
+//			String sql = "UPDATE shopcart_table SET product_count = ? WHERE product_id = ? AND user_id = ?";
+//			PreparedStatement stmtUp = cn.prepareStatement(sql);
+//			stmtUp.setInt(1, productCount);
+//			stmtUp.setInt(2, productId);
+//			stmtUp.setInt(3, userId);
+//			
+//			
+//			System.out.println("updateProductCount() -----------------");
+//			num  = stmtUp.executeUpdate();
+//
+//			
+//			System.out.println("updateProductCount() -----------------");
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return num  > 0;
+		
+		
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			String sql = "UPDATE shopcart_table SET product_count = ? WHERE product_id = ? AND user_id = ?";
+			PreparedStatement stmtUp = cn.prepareStatement(sql);
+			stmtUp.setInt(1, productCount);
+			stmtUp.setInt(2, productId);
+			stmtUp.setInt(3, userId);
+			ret = stmtUp.executeUpdate();
+			
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
 		
 	}
 	

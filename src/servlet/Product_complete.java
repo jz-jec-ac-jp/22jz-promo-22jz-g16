@@ -69,9 +69,11 @@ public class Product_complete extends HttpServlet {
 		System.out.println("complete cardId  " + cardId);
 		String delivery_status = "準備中";
 		System.out.println(cardId);
+		
+		List<Integer> productCount = dao.ProductCount(loginUser.getId());
 //		
 		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
-		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList);
+		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList, productCount);
 		
 //		PrdocutPurchaseDAO daoPurchase = new PrdocutPurchaseDAO();
 //		daoPurchase.create(delivery_status);

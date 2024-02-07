@@ -45,7 +45,7 @@ public class Product_purchase extends HttpServlet {
 			ShopcartDAO dao = new ShopcartDAO();
 			
 			List<Item> list = dao.get(loginUser.getId());
-			List<Integer> productCount = dao.ProductCount();
+			List<Integer> productCount = dao.ProductCount(loginUser.getId());
 			//Item item = dao.find(1);
 			
 			request.setAttribute("productCount", productCount);

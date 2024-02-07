@@ -295,7 +295,35 @@ public class ProductHistoryDAO {
 	    /* 取得したライセンス情報を  item にセット */
 //	     item.setLicenses(licenses);
 //	  }
-	public boolean create(int user_id, String payMethod,int card_id, String delivery_status, List<Item> shopCartList ) {
+	
+	public int itemStock (int id, int count) {
+//		List<Integer>  dateList = new ArrayList<>();
+		int minusCount = count;
+		int stock = 0;
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			
+			
+				// プレースホルダで変数部分を定義
+				String sql = "SELECT product_stock FROM item_table where id = ?";
+				PreparedStatement stmt = cn.prepareStatement(sql);
+				stmt.setInt(1, id);
+				ResultSet rs = stmt.executeQuery();
+				
+				while (rs.next()) {
+					
+					stock =  rs.getInt("product_stock");
+				}
+				
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_find  " + e);
+		}
+		
+		return   stock - minusCount;
+	}
+	
+	public boolean create(int user_id, String payMethod,int card_id, String delivery_status, List<Item> shopCartList, List<Integer> productCount) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -331,6 +359,22 @@ public class ProductHistoryDAO {
 				stmtCart.setString(2, delivery_status);
 				stmtCart.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
 				stmtCart.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+				ret = stmtCart.executeUpdate();
+				
+			}
+			
+			for (int i = 0; i < shopCartList.size(); i++) {
+				Item cartItem = shopCartList.get(i);
+				int productId = cartItem.getId();
+				
+				int stock = itemStock(productId, productCount.get(i));
+				
+				String sqlPurchase = "UPDATE item_table SET product_stock = ? WHERE id = ?";
+				
+				PreparedStatement stmtCart = cn.prepareStatement(sqlPurchase);
+				stmtCart.setInt(1, stock);
+				stmtCart.setInt(2, productId);
+
 				ret = stmtCart.executeUpdate();
 				
 			}
