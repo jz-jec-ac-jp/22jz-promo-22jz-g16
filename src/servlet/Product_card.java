@@ -62,6 +62,7 @@ public class Product_card extends HttpServlet {
 			
 		CardDAO dao = new CardDAO();
 		
+		
 		System.out.println("");
 		System.out.println("card post");
 		System.out.println("");

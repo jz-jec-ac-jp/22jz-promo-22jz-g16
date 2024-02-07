@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -59,14 +60,15 @@ public class Admin_productStatus extends HttpServlet {
 			
 			
 //			<!-- 変更したよーーーーーーーーーーーーーーーー -->
-			List<String> list
+			List<String> listStatus = new ArrayList<>();
 			for (String status : userStatus) {				
 				if (status.equals("準備中")) {
 //					request.setAttribute("wait", "準備中");
-					status.add("準備中");
+					listStatus.add("準備中");
 				}
 				else if (status.equals("完了")) {
-					request.setAttribute("comp", "出荷中");
+//					request.setAttribute("comp", "出荷中");
+					listStatus.add("完了");
 				}
 			}
 			
@@ -82,6 +84,7 @@ public class Admin_productStatus extends HttpServlet {
 			System.out.println(list);
 			
 			request.setAttribute("list", list);
+			request.setAttribute("listStatus", listStatus);
 			request.setAttribute("idList", idList);
 			request.setAttribute("userMailAdress", userMailAdress);
 			request.setAttribute("userDetailList", userDetailList);

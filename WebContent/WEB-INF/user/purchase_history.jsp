@@ -153,7 +153,7 @@
 	                </div>
 	                
 	                	    <!-- 変更したよーーーーーーーーーーーーーーーー -->
-				    <ul class="progressbar">
+				    <!-- <ul class="progressbar">
 				      <li>
 						<c:if test="${ not empty wait  }">
 							<p>準備中</p>
@@ -164,8 +164,13 @@
 				      		<p>出荷中</p>
 				      	</c:if>
 				      </li>
-				    </ul>
+				    </ul> -->
+				    
+				    <p>${ productStatus[count.index] }</p>
+				    
 	                <!-- 
+	                
+	                
 	                
 	                <div class="delivery-bottom">
 	                    <div class="delivery-route">○○ → ------ ○○ ----- ○○ ----- ○○ -----○○</div>

@@ -266,6 +266,8 @@ public class FavoriteDAO {
 		
 	}
 	
+	
+	
 	/**
 	 * ResultSetの行データをモデルの形に変換するメソッド
 	 * @param rs 変換前のデータ

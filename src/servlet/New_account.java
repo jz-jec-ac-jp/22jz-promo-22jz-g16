@@ -51,6 +51,8 @@ public class New_account extends HttpServlet {
 				ProductUser user = dao.create(name_kanji, name_kana, mail_adress, us_pasward,
 						us_adress, tel_number, us_prefectur, street_address);
 				
+
+				
 				System.out.println("");
 				System.out.println("user " + user);
 				System.out.println("usercreate");

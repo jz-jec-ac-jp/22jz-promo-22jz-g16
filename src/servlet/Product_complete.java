@@ -65,9 +65,10 @@ public class Product_complete extends HttpServlet {
 		int user_id = loginUser.getId();
 		String payMethod =  (String) request.getSession().getAttribute("pay");
 		System.out.println("payMethod " +  payMethod);		
-		int cardId =  daoCard.findCardId(cardNumber);
+		int cardId =  daoCard.findCardId(cardNumber, loginUser.getId());
 		System.out.println("complete cardId  " + cardId);
 		String delivery_status = "準備中";
+		System.out.println(cardId);
 //		
 		ProductHistoryDAO daoHistory = new ProductHistoryDAO();
 		daoHistory.create(user_id, payMethod, cardId, delivery_status, shopCartList);

@@ -70,7 +70,7 @@
 	    <!-- 変更したよーーーーーーーーーーーーーーーー -->
 	    <ul class="progressbar">
 	      <li>
-			<c:if test="${ not empty wait  }">
+			<c:if test="${ listStatus[count.index] }">
 				<p>準備中</p>
 			</c:if>
 	      </li>

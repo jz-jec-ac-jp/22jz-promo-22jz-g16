@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,7 +135,7 @@ public class ShopcartDAO {
 		return num > 0;
 	}
 	
-	public boolean create(int product_id, int user_id ) {
+	public boolean create(int product_id, int user_id, int count) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -146,10 +145,11 @@ public class ShopcartDAO {
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			// プレースホルダで変数部分を定義
-			String sql = "INSERT INTO shopcart_table (product_id, user_id) VALUES (?, ?)";
+			String sql = "INSERT INTO shopcart_table (product_id, user_id, product_count) VALUES (?, ?)";
 			PreparedStatement stmt = cn.prepareStatement(sql);
 			stmt.setInt(1, product_id);
 			stmt.setInt(2, user_id);
+			stmt.setInt(3, count);
 			
 			System.out.println("shopcart create-----------------");
 			
@@ -165,7 +165,7 @@ public class ShopcartDAO {
 	
 	
 //	<!-- 変更したよーーーーーーーーーーーーーーーー -->
-	public boolean update(int id, int count, List<Item> shopCartList) {
+	public int update(int id, int count, List<Item> shopCartList) {
 		int ret = -1;
 		
 		// できるなら存在確認
@@ -185,10 +185,14 @@ public class ShopcartDAO {
 				stmtItem.setInt(1, item.getId());
 				ResultSet retItem = stmtItem.executeQuery();
 				
+				
+				
 				while (retItem.next()) {
-					if (retItem.getInt("product_stock") <= count) {
+					if (retItem.getInt("product_stock") >= count) {
 						int itemCount = retItem.getInt("product_stock");
-						String sql = "UPDATE item_table SET product_count = ? WHERE product_id = ?";
+						System.out.println("stock --------------------" + itemCount);
+						System.out.println("count --------------------" + count);
+						String sql = "UPDATE shopcart_table SET product_count = ? WHERE id = ?";
 						PreparedStatement stmt = cn.prepareStatement(sql);
 						stmt.setInt(1, itemCount - count);
 						stmt.setInt(2, id);
@@ -199,41 +203,41 @@ public class ShopcartDAO {
 						ret = stmt.executeUpdate();
 					}
 					else  {
-						return ret < 0;
+						return ret -1;
 					}
 				}
 				
 			}
 			
-			// プレースホルダで変数部分を定義
-			String sql = "UPDATE purchase_table SET product_count = ?, update_date = ? WHERE product_id = ?";
-			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setInt(1, count);
-			stmt.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
-			stmt.setInt(3, id);
-			System.out.println("count.update" + count);
-			System.out.println("id.update" + id);
-			System.out.println("");
+//			// プレースホルダで変数部分を定義
+//			String sql = "UPDATE shopcart_table SET product_count = ?, update_date = ? WHERE product_id = ?";
+//			PreparedStatement stmt = cn.prepareStatement(sql);
+//			stmt.setInt(1, count);
+//			stmt.setTimestamp(2, Timestamp.valueOf(LocalDateTime.now()));
+//			stmt.setInt(3, id);
+//			System.out.println("count.update" + count);
+//			System.out.println("id.update" + id);
+//			System.out.println("");
 			
-			ret = stmt.executeUpdate();
+//			ret = stmt.executeUpdate();
 			System.out.println("shopcart update-----------------");
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return ret > 0;
+		return ret;
 	}
 	
-	public  List<Integer> ProductCount() {
+	public  List<Integer> ProductCount(int userId) {
         List<Integer> countList = new ArrayList<>();
 		
        
        DBManager manager = DBManager.getInstance();
        try(Connection cn = manager.getConnection()) {
-       String sql = "SELECT product_count FROM purchase_table";
+       String sql = "SELECT product_count FROM shopcart_table WHERE user_id = ?";
        PreparedStatement stmt = cn.prepareStatement(sql);
-
+       stmt.setInt(1, userId);
        System.out.println("product_count whileBefore");
         
        ResultSet rs = stmt.executeQuery();

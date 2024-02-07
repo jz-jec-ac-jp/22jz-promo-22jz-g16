@@ -81,21 +81,21 @@ public class CardDAO {
 		
 	}
 	
-	public int findCardId(String card_number) {
+	public int findCardId(String card_number, int userId) {
 //		List<ProductCard> list = new ArrayList<>();
-			int card = 1;
+			int card = userId;
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
-			String sql = "SELECT id FROM card_table where card_number = ?";
+			String sql = "SELECT id FROM card_table where user_id = ?";
 			PreparedStatement stmt = cn.prepareStatement(sql);
-			stmt.setString(1, card_number);
+			stmt.setInt(1, userId);
 			ResultSet rs = stmt.executeQuery();
 			
 //			rs.next();
 			
 			// データをリストに格納
-			while(rs.next()) {
+			if(rs.next()) {
 //				ProductCard card = rs2model(rs);
 				card = rs.getInt("id");
 //			card = ((ProductCard) rs).getId();
@@ -105,7 +105,7 @@ public class CardDAO {
 //				System.out.println("true_get " +  list.add(item));
 //				System.out.println("true_get()  " + card.getId());
 			
-				return card;
+//				return card;
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();

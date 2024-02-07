@@ -116,7 +116,7 @@ public class Product_favorite extends HttpServlet {
 			
 			boolean find =  daoShopCart.findProduct(productId, id);
 			if (!find) {			
-				daoShopCart.create(productId, id);
+				daoShopCart.create(productId, id, 1);
 			}
 			
 			

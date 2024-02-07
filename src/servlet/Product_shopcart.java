@@ -61,7 +61,7 @@ public class Product_shopcart extends HttpServlet {
 			ShopcartDAO dao = new ShopcartDAO();
 			
 			List<Item> list = dao.get(loginUser.getId());
-			List<Integer> productCount = dao. ProductCount();
+			List<Integer> productCount = dao.ProductCount(loginUser.getId());
 			
 			int num = 0;
 			for (int i = 0; i < list.size(); i++) {
@@ -73,7 +73,7 @@ public class Product_shopcart extends HttpServlet {
 			
 			request.setAttribute("list", list);
 			request.setAttribute("num", num);
-			session.setAttribute("shopCartList", list);
+//			session.setAttribute("shopCartList", shopCartList);
 			
 			System.out.println("true  " + list);
 			
@@ -119,21 +119,37 @@ public class Product_shopcart extends HttpServlet {
 						List<Item> shopCartList = daoShopCart.get(loginUser.getId());
 						//数量変更する
 						int tempcount = Integer.parseInt(request.getParameter("count"));
+//						request.setAttribute("tempCount", tempcount);
 						int id =Integer.parseInt( request.getParameter("id"));
 						ShopcartDAO shopcartdao = new ShopcartDAO();
 						System.out.println("countは"+tempcount);
 						System.out.println("idは"+id);
 						
 //						<!-- 変更したよーーーーーーーーーーーーーーーー -->
-						boolean com = shopcartdao.update(id, tempcount, shopCartList);
-						if (!com) {
+
+						int com = shopcartdao.update(id, tempcount, shopCartList);
+						System.out.println("com " + com);
+						if (com < 0) {
+							System.out.println("在庫足りない");
 							request.setAttribute("shopFalse", "在庫が足りません。注文をキャンセルします。");
+//							response.sendRedirect("Product_shopcart");
 						}
+					
 						
-					} else if (request.getParameter("productId") != null) {
-						int productId = Integer.parseInt(request.getParameter("productId"));
-						dao.productDelete(loginUser.getId(), productId);
-						
+//						} else if (request.getParameter("productId") != null) {
+//							int productId = Integer.parseInt(request.getParameter("productId"));
+//							dao.productDelete(loginUser.getId(), productId);
+//							
+//						}
+//					 else if (com > 0) {
+//						int productId = Integer.parseInt(request.getParameter("productId"));
+//						dao.productDelete(productId, tempcount);
+//						
+					}
+					else if (request.getParameter("productId") != null) {
+						System.out.println("----------------------------------- detele");
+						int id = Integer.parseInt(request.getParameter("productId"));
+						productDelete(loginUser.getId(), id);
 					}
 					else {
 						int Product_id = Integer.parseInt(request.getParameter("shopCart"));
@@ -143,7 +159,7 @@ public class Product_shopcart extends HttpServlet {
 						
 						// CartDAOを用意してDBに登録
 						
-						dao.create(Product_id, userId);
+						dao.create(Product_id, userId, 1);
 						
 						
 						
@@ -164,5 +180,11 @@ public class Product_shopcart extends HttpServlet {
 					
 				}
 			}
+
+
+	private void productDelete(int id, int id2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 
 	}
