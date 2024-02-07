@@ -127,7 +127,7 @@
                 <!--氏名-->
                 <h2 class="us-login-id">氏名</h2>
                 <!--姓（カナ）名前（かな）-->
-                <h2 class="name-kana">姓（カナ）名前（かな）</h2>
+                <h2 class="name-kana">姓（カナ）名前（カナ）</h2>
                 <input name="name_kana"  class="name-kana-txt text-input" type="text" placeholder="入力してください"  pattern=".*\S+.*">
                 <!-- 
                 <p class="error-message">※</p>
