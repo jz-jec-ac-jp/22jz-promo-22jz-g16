@@ -59,9 +59,11 @@ public class Admin_productStatus extends HttpServlet {
 			
 			
 //			<!-- 変更したよーーーーーーーーーーーーーーーー -->
+			List<String> list
 			for (String status : userStatus) {				
 				if (status.equals("準備中")) {
-					request.setAttribute("wait", "準備中");
+//					request.setAttribute("wait", "準備中");
+					status.add("準備中");
 				}
 				else if (status.equals("完了")) {
 					request.setAttribute("comp", "出荷中");

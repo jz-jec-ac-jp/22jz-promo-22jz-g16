@@ -155,7 +155,7 @@
 	                	    <!-- 変更したよーーーーーーーーーーーーーーーー -->
 				    <ul class="progressbar">
 				      <li>
-						<c:if test="${ not empty wait ] }">
+						<c:if test="${ not empty wait  }">
 							<p>準備中</p>
 						</c:if>
 				      </li>
