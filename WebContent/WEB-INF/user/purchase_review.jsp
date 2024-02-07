@@ -198,7 +198,7 @@
                 </div>
     
                 <div class="review-send">
-                    <a class="review-product-cart" href="Puroduct_detail">商品詳細ページへいく</a>
+                    <a class="review-product-cart" href="Product_detail?id=${ item.id }">商品詳細ページへいく</a>
                     <!-- 送信アイコン -->
                     <input id="set" class="review-submit-icon" type="image" src="assets/img/send-icon.png" alt="">
                 </div>
