@@ -42,11 +42,12 @@ public class Product_history extends HttpServlet {
 			response.sendRedirect("Product_login");
 		}
 		else {
-			List<Item> list = dao.get(loginUser.getId());
 			PurchaseStatusDAO daoPurchase= new PurchaseStatusDAO();
 			List<Integer> idList = daoPurchase.getUserId(loginUser.getId());
+			List<Item> list = dao.get(loginUser.getId(), idList);
 			List<String> date = daoPurchase.getUserDate(idList);
 			List<String> productStatus = daoPurchase.getProductStatus(idList);
+			
 			
 //			List<Integer> date = daoPurchase..getUserId()
 			
