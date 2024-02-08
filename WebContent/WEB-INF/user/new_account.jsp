@@ -118,6 +118,40 @@
         <div class="new-account">
             <!--新規会員登録フォーム-->
 
+            <c:if test="${not empty nameOneFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${nameOneFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty nameTweFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${nameTweFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty mailFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${mailFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty paswardFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${paswardFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty telFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${telFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty prefecturFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${prefecturFalse}</p>
+            </c:if>
+            
+            <c:if test="${not empty streetAdressFalse}">
+	            <%-- メッセージが存在するときのみ表示 --%>
+	            <p class="error-message">${streetAdressFalse}</p>
+            </c:if>
 
             <form class="newaccount-form" action="#" method="post"> <!--  onsubmit="return check();" -->
 	            <c:if test="${not empty msg}">
@@ -128,49 +162,51 @@
                 <h2 class="us-login-id">氏名</h2>
                 <!--姓（カナ）名前（かな）-->
                 <h2 class="name-kana">姓（カナ）名前（カナ）</h2>
-                <input name="name_kana"  class="name-kana-txt text-input" type="text" placeholder="入力してください"  pattern=".*\S+.*">
+                <input name="name_kana"  class="name-kana-txt text-input" type="text" placeholder="入力してください"  pattern=".*\S+.*" value="${ name_kana }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
 
                 <!--姓（漢字）名前（漢字）-->
                 <h2 class="name-kanji">姓（漢字）名前（漢字）</h2>
-                <input name="name_kanji" class="name-kanji-txt text-input" type="text" placeholder="入力してください">
+                <input name="name_kanji" class="name-kanji-txt text-input" type="text" placeholder="入力してください" value="${ name_kanji }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
 
                 <!--ログインID入力-->
                 <h2 class="us-login-id">ログインID</h2>
-                <input name="mail_adress" class="id-txt text-input" type="email" name="login-id" placeholder="入力してください">
+                <input name="mail_adress" class="id-txt text-input" type="email" name="login-id" placeholder="入力してください"  value="${ mail_adress }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
 
-                <input class="id-txt text-input" type="email" name="login-id" placeholder="確認用メールアドレス欄">
+                <input class="id-txt text-input" type="email" name="login-id" placeholder="確認用メールアドレス欄"  value="${ mail_adress }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
 
                 <!--パスワード-->
                 <h2 class="us-login-password">パスワード</h2>
-                <input name="us_pasward" class="password-txt text-input" type="password" name="password-txt" placeholder="パスワード入力欄" onKeyUp="countLength(value, 'textlength0');">
+                <input name="us_pasward" class="password-txt text-input" type="password" name="password-txt" placeholder="パスワード入力欄" onKeyUp="countLength(value, 'textlength0');"  value="${ us_pasward }">
                 <!-- 
                 <p class="error-message">※</p>
                 <p id="textlength0">0</p>
                  -->
 
-                <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"
+                <input class="password-txt text-input" type="password" name="password-txt" placeholder="確認用パスワード欄"  value="${ us_pasward }">
              
                 <!--電話番号-->
           
 
                 <h2 class="telephone-number">電話番号</h2>
-                <input name="telNumber" class="telephone-txt text-input" type="text" placeholder="携帯用">
+                <input name="telNumber" class="telephone-txt text-input" type="text" placeholder="携帯用"  value="${ tel_number }">
 
                 
-         
-
+         		
+         		<c:if test="${ not empty us_adressError }">
+					<p class="errorMessage">${us_adressError }</p>         		
+         		</c:if>
                 <!--住所１（市区町村）-->
                 <h2 class="addres-txt">住所１(市区町村)</h2>
                 <button class="select-input-btn" type="button" onclick="check_select()">
@@ -229,14 +265,14 @@
                 <p class="error-message-select">※</p>
                  -->
 
-                <input id="name" class="telephone-txt text-input" type="text" name="us_adress" placeholder="市区町村を入力">
+                <input id="name" class="telephone-txt text-input" type="text" name="us_adress" placeholder="市区町村を入力"  value="${ us_adress }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
 
                 <!--都道府県-->
                 <h2 class="prefectur">都道府県(番地)</h2>
-                <input class="prefectur-txt text-input" type="text" name="street_address" placeholder="住所２（番地）">
+                <input class="prefectur-txt text-input" type="text" name="street_address" placeholder="住所２（番地）"  value="${ street_address }">
                 <!-- 
                 <p class="error-message">※</p>
                  -->
