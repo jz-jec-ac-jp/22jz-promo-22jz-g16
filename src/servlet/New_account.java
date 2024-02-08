@@ -100,6 +100,8 @@ public class New_account extends HttpServlet {
 					
 					System.out.println(name_kanji + name_kana + mail_adress + us_pasward + us_adress + tel_number + us_prefectur + street_address);
 					
+					System.out.println(dao.findByEmail(mail_adress));
+					
 					ProductUser user = dao.create(name_kanji, name_kana, mail_adress, us_pasward,
 							us_adress, tel_number, us_prefectur, street_address);
 					

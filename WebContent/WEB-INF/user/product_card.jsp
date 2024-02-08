@@ -138,13 +138,13 @@
             <form class="card-form" action="#" method="post" ><!-- onsubmit="return check()" -->
                 <h1 class="card-logo">Visa</h1>
                 <!-- カード番号 -->
-                <h2>カード番号（半角）*</h2>
+                <h2>カード番号（半角）</h2>
                 <input class="card-number text-input" type="text"
                     placeholder="入力してください"  name="card_number">
                 
 
                 <!-- 有効期限 -->
-                <h2>有効期限*</h2>
+                <h2>有効期限</h2>
                 <div class="expiration">
                     <input class="expiration-month text-input" type="number" placeholder="例 年月）2712" name="date_of_expiry">
                 

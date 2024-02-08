@@ -121,7 +121,7 @@
         </div>
          -->
         
-        <div class="history-data">
+        <div class="history-data history_data">
         
 	        <c:forEach var="item" items="${ list }" varStatus="count">
 	        <a href="Product_review?id=${ item.id }">

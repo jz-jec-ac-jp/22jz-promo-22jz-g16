@@ -114,7 +114,7 @@
             <form class="card-form" action="Product_complete" method="get" ><!-- onsubmit="return check()" -->
                 <h1 class="card-logo">Visa</h1>
                 <!-- カード番号 -->
-                <h2>カード番号（半角）*</h2>
+                <h2>カード番号（半角）</h2>
 
 				<c:choose>
 				    <c:when test="${not empty cardCheckNum}">
@@ -126,7 +126,7 @@
 				</c:choose>
 
                 <!-- 有効期限 -->
-                <h2>有効期限*</h2>
+                <h2>有効期限</h2>
 
                 
                 <c:choose>

@@ -1722,7 +1722,6 @@ footer a {
 .us-color-size,
 .peace,
 .postage {
-    text-align: left;
     margin: 5px;
 }
 
@@ -2042,7 +2041,10 @@ footer a {
 	margin-top: 10px;
 	border-radius:10px;
 }
-
+.history_data img {
+	width: 36vw;
+	height: 15vh;
+}
 /*合計金額*/
 
 /*購入履歴全体*/
