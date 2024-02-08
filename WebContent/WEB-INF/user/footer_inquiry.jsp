@@ -126,10 +126,12 @@
 	        <!-- 投稿テキスト -->
 		     <div class="write-div">
 		           <h2>お問い合わせ内容</h2>
-		           <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
-		           minlength="5" placeholder="入力してください"></input>
+		           <textarea class="text-area review-text"  name="review-text" onKeyUp="countLength(value, 'textlength4');"
+		            placeholder="入力してください"></textarea>
+		           <!-- 
 		           <p class="error-message">※入力してください</p>
 		           <p id="textlength4">0</p>   
+		            -->
 		     </div>
 		     <input class="confirm-button" type="submit" value="送信する">
         </div>        

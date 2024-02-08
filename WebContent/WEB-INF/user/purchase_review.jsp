@@ -141,7 +141,6 @@
             <form  class="review-send-form" action="#" method="post" name="myForm"><!--  onsubmit="return check();" -->
                 <h2 class="all-evalution">総合評価</h2>
                 <div class="evaluation-div">
-                    <p class="evaluation">3.0</p>
                     <!-- <p class="evaluation-star">☆☆☆☆☆</p> -->
                     <div class="stars">
                         <span>
@@ -169,8 +168,9 @@
                     <!-- <p class="customer-comment">しっかりしている!!</p> -->
                     <input name="review-title" class="text-input customer-comment" type="text" placeholder="入力してください"
                         onKeyUp="countLength(value, 'textlength3');" >
+                    <!-- <p id="textlength3">0</p>
                     <p class="error-message">※入力してください</p>
-                    <!-- <p id="textlength3">0</p> -->
+                     -->
     
                 </div>
                 <!--商品・動画-->
@@ -191,10 +191,13 @@
    
                 <div class="write-div">
                     <h2>レビュー</h2>
-                    <input class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
-                        minlength="5" placeholder="入力してください"></input>
+                    <textarea class="text-area review-text" name="review-text" onKeyUp="countLength(value, 'textlength4');"
+                        minlength="5" placeholder="入力してください"></textarea>
+                        <!-- 
                     <p class="error-message">※入力してください</p>
                     <p id="textlength4">0</p>
+                         -->
+                      
                 </div>
     
                 <div class="review-send">
