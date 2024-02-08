@@ -128,7 +128,7 @@
         <div class="product">
             <p>${item.product_price}円</p>
             <!-- お気に入り -->
-            <form   action="#" method="post">
+            <form   action="#" method="post" class="favoriteForm">
             	<button class="favorite_button" type="submit">
             		<input type="hidden" name="favoriteId" value="${ item.id }"> 	
 		            <figure>

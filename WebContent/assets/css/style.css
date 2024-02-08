@@ -2292,6 +2292,10 @@ footer a {
 /*        width: 50vw;*/
         margin: 10% 10%;
     }
+    
+.favoriteForm {
+	margin-top: 15px;
+}
 
 .wrap {
     margin: 2em auto;
