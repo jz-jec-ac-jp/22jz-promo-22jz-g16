@@ -123,7 +123,7 @@
             
             <c:if test="${not empty msg}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p>${msg}</p>
+	            <p class="errorMessage">${msg}</p>
 	        </c:if>
 	        
 	        <c:if test="${ not empty logincomplete }">

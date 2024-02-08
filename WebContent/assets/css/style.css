@@ -264,6 +264,11 @@ select:focus {
 	overflow: hidden;
 }
 
+
+.errorMessage {
+	color: rgb(255, 0, 0);
+}
+
 /* header  */
 
 
