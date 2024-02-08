@@ -292,7 +292,6 @@ public class  ItemDAO {
 			System.out.println("モノトーン時計");
 			imgs.add("assets/img/monotone_clock1.jpg");
 			imgs.add("assets/img/monotone_clock2.jpg");
-			imgs.add("assets/img/monotone_clock3.jpg");
 			
 		} else if (category_img.equals("カントリー照明")) {
 			System.out.println("カントリー照明");
