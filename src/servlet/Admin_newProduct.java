@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,11 +49,14 @@ public class Admin_newProduct extends HttpServlet {
 			
 			ItemDAO dao = new ItemDAO();
 			
+			List<Item> itemList = dao.get();
+			
 			String search = request.getParameter("searchProductId");
 			Item item = dao.findStringAdmin(search);
 			System.out.println("edit");
 			
 			request.setAttribute("item", item);
+			request.setAttribute("itemList", itemList);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
 			dispatcher.forward(request, response);

@@ -473,12 +473,31 @@
       <!-- 変更したよーーーーーーーーーーーーーーーー -->
     <form class="search-form" action="#" method="get">
      
-      <div class="ad-search">
-        <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
+      
         <!-- 検索ボックス -->
+<!--       <div class="ad-search">
         <input type="search" class="new-search-txtbox" placeholder="キーワードを入力" name="searchProductId">
       
       </div>
+      -->
+        <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
+      
+            <select class=" productCategory" name="searchProductId">
+             <option value="">商品一覧</option>
+   				<%-- メッセージが存在するときのみ表示 --%>
+               	<option value="モノトーン風 ダイニングチェアー">モノトーン風 ダイニングチェアー</option>
+               	<option value="カントリー風 ダイニングチェアー">カントリー風 ダイニングチェアー</option>
+               	<option value="モノトーン風 ダイニングテーブル">モノトーン風 ダイニングテーブル</option>
+               	<option value="カントリー風 ダイニングテーブル">カントリー風 ダイニングテーブル</option>
+               	<option value="モノトーン風 ペンダントライト">モノトーン風 ペンダントライト</option>
+               	<option value="カントリー風 シーリングライト">カントリー風 シーリングライト</option>
+               	<option value="モノトーン風 サイドボード">モノトーン風 サイドボード</option>
+               	<option value="カントリー風 サイドボード">カントリー風 サイドボード</option>
+               	<option value="モノトーン風 壁掛け時計">モノトーン風 壁掛け時計</option>
+               	<option value="カントリー風 壁掛け時計">カントリー風 壁掛け時計</option>
+               	
+
+          </select>  
 	</form>
 
     <form class="new-search-form" action="#" method="post">
