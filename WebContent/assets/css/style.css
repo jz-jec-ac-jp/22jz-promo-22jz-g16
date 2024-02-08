@@ -2261,10 +2261,15 @@ footer a {
 購入完了報告画面
 
 */
+.complete_img {
+	width: 47vw;
+	height: 19vh;
+
+}
 
 .complete {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

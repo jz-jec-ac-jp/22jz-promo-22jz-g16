@@ -112,9 +112,11 @@
             </ol>
         </nav>
         <div class="complete">
+            <figure>
+            	<img class="complete_img" src="assets/img/G16.png" alt="" >
+            </figure>
             <h1>Thank you !!</h1>
             <p>商品の購入が完了しました！！</p>
-
             <h2>お客様の注文番号</h2>
             <p class="product-number">****************</p>
 
