@@ -474,35 +474,35 @@
     <form class="search-form" action="#" method="get">
       
       <c:if test="${ not empty nameNull }">
-      	<p>${ nameNull }</p>
+      	<p class="textColor">${ nameNull }</p>
       </c:if>
       
       <c:if test="${ not empty detailNull }">
-      	<p>${ detailNull }</p>
+      	<p class="textColor">${ detailNull }</p>
       </c:if>
       
       <c:if test="${ not empty valuelNull }">
-      	<p>${ valuelNull }</p>
+      	<p class="textColor">${ valuelNull }</p>
       </c:if>
       
       <c:if test="${ not empty colorNull }">
-      	<p>${ colorNull }</p>
+      	<p class="textColor">${ colorNull }</p>
       </c:if>
       
       <c:if test="${ not empty sizelNull }">
-      	<p>${ sizelNull }</p>
+      	<p class="textColor">${ sizelNull }</p>
       </c:if>
       
       <c:if test="${ not empty nameNull }">
-      	<p>${ nameNull }</p>
+      	<p class="textColor">${ nameNull }</p>
       </c:if>
       
       <c:if test="${ not empty weightNull }">
-      	<p>${ weightNull }</p>
+      	<p class="textColor">${ weightNull }</p>
       </c:if>
       
       <c:if test="${ not empty imgNull }">
-      	<p>${ imgNull }</p>
+      	<p class="textColor">${ imgNull }</p>
       </c:if>
      
       
@@ -512,6 +512,7 @@
       
       </div>
       -->
+      
         <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
       
       <!-- 
@@ -534,9 +535,7 @@
 				
           </select>
            -->
-	      <c:if test="${ not empty nameError }">
-	      	<p>${ nameError }</p>
-	      </c:if>
+	   
           <select class="productCategory" name="searchProductId">
              <option value="">商品一覧</option>
 	       		<c:forEach var="item" items="${ itemList }">
@@ -544,6 +543,9 @@
                   	<option value="${ item.product_name }">${ item.product_name }</option>
 		       	</c:forEach>
           </select>
+         <c:if test="${ not empty nameError }">
+	      	<p class="textColor">${ nameError }</p>
+	      </c:if>
            
             
 	</form>
@@ -564,9 +566,6 @@
 		    
 	     <input type="hidden" name="productIdDelete" value="${ item.id }">
         
-	       <c:if test="${ not empty imgError }">
-	      	<p>${ imgError }</p>
-	      </c:if>
           <select class="productCategory" name="category_img">
              <option value="">商品写真一覧</option>
    				<%-- メッセージが存在するときのみ表示 --%>
@@ -583,6 +582,9 @@
                	
 
           </select>
+	       <c:if test="${ not empty imgError }">
+	      	<p class="textColor">${ imgError }</p>
+	      </c:if>
       <!-- </button> -->
       </div>
       <!-- 商品名 -->

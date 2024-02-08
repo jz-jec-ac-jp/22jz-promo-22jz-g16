@@ -120,43 +120,43 @@
 
             <c:if test="${not empty nameOneFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${nameOneFalse}</p>
+	            <p  class="errorMesage">${nameOneFalse}</p>
             </c:if>
             
             <c:if test="${not empty nameTweFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${nameTweFalse}</p>
+	            <p class="errorMesage">${nameTweFalse}</p>
             </c:if>
             
             <c:if test="${not empty mailFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${mailFalse}</p>
+	            <p class="errorMesage">${mailFalse}</p>
             </c:if>
             
             <c:if test="${not empty paswardFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${paswardFalse}</p>
+	            <p class="errorMesage">${paswardFalse}</p>
             </c:if>
             
             <c:if test="${not empty telFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${telFalse}</p>
+	            <p class="errorMesage">${telFalse}</p>
             </c:if>
             
             <c:if test="${not empty prefecturFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${prefecturFalse}</p>
+	            <p class="errorMesage">${prefecturFalse}</p>
             </c:if>
             
             <c:if test="${not empty streetAdressFalse}">
 	            <%-- メッセージが存在するときのみ表示 --%>
-	            <p class="error-message">${streetAdressFalse}</p>
+	            <p class="errorMesage">${streetAdressFalse}</p>
             </c:if>
 
             <form class="newaccount-form" action="#" method="post"> <!--  onsubmit="return check();" -->
 	            <c:if test="${not empty msg}">
 		            <%-- メッセージが存在するときのみ表示 --%>
-		            <p class="error-message">${msg}</p>
+		            <p class="errorMesage">${msg}</p>
 	            </c:if>
                 <!--氏名-->
                 <h2 class="us-login-id">氏名</h2>
