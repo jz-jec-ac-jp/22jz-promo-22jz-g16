@@ -148,6 +148,50 @@ public class AddproductDAO {
 	    
 	}
 	
+	public boolean delete(int productId) {
+		int ret = -1;
+		
+		// できるなら存在確認
+		
+		
+		// DBにデータを追加
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			// プレースホルダで変数部分を定義
+			
+			String sqlColor = "DELETE FROM color_table WHERE product_id = ?";
+			PreparedStatement stmtColor = cn.prepareStatement(sqlColor);
+			stmtColor.setInt(1, productId);
+			ret = stmtColor.executeUpdate();
+			
+			String sqlWeight = "DELETE FROM weight_table WHERE producr_id = ?";
+			PreparedStatement stmtWeight = cn.prepareStatement(sqlWeight);
+			stmtWeight.setInt(1, productId);
+			ret = stmtWeight.executeUpdate();
+			
+			String sqlImg = "DELETE FROM img_table WHERE item_id = ?";
+			PreparedStatement stmtImg = cn.prepareStatement(sqlImg);
+			stmtImg.setInt(1, productId);
+			ret = stmtImg.executeUpdate();
+			
+			String sql = "DELETE FROM item_table WHERE id = ?";
+			PreparedStatement stmt = cn.prepareStatement(sql);
+			stmt.setInt(1, productId);
+			ret = stmt.executeUpdate();
+			
+			
+			System.out.println("product delete");
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret > 0;
+		
+		
+		
+	}
 	
 	
 	public List<Item> get() {
@@ -176,6 +220,8 @@ public class AddproductDAO {
 		
 		return list;
 	}
+	
+	
 	
 	/**
 	 * ResultSetの行データをモデルの形に変換するメソッド

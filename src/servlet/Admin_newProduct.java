@@ -31,6 +31,9 @@ public class Admin_newProduct extends HttpServlet {
 		AdminUser loginUser = (AdminUser)request.getSession().getAttribute("loginUser");
 //		HttpSession session = request.getSession();
 		
+		ItemDAO dao = new ItemDAO();
+		List<Item> itemList = dao.get();
+		request.setAttribute("itemList", itemList);
 		
 		
 		
@@ -47,16 +50,13 @@ public class Admin_newProduct extends HttpServlet {
 				
 			request.setCharacterEncoding("UTF-8");
 			
-			ItemDAO dao = new ItemDAO();
 			
-			List<Item> itemList = dao.get();
 			
 			String search = request.getParameter("searchProductId");
 			Item item = dao.findStringAdmin(search);
 			System.out.println("edit");
 			
 			request.setAttribute("item", item);
-			request.setAttribute("itemList", itemList);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
 			dispatcher.forward(request, response);
@@ -64,6 +64,8 @@ public class Admin_newProduct extends HttpServlet {
 		else {
 			Item item = null;
 			request.setAttribute("item", item);
+			
+			request.setAttribute("itemList", itemList);
 			request.setAttribute("loginTrue", "ログイン済みです");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/admin/new_product.jsp");
 			dispatcher.forward(request, response);
@@ -77,6 +79,10 @@ public class Admin_newProduct extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		ItemDAO dao = new ItemDAO();
+		List<Item> itemList = dao.get();
+		request.setAttribute("itemList", itemList);
+		
 		request.setCharacterEncoding("UTF-8");
 		AddproductDAO daoAdd = new AddproductDAO();
 		
@@ -94,17 +100,77 @@ public class Admin_newProduct extends HttpServlet {
 		String productWeight = request.getParameter("productWeight");
 		
 		String category_img = request.getParameter("category_img");
-
-		if (request.getParameter("createEdit-box").equals("edit")) {
-			ItemDAO dao = new ItemDAO();
-			int id = Integer.parseInt(request.getParameter("idProduct"));
-			dao.updateProduct(id, productName, productDetail, productValue, productStock, productColor, productSize, productWeight, category_img);
+		
+		if (productName == "" || productDetail == "" || Integer.toString(productValue) == "" || Integer.toString(productStock) == "" || productColor == "" || productSize == "" || productWeight == "" || category_img == "") {
+			if (productName == "") {
+				request.setAttribute("nameNull", "名前が未入力です");
+			}
+			
+			if (productDetail == "") {
+				request.setAttribute("detailNull", "商品詳細が未入力です");
+			}
+			
+			if (Integer.toString(productValue) == "") {
+				request.setAttribute("valuelNull", "金額が未入力です");
+			}
+			
+			if (Integer.toString(productStock) == "") {
+				request.setAttribute("stocklNull", "在庫数が未入力です");
+			}
+			
+			if (productColor == "") {
+				request.setAttribute("colorNull", "カラーが未入力です");
+			}
+			
+			if (productSize == "") {
+				request.setAttribute("sizelNull", "サイズが未入力です");
+			}
+			
+			if (productWeight == "") {
+				request.setAttribute("weightNull", "大きさが未入力です");
+			}
+			
+			if (category_img == "") {
+				request.setAttribute("imgNull", "画像が未入力です");
+			}
+			
+			request.setAttribute("productName", productName);
+			request.setAttribute("productDetail", productDetail);
+			request.setAttribute("productValue", productValue);
+			request.setAttribute("productStock", productStock);
+			request.setAttribute("productColor", productColor);
+			request.setAttribute("productSize", productSize);
+			request.setAttribute("productWeight", productWeight);
+			request.setAttribute("category_img", category_img);
+			
+			request.setAttribute("imgError", "画像を選択してください");
+			request.setAttribute("nameError", "商品名を選択してください");
+			
 		}
 		else {
 			
-			System.out.println("admin_newProduct doPost");
-			daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight, productColor, category_img);
+			if (request.getParameter("productDelete-box") != "") {
+				int id = Integer.parseInt(request.getParameter("productIdDelete"));
+				daoAdd.delete(id);
+				
+			}
+			else if (request.getParameter("createEdit-box").equals("edit")) {
+				
+				int id = Integer.parseInt(request.getParameter("idProduct"));
+				dao.updateProduct(id, productName, productDetail, productValue, productStock, productColor, productSize, productWeight, category_img);
+				
+				
+			}
+			else {
+				
+				
+				request.setAttribute("itemList", itemList);
+				System.out.println("admin_newProduct doPost");
+				daoAdd.create(productName, productDetail, productValue, productStock, productSize, productWeight, productColor, category_img);
+			}
 		}
+		
+		
 		
 		
 //		ShopcartDAO dao = new ShopcartDAO();

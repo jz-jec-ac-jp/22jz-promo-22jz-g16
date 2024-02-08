@@ -472,6 +472,38 @@
       
       <!-- 変更したよーーーーーーーーーーーーーーーー -->
     <form class="search-form" action="#" method="get">
+      
+      <c:if test="${ not empty nameNull }">
+      	<p>${ nameNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty detailNull }">
+      	<p>${ detailNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty valuelNull }">
+      	<p>${ valuelNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty colorNull }">
+      	<p>${ colorNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty sizelNull }">
+      	<p>${ sizelNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty nameNull }">
+      	<p>${ nameNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty weightNull }">
+      	<p>${ weightNull }</p>
+      </c:if>
+      
+      <c:if test="${ not empty imgNull }">
+      	<p>${ imgNull }</p>
+      </c:if>
      
       
         <!-- 検索ボックス -->
@@ -482,6 +514,7 @@
       -->
         <input class="new-search-icon" type="image" src="assets/img/header_search.png" src="#">
       
+      <!-- 
             <select class=" productCategory" name="searchProductId">
              <option value="">商品一覧</option>
    				<%-- メッセージが存在するときのみ表示 --%>
@@ -496,21 +529,44 @@
                	<option value="モノトーン風 壁掛け時計">モノトーン風 壁掛け時計</option>
                	<option value="カントリー風 壁掛け時計">カントリー風 壁掛け時計</option>
                	
-
-          </select>  
+				
+				
+				
+          </select>
+           -->
+	      <c:if test="${ not empty nameError }">
+	      	<p>${ nameError }</p>
+	      </c:if>
+          <select class="productCategory" name="searchProductId">
+             <option value="">商品一覧</option>
+	       		<c:forEach var="item" items="${ itemList }">
+		      		<%-- メッセージが存在するときのみ表示 --%>
+                  	<option value="${ item.product_name }">${ item.product_name }</option>
+		       	</c:forEach>
+          </select>
+           
+            
 	</form>
 
+	
     <form class="new-search-form" action="#" method="post">
         <!-- <button class="select-input-btn" type="button"> -->
         
+       	<select class="" name="productDelete-box">
+	           <option value=""></option>
+	           <option value="edit">商品削除</option>
+	    </select>
           <p class="textColor">※注意</p>
 	       <select class="" name="createEdit-box">
 	           <option value="create">追加</option>
 	           <option value="edit">編集</option>
 	       </select>
 		    
-	      
+	     <input type="hidden" name="productIdDelete" value="${ item.id }">
         
+	       <c:if test="${ not empty imgError }">
+	      	<p>${ imgError }</p>
+	      </c:if>
           <select class="productCategory" name="category_img">
              <option value="">商品写真一覧</option>
    				<%-- メッセージが存在するときのみ表示 --%>
@@ -541,12 +597,25 @@
       <div class="ad-value">
         <div class="ad-new-vaca">
           <p>値段</p>
-          <input type="number" class="ad-new-value" placeholder="例）3000" name="productValue" value="${ item.product_price }">
+          
+          <c:if test="${ empty item.product_price }">
+          	<input type="number" class="ad-new-value" placeholder="例）3000" name="productValue" value="1">
+          </c:if>
+          
+          <c:if test="${ not empty item.product_price }">          
+	          <input type="number" class="ad-new-value" placeholder="例）3000" name="productValue" value="${ item.product_price }">
+          </c:if>
         </div>
         <!-- 個数 -->
         <div class="ad-new-vaca">
           <p>個数</p>
-          <input type="number" class="ad-new-num" placeholder="例）50" name="productStock" value="${ item.product_stock }">
+          <c:if test="${ empty item.product_stock }">
+          	<input type="number" class="ad-new-num" placeholder="例）50" name="productStock" value="1">
+          </c:if>
+          
+          <c:if test="${ not empty item.product_stock }">          
+          	<input type="number" class="ad-new-num" placeholder="例）50" name="productStock" value="${ item.product_stock }">
+          </c:if>
         </div>
       </div>
       
@@ -593,11 +662,13 @@
           
         </div>
       </div>
+      
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
       <p>${ item.product_detail }</p>
       <textarea class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
-      <button type="submit">追加</button>
+      <button type="submit">確定</button>
+
     </form>
   </main>
 </body>
