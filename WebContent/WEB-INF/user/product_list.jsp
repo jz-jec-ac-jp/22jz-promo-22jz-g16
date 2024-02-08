@@ -211,7 +211,7 @@
 	              </c:forEach>
             </div>
 			        <p class="ad-productname">${ item.product_name }</p>
-		        <p class="price">値段:${ item.product_price }(税込)</p>
+		        <p class="price">値段:${ item.product_price }円(税込)</p>
 		        <c:forEach var="color" items="${ item.colorTexts }">
 		        	<p>${ color.purchase_color}</p>
 		        </c:forEach>
