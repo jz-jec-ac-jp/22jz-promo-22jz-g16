@@ -148,6 +148,7 @@ header {
     font-size: 1.6rem;
     width: 25%;
     margin: auto;
+	text-align: center;
 }
 
 .ad-login-button {

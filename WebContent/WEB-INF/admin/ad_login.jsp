@@ -37,7 +37,7 @@
 	                <input class="ad-id-txt" type="text" name="ad-login-id"> <!-- name="ad-login-id"  -->
 	                <!-- パスワード入力 -->
 	                <h2 class="ad-login-password">パスワード</h2>
-	                <input class="ad-password-txt" type="text" name="ad-password-txt"> <!-- name="ad-password-txt" -->
+	                <input class="ad-password-txt" type="password" name="ad-password-txt"> <!-- name="ad-password-txt" -->
 	                <!-- ログインボタン -->
 	                
 	                <!-- <input class="login-button" type="button" value="ログイン"> 

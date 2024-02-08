@@ -440,8 +440,8 @@
     <h2 class="news">News</h2>
     <div class="news-list">
       <div class="news-item">
-        <p class="item-day">2023/10/30</p>
-        <p class="item-contents">新商品が追加されました。</p>
+        <p class="item-day">2024/2/8</p>
+        <p class="item-contents">カントリー風サイドボードを追加しました。</p>
       </div>
       <div class="news-item">
         <p class="item-day">2023/10/30</p>
