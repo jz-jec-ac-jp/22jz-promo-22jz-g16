@@ -92,7 +92,7 @@ public class AddproductDAO {
 				System.out.println("モノトーン時計");
 				imgs.add("assets/img/monotone_clock1.jpg");
 				imgs.add("assets/img/monotone_clock2.jpg");
-				imgs.add("assets/img/monotone_clock3.jpg");
+				
 				
 			} else if (category_img.equals("カントリー照明")) {
 				System.out.println("カントリー照明");
@@ -101,7 +101,7 @@ public class AddproductDAO {
 				
 			} else if (category_img.equals("モノトーン照明")) {
 				System.out.println("モノトーン照明");
-				imgs.add("assets/img/monotone_light1.jpg");
+				imgs.add("assets/img/monotone_lighit1.jpg");
 				imgs.add("assets/img/monotone_light2.jpg");
 				imgs.add("assets/img/monotone_light3.jpg");
 				

@@ -112,12 +112,7 @@
     <div>
       <!-- カテゴリ -->
       <!-- 照明 -->
-      <div class="category-item">
-        <a href="javascript:popup_open_category();">
 
-          <p>カテゴリ</p>
-        </a>
-      </div>
       <div id="popup-overlay-category">
         <div id="popup-window-category" class="popup-window list-pop">
           <section class="popup-header">
