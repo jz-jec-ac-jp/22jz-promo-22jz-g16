@@ -202,7 +202,7 @@
                 <h2 class="telephone-number">電話番号</h2>
                 <input name="telNumber" class="telephone-txt text-input" type="text" placeholder="携帯用"  value="${ tel_number }">
 
-                
+               
          		
          		<c:if test="${ not empty us_adressError }">
 					<p class="errorMessage">${us_adressError }</p>         		
