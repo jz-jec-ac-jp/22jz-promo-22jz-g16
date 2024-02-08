@@ -128,7 +128,7 @@
 	        
 	        <c:if test="${ not empty logincomplete }">
 	        	<p>${ logincomplete }</p>
-	        	<p>${ loginUserId }</p>
+	        	<p>ログイン ID<br>${ loginUserId }</p>
 	        	<a href="Product_logout">ログアウト</a>
 	        </c:if>
             
