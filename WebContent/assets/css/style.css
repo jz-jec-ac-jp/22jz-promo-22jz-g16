@@ -593,6 +593,7 @@ footer a {
     list-style: none;
 }
 
+
 .breadcrumb li:not(:last-of-type)::after {
     content: "›";
     margin: 0 .6em;
