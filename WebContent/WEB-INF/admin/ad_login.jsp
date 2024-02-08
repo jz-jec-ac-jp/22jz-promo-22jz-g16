@@ -15,12 +15,12 @@
     <main>
         <!-- ログイン -->
         <h1 class="admin-login">ログイン</h1>
-        <p class="ad-msg">学校メールアドレス、学籍番号_Admin</p>
+        
         
         <div class="ad-login">
 	            <%-- メッセージが存在するときのみ表示 --%>
 	        <c:if test="${not empty msg}">
-	            <p class="ad-msg">${msg}</p>
+	            <p class="textColor">${msg}</p>
 	        </c:if>
 	         
 	        
