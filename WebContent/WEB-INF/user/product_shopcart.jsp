@@ -123,7 +123,7 @@
 	
 	<!-- 変更したよーーーーーーーーーーーーーーーー -->
 	<c:if test="${ not empty shopFalse}">
-		<p>${ shopFalse }</p>
+		<p class="errorMessage">${ shopFalse }</p>
 	</c:if>
 
     <div class="year-total">

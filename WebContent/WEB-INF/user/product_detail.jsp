@@ -128,7 +128,7 @@
         <div class="product">
             <p>${item.product_price}円</p>
             <!-- お気に入り -->
-            <form   action="#" method="post">
+            <form   action="#" method="post" class="favoriteForm">
             	<button class="favorite_button" type="submit">
             		<input type="hidden" name="favoriteId" value="${ item.id }"> 	
 		            <figure>
@@ -194,18 +194,19 @@
                 <p>☆☆☆☆</p>
             </div>
 		 -->
+		 <!-- 
         <div class="product-review">
             <div class="product-review-item">
                 <h2>レビューはこちら▼</h2>
             </div>
         </div>
-
+ -->
         <div class="wrap">
 
             <div class="wrap">
 
                 <details class="details">
-                    <summary class="details__summary">もっと見る</summary>
+                    <summary class="details__summary">レビューはこちら</summary>
                     <div class="details__content">
                         <!-- <p>&lt;details&gt;要素を使う場合の開閉アニメーションはJavaScriptで補います。</p> -->
                         <!-- ↓↓最初隠したいコンテンツ↓↓ -->

@@ -264,6 +264,11 @@ select:focus {
 	overflow: hidden;
 }
 
+
+.errorMessage {
+	color: rgb(255, 0, 0);
+}
+
 /* header  */
 
 
@@ -2292,6 +2297,10 @@ footer a {
 /*        width: 50vw;*/
         margin: 10% 10%;
     }
+    
+.favoriteForm {
+	margin-top: 15px;
+}
 
 .wrap {
     margin: 2em auto;
@@ -2324,12 +2333,14 @@ footer a {
 
 .details__summary {
     text-align: center;
-    background: #c4c4c4;
+    background: #7c7c7c;
     border-radius: 20px;
-    padding: 10px;
+    padding: 7px 0;
     font-size: 1.2rem;
+    color: #fff;
+    width: 90%;
+    margin: auto;
 }
-
 
 /* .details {
     color: #287E39;

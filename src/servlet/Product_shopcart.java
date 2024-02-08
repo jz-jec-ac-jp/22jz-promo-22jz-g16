@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.ShopcartDAO;
 import dao.UserDAO;
@@ -44,11 +43,11 @@ public class Product_shopcart extends HttpServlet {
 		
 		ProductUser loginUser = (ProductUser)request.getSession().getAttribute("loginUser");
 		
-		HttpSession session = request.getSession();
+//		HttpSession session = request.getSession();
 		if (loginUser == null) {			
 
 			System.out.println("ショップカート画面未ログイン");
-			session.setAttribute("msg", "ログインしてください");
+			request.setAttribute("msg", "ログインしてください");
 			response.sendRedirect("Product_login");
 		}
 		else {
