@@ -2050,6 +2050,11 @@ footer a {
     border-bottom: 1px solid #362918;
 }
 
+.history-data .introduction-div {
+	margin: 5px 15px;
+	margin-right: -19px;
+}
+
 .history-data .ad-productimg {
     width: 60%;
 }

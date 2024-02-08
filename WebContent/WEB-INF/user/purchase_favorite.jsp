@@ -120,7 +120,9 @@
 	            <section class="history-list">
 	                <div class="history-title">
 	                    <h1 class="ad-productname">${ item.product_name }</h1>
+	                    <!-- 
 	                    <p class="evaluation">☆☆☆☆☆</p>
+	                     -->
 	                </div>
 	                <div class="ad-product-man">
 	
