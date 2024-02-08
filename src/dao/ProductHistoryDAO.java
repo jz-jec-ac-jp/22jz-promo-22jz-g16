@@ -24,19 +24,49 @@ public class ProductHistoryDAO {
 //	変更した
 //	public List<Integer> historyList(List)
 	
+	public List<Integer> list(List<Integer> idList) {
+		List<Integer> list = new ArrayList<>();
+		
+		DBManager manager = DBManager.getInstance();
+		try(Connection cn = manager.getConnection()) {
+			
+			for (int i = 0; i < idList.size(); i++) {				
+				String sql = "SELECT id FROM history_table WHERE user_id = ?";
+				//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
+				PreparedStatement stmt = cn.prepareStatement(sql);
+				System.out.println("履歴入ったよ");
+				stmt.setInt(1, idList.get(i));
+				
+				ResultSet rs = stmt.executeQuery();
+				
+				while (rs.next()) {
+					int id = rs.getInt("id");
+					list.add(id);
+				}
+				
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+			System.out.println("error_get  " + e);
+		}
+		return list;
+	}
+	
 	public List<Item> get(int id, List<Integer> idList) {
 		List<Item> list = new ArrayList<>();
 		
 		DBManager manager = DBManager.getInstance();
 		try(Connection cn = manager.getConnection()) {
 			
-			for (int i = 0; i < idList.size(); i++) {
+			List<Integer> listHistory = list(idList);
+			
+			for (int i = 0; i < listHistory.size(); i++) {
 				
-				String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id WHERE (SELECT id FROM history_table WHERE id = ?) = p.purchase_history";
+				String sql = "SELECT i.id, i.product_name, i.product_detail, i.product_price, i.product_stock, i.create_date, i.update_date FROM purchase_table p INNER JOIN item_table i ON p.product_id = i.id WHERE ? = p.purchase_history";
 				//SELECT i.product_name, i.product_detail, i.product_price, i.product_stock FROM purchase_table INNER JOIN item_table i ON purchase_table.product_id = i.id
 				PreparedStatement stmt = cn.prepareStatement(sql);
 				System.out.println("履歴入ったよ");
-				stmt.setInt(1, idList.get(i));
+				stmt.setInt(1, listHistory.get(i));
 				
 				ResultSet rs = stmt.executeQuery();
 				
