@@ -300,7 +300,7 @@ public class  ItemDAO {
 			
 		} else if (category_img.equals("モノトーン照明")) {
 			System.out.println("モノトーン照明");
-			imgs.add("assets/img/monotone_light1.jpg");
+			imgs.add("assets/img/monotone_lighit1.jpg");
 			imgs.add("assets/img/monotone_light2.jpg");
 			imgs.add("assets/img/monotone_light3.jpg");
 			
