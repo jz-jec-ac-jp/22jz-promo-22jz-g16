@@ -138,6 +138,8 @@
 		      <section class="history-product">
 		        <p class="us-productname">${ item.product_name }</p>
 		        <div class="us-detail-Product-name">
+		        
+		        
 		      <a href="Product_detail?id=${ item.id }" class="imgOverflow">
 	            <div class="imgContents">
 		            <c:forEach var="img" items="${ item.imgUrl }">
@@ -147,24 +149,23 @@
 		              </c:forEach>
 	            </div>
 			  </a>
+			  
+			  
 		          <div class="introduction-div">
 		            <p class="us-product-man">商品コード:${ item.id }</p>
-		            
 		            <c:forEach var="color" items="${ item.getColorTexts() }">
 		            <p class="us-color-size">カラー:${ color.purchase_color }</p>
 		            </c:forEach>
-		            
 		            <br>
 		            <c:forEach var="size" items="${ item.size_name }">
 			   			<p>サイズ：${ size.size_name }</p>
 					</c:forEach>
-		            <p class="value">${item.product_price }(税込)</p>
-					
-		           
-		          </div>
-		          <div class="us-detail-peace">
 		            <p class="postage">送料:500円</p>
-		            <p class="total-value">小計:${item.product_price }円(税込)</p>
+		            <p class="value　cart_value">${item.product_price }円(税込)</p>
+		          </div>
+		          
+		          
+		          <div class="us-detail-peace">
 		            <div>
 			          <form class="cart_form" action="#" method="post" id="form_product_shopcart">
 				          <label class="change_peace" for="count" id="label_count">個数 : ${ productCount[count.index] }</label>
@@ -247,7 +248,7 @@
 	      
 	     
 		<div class="product-button">
-	       <a href="Product_top" class="cart-btn">戻る</a>
+	       <a href="Product_list" class="cart-btn">戻る</a>
 	       <a href="Product_purchase" class="cart-btn">確認画面へ進む</a>
 	     </div>
 	</c:if>
