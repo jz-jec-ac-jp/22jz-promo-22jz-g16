@@ -2576,6 +2576,11 @@ footer a {
 お気に入りページ
 
 */
+.favorite_img img{
+	width: 20vh;
+	height: 20vh;
+	margin: 0 -13px;
+}
 .favorite_button{
 	background-color: #ffffff;
 	border-style: none;
@@ -2599,8 +2604,7 @@ footer a {
 }
 
 .q {
-    margin: 0 auto;
-
+    margin: auto;
 }
 
 .h .ad-productname {

@@ -124,15 +124,16 @@
 	                    <p class="evaluation">☆☆☆☆☆</p>
 	                     -->
 	                </div>
-	                <div class="ad-product-man">
-	
-		        		            
-			            <div class="imgContents imgOverflow">
-				            <c:forEach var="img" items="${ item.imgUrl }">
-					              <figure>
-					                <img class="" src="${ img.img_url }" alt="">
-					              </figure>
-				              </c:forEach>
+	                <div class="ad-product-man favorite_img">          
+				         <div class="img_price">
+			             <div class="imgContents imgOverflow">
+					            <c:forEach var="img" items="${ item.imgUrl }">
+						              <figure>
+						                <img class="" src="${ img.img_url }" alt="">
+						              </figure>
+					             </c:forEach>
+				            </div>
+			                	<p class="value">${ item.product_price}円(税込)</p>
 			            </div>
 			        
 	                    <div class="q">
@@ -141,14 +142,11 @@
 	                            <c:forEach var="color" items="${ item.colorTexts }">
 			                       <p>カラー：${ color.purchase_color}</p>
 			                    </c:forEach>
-		                        <br>
+		                      
 			                     <c:forEach var="size" items="${ item.size_name }">
 			   						<p>サイズ：${ size.size_name }</p>
 								</c:forEach>
-	                        	<br>
 	                        </p>
-		                     
-		                        <p class="value">${ item.product_price}円(税込)</p>
 		                       
 
 	                
