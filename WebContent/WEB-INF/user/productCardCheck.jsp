@@ -157,8 +157,8 @@
                 
                 <c:choose>
 				    <c:when test="${not empty cardCheckNum}">
-                	<input class="security-number text-input" type="number" placeholder="入力してください" name="card-security-number">
-                	<p class="error-message">※入力してください</p>
+                	<input class="security-number text-input" type="password" placeholder="入力してください" name="card-security-number">
+                	
 				    </c:when>
 				    <c:when test="${ not empty cardCheck}">
                 		<p>${ card_security_number }</p>

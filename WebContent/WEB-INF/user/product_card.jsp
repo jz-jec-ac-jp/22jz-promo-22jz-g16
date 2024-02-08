@@ -141,13 +141,13 @@
                 <h2>カード番号（半角）*</h2>
                 <input class="card-number text-input" type="text"
                     placeholder="入力してください"  name="card_number">
-                <p class="error-message">※入力してください</p>
+                
 
                 <!-- 有効期限 -->
                 <h2>有効期限*</h2>
                 <div class="expiration">
                     <input class="expiration-month text-input" type="number" placeholder="例 年月）2712" name="date_of_expiry">
-                    <p class="error-message error-month">※入力してください</p>
+                
 					
                   <!--   <input class="expiration-year text-input" type="number" placeholder="例）27" name="date_of_expiry">
                     <p class="error-message error-year">※入力してください</p>
@@ -157,13 +157,13 @@
                 <!-- 名義人名 -->
                 <h2>名義人名（半角ローマ字）</h2>
                 <input class="holder-name text-input" type="text" placeholder="入力してください" name="card_nominee">
-                <p class="error-message">※入力してください</p>
+                
 
 
                 <!-- セキュリティ番号 -->
                 <h2>セキュリティ番号</h2>
-                <input class="security-number text-input" type="number" placeholder="入力してください" name="card-security-number">
-                <p class="error-message">※入力してください</p>
+                <input class="security-number text-input" type="password" placeholder="入力してください" name="card-security-number">
+                
 
                 <!-- 確定ボタン -->
                 <div class="card-button">
