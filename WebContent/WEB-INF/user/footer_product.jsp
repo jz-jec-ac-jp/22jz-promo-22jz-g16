@@ -254,7 +254,7 @@
               </li>
               <li class="popup-list">
                 <a href="Product_list">
-                  <img src="" alt="">
+                  <img src="assets/img/country_deskbord.jpg" alt="">
                   <p>カントリー風</p>
                 </a>
               </li>

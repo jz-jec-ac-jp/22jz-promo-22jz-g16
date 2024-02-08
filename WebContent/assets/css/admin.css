@@ -430,7 +430,7 @@ header {
 }
 
 .ad-product-name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .ad-product-del {
@@ -483,6 +483,10 @@ header {
 .listForm .deliveryStatus {
 	font-size: 1.5rem;
 	text-align: center;
+}
+
+.errorMesage {
+	color: red;
 }
 
 /*

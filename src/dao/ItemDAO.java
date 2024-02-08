@@ -314,7 +314,7 @@ public class  ItemDAO {
 			
 		} else if (category_img.equals("カントリー棚")) {
 			System.out.println("カントリー棚");
-			imgs.add("assets/img/country_chair.jpg");
+			imgs.add("assets/img/country_deskbord.jpg");
 			
 		} else if (category_img.equals("モノトーン棚")) {
 			System.out.println("モノトーン棚");
