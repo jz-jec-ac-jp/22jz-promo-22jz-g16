@@ -625,13 +625,26 @@
       <div class="ad-value">
         <div class="ad-new-vaca">
           <p>サイズ</p>
+          
+            
+	       <select class="ad-new-value selectSize" name="productSize">
+             <option value="">サイズ一覧</option>
+   				<%-- メッセージが存在するときのみ表示 --%>
+               	<option value="S">S</option>
+               	<option value="M">M</option>
+               	<option value="L">L</option>
+           </select>
+          <!-- 
             <c:forEach var="size" items="${ item.size_name }">
 	          <input type="text" class="ad-new-value" placeholder="例）M" name="productSize" value="${ size.size_name }">
+	        
+	          
 			</c:forEach>
 			
 			<c:if test="${ empty item.size_name }">
 				<input type="text" class="ad-new-value" placeholder="例）M" name="productSize" value="${ size.size_name }">
 			</c:if>
+			 -->
 			
         </div>
         <!-- 重量 -->
@@ -667,8 +680,9 @@
       
       <!-- 商品内容 -->
       <p class="ad-product-content">商品内容</p>
-      <p>${ item.product_detail }</p>
-      <textarea class="ad-new-contents" placeholder="商品内容を入力" name="productDetail"></textarea>
+      
+     
+       <textarea class="ad-new-contents" placeholder="商品内容を入力" name="productDetail">${ item.product_detail }</textarea> 
       <button type="submit">確定</button>
 
     </form>
